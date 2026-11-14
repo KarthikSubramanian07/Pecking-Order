@@ -1,0 +1,159 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "operating-systems",
+  "version": "1.0.0",
+  "title": "Operating Systems",
+  "description": "The software that decides when your computer restarts.",
+  "category": "Tech",
+  "accent": "Speckle",
+  "author": "Pecking Order",
+  "tiers": ["Flawless", "Reliable", "It boots", "Blue screen", "Bricked"],
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/en/thumb/6/64/Windows_XP_Luna.png/500px-Windows_XP_Luna.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/en/thumb/b/b9/MacOS_original_logo.svg/500px-MacOS_original_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Android_robot_head.svg/500px-Android_robot_head.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Logo-ubuntu_cof-orange-hex.svg/500px-Logo-ubuntu_cof-orange-hex.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  ],
+  "items": [
+    {
+      "id": "ms-dos",
+      "label": "MS-DOS",
+      "wikipedia": "MS-DOS"
+    },
+    {
+      "id": "cp-m",
+      "label": "CP/M",
+      "wikipedia": "CP/M"
+    },
+    {
+      "id": "unix",
+      "label": "Unix",
+      "wikipedia": "Unix"
+    },
+    {
+      "id": "classic-mac-os",
+      "label": "Classic Mac OS",
+      "wikipedia": "Classic Mac OS"
+    },
+    {
+      "id": "amigaos",
+      "label": "AmigaOS",
+      "wikipedia": "AmigaOS"
+    },
+    {
+      "id": "os-2",
+      "label": "OS/2",
+      "wikipedia": "OS/2"
+    },
+    {
+      "id": "beos",
+      "label": "BeOS",
+      "wikipedia": "BeOS"
+    },
+    {
+      "id": "nextstep",
+      "label": "NeXTSTEP",
+      "wikipedia": "NeXTSTEP"
+    },
+    {
+      "id": "windows-95",
+      "label": "Windows 95",
+      "wikipedia": "Windows 95"
+    },
+    {
+      "id": "windows-xp",
+      "label": "Windows XP",
+      "wikipedia": "Windows XP"
+    },
+    {
+      "id": "windows-vista",
+      "label": "Windows Vista",
+      "wikipedia": "Windows Vista"
+    },
+    {
+      "id": "windows-7",
+      "label": "Windows 7",
+      "wikipedia": "Windows 7"
+    },
+    {
+      "id": "windows-10",
+      "label": "Windows 10",
+      "wikipedia": "Windows 10"
+    },
+    {
+      "id": "windows-11",
+      "label": "Windows 11",
+      "wikipedia": "Windows 11"
+    },
+    {
+      "id": "macos",
+      "label": "macOS",
+      "wikipedia": "macOS"
+    },
+    {
+      "id": "ios",
+      "label": "iOS",
+      "commons": "File:IOS 15 logo.png"
+    },
+    {
+      "id": "android",
+      "label": "Android",
+      "commons": "File:Android robot head.svg"
+    },
+    {
+      "id": "chromeos",
+      "label": "ChromeOS",
+      "wikipedia": "ChromeOS"
+    },
+    {
+      "id": "ubuntu",
+      "label": "Ubuntu",
+      "commons": "File:Logo-ubuntu cof-orange-hex.svg"
+    },
+    {
+      "id": "debian",
+      "label": "Debian",
+      "wikipedia": "Debian"
+    },
+    {
+      "id": "fedora",
+      "label": "Fedora",
+      "wikipedia": "Fedora Linux"
+    },
+    {
+      "id": "arch-linux",
+      "label": "Arch Linux",
+      "wikipedia": "Arch Linux"
+    },
+    {
+      "id": "freebsd",
+      "label": "FreeBSD",
+      "wikipedia": "FreeBSD"
+    },
+    {
+      "id": "solaris",
+      "label": "Solaris",
+      "wikipedia": "Oracle Solaris"
+    },
+    {
+      "id": "symbian",
+      "label": "Symbian",
+      "wikipedia": "Symbian"
+    },
+    {
+      "id": "palm-os",
+      "label": "Palm OS",
+      "wikipedia": "Palm OS"
+    },
+    {
+      "id": "blackberry-os",
+      "label": "BlackBerry OS",
+      "commons": "File:BlackBerry Bold 9900.jpg"
+    },
+    {
+      "id": "windows-phone",
+      "label": "Windows Phone",
+      "wikipedia": "Windows Phone"
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "javascript-frameworks",
+  "version": "1.0.0",
+  "title": "JavaScript Frameworks",
+  "description": "Another one shipped while you were reading this sentence.",
+  "category": "Tech",
+  "accent": "Corn",
+  "author": "Pecking Order",
+  "tiers": ["Ship it", "Would npm install", "Fine for a side project", "Legacy", "Rewrite it"],
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/React_Logo_SVG.svg/500px-React_Logo_SVG.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/500px-Vue.js_Logo_2.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Svelte_Logo.svg/500px-Svelte_Logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "https://raw.githubusercontent.com/github/explore/main/topics/nuxt/nuxt.png"
+  ],
+  "items": [
+    {
+      "id": "react",
+      "label": "React",
+      "wikipedia": "React (software)"
+    },
+    {
+      "id": "vue",
+      "label": "Vue",
+      "wikipedia": "Vue.js"
+    },
+    {
+      "id": "angular",
+      "label": "Angular",
+      "image": "https://raw.githubusercontent.com/github/explore/main/topics/angular/angular.png"
+    },
+    {
+      "id": "angularjs",
+      "label": "AngularJS",
+      "commons": "File:Angularjsoldicon.png"
+    },
+    {
+      "id": "svelte",
+      "label": "Svelte",
+      "commons": "File:Svelte Logo.svg"
+    },
+    {
+      "id": "solid",
+      "label": "Solid"
+    },
+    {
+      "id": "preact",
+      "label": "Preact",
+      "image": "https://raw.githubusercontent.com/github/explore/main/topics/preact/preact.png"
+    },
+    {
+      "id": "next-js",
+      "label": "Next.js",
+      "image": "https://raw.githubusercontent.com/github/explore/main/topics/nextjs/nextjs.png"
+    },
+    {
+      "id": "nuxt",
+      "label": "Nuxt",
+      "image": "https://raw.githubusercontent.com/github/explore/main/topics/nuxt/nuxt.png"
+    },
+    {
+      "id": "astro",
+      "label": "Astro",
+      "image": "https://raw.githubusercontent.com/github/explore/main/topics/astro/astro.png"
+    },
+    {
+      "id": "gatsby",
+      "label": "Gatsby",
+      "image": "https://raw.githubusercontent.com/github/explore/main/topics/gatsby/gatsby.png"
+    },
+    {
+      "id": "ember",
+      "label": "Ember",
+      "image": "https://raw.githubusercontent.com/github/explore/main/topics/ember/ember.png"
+    },
+    {
+      "id": "backbone",
+      "label": "Backbone",
+      "image": "https://raw.githubusercontent.com/github/explore/main/topics/backbonejs/backbonejs.png"
+    },
+    {
+      "id": "jquery",
+      "label": "jQuery",
+      "image": "https://raw.githubusercontent.com/github/explore/main/topics/jquery/jquery.png"
+    },
+    {
+      "id": "express",
+      "label": "Express",
+      "image": "https://raw.githubusercontent.com/github/explore/main/topics/express/express.png"
+    },
+    {
+      "id": "nestjs",
+      "label": "NestJS",
+      "image": "https://raw.githubusercontent.com/github/explore/main/topics/nestjs/nestjs.png"
+    },
+    {
+      "id": "meteor",
+      "label": "Meteor",
+      "image": "https://raw.githubusercontent.com/github/explore/main/topics/meteor/meteor.png"
+    },
+    {
+      "id": "htmx",
+      "label": "htmx"
+    },
+    {
+      "id": "mootools",
+      "label": "MooTools"
+    },
+    {
+      "id": "electron",
+      "label": "Electron",
+      "image": "https://raw.githubusercontent.com/github/explore/main/topics/electron/electron.png"
+    },
+    {
+      "id": "react-native",
+      "label": "React Native",
+      "wikipedia": "React Native"
+    },
+    {
+      "id": "qwik",
+      "label": "Qwik"
+    },
+    {
+      "id": "d3",
+      "label": "D3.js",
+      "wikipedia": "D3.js"
+    },
+    {
+      "id": "three-js",
+      "label": "Three.js",
+      "wikipedia": "Three.js"
+    },
+    {
+      "id": "redux",
+      "label": "Redux",
+      "image": "https://raw.githubusercontent.com/github/explore/main/topics/redux/redux.png"
+    }
+  ]
+}
