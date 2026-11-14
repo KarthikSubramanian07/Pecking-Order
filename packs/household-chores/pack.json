@@ -1,0 +1,133 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "household-chores",
+  "version": "1.0.0",
+  "title": "Household Chores",
+  "description": "Somebody has to do them. Ideally somebody else.",
+  "category": "Miscellaneous",
+  "accent": "Oat",
+  "author": "Pecking Order",
+  "tiers": ["Weirdly soothing", "Fine", "Ugh", "I'd rather move"],
+  "items": [
+    {
+      "id": "washing-up",
+      "label": "Washing up"
+    },
+    {
+      "id": "loading-the-dishwasher",
+      "label": "Loading the dishwasher"
+    },
+    {
+      "id": "unloading-the-dishwasher",
+      "label": "Unloading the dishwasher"
+    },
+    {
+      "id": "vacuuming",
+      "label": "Vacuuming"
+    },
+    {
+      "id": "mopping",
+      "label": "Mopping"
+    },
+    {
+      "id": "dusting",
+      "label": "Dusting"
+    },
+    {
+      "id": "doing-the-laundry",
+      "label": "Doing the laundry"
+    },
+    {
+      "id": "folding-laundry",
+      "label": "Folding laundry"
+    },
+    {
+      "id": "matching-socks",
+      "label": "Matching socks"
+    },
+    {
+      "id": "ironing",
+      "label": "Ironing"
+    },
+    {
+      "id": "making-the-bed",
+      "label": "Making the bed"
+    },
+    {
+      "id": "changing-the-sheets",
+      "label": "Changing the sheets"
+    },
+    {
+      "id": "cleaning-the-toilet",
+      "label": "Cleaning the toilet"
+    },
+    {
+      "id": "scrubbing-the-shower",
+      "label": "Scrubbing the shower"
+    },
+    {
+      "id": "cleaning-the-oven",
+      "label": "Cleaning the oven"
+    },
+    {
+      "id": "cleaning-out-the-fridge",
+      "label": "Cleaning out the fridge"
+    },
+    {
+      "id": "defrosting-the-freezer",
+      "label": "Defrosting the freezer"
+    },
+    {
+      "id": "wiping-the-counters",
+      "label": "Wiping the counters"
+    },
+    {
+      "id": "taking-out-the-bins",
+      "label": "Taking out the bins"
+    },
+    {
+      "id": "sorting-the-recycling",
+      "label": "Sorting the recycling"
+    },
+    {
+      "id": "unclogging-the-drain",
+      "label": "Unclogging the drain"
+    },
+    {
+      "id": "descaling-the-kettle",
+      "label": "Descaling the kettle"
+    },
+    {
+      "id": "cleaning-the-windows",
+      "label": "Cleaning the windows"
+    },
+    {
+      "id": "mowing-the-lawn",
+      "label": "Mowing the lawn"
+    },
+    {
+      "id": "weeding",
+      "label": "Weeding"
+    },
+    {
+      "id": "raking-leaves",
+      "label": "Raking leaves"
+    },
+    {
+      "id": "clearing-the-gutters",
+      "label": "Clearing the gutters"
+    },
+    {
+      "id": "watering-the-plants",
+      "label": "Watering the plants"
+    },
+    {
+      "id": "grocery-shopping",
+      "label": "Grocery shopping"
+    },
+    {
+      "id": "washing-the-car",
+      "label": "Washing the car"
+    }
+  ]
+}

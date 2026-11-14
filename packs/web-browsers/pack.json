@@ -1,0 +1,109 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "web-browsers",
+  "version": "1.0.0",
+  "title": "Web Browsers",
+  "description": "Including the one you only ever opened to download a different one.",
+  "category": "Tech",
+  "accent": "Duck Egg",
+  "author": "Pecking Order",
+  "tiers": ["Daily driver", "Respectable", "For testing", "Nostalgia only", "Uninstall"],
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Google_Chrome_icon_%28February_2022%29.svg/500px-Google_Chrome_icon_%28February_2022%29.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Firefox_logo%2C_2019.svg/500px-Firefox_logo%2C_2019.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://upload.wikimedia.org/wikipedia/en/7/71/Safari_Liquid_Glass_icon.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Microsoft_Edge_logo_%282019%29.svg/500px-Microsoft_Edge_logo_%282019%29.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  ],
+  "items": [
+    {
+      "id": "chrome",
+      "label": "Chrome",
+      "wikipedia": "Google Chrome"
+    },
+    {
+      "id": "firefox",
+      "label": "Firefox",
+      "wikipedia": "Firefox"
+    },
+    {
+      "id": "safari",
+      "label": "Safari",
+      "wikipedia": "Safari (web browser)"
+    },
+    {
+      "id": "edge",
+      "label": "Edge",
+      "wikipedia": "Microsoft Edge"
+    },
+    {
+      "id": "opera",
+      "label": "Opera",
+      "wikipedia": "Opera (web browser)"
+    },
+    {
+      "id": "brave",
+      "label": "Brave",
+      "commons": "File:Brave lion icon.svg"
+    },
+    {
+      "id": "vivaldi",
+      "label": "Vivaldi",
+      "wikipedia": "Vivaldi (web browser)"
+    },
+    {
+      "id": "arc",
+      "label": "Arc",
+      "wikipedia": "Arc (web browser)"
+    },
+    {
+      "id": "tor-browser",
+      "label": "Tor Browser",
+      "wikipedia": "Tor Browser"
+    },
+    {
+      "id": "samsung-internet",
+      "label": "Samsung Internet",
+      "wikipedia": "Samsung Internet"
+    },
+    {
+      "id": "chromium",
+      "label": "Chromium",
+      "wikipedia": "Chromium (web browser)"
+    },
+    {
+      "id": "internet-explorer",
+      "label": "Internet Explorer",
+      "commons": "File:Internet Explorer 10+11 logo.svg"
+    },
+    {
+      "id": "netscape-navigator",
+      "label": "Netscape Navigator",
+      "commons": "File:Netscape icon.svg"
+    },
+    {
+      "id": "mosaic",
+      "label": "Mosaic",
+      "wikipedia": "Mosaic (web browser)"
+    },
+    {
+      "id": "worldwideweb",
+      "label": "WorldWideWeb",
+      "wikipedia": "WorldWideWeb"
+    },
+    {
+      "id": "lynx",
+      "label": "Lynx",
+      "wikipedia": "Lynx (web browser)"
+    },
+    {
+      "id": "konqueror",
+      "label": "Konqueror",
+      "wikipedia": "Konqueror"
+    },
+    {
+      "id": "seamonkey",
+      "label": "SeaMonkey",
+      "commons": "File:SeaMonkey.svg"
+    }
+  ]
+}
