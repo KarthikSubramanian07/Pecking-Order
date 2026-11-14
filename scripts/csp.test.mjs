@@ -55,12 +55,14 @@ describe('csp.config helpers', () => {
     expect(inlineStyleHashes(html)).toEqual([sha('a{b:c}'), sha('\n x{}\n')])
   })
 
-  it('fills the placeholder, or drops it when there is nothing to hash', () => {
+  it('fills the placeholder with the page hashes plus only the empty-stylesheet hash', () => {
     const line = `style-src 'self' ${STYLE_HASHES_PLACEHOLDER}; img-src 'self'`
     expect(applyStyleHashes(line, '<style>a{}</style>')).toBe(
-      `style-src 'self' ${sha('a{}')}; img-src 'self'`,
+      `style-src 'self' ${sha('a{}')} ${sha('')}; img-src 'self'`,
     )
-    expect(applyStyleHashes(line, '<p>no styles</p>')).toBe("style-src 'self'; img-src 'self'")
+    expect(applyStyleHashes(line, '<p>no styles</p>')).toBe(
+      `style-src 'self' ${sha('')}; img-src 'self'`,
+    )
     expect(() => applyStyleHashes("style-src 'self'", '')).toThrow(/placeholder/)
   })
 

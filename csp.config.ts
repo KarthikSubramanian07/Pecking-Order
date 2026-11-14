@@ -37,11 +37,19 @@ export function executableInlineScripts(html: string): string[] {
 }
 
 /** Fills the placeholder in a _headers file with the hashes of `html`'s inline styles. */
+/**
+ * The hash of an empty stylesheet. Motion's AnimatePresence "popLayout" mode
+ * (Peck-off's card swap) appends an empty <style> and fills it through the
+ * CSSOM, which CSP does not govern. Allowing only the empty string keeps every
+ * other inline style blocked.
+ */
+export const EMPTY_STYLE_HASH = sha256('')
+
 export function applyStyleHashes(headers: string, html: string): string {
   if (!headers.includes(STYLE_HASHES_PLACEHOLDER)) {
     throw new Error(`_headers has no ${STYLE_HASHES_PLACEHOLDER} placeholder in style-src`)
   }
-  const hashes = inlineStyleHashes(html).join(' ')
+  const hashes = [...new Set([...inlineStyleHashes(html), EMPTY_STYLE_HASH])].join(' ')
   return headers.replaceAll(
     hashes ? STYLE_HASHES_PLACEHOLDER : ` ${STYLE_HASHES_PLACEHOLDER}`,
     hashes,

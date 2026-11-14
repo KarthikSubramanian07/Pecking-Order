@@ -131,6 +131,26 @@ test.describe('production security headers', () => {
     expect(violations).toEqual([])
   })
 
+  test('animated surfaces (drag, Peck-off, export) run with zero violations', async ({ page }) => {
+    const violations = await openWithProductionHeaders(page)
+    await page.locator('#quick-add').fill(['Kiwi', 'Lime', 'Mango', 'Nectarine'].join('\n'))
+    await page.keyboard.press('Enter')
+    await expect(page.locator('[data-item-id]')).toHaveCount(4)
+
+    // Peck-off swaps cards with AnimatePresence popLayout, which injects a <style>.
+    await page.getByRole('button', { name: 'Peck-off' }).click()
+    await page.getByRole('button', { name: /Rank the Coop/ }).click()
+    for (let i = 0; i < 3; i++) {
+      await page.keyboard.press('ArrowLeft')
+      await page.waitForTimeout(150)
+    }
+    await page.keyboard.press('Escape')
+
+    await page.getByRole('button', { name: 'Export', exact: true }).click()
+    await expect(page.locator('img[alt^="Export preview"]')).toBeVisible()
+    expect(violations).toEqual([])
+  })
+
   test('refuses a pixel flood and a private-network link without a request', async ({ page }) => {
     const violations = await openWithProductionHeaders(page)
     const requests: string[] = []
