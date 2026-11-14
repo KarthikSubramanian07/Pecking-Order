@@ -1,0 +1,178 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "sandwiches",
+  "version": "1.0.0",
+  "title": "Sandwiches",
+  "description": "Two slices of bread and a thousand ways to disagree.",
+  "category": "Food & Drink",
+  "accent": "Speckle",
+  "author": "Pecking Order",
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Mmm..._BLT_for_me%21_%285487341380%29.jpg/500px-Mmm..._BLT_for_me%21_%285487341380%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Katz%27s_Deli_-_Lunch.jpg/500px-Katz%27s_Deli_-_Lunch.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Club_sandwich_at_Caf%C3%A9_Picnic.jpg/500px-Club_sandwich_at_Caf%C3%A9_Picnic.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Cheddar_cheese_sandwich.jpg/500px-Cheddar_cheese_sandwich.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  ],
+  "items": [
+    {
+      "id": "blt",
+      "label": "BLT",
+      "wikipedia": "BLT"
+    },
+    {
+      "id": "reuben",
+      "label": "Reuben",
+      "wikipedia": "Reuben sandwich"
+    },
+    {
+      "id": "club",
+      "label": "Club Sandwich",
+      "wikipedia": "Club sandwich"
+    },
+    {
+      "id": "grilled-cheese",
+      "label": "Grilled Cheese",
+      "wikipedia": "Cheese sandwich"
+    },
+    {
+      "id": "pb-and-j",
+      "label": "Peanut Butter and Jelly",
+      "wikipedia": "Peanut butter and jelly sandwich"
+    },
+    {
+      "id": "cuban",
+      "label": "Cuban Sandwich",
+      "wikipedia": "Cuban sandwich"
+    },
+    {
+      "id": "banh-mi",
+      "label": "Bánh Mì",
+      "wikipedia": "Bánh mì"
+    },
+    {
+      "id": "cheesesteak",
+      "label": "Philly Cheesesteak",
+      "wikipedia": "Cheesesteak"
+    },
+    {
+      "id": "monte-cristo",
+      "label": "Monte Cristo",
+      "wikipedia": "Monte Cristo sandwich"
+    },
+    {
+      "id": "croque-monsieur",
+      "label": "Croque Monsieur",
+      "wikipedia": "Croque monsieur"
+    },
+    {
+      "id": "muffuletta",
+      "label": "Muffuletta",
+      "commons": "File:Muffuletta in Quarters.jpg"
+    },
+    {
+      "id": "po-boy",
+      "label": "Po' Boy",
+      "wikipedia": "Po' boy"
+    },
+    {
+      "id": "french-dip",
+      "label": "French Dip",
+      "wikipedia": "French dip"
+    },
+    {
+      "id": "sloppy-joe",
+      "label": "Sloppy Joe",
+      "wikipedia": "Sloppy joe"
+    },
+    {
+      "id": "submarine",
+      "label": "Submarine",
+      "wikipedia": "Submarine sandwich"
+    },
+    {
+      "id": "patty-melt",
+      "label": "Patty Melt",
+      "wikipedia": "Patty melt"
+    },
+    {
+      "id": "cucumber",
+      "label": "Cucumber Sandwich",
+      "wikipedia": "Cucumber sandwich"
+    },
+    {
+      "id": "chip-butty",
+      "label": "Chip Butty",
+      "wikipedia": "Chip butty"
+    },
+    {
+      "id": "bacon-sandwich",
+      "label": "Bacon Butty",
+      "wikipedia": "Bacon sandwich"
+    },
+    {
+      "id": "katsu-sando",
+      "label": "Katsu Sando",
+      "wikipedia": "Katsu sando"
+    },
+    {
+      "id": "panini",
+      "label": "Panini",
+      "wikipedia": "Panini (sandwich)"
+    },
+    {
+      "id": "italian-beef",
+      "label": "Italian Beef",
+      "wikipedia": "Italian beef"
+    },
+    {
+      "id": "lobster-roll",
+      "label": "Lobster Roll",
+      "wikipedia": "Lobster roll"
+    },
+    {
+      "id": "hot-dog",
+      "label": "Hot Dog (allegedly)",
+      "wikipedia": "Hot dog"
+    },
+    {
+      "id": "pastrami-on-rye",
+      "label": "Pastrami on Rye",
+      "wikipedia": "Pastrami on rye"
+    },
+    {
+      "id": "smorrebrod",
+      "label": "Smørrebrød",
+      "commons": "File:Smørrebrød med tatar og hønsesalat (5485563164).jpg"
+    },
+    {
+      "id": "fluffernutter",
+      "label": "Fluffernutter",
+      "wikipedia": "Fluffernutter"
+    },
+    {
+      "id": "torta",
+      "label": "Torta",
+      "commons": "File:Tortamex.jpg"
+    },
+    {
+      "id": "choripan",
+      "label": "Choripán",
+      "wikipedia": "Choripán"
+    },
+    {
+      "id": "vada-pav",
+      "label": "Vada Pav",
+      "wikipedia": "Vada pav"
+    },
+    {
+      "id": "chivito",
+      "label": "Chivito",
+      "wikipedia": "Chivito (sandwich)"
+    },
+    {
+      "id": "egg-salad",
+      "label": "Egg Salad",
+      "wikipedia": "Egg sandwich"
+    }
+  ]
+}

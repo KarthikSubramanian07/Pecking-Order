@@ -1,0 +1,169 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "christmas-movies",
+  "version": "1.0.0",
+  "title": "Christmas Movies",
+  "description": "Watching them every year is tradition. Ranking them is new.",
+  "category": "Film & TV",
+  "accent": "Comb",
+  "author": "Pecking Order",
+  "tiers": ["Christmas Miracle", "Nice List", "Leftover Turkey", "Fruitcake", "Lump of Coal"],
+  "cover": [
+    "https://upload.wikimedia.org/wikipedia/en/7/76/Home_alone_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "https://upload.wikimedia.org/wikipedia/en/5/50/Home_Alone_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "https://upload.wikimedia.org/wikipedia/en/d/df/Elf_movie.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/It%27s_a_Wonderful_Life_%281946_poster%29.jpeg/500px-It%27s_a_Wonderful_Life_%281946_poster%29.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  ],
+  "items": [
+    {
+      "id": "home-alone",
+      "label": "Home Alone",
+      "wikipedia": "Home Alone"
+    },
+    {
+      "id": "home-alone-2",
+      "label": "Home Alone 2: Lost in New York",
+      "wikipedia": "Home Alone 2: Lost in New York"
+    },
+    {
+      "id": "elf",
+      "label": "Elf",
+      "wikipedia": "Elf (film)"
+    },
+    {
+      "id": "its-a-wonderful-life",
+      "label": "It's a Wonderful Life",
+      "wikipedia": "It's a Wonderful Life"
+    },
+    {
+      "id": "miracle-on-34th-street",
+      "label": "Miracle on 34th Street",
+      "wikipedia": "Miracle on 34th Street"
+    },
+    {
+      "id": "a-christmas-story",
+      "label": "A Christmas Story",
+      "wikipedia": "A Christmas Story"
+    },
+    {
+      "id": "christmas-vacation",
+      "label": "National Lampoon's Christmas Vacation",
+      "wikipedia": "National Lampoon's Christmas Vacation"
+    },
+    {
+      "id": "the-polar-express",
+      "label": "The Polar Express",
+      "wikipedia": "The Polar Express (film)"
+    },
+    {
+      "id": "how-the-grinch-stole-christmas-2000",
+      "label": "How the Grinch Stole Christmas (2000)",
+      "wikipedia": "How the Grinch Stole Christmas (2000 film)"
+    },
+    {
+      "id": "the-grinch-2018",
+      "label": "The Grinch (2018)",
+      "wikipedia": "The Grinch (film)"
+    },
+    {
+      "id": "the-nightmare-before-christmas",
+      "label": "The Nightmare Before Christmas",
+      "wikipedia": "The Nightmare Before Christmas"
+    },
+    {
+      "id": "the-muppet-christmas-carol",
+      "label": "The Muppet Christmas Carol",
+      "wikipedia": "The Muppet Christmas Carol"
+    },
+    {
+      "id": "scrooged",
+      "label": "Scrooged",
+      "wikipedia": "Scrooged"
+    },
+    {
+      "id": "jingle-all-the-way",
+      "label": "Jingle All the Way",
+      "wikipedia": "Jingle All the Way"
+    },
+    {
+      "id": "the-santa-clause",
+      "label": "The Santa Clause",
+      "wikipedia": "The Santa Clause"
+    },
+    {
+      "id": "arthur-christmas",
+      "label": "Arthur Christmas",
+      "wikipedia": "Arthur Christmas"
+    },
+    {
+      "id": "klaus",
+      "label": "Klaus",
+      "wikipedia": "Klaus (film)"
+    },
+    {
+      "id": "white-christmas",
+      "label": "White Christmas",
+      "wikipedia": "White Christmas (film)"
+    },
+    {
+      "id": "holiday-inn",
+      "label": "Holiday Inn",
+      "wikipedia": "Holiday Inn (film)"
+    },
+    {
+      "id": "the-holiday",
+      "label": "The Holiday",
+      "wikipedia": "The Holiday"
+    },
+    {
+      "id": "gremlins",
+      "label": "Gremlins",
+      "wikipedia": "Gremlins"
+    },
+    {
+      "id": "a-charlie-brown-christmas",
+      "label": "A Charlie Brown Christmas",
+      "wikipedia": "A Charlie Brown Christmas"
+    },
+    {
+      "id": "rudolph-the-red-nosed-reindeer",
+      "label": "Rudolph the Red-Nosed Reindeer",
+      "wikipedia": "Rudolph the Red-Nosed Reindeer (TV special)"
+    },
+    {
+      "id": "scrooge-1951",
+      "label": "Scrooge (1951)",
+      "wikipedia": "Scrooge (1951 film)"
+    },
+    {
+      "id": "the-bishops-wife",
+      "label": "The Bishop's Wife",
+      "wikipedia": "The Bishop's Wife"
+    },
+    {
+      "id": "fred-claus",
+      "label": "Fred Claus",
+      "wikipedia": "Fred Claus"
+    },
+    {
+      "id": "four-christmases",
+      "label": "Four Christmases",
+      "wikipedia": "Four Christmases"
+    },
+    {
+      "id": "a-christmas-carol-2009",
+      "label": "A Christmas Carol (2009)",
+      "wikipedia": "A Christmas Carol (2009 film)"
+    },
+    {
+      "id": "frosty-the-snowman",
+      "label": "Frosty the Snowman",
+      "wikipedia": "Frosty the Snowman (TV special)"
+    },
+    {
+      "id": "christmas-with-the-kranks",
+      "label": "Christmas with the Kranks",
+      "wikipedia": "Christmas with the Kranks"
+    }
+  ]
+}

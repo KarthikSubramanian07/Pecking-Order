@@ -1,0 +1,184 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "breads",
+  "version": "1.0.0",
+  "title": "Breads",
+  "description": "The best thing since sliced bread, which is also on here.",
+  "category": "Food & Drink",
+  "accent": "Oat",
+  "author": "Pecking Order",
+  "tiers": ["Fresh From the Oven", "Toasted", "Day Old", "Stale", "Crouton"],
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Baguettes%2C_Paris%2C_France_-_panoramio.jpg/500px-Baguettes%2C_Paris%2C_France_-_panoramio.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Sourdough_bread_loaf.jpg/500px-Sourdough_bread_loaf.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Ciabatta_cut.JPG/500px-Ciabatta_cut.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Focaccia_with_Crumb.jpg/500px-Focaccia_with_Crumb.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  ],
+  "items": [
+    {
+      "id": "baguette",
+      "label": "Baguette",
+      "wikipedia": "Baguette"
+    },
+    {
+      "id": "sourdough",
+      "label": "Sourdough",
+      "wikipedia": "Sourdough"
+    },
+    {
+      "id": "ciabatta",
+      "label": "Ciabatta",
+      "wikipedia": "Ciabatta"
+    },
+    {
+      "id": "focaccia",
+      "label": "Focaccia",
+      "wikipedia": "Focaccia"
+    },
+    {
+      "id": "brioche",
+      "label": "Brioche",
+      "wikipedia": "Brioche"
+    },
+    {
+      "id": "challah",
+      "label": "Challah",
+      "wikipedia": "Challah"
+    },
+    {
+      "id": "naan",
+      "label": "Naan",
+      "wikipedia": "Naan"
+    },
+    {
+      "id": "pita",
+      "label": "Pita",
+      "wikipedia": "Pita"
+    },
+    {
+      "id": "bagel",
+      "label": "Bagel",
+      "wikipedia": "Bagel"
+    },
+    {
+      "id": "pretzel",
+      "label": "Pretzel",
+      "wikipedia": "Pretzel"
+    },
+    {
+      "id": "rye-bread",
+      "label": "Rye Bread",
+      "wikipedia": "Rye bread"
+    },
+    {
+      "id": "pumpernickel",
+      "label": "Pumpernickel",
+      "wikipedia": "Pumpernickel"
+    },
+    {
+      "id": "soda-bread",
+      "label": "Soda Bread",
+      "wikipedia": "Soda bread"
+    },
+    {
+      "id": "cornbread",
+      "label": "Cornbread",
+      "wikipedia": "Cornbread"
+    },
+    {
+      "id": "tortilla",
+      "label": "Tortilla",
+      "wikipedia": "Tortilla"
+    },
+    {
+      "id": "lavash",
+      "label": "Lavash",
+      "wikipedia": "Lavash"
+    },
+    {
+      "id": "injera",
+      "label": "Injera",
+      "wikipedia": "Injera"
+    },
+    {
+      "id": "chapati",
+      "label": "Chapati",
+      "wikipedia": "Chapati"
+    },
+    {
+      "id": "paratha",
+      "label": "Paratha",
+      "wikipedia": "Paratha"
+    },
+    {
+      "id": "english-muffin",
+      "label": "English Muffin",
+      "wikipedia": "English muffin"
+    },
+    {
+      "id": "crumpet",
+      "label": "Crumpet",
+      "wikipedia": "Crumpet"
+    },
+    {
+      "id": "pao-de-queijo",
+      "label": "Pão de Queijo",
+      "wikipedia": "Pão de queijo"
+    },
+    {
+      "id": "banana-bread",
+      "label": "Banana Bread",
+      "wikipedia": "Banana bread"
+    },
+    {
+      "id": "panettone",
+      "label": "Panettone",
+      "wikipedia": "Panettone"
+    },
+    {
+      "id": "stollen",
+      "label": "Stollen",
+      "wikipedia": "Stollen"
+    },
+    {
+      "id": "fougasse",
+      "label": "Fougasse",
+      "wikipedia": "Fougasse (bread)"
+    },
+    {
+      "id": "arepa",
+      "label": "Arepa",
+      "wikipedia": "Arepa"
+    },
+    {
+      "id": "simit",
+      "label": "Simit",
+      "wikipedia": "Simit"
+    },
+    {
+      "id": "khachapuri",
+      "label": "Khachapuri",
+      "wikipedia": "Khachapuri"
+    },
+    {
+      "id": "milk-bread",
+      "label": "Milk Bread",
+      "wikipedia": "Hokkaido milk bread"
+    },
+    {
+      "id": "garlic-bread",
+      "label": "Garlic Bread",
+      "wikipedia": "Garlic bread"
+    },
+    {
+      "id": "white-bread",
+      "label": "Sliced White",
+      "wikipedia": "White bread"
+    },
+    {
+      "id": "melonpan",
+      "label": "Melonpan",
+      "wikipedia": "Melonpan"
+    }
+  ]
+}

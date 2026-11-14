@@ -1,0 +1,194 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "cocktails",
+  "version": "1.0.0",
+  "title": "Classic Cocktails",
+  "description": "Ice, a garnish and a strong opinion.",
+  "category": "Food & Drink",
+  "accent": "Heather",
+  "author": "Pecking Order",
+  "tiers": ["Top Shelf", "House Special", "Well Drink", "Watered Down", "Last Call"],
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/15-09-26-RalfR-WLC-0084.jpg/500px-15-09-26-RalfR-WLC-0084.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Whiskey_Old_Fashioned1.jpg/500px-Whiskey_Old_Fashioned1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/A_Manhattan.jpg/500px-A_Manhattan.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/C%C3%B3ctel_Negroni_Campari.jpg/500px-C%C3%B3ctel_Negroni_Campari.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  ],
+  "items": [
+    {
+      "id": "martini",
+      "label": "Martini",
+      "wikipedia": "Martini (cocktail)"
+    },
+    {
+      "id": "old-fashioned",
+      "label": "Old Fashioned",
+      "wikipedia": "Old fashioned (cocktail)"
+    },
+    {
+      "id": "manhattan",
+      "label": "Manhattan",
+      "wikipedia": "Manhattan (cocktail)"
+    },
+    {
+      "id": "negroni",
+      "label": "Negroni",
+      "wikipedia": "Negroni"
+    },
+    {
+      "id": "margarita",
+      "label": "Margarita",
+      "wikipedia": "Margarita"
+    },
+    {
+      "id": "mojito",
+      "label": "Mojito",
+      "wikipedia": "Mojito"
+    },
+    {
+      "id": "daiquiri",
+      "label": "Daiquiri",
+      "wikipedia": "Daiquiri"
+    },
+    {
+      "id": "pina-colada",
+      "label": "Piña Colada",
+      "wikipedia": "Piña colada"
+    },
+    {
+      "id": "cosmopolitan",
+      "label": "Cosmopolitan",
+      "wikipedia": "Cosmopolitan (cocktail)"
+    },
+    {
+      "id": "mai-tai",
+      "label": "Mai Tai",
+      "wikipedia": "Mai Tai"
+    },
+    {
+      "id": "whiskey-sour",
+      "label": "Whiskey Sour",
+      "wikipedia": "Whiskey sour"
+    },
+    {
+      "id": "moscow-mule",
+      "label": "Moscow Mule",
+      "wikipedia": "Moscow mule"
+    },
+    {
+      "id": "bloody-mary",
+      "label": "Bloody Mary",
+      "wikipedia": "Bloody Mary (cocktail)"
+    },
+    {
+      "id": "gin-and-tonic",
+      "label": "Gin and Tonic",
+      "wikipedia": "Gin and tonic"
+    },
+    {
+      "id": "aperol-spritz",
+      "label": "Aperol Spritz",
+      "wikipedia": "Spritz (cocktail)"
+    },
+    {
+      "id": "sidecar",
+      "label": "Sidecar",
+      "wikipedia": "Sidecar (cocktail)"
+    },
+    {
+      "id": "french-75",
+      "label": "French 75",
+      "wikipedia": "French 75 (cocktail)"
+    },
+    {
+      "id": "tom-collins",
+      "label": "Tom Collins",
+      "wikipedia": "Tom Collins"
+    },
+    {
+      "id": "mint-julep",
+      "label": "Mint Julep",
+      "wikipedia": "Mint julep"
+    },
+    {
+      "id": "caipirinha",
+      "label": "Caipirinha",
+      "wikipedia": "Caipirinha"
+    },
+    {
+      "id": "paloma",
+      "label": "Paloma",
+      "wikipedia": "Paloma (cocktail)"
+    },
+    {
+      "id": "espresso-martini",
+      "label": "Espresso Martini",
+      "wikipedia": "Espresso martini"
+    },
+    {
+      "id": "long-island-iced-tea",
+      "label": "Long Island Iced Tea",
+      "wikipedia": "Long Island iced tea"
+    },
+    {
+      "id": "sazerac",
+      "label": "Sazerac",
+      "wikipedia": "Sazerac"
+    },
+    {
+      "id": "gimlet",
+      "label": "Gimlet",
+      "wikipedia": "Gimlet (cocktail)"
+    },
+    {
+      "id": "dark-n-stormy",
+      "label": "Dark 'n' Stormy",
+      "wikipedia": "Dark 'n' Stormy"
+    },
+    {
+      "id": "boulevardier",
+      "label": "Boulevardier",
+      "wikipedia": "Boulevardier (cocktail)"
+    },
+    {
+      "id": "pisco-sour",
+      "label": "Pisco Sour",
+      "wikipedia": "Pisco sour"
+    },
+    {
+      "id": "aviation",
+      "label": "Aviation",
+      "wikipedia": "Aviation (cocktail)"
+    },
+    {
+      "id": "bellini",
+      "label": "Bellini",
+      "wikipedia": "Bellini (cocktail)"
+    },
+    {
+      "id": "mimosa",
+      "label": "Mimosa",
+      "wikipedia": "Mimosa (cocktail)"
+    },
+    {
+      "id": "irish-coffee",
+      "label": "Irish Coffee",
+      "wikipedia": "Irish coffee"
+    },
+    {
+      "id": "white-russian",
+      "label": "White Russian",
+      "wikipedia": "White Russian (cocktail)"
+    },
+    {
+      "id": "cuba-libre",
+      "label": "Cuba Libre",
+      "wikipedia": "Rum and Coke"
+    },
+    {
+      "id": "last-word",
+      "label": "Last Word",
+      "wikipedia": "Last Word (cocktail)"
+    }
+  ]
+}

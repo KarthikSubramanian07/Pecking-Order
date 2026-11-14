@@ -1,0 +1,169 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "soft-drinks",
+  "version": "1.0.0",
+  "title": "Soft Drinks",
+  "description": "Strong opinions, lightly carbonated.",
+  "category": "Food & Drink",
+  "accent": "Yolk",
+  "author": "Pecking Order",
+  "tiers": ["Ice Cold", "Refreshing", "Room Temperature", "Flat", "Spilled"],
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Coca_Cola_Flasche_-_Original_Taste.jpg/500px-Coca_Cola_Flasche_-_Original_Taste.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/7up_1.jpg/500px-7up_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/IncaKolaBottleGlass.jpg/500px-IncaKolaBottleGlass.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Ramune-lemonade%2Cjapan.JPG/500px-Ramune-lemonade%2Cjapan.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  ],
+  "items": [
+    {
+      "id": "coca-cola",
+      "label": "Coca-Cola",
+      "wikipedia": "Coca-Cola"
+    },
+    {
+      "id": "pepsi",
+      "label": "Pepsi",
+      "wikipedia": "Pepsi"
+    },
+    {
+      "id": "dr-pepper",
+      "label": "Dr Pepper",
+      "wikipedia": "Dr Pepper"
+    },
+    {
+      "id": "sprite",
+      "label": "Sprite",
+      "wikipedia": "Sprite (drink)"
+    },
+    {
+      "id": "7-up",
+      "label": "7 Up",
+      "wikipedia": "7 Up"
+    },
+    {
+      "id": "fanta",
+      "label": "Fanta",
+      "wikipedia": "Fanta"
+    },
+    {
+      "id": "mountain-dew",
+      "label": "Mountain Dew",
+      "wikipedia": "Mountain Dew"
+    },
+    {
+      "id": "a-and-w-root-beer",
+      "label": "A&W Root Beer",
+      "wikipedia": "A&W Root Beer"
+    },
+    {
+      "id": "barqs",
+      "label": "Barq's",
+      "wikipedia": "Barq's"
+    },
+    {
+      "id": "canada-dry",
+      "label": "Canada Dry",
+      "wikipedia": "Canada Dry"
+    },
+    {
+      "id": "schweppes",
+      "label": "Schweppes",
+      "wikipedia": "Schweppes"
+    },
+    {
+      "id": "sunkist",
+      "label": "Sunkist",
+      "wikipedia": "Sunkist (soft drink)"
+    },
+    {
+      "id": "crush",
+      "label": "Crush",
+      "wikipedia": "Crush (drink)"
+    },
+    {
+      "id": "irn-bru",
+      "label": "Irn-Bru",
+      "wikipedia": "Irn-Bru"
+    },
+    {
+      "id": "inca-kola",
+      "label": "Inca Kola",
+      "wikipedia": "Inca Kola"
+    },
+    {
+      "id": "guarana-antarctica",
+      "label": "Guaraná Antarctica",
+      "wikipedia": "Guaraná Antarctica"
+    },
+    {
+      "id": "tango",
+      "label": "Tango",
+      "wikipedia": "Tango (drink)"
+    },
+    {
+      "id": "vimto",
+      "label": "Vimto",
+      "wikipedia": "Vimto"
+    },
+    {
+      "id": "fresca",
+      "label": "Fresca",
+      "wikipedia": "Fresca"
+    },
+    {
+      "id": "squirt",
+      "label": "Squirt",
+      "wikipedia": "Squirt (drink)"
+    },
+    {
+      "id": "big-red",
+      "label": "Big Red",
+      "commons": "File:Big Red bottle.jpg"
+    },
+    {
+      "id": "cheerwine",
+      "label": "Cheerwine",
+      "wikipedia": "Cheerwine"
+    },
+    {
+      "id": "rc-cola",
+      "label": "RC Cola",
+      "wikipedia": "RC Cola"
+    },
+    {
+      "id": "diet-coke",
+      "label": "Diet Coke",
+      "wikipedia": "Diet Coke"
+    },
+    {
+      "id": "orangina",
+      "label": "Orangina",
+      "wikipedia": "Orangina"
+    },
+    {
+      "id": "ramune",
+      "label": "Ramune",
+      "wikipedia": "Ramune"
+    },
+    {
+      "id": "mirinda",
+      "label": "Mirinda",
+      "wikipedia": "Mirinda"
+    },
+    {
+      "id": "mello-yello",
+      "label": "Mello Yello",
+      "wikipedia": "Mello Yello"
+    },
+    {
+      "id": "jarritos",
+      "label": "Jarritos",
+      "wikipedia": "Jarritos"
+    },
+    {
+      "id": "faygo",
+      "label": "Faygo",
+      "wikipedia": "Faygo"
+    }
+  ]
+}

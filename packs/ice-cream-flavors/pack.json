@@ -1,0 +1,139 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "ice-cream-flavors",
+  "version": "1.0.0",
+  "title": "Ice Cream Flavors",
+  "description": "Vanilla is not boring. Vanilla is a choice.",
+  "category": "Food & Drink",
+  "accent": "Rhubarb",
+  "author": "Pecking Order",
+  "tiers": ["Double Scoop", "Single Scoop", "Kids Cup", "Brain Freeze", "Melted"],
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Strawberry_ice_cream_cone_%285076899310%29.jpg/500px-Strawberry_ice_cream_cone_%285076899310%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Ice_cream_cone_%28cropped%29.jpg/330px-Ice_cream_cone_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Ube_Ice_Cream_%28Philippines%29_02.jpg/500px-Ube_Ice_Cream_%28Philippines%29_02.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/2020-04-27_18_23_07_A_spoonful_of_Friendly%27s_Mint_Chocolate_Chip_Ice_Cream_in_the_Franklin_Farm_section_of_Oak_Hill%2C_Fairfax_County%2C_Virginia.jpg/500px-2020-04-27_18_23_07_A_spoonful_of_Friendly%27s_Mint_Chocolate_Chip_Ice_Cream_in_the_Franklin_Farm_section_of_Oak_Hill%2C_Fairfax_County%2C_Virginia.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  ],
+  "items": [
+    {
+      "id": "vanilla",
+      "label": "Vanilla",
+      "wikipedia": "Vanilla ice cream"
+    },
+    {
+      "id": "chocolate",
+      "label": "Chocolate",
+      "wikipedia": "Chocolate ice cream"
+    },
+    {
+      "id": "strawberry",
+      "label": "Strawberry",
+      "wikipedia": "Strawberry ice cream"
+    },
+    {
+      "id": "neapolitan",
+      "label": "Neapolitan",
+      "wikipedia": "Neapolitan ice cream"
+    },
+    {
+      "id": "mint-chocolate-chip",
+      "label": "Mint Chocolate Chip",
+      "wikipedia": "Mint chocolate chip"
+    },
+    {
+      "id": "cookies-and-cream",
+      "label": "Cookies and Cream",
+      "wikipedia": "Cookies and cream"
+    },
+    {
+      "id": "rocky-road",
+      "label": "Rocky Road",
+      "wikipedia": "Rocky road ice cream"
+    },
+    {
+      "id": "butter-pecan",
+      "label": "Butter Pecan",
+      "wikipedia": "Butter pecan"
+    },
+    {
+      "id": "pistachio",
+      "label": "Pistachio",
+      "wikipedia": "Pistachio ice cream"
+    },
+    {
+      "id": "cookie-dough",
+      "label": "Cookie Dough",
+      "wikipedia": "Cookie dough"
+    },
+    {
+      "id": "coffee",
+      "label": "Coffee",
+      "wikipedia": "Coffee ice cream"
+    },
+    {
+      "id": "rum-raisin",
+      "label": "Rum Raisin",
+      "wikipedia": "Rum raisin"
+    },
+    {
+      "id": "tutti-frutti",
+      "label": "Tutti Frutti",
+      "wikipedia": "Tutti frutti"
+    },
+    {
+      "id": "spumoni",
+      "label": "Spumoni",
+      "wikipedia": "Spumoni"
+    },
+    {
+      "id": "green-tea",
+      "label": "Green Tea",
+      "wikipedia": "Green tea ice cream"
+    },
+    {
+      "id": "raspberry-ripple",
+      "label": "Raspberry Ripple",
+      "wikipedia": "Raspberry ripple"
+    },
+    {
+      "id": "butterscotch",
+      "label": "Butterscotch",
+      "commons": "File:Butterscotch sundae.jpg"
+    },
+    {
+      "id": "dulce-de-leche",
+      "label": "Dulce de Leche",
+      "wikipedia": "Dulce de leche"
+    },
+    {
+      "id": "stracciatella",
+      "label": "Stracciatella",
+      "wikipedia": "Stracciatella (ice cream)"
+    },
+    {
+      "id": "hokey-pokey",
+      "label": "Hokey Pokey",
+      "wikipedia": "Hokey pokey (ice cream)"
+    },
+    {
+      "id": "black-sesame",
+      "label": "Black Sesame",
+      "commons": "File:Black sesame ice cream in Sapporo, Japan.jpg"
+    },
+    {
+      "id": "ube",
+      "label": "Ube",
+      "wikipedia": "Ube ice cream"
+    },
+    {
+      "id": "salted-caramel",
+      "label": "Salted Caramel",
+      "commons": "File:Salted caramel ice cream (26314112816).jpg"
+    },
+    {
+      "id": "bubblegum",
+      "label": "Bubblegum",
+      "commons": "File:Bubblegum ice cream (449802593).jpg"
+    }
+  ]
+}
