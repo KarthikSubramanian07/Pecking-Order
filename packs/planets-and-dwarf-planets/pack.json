@@ -1,0 +1,97 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "planets-and-dwarf-planets",
+  "version": "1.0.0",
+  "title": "Planets & Dwarf Planets",
+  "description": "Pluto's legal team has been notified.",
+  "category": "Science & Nature",
+  "accent": "Heather",
+  "author": "Pecking Order",
+  "items": [
+    {
+      "id": "mercury",
+      "label": "Mercury",
+      "wikipedia": "Mercury (planet)"
+    },
+    {
+      "id": "venus",
+      "label": "Venus",
+      "wikipedia": "Venus"
+    },
+    {
+      "id": "earth",
+      "label": "Earth",
+      "wikipedia": "Earth"
+    },
+    {
+      "id": "mars",
+      "label": "Mars",
+      "wikipedia": "Mars"
+    },
+    {
+      "id": "jupiter",
+      "label": "Jupiter",
+      "wikipedia": "Jupiter"
+    },
+    {
+      "id": "saturn",
+      "label": "Saturn",
+      "wikipedia": "Saturn"
+    },
+    {
+      "id": "uranus",
+      "label": "Uranus",
+      "wikipedia": "Uranus"
+    },
+    {
+      "id": "neptune",
+      "label": "Neptune",
+      "wikipedia": "Neptune"
+    },
+    {
+      "id": "pluto",
+      "label": "Pluto",
+      "wikipedia": "Pluto"
+    },
+    {
+      "id": "ceres",
+      "label": "Ceres",
+      "wikipedia": "Ceres (dwarf planet)"
+    },
+    {
+      "id": "eris",
+      "label": "Eris",
+      "wikipedia": "Eris (dwarf planet)"
+    },
+    {
+      "id": "haumea",
+      "label": "Haumea",
+      "wikipedia": "Haumea"
+    },
+    {
+      "id": "makemake",
+      "label": "Makemake",
+      "wikipedia": "Makemake"
+    },
+    {
+      "id": "gonggong",
+      "label": "Gonggong",
+      "wikipedia": "Gonggong (dwarf planet)"
+    },
+    {
+      "id": "quaoar",
+      "label": "Quaoar",
+      "wikipedia": "Quaoar"
+    },
+    {
+      "id": "sedna",
+      "label": "Sedna",
+      "wikipedia": "Sedna (dwarf planet)"
+    },
+    {
+      "id": "orcus",
+      "label": "Orcus",
+      "wikipedia": "Orcus (dwarf planet)"
+    }
+  ]
+}

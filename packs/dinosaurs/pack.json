@@ -1,0 +1,157 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "dinosaurs",
+  "version": "1.0.0",
+  "title": "Dinosaurs",
+  "description": "The chicken's ancestors, ranked. They remember everything.",
+  "category": "Science & Nature",
+  "accent": "Corn",
+  "author": "Pecking Order",
+  "items": [
+    {
+      "id": "tyrannosaurus",
+      "label": "Tyrannosaurus",
+      "wikipedia": "Tyrannosaurus"
+    },
+    {
+      "id": "triceratops",
+      "label": "Triceratops",
+      "wikipedia": "Triceratops"
+    },
+    {
+      "id": "stegosaurus",
+      "label": "Stegosaurus",
+      "wikipedia": "Stegosaurus"
+    },
+    {
+      "id": "velociraptor",
+      "label": "Velociraptor",
+      "wikipedia": "Velociraptor"
+    },
+    {
+      "id": "brachiosaurus",
+      "label": "Brachiosaurus",
+      "wikipedia": "Brachiosaurus"
+    },
+    {
+      "id": "spinosaurus",
+      "label": "Spinosaurus",
+      "wikipedia": "Spinosaurus"
+    },
+    {
+      "id": "ankylosaurus",
+      "label": "Ankylosaurus",
+      "wikipedia": "Ankylosaurus"
+    },
+    {
+      "id": "diplodocus",
+      "label": "Diplodocus",
+      "wikipedia": "Diplodocus"
+    },
+    {
+      "id": "parasaurolophus",
+      "label": "Parasaurolophus",
+      "wikipedia": "Parasaurolophus"
+    },
+    {
+      "id": "pachycephalosaurus",
+      "label": "Pachycephalosaurus",
+      "wikipedia": "Pachycephalosaurus"
+    },
+    {
+      "id": "allosaurus",
+      "label": "Allosaurus",
+      "wikipedia": "Allosaurus"
+    },
+    {
+      "id": "iguanodon",
+      "label": "Iguanodon",
+      "wikipedia": "Iguanodon"
+    },
+    {
+      "id": "archaeopteryx",
+      "label": "Archaeopteryx",
+      "wikipedia": "Archaeopteryx"
+    },
+    {
+      "id": "brontosaurus",
+      "label": "Brontosaurus",
+      "wikipedia": "Brontosaurus"
+    },
+    {
+      "id": "apatosaurus",
+      "label": "Apatosaurus",
+      "wikipedia": "Apatosaurus"
+    },
+    {
+      "id": "carnotaurus",
+      "label": "Carnotaurus",
+      "wikipedia": "Carnotaurus"
+    },
+    {
+      "id": "dilophosaurus",
+      "label": "Dilophosaurus",
+      "wikipedia": "Dilophosaurus"
+    },
+    {
+      "id": "gallimimus",
+      "label": "Gallimimus",
+      "wikipedia": "Gallimimus"
+    },
+    {
+      "id": "therizinosaurus",
+      "label": "Therizinosaurus",
+      "wikipedia": "Therizinosaurus"
+    },
+    {
+      "id": "microraptor",
+      "label": "Microraptor",
+      "wikipedia": "Microraptor"
+    },
+    {
+      "id": "compsognathus",
+      "label": "Compsognathus",
+      "wikipedia": "Compsognathus"
+    },
+    {
+      "id": "deinonychus",
+      "label": "Deinonychus",
+      "wikipedia": "Deinonychus"
+    },
+    {
+      "id": "argentinosaurus",
+      "label": "Argentinosaurus",
+      "wikipedia": "Argentinosaurus"
+    },
+    {
+      "id": "giganotosaurus",
+      "label": "Giganotosaurus",
+      "wikipedia": "Giganotosaurus"
+    },
+    {
+      "id": "baryonyx",
+      "label": "Baryonyx",
+      "wikipedia": "Baryonyx"
+    },
+    {
+      "id": "oviraptor",
+      "label": "Oviraptor",
+      "wikipedia": "Oviraptor"
+    },
+    {
+      "id": "protoceratops",
+      "label": "Protoceratops",
+      "wikipedia": "Protoceratops"
+    },
+    {
+      "id": "maiasaura",
+      "label": "Maiasaura",
+      "wikipedia": "Maiasaura"
+    },
+    {
+      "id": "edmontosaurus",
+      "label": "Edmontosaurus",
+      "wikipedia": "Edmontosaurus"
+    }
+  ]
+}

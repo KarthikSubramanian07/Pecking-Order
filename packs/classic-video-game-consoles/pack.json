@@ -1,0 +1,157 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "classic-video-game-consoles",
+  "version": "1.0.0",
+  "title": "Classic Video Game Consoles",
+  "description": "Blow on the cartridge, then pick a tier.",
+  "category": "Games",
+  "accent": "Heather",
+  "author": "Pecking Order",
+  "items": [
+    {
+      "id": "magnavox-odyssey",
+      "label": "Magnavox Odyssey",
+      "wikipedia": "Magnavox Odyssey"
+    },
+    {
+      "id": "atari-2600",
+      "label": "Atari 2600",
+      "wikipedia": "Atari 2600"
+    },
+    {
+      "id": "intellivision",
+      "label": "Intellivision",
+      "wikipedia": "Intellivision"
+    },
+    {
+      "id": "colecovision",
+      "label": "ColecoVision",
+      "wikipedia": "ColecoVision"
+    },
+    {
+      "id": "nes",
+      "label": "NES",
+      "wikipedia": "Nintendo Entertainment System"
+    },
+    {
+      "id": "sega-master-system",
+      "label": "Sega Master System",
+      "wikipedia": "Master System"
+    },
+    {
+      "id": "sega-genesis",
+      "label": "Sega Genesis",
+      "wikipedia": "Sega Genesis"
+    },
+    {
+      "id": "super-nintendo",
+      "label": "Super Nintendo",
+      "wikipedia": "Super Nintendo Entertainment System"
+    },
+    {
+      "id": "turbografx-16",
+      "label": "TurboGrafx-16",
+      "commons": "File:TurboGrafx16-Console-Set.png"
+    },
+    {
+      "id": "neo-geo",
+      "label": "Neo Geo",
+      "wikipedia": "Neo Geo"
+    },
+    {
+      "id": "game-boy",
+      "label": "Game Boy",
+      "wikipedia": "Game Boy"
+    },
+    {
+      "id": "atari-lynx",
+      "label": "Atari Lynx",
+      "wikipedia": "Atari Lynx"
+    },
+    {
+      "id": "game-gear",
+      "label": "Game Gear",
+      "wikipedia": "Game Gear"
+    },
+    {
+      "id": "sega-saturn",
+      "label": "Sega Saturn",
+      "wikipedia": "Sega Saturn"
+    },
+    {
+      "id": "playstation",
+      "label": "PlayStation",
+      "commons": "File:PSX-Console-wController.png"
+    },
+    {
+      "id": "nintendo-64",
+      "label": "Nintendo 64",
+      "commons": "File:N64-Console-Set.png"
+    },
+    {
+      "id": "dreamcast",
+      "label": "Dreamcast",
+      "commons": "File:Dreamcast-Console-Set.png"
+    },
+    {
+      "id": "playstation-2",
+      "label": "PlayStation 2",
+      "wikipedia": "PlayStation 2"
+    },
+    {
+      "id": "gamecube",
+      "label": "GameCube",
+      "wikipedia": "GameCube"
+    },
+    {
+      "id": "xbox",
+      "label": "Xbox",
+      "wikipedia": "Xbox (console)"
+    },
+    {
+      "id": "game-boy-advance",
+      "label": "Game Boy Advance",
+      "wikipedia": "Game Boy Advance"
+    },
+    {
+      "id": "atari-jaguar",
+      "label": "Atari Jaguar",
+      "commons": "File:Atari-Jaguar-Console-Set.png"
+    },
+    {
+      "id": "3do",
+      "label": "3DO",
+      "wikipedia": "3DO"
+    },
+    {
+      "id": "virtual-boy",
+      "label": "Virtual Boy",
+      "wikipedia": "Virtual Boy"
+    },
+    {
+      "id": "nintendo-ds",
+      "label": "Nintendo DS",
+      "wikipedia": "Nintendo DS"
+    },
+    {
+      "id": "playstation-portable",
+      "label": "PlayStation Portable",
+      "wikipedia": "PlayStation Portable"
+    },
+    {
+      "id": "wii",
+      "label": "Wii",
+      "wikipedia": "Wii"
+    },
+    {
+      "id": "xbox-360",
+      "label": "Xbox 360",
+      "commons": "File:Xbox-360-Pro-wController.jpg"
+    },
+    {
+      "id": "playstation-3",
+      "label": "PlayStation 3",
+      "wikipedia": "PlayStation 3"
+    }
+  ]
+}

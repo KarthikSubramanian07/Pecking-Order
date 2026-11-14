@@ -1,0 +1,187 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "fruits",
+  "version": "1.0.0",
+  "title": "Fruits",
+  "description": "Nature's candy, now with a hierarchy.",
+  "category": "Food & Drink",
+  "accent": "Pasture",
+  "author": "Pecking Order",
+  "items": [
+    {
+      "id": "apple",
+      "label": "Apple",
+      "wikipedia": "Apple"
+    },
+    {
+      "id": "banana",
+      "label": "Banana",
+      "wikipedia": "Banana"
+    },
+    {
+      "id": "orange",
+      "label": "Orange",
+      "wikipedia": "Orange (fruit)"
+    },
+    {
+      "id": "mango",
+      "label": "Mango",
+      "wikipedia": "Mango"
+    },
+    {
+      "id": "strawberry",
+      "label": "Strawberry",
+      "wikipedia": "Strawberry"
+    },
+    {
+      "id": "blueberry",
+      "label": "Blueberry",
+      "wikipedia": "Blueberry"
+    },
+    {
+      "id": "pineapple",
+      "label": "Pineapple",
+      "wikipedia": "Pineapple"
+    },
+    {
+      "id": "watermelon",
+      "label": "Watermelon",
+      "wikipedia": "Watermelon"
+    },
+    {
+      "id": "grape",
+      "label": "Grape",
+      "wikipedia": "Grape"
+    },
+    {
+      "id": "kiwi",
+      "label": "Kiwi",
+      "commons": "File:Kiwifruit cross section.jpg"
+    },
+    {
+      "id": "peach",
+      "label": "Peach",
+      "wikipedia": "Peach"
+    },
+    {
+      "id": "pear",
+      "label": "Pear",
+      "wikipedia": "Pear"
+    },
+    {
+      "id": "cherry",
+      "label": "Cherry",
+      "wikipedia": "Cherry"
+    },
+    {
+      "id": "plum",
+      "label": "Plum",
+      "wikipedia": "Plum"
+    },
+    {
+      "id": "apricot",
+      "label": "Apricot",
+      "wikipedia": "Apricot"
+    },
+    {
+      "id": "lemon",
+      "label": "Lemon",
+      "wikipedia": "Lemon"
+    },
+    {
+      "id": "lime",
+      "label": "Lime",
+      "wikipedia": "Lime (fruit)"
+    },
+    {
+      "id": "grapefruit",
+      "label": "Grapefruit",
+      "wikipedia": "Grapefruit"
+    },
+    {
+      "id": "pomegranate",
+      "label": "Pomegranate",
+      "wikipedia": "Pomegranate"
+    },
+    {
+      "id": "papaya",
+      "label": "Papaya",
+      "wikipedia": "Papaya"
+    },
+    {
+      "id": "coconut",
+      "label": "Coconut",
+      "wikipedia": "Coconut"
+    },
+    {
+      "id": "avocado",
+      "label": "Avocado",
+      "wikipedia": "Avocado"
+    },
+    {
+      "id": "fig",
+      "label": "Fig",
+      "wikipedia": "Fig"
+    },
+    {
+      "id": "raspberry",
+      "label": "Raspberry",
+      "wikipedia": "Raspberry"
+    },
+    {
+      "id": "blackberry",
+      "label": "Blackberry",
+      "wikipedia": "Blackberry"
+    },
+    {
+      "id": "lychee",
+      "label": "Lychee",
+      "wikipedia": "Lychee"
+    },
+    {
+      "id": "passion-fruit",
+      "label": "Passion fruit",
+      "wikipedia": "Passiflora edulis"
+    },
+    {
+      "id": "dragon-fruit",
+      "label": "Dragon fruit",
+      "wikipedia": "Dragon fruit"
+    },
+    {
+      "id": "durian",
+      "label": "Durian",
+      "wikipedia": "Durian"
+    },
+    {
+      "id": "jackfruit",
+      "label": "Jackfruit",
+      "wikipedia": "Jackfruit"
+    },
+    {
+      "id": "guava",
+      "label": "Guava",
+      "wikipedia": "Guava"
+    },
+    {
+      "id": "cantaloupe",
+      "label": "Cantaloupe",
+      "wikipedia": "Cantaloupe"
+    },
+    {
+      "id": "persimmon",
+      "label": "Persimmon",
+      "wikipedia": "Persimmon"
+    },
+    {
+      "id": "starfruit",
+      "label": "Starfruit",
+      "wikipedia": "Carambola"
+    },
+    {
+      "id": "tomato",
+      "label": "Tomato",
+      "wikipedia": "Tomato"
+    }
+  ]
+}
