@@ -2,6 +2,7 @@
 import { existsSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import {
+  isAppRoute,
   MARKDOWN_TWINS,
   notFoundMarkdown,
   pagePath,
@@ -113,5 +114,16 @@ describe('varyOnAccept', () => {
     ['*', '*'],
   ])('%s → %s', (existing, expected) => {
     expect(varyOnAccept(existing)).toBe(expected)
+  })
+})
+
+describe('isAppRoute', () => {
+  it('matches board routes only', () => {
+    expect(isAppRoute('/b/b_abc123')).toBe(true)
+    expect(isAppRoute('/b/b_abc123/')).toBe(true)
+    expect(isAppRoute('/b/')).toBe(false)
+    expect(isAppRoute('/b/a/b')).toBe(false)
+    expect(isAppRoute('/about/')).toBe(false)
+    expect(isAppRoute('/b/..%2F')).toBe(false)
   })
 })

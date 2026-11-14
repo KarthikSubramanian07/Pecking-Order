@@ -1,2 +1,0 @@
-# Boards live at /b/<id>; the app reads the id from the URL.
-/b/* /index.html 200
