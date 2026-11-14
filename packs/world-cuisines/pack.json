@@ -1,0 +1,162 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "world-cuisines",
+  "version": "1.0.0",
+  "title": "World Cuisines",
+  "description": "Around the world in thirty dinners.",
+  "category": "Food & Drink",
+  "accent": "Comb",
+  "author": "Pecking Order",
+  "items": [
+    {
+      "id": "italian",
+      "label": "Italian",
+      "wikipedia": "Italian cuisine"
+    },
+    {
+      "id": "japanese",
+      "label": "Japanese",
+      "wikipedia": "Japanese cuisine"
+    },
+    {
+      "id": "mexican",
+      "label": "Mexican",
+      "wikipedia": "Mexican cuisine"
+    },
+    {
+      "id": "indian",
+      "label": "Indian",
+      "wikipedia": "Indian cuisine"
+    },
+    {
+      "id": "chinese",
+      "label": "Chinese",
+      "wikipedia": "Chinese cuisine"
+    },
+    {
+      "id": "french",
+      "label": "French",
+      "wikipedia": "French cuisine"
+    },
+    {
+      "id": "thai",
+      "label": "Thai",
+      "commons": "File:Phat Thai kung Chang Khien street stall.jpg"
+    },
+    {
+      "id": "korean",
+      "label": "Korean",
+      "wikipedia": "Korean cuisine"
+    },
+    {
+      "id": "vietnamese",
+      "label": "Vietnamese",
+      "wikipedia": "Vietnamese cuisine"
+    },
+    {
+      "id": "greek",
+      "label": "Greek",
+      "wikipedia": "Greek cuisine"
+    },
+    {
+      "id": "spanish",
+      "label": "Spanish",
+      "wikipedia": "Spanish cuisine"
+    },
+    {
+      "id": "turkish",
+      "label": "Turkish",
+      "wikipedia": "Turkish cuisine"
+    },
+    {
+      "id": "lebanese",
+      "label": "Lebanese",
+      "wikipedia": "Lebanese cuisine"
+    },
+    {
+      "id": "ethiopian",
+      "label": "Ethiopian",
+      "wikipedia": "Ethiopian cuisine"
+    },
+    {
+      "id": "moroccan",
+      "label": "Moroccan",
+      "wikipedia": "Moroccan cuisine"
+    },
+    {
+      "id": "peruvian",
+      "label": "Peruvian",
+      "commons": "File:Ceviche peruano.jpg"
+    },
+    {
+      "id": "brazilian",
+      "label": "Brazilian",
+      "wikipedia": "Brazilian cuisine"
+    },
+    {
+      "id": "american",
+      "label": "American",
+      "wikipedia": "American cuisine"
+    },
+    {
+      "id": "british",
+      "label": "British",
+      "commons": "File:Fish and chips blackpool.jpg"
+    },
+    {
+      "id": "german",
+      "label": "German",
+      "wikipedia": "German cuisine"
+    },
+    {
+      "id": "filipino",
+      "label": "Filipino",
+      "wikipedia": "Filipino cuisine"
+    },
+    {
+      "id": "indonesian",
+      "label": "Indonesian",
+      "wikipedia": "Indonesian cuisine"
+    },
+    {
+      "id": "malaysian",
+      "label": "Malaysian",
+      "wikipedia": "Malaysian cuisine"
+    },
+    {
+      "id": "persian",
+      "label": "Persian",
+      "wikipedia": "Iranian cuisine"
+    },
+    {
+      "id": "caribbean",
+      "label": "Caribbean",
+      "wikipedia": "Caribbean cuisine"
+    },
+    {
+      "id": "nigerian",
+      "label": "Nigerian",
+      "wikipedia": "Nigerian cuisine"
+    },
+    {
+      "id": "argentine",
+      "label": "Argentine",
+      "wikipedia": "Argentine cuisine"
+    },
+    {
+      "id": "russian",
+      "label": "Russian",
+      "wikipedia": "Russian cuisine"
+    },
+    {
+      "id": "polish",
+      "label": "Polish",
+      "wikipedia": "Polish cuisine"
+    },
+    {
+      "id": "georgian",
+      "label": "Georgian",
+      "commons": "File:Adjarian Khachapuri.jpg"
+    }
+  ]
+}

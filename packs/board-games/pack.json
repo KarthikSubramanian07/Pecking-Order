@@ -1,0 +1,172 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "board-games",
+  "version": "1.0.0",
+  "title": "Board Games",
+  "description": "Ranked fairly, unlike that one game of Monopoly in 2009.",
+  "category": "Games",
+  "accent": "Eucalyptus",
+  "author": "Pecking Order",
+  "items": [
+    {
+      "id": "chess",
+      "label": "Chess",
+      "wikipedia": "Chess"
+    },
+    {
+      "id": "go",
+      "label": "Go",
+      "wikipedia": "Go (game)"
+    },
+    {
+      "id": "monopoly",
+      "label": "Monopoly",
+      "wikipedia": "Monopoly (game)"
+    },
+    {
+      "id": "scrabble",
+      "label": "Scrabble",
+      "wikipedia": "Scrabble"
+    },
+    {
+      "id": "catan",
+      "label": "Catan",
+      "wikipedia": "Catan"
+    },
+    {
+      "id": "ticket-to-ride",
+      "label": "Ticket to Ride",
+      "wikipedia": "Ticket to Ride (board game)"
+    },
+    {
+      "id": "carcassonne",
+      "label": "Carcassonne",
+      "wikipedia": "Carcassonne (board game)"
+    },
+    {
+      "id": "pandemic",
+      "label": "Pandemic",
+      "wikipedia": "Pandemic (board game)"
+    },
+    {
+      "id": "risk",
+      "label": "Risk",
+      "wikipedia": "Risk (game)"
+    },
+    {
+      "id": "clue",
+      "label": "Clue",
+      "wikipedia": "Cluedo"
+    },
+    {
+      "id": "trivial-pursuit",
+      "label": "Trivial Pursuit",
+      "wikipedia": "Trivial Pursuit"
+    },
+    {
+      "id": "backgammon",
+      "label": "Backgammon",
+      "wikipedia": "Backgammon"
+    },
+    {
+      "id": "checkers",
+      "label": "Checkers",
+      "wikipedia": "Checkers"
+    },
+    {
+      "id": "battleship",
+      "label": "Battleship",
+      "wikipedia": "Battleship (game)"
+    },
+    {
+      "id": "connect-four",
+      "label": "Connect Four",
+      "wikipedia": "Connect Four"
+    },
+    {
+      "id": "jenga",
+      "label": "Jenga",
+      "wikipedia": "Jenga"
+    },
+    {
+      "id": "codenames",
+      "label": "Codenames",
+      "wikipedia": "Codenames (board game)"
+    },
+    {
+      "id": "azul",
+      "label": "Azul",
+      "wikipedia": "Azul (board game)"
+    },
+    {
+      "id": "wingspan",
+      "label": "Wingspan",
+      "wikipedia": "Wingspan (board game)"
+    },
+    {
+      "id": "7-wonders",
+      "label": "7 Wonders",
+      "wikipedia": "7 Wonders (board game)"
+    },
+    {
+      "id": "splendor",
+      "label": "Splendor",
+      "wikipedia": "Splendor (game)"
+    },
+    {
+      "id": "terraforming-mars",
+      "label": "Terraforming Mars",
+      "wikipedia": "Terraforming Mars (board game)"
+    },
+    {
+      "id": "gloomhaven",
+      "label": "Gloomhaven",
+      "wikipedia": "Gloomhaven"
+    },
+    {
+      "id": "mahjong",
+      "label": "Mahjong",
+      "wikipedia": "Mahjong"
+    },
+    {
+      "id": "snakes-and-ladders",
+      "label": "Snakes and Ladders",
+      "wikipedia": "Snakes and ladders"
+    },
+    {
+      "id": "the-game-of-life",
+      "label": "The Game of Life",
+      "wikipedia": "The Game of Life"
+    },
+    {
+      "id": "mouse-trap",
+      "label": "Mouse Trap",
+      "wikipedia": "Mouse Trap (board game)"
+    },
+    {
+      "id": "sorry",
+      "label": "Sorry!",
+      "wikipedia": "Sorry! (game)"
+    },
+    {
+      "id": "candy-land",
+      "label": "Candy Land",
+      "wikipedia": "Candy Land"
+    },
+    {
+      "id": "stratego",
+      "label": "Stratego",
+      "wikipedia": "Stratego"
+    },
+    {
+      "id": "othello",
+      "label": "Othello",
+      "wikipedia": "Reversi"
+    },
+    {
+      "id": "mancala",
+      "label": "Mancala",
+      "wikipedia": "Mancala"
+    }
+  ]
+}

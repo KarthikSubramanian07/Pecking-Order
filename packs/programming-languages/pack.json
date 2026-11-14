@@ -1,0 +1,181 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "programming-languages",
+  "version": "1.0.0",
+  "title": "Programming Languages",
+  "description": "Every one of them is the best one, according to someone loud.",
+  "category": "Tech",
+  "accent": "Duck Egg",
+  "author": "Pecking Order",
+  "tiers": ["Ship it", "Would write", "Paid to write", "Under duress", "Legacy code"],
+  "items": [
+    {
+      "id": "c",
+      "label": "C",
+      "wikipedia": "C (programming language)"
+    },
+    {
+      "id": "cpp",
+      "label": "C++",
+      "wikipedia": "C++"
+    },
+    {
+      "id": "java",
+      "label": "Java",
+      "wikipedia": "Java (programming language)"
+    },
+    {
+      "id": "python",
+      "label": "Python",
+      "wikipedia": "Python (programming language)"
+    },
+    {
+      "id": "javascript",
+      "label": "JavaScript",
+      "commons": "File:Unofficial JavaScript logo 2.svg"
+    },
+    {
+      "id": "typescript",
+      "label": "TypeScript",
+      "wikipedia": "TypeScript"
+    },
+    {
+      "id": "rust",
+      "label": "Rust",
+      "wikipedia": "Rust (programming language)"
+    },
+    {
+      "id": "go",
+      "label": "Go",
+      "wikipedia": "Go (programming language)"
+    },
+    {
+      "id": "ruby",
+      "label": "Ruby",
+      "wikipedia": "Ruby (programming language)"
+    },
+    {
+      "id": "php",
+      "label": "PHP",
+      "wikipedia": "PHP"
+    },
+    {
+      "id": "swift",
+      "label": "Swift",
+      "commons": "File:Swift logo.svg"
+    },
+    {
+      "id": "kotlin",
+      "label": "Kotlin",
+      "commons": "File:Kotlin icon (2021-present).svg"
+    },
+    {
+      "id": "csharp",
+      "label": "C#",
+      "wikipedia": "C Sharp (programming language)"
+    },
+    {
+      "id": "haskell",
+      "label": "Haskell",
+      "commons": "File:Haskell-Logo.svg"
+    },
+    {
+      "id": "lisp",
+      "label": "Lisp",
+      "commons": "File:Lisp logo.svg"
+    },
+    {
+      "id": "clojure",
+      "label": "Clojure",
+      "wikipedia": "Clojure"
+    },
+    {
+      "id": "elixir",
+      "label": "Elixir",
+      "wikipedia": "Elixir (programming language)"
+    },
+    {
+      "id": "erlang",
+      "label": "Erlang",
+      "wikipedia": "Erlang (programming language)"
+    },
+    {
+      "id": "scala",
+      "label": "Scala",
+      "wikipedia": "Scala (programming language)"
+    },
+    {
+      "id": "perl",
+      "label": "Perl",
+      "wikipedia": "Perl"
+    },
+    {
+      "id": "lua",
+      "label": "Lua",
+      "wikipedia": "Lua"
+    },
+    {
+      "id": "r",
+      "label": "R",
+      "wikipedia": "R (programming language)"
+    },
+    {
+      "id": "julia",
+      "label": "Julia",
+      "wikipedia": "Julia (programming language)"
+    },
+    {
+      "id": "fortran",
+      "label": "Fortran",
+      "wikipedia": "Fortran"
+    },
+    {
+      "id": "cobol",
+      "label": "COBOL",
+      "wikipedia": "COBOL"
+    },
+    {
+      "id": "assembly",
+      "label": "Assembly",
+      "wikipedia": "Assembly language"
+    },
+    {
+      "id": "zig",
+      "label": "Zig",
+      "wikipedia": "Zig (programming language)"
+    },
+    {
+      "id": "ocaml",
+      "label": "OCaml",
+      "commons": "File:OCaml Logo.svg"
+    },
+    {
+      "id": "dart",
+      "label": "Dart",
+      "commons": "File:Dart programming language logo icon.svg"
+    },
+    {
+      "id": "pascal",
+      "label": "Pascal"
+    },
+    {
+      "id": "smalltalk",
+      "label": "Smalltalk",
+      "wikipedia": "Smalltalk"
+    },
+    {
+      "id": "sql",
+      "label": "SQL"
+    },
+    {
+      "id": "bash",
+      "label": "Bash",
+      "wikipedia": "Bash (Unix shell)"
+    },
+    {
+      "id": "matlab",
+      "label": "MATLAB",
+      "wikipedia": "MATLAB"
+    }
+  ]
+}

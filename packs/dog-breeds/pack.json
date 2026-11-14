@@ -1,0 +1,198 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "dog-breeds",
+  "version": "1.0.0",
+  "title": "Dog Breeds",
+  "description": "They're all good dogs. This is purely administrative.",
+  "category": "Animals",
+  "accent": "Speckle",
+  "author": "Pecking Order",
+  "tiers": ["Best in show", "Very good", "Good", "Still good", "Also good"],
+  "items": [
+    {
+      "id": "labrador-retriever",
+      "label": "Labrador Retriever",
+      "wikipedia": "Labrador Retriever"
+    },
+    {
+      "id": "golden-retriever",
+      "label": "Golden Retriever",
+      "wikipedia": "Golden Retriever"
+    },
+    {
+      "id": "german-shepherd",
+      "label": "German Shepherd",
+      "wikipedia": "German Shepherd"
+    },
+    {
+      "id": "french-bulldog",
+      "label": "French Bulldog",
+      "wikipedia": "French Bulldog"
+    },
+    {
+      "id": "bulldog",
+      "label": "Bulldog",
+      "wikipedia": "Bulldog"
+    },
+    {
+      "id": "poodle",
+      "label": "Poodle",
+      "wikipedia": "Poodle"
+    },
+    {
+      "id": "beagle",
+      "label": "Beagle",
+      "wikipedia": "Beagle"
+    },
+    {
+      "id": "rottweiler",
+      "label": "Rottweiler",
+      "wikipedia": "Rottweiler"
+    },
+    {
+      "id": "dachshund",
+      "label": "Dachshund",
+      "wikipedia": "Dachshund"
+    },
+    {
+      "id": "pembroke-welsh-corgi",
+      "label": "Pembroke Welsh Corgi",
+      "wikipedia": "Pembroke Welsh Corgi"
+    },
+    {
+      "id": "siberian-husky",
+      "label": "Siberian Husky",
+      "wikipedia": "Siberian Husky"
+    },
+    {
+      "id": "border-collie",
+      "label": "Border Collie",
+      "wikipedia": "Border Collie"
+    },
+    {
+      "id": "shiba-inu",
+      "label": "Shiba Inu",
+      "wikipedia": "Shiba Inu"
+    },
+    {
+      "id": "pug",
+      "label": "Pug",
+      "wikipedia": "Pug"
+    },
+    {
+      "id": "chihuahua",
+      "label": "Chihuahua",
+      "wikipedia": "Chihuahua (dog breed)"
+    },
+    {
+      "id": "boxer",
+      "label": "Boxer",
+      "wikipedia": "Boxer (dog breed)"
+    },
+    {
+      "id": "great-dane",
+      "label": "Great Dane",
+      "wikipedia": "Great Dane"
+    },
+    {
+      "id": "dalmatian",
+      "label": "Dalmatian",
+      "wikipedia": "Dalmatian dog"
+    },
+    {
+      "id": "bernese-mountain-dog",
+      "label": "Bernese Mountain Dog",
+      "wikipedia": "Bernese Mountain Dog"
+    },
+    {
+      "id": "australian-shepherd",
+      "label": "Australian Shepherd",
+      "wikipedia": "Australian Shepherd"
+    },
+    {
+      "id": "shih-tzu",
+      "label": "Shih Tzu",
+      "wikipedia": "Shih Tzu"
+    },
+    {
+      "id": "yorkshire-terrier",
+      "label": "Yorkshire Terrier",
+      "wikipedia": "Yorkshire Terrier"
+    },
+    {
+      "id": "cavalier-king-charles-spaniel",
+      "label": "Cavalier King Charles Spaniel",
+      "wikipedia": "Cavalier King Charles Spaniel"
+    },
+    {
+      "id": "greyhound",
+      "label": "Greyhound",
+      "wikipedia": "Greyhound"
+    },
+    {
+      "id": "whippet",
+      "label": "Whippet",
+      "wikipedia": "Whippet"
+    },
+    {
+      "id": "basset-hound",
+      "label": "Basset Hound",
+      "wikipedia": "Basset Hound"
+    },
+    {
+      "id": "bloodhound",
+      "label": "Bloodhound",
+      "wikipedia": "Bloodhound"
+    },
+    {
+      "id": "st-bernard",
+      "label": "St. Bernard",
+      "wikipedia": "St. Bernard (dog breed)"
+    },
+    {
+      "id": "samoyed",
+      "label": "Samoyed",
+      "wikipedia": "Samoyed dog"
+    },
+    {
+      "id": "akita",
+      "label": "Akita",
+      "wikipedia": "Akita (dog breed)"
+    },
+    {
+      "id": "pomeranian",
+      "label": "Pomeranian",
+      "wikipedia": "Pomeranian dog"
+    },
+    {
+      "id": "jack-russell-terrier",
+      "label": "Jack Russell Terrier",
+      "wikipedia": "Jack Russell Terrier"
+    },
+    {
+      "id": "newfoundland",
+      "label": "Newfoundland",
+      "wikipedia": "Newfoundland dog"
+    },
+    {
+      "id": "afghan-hound",
+      "label": "Afghan Hound",
+      "wikipedia": "Afghan Hound"
+    },
+    {
+      "id": "bichon-frise",
+      "label": "Bichon Frisé",
+      "wikipedia": "Bichon Frisé"
+    },
+    {
+      "id": "boston-terrier",
+      "label": "Boston Terrier",
+      "wikipedia": "Boston Terrier"
+    },
+    {
+      "id": "dobermann",
+      "label": "Dobermann",
+      "wikipedia": "Dobermann"
+    }
+  ]
+}

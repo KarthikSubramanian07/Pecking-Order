@@ -1,0 +1,167 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "pixar-films",
+  "version": "1.0.0",
+  "title": "Pixar Films",
+  "description": "Bring tissues. Ranking these is emotionally expensive.",
+  "category": "Film & TV",
+  "accent": "Duck Egg",
+  "author": "Pecking Order",
+  "items": [
+    {
+      "id": "toy-story",
+      "label": "Toy Story",
+      "wikipedia": "Toy Story"
+    },
+    {
+      "id": "a-bug-s-life",
+      "label": "A Bug's Life",
+      "wikipedia": "A Bug's Life"
+    },
+    {
+      "id": "toy-story-2",
+      "label": "Toy Story 2",
+      "wikipedia": "Toy Story 2"
+    },
+    {
+      "id": "monsters-inc",
+      "label": "Monsters, Inc.",
+      "wikipedia": "Monsters, Inc."
+    },
+    {
+      "id": "finding-nemo",
+      "label": "Finding Nemo",
+      "wikipedia": "Finding Nemo"
+    },
+    {
+      "id": "the-incredibles",
+      "label": "The Incredibles",
+      "wikipedia": "The Incredibles"
+    },
+    {
+      "id": "cars",
+      "label": "Cars",
+      "wikipedia": "Cars (film)"
+    },
+    {
+      "id": "ratatouille",
+      "label": "Ratatouille",
+      "wikipedia": "Ratatouille (film)"
+    },
+    {
+      "id": "wall-e",
+      "label": "WALL-E",
+      "wikipedia": "WALL-E"
+    },
+    {
+      "id": "up",
+      "label": "Up",
+      "wikipedia": "Up (2009 film)"
+    },
+    {
+      "id": "toy-story-3",
+      "label": "Toy Story 3",
+      "wikipedia": "Toy Story 3"
+    },
+    {
+      "id": "cars-2",
+      "label": "Cars 2",
+      "wikipedia": "Cars 2"
+    },
+    {
+      "id": "brave",
+      "label": "Brave",
+      "wikipedia": "Brave (2012 film)"
+    },
+    {
+      "id": "monsters-university",
+      "label": "Monsters University",
+      "wikipedia": "Monsters University"
+    },
+    {
+      "id": "inside-out",
+      "label": "Inside Out",
+      "wikipedia": "Inside Out"
+    },
+    {
+      "id": "the-good-dinosaur",
+      "label": "The Good Dinosaur",
+      "wikipedia": "The Good Dinosaur"
+    },
+    {
+      "id": "finding-dory",
+      "label": "Finding Dory",
+      "wikipedia": "Finding Dory"
+    },
+    {
+      "id": "cars-3",
+      "label": "Cars 3",
+      "wikipedia": "Cars 3"
+    },
+    {
+      "id": "coco",
+      "label": "Coco",
+      "wikipedia": "Coco (2017 film)"
+    },
+    {
+      "id": "incredibles-2",
+      "label": "Incredibles 2",
+      "wikipedia": "Incredibles 2"
+    },
+    {
+      "id": "toy-story-4",
+      "label": "Toy Story 4",
+      "wikipedia": "Toy Story 4"
+    },
+    {
+      "id": "onward",
+      "label": "Onward",
+      "wikipedia": "Onward (film)"
+    },
+    {
+      "id": "soul",
+      "label": "Soul",
+      "wikipedia": "Soul (2020 film)"
+    },
+    {
+      "id": "luca",
+      "label": "Luca",
+      "wikipedia": "Luca (2021 film)"
+    },
+    {
+      "id": "turning-red",
+      "label": "Turning Red",
+      "wikipedia": "Turning Red"
+    },
+    {
+      "id": "lightyear",
+      "label": "Lightyear",
+      "wikipedia": "Lightyear (film)"
+    },
+    {
+      "id": "elemental",
+      "label": "Elemental",
+      "wikipedia": "Elemental (2023 film)"
+    },
+    {
+      "id": "inside-out-2",
+      "label": "Inside Out 2",
+      "wikipedia": "Inside Out 2"
+    },
+    {
+      "id": "elio",
+      "label": "Elio",
+      "wikipedia": "Elio (film)"
+    },
+    {
+      "id": "hoppers",
+      "label": "Hoppers",
+      "wikipedia": "Hoppers (film)"
+    },
+    {
+      "id": "toy-story-5",
+      "label": "Toy Story 5",
+      "wikipedia": "Toy Story 5"
+    }
+  ]
+}

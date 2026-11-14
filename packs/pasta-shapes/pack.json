@@ -1,0 +1,172 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "pasta-shapes",
+  "version": "1.0.0",
+  "title": "Pasta Shapes",
+  "description": "Same dough, wildly different opinions.",
+  "category": "Food & Drink",
+  "accent": "Corn",
+  "author": "Pecking Order",
+  "items": [
+    {
+      "id": "spaghetti",
+      "label": "Spaghetti",
+      "wikipedia": "Spaghetti"
+    },
+    {
+      "id": "penne",
+      "label": "Penne",
+      "wikipedia": "Penne"
+    },
+    {
+      "id": "fusilli",
+      "label": "Fusilli",
+      "commons": "File:Fusilli pasta.jpg"
+    },
+    {
+      "id": "farfalle",
+      "label": "Farfalle",
+      "wikipedia": "Farfalle"
+    },
+    {
+      "id": "rigatoni",
+      "label": "Rigatoni",
+      "wikipedia": "Rigatoni"
+    },
+    {
+      "id": "linguine",
+      "label": "Linguine",
+      "wikipedia": "Linguine"
+    },
+    {
+      "id": "fettuccine",
+      "label": "Fettuccine",
+      "wikipedia": "Fettuccine"
+    },
+    {
+      "id": "tagliatelle",
+      "label": "Tagliatelle",
+      "wikipedia": "Tagliatelle"
+    },
+    {
+      "id": "pappardelle",
+      "label": "Pappardelle",
+      "wikipedia": "Pappardelle"
+    },
+    {
+      "id": "lasagne",
+      "label": "Lasagne",
+      "wikipedia": "Lasagna"
+    },
+    {
+      "id": "macaroni",
+      "label": "Macaroni",
+      "wikipedia": "Macaroni"
+    },
+    {
+      "id": "orzo",
+      "label": "Orzo",
+      "wikipedia": "Orzo"
+    },
+    {
+      "id": "orecchiette",
+      "label": "Orecchiette",
+      "wikipedia": "Orecchiette"
+    },
+    {
+      "id": "conchiglie",
+      "label": "Conchiglie",
+      "wikipedia": "Conchiglie"
+    },
+    {
+      "id": "ravioli",
+      "label": "Ravioli",
+      "wikipedia": "Ravioli"
+    },
+    {
+      "id": "tortellini",
+      "label": "Tortellini",
+      "wikipedia": "Tortellini"
+    },
+    {
+      "id": "gnocchi",
+      "label": "Gnocchi",
+      "wikipedia": "Gnocchi"
+    },
+    {
+      "id": "bucatini",
+      "label": "Bucatini",
+      "wikipedia": "Bucatini"
+    },
+    {
+      "id": "ziti",
+      "label": "Ziti",
+      "wikipedia": "Ziti"
+    },
+    {
+      "id": "cavatappi",
+      "label": "Cavatappi",
+      "wikipedia": "Cavatappi"
+    },
+    {
+      "id": "rotini",
+      "label": "Rotini",
+      "commons": "File:Rotini.jpg"
+    },
+    {
+      "id": "radiatori",
+      "label": "Radiatori",
+      "wikipedia": "Radiatori"
+    },
+    {
+      "id": "ditalini",
+      "label": "Ditalini",
+      "wikipedia": "Ditalini"
+    },
+    {
+      "id": "cannelloni",
+      "label": "Cannelloni",
+      "wikipedia": "Cannelloni"
+    },
+    {
+      "id": "capellini",
+      "label": "Capellini",
+      "wikipedia": "Capellini"
+    },
+    {
+      "id": "gemelli",
+      "label": "Gemelli",
+      "wikipedia": "Gemelli (pasta)"
+    },
+    {
+      "id": "strozzapreti",
+      "label": "Strozzapreti",
+      "wikipedia": "Strozzapreti"
+    },
+    {
+      "id": "paccheri",
+      "label": "Paccheri",
+      "wikipedia": "Paccheri"
+    },
+    {
+      "id": "vermicelli",
+      "label": "Vermicelli",
+      "wikipedia": "Vermicelli"
+    },
+    {
+      "id": "trofie",
+      "label": "Trofie",
+      "wikipedia": "Trofie"
+    },
+    {
+      "id": "casarecce",
+      "label": "Casarecce",
+      "wikipedia": "Casarecce"
+    },
+    {
+      "id": "mafaldine",
+      "label": "Mafaldine",
+      "wikipedia": "Mafaldine"
+    }
+  ]
+}
