@@ -3,6 +3,7 @@ import { useBoardStore } from '@/state/boardStore'
 import styles from './App.module.css'
 import { Board } from './board/Board'
 import { Hen } from './brand/Hen'
+import { MotionProvider } from './MotionProvider'
 import btn from './primitives/Button.module.css'
 import { Link } from './router'
 
@@ -44,7 +45,13 @@ export default function BoardPage({ id }: { id: string }) {
 
   return (
     <main id="main" className={styles.main} tabIndex={-1} aria-busy={state === 'loading'}>
-      {state === 'ok' ? <Board /> : <p className={styles.hatching}>Hatching…</p>}
+      {state === 'ok' ? (
+        <MotionProvider>
+          <Board />
+        </MotionProvider>
+      ) : (
+        <p className={styles.hatching}>Hatching…</p>
+      )}
     </main>
   )
 }

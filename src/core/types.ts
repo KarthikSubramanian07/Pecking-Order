@@ -7,7 +7,7 @@
 
 /** The id of the unranked pool. Every board has exactly one. */
 export const COOP = 'coop' as const
-export type CoopId = typeof COOP
+type CoopId = typeof COOP
 
 export type TierId = string
 export type ItemId = string
@@ -43,7 +43,7 @@ export interface Item {
   packItemId?: string
 }
 
-export interface PackRef {
+interface PackRef {
   id: string
   version: string
 }

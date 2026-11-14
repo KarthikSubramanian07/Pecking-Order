@@ -386,8 +386,7 @@
 .mosaic[data-count="0"] {
   grid-template-columns: 1fr;
 }
-.mosaic img,
-.mosaic > span:not(.egg) {
+.mosaic > :not(.egg) {
   width: 100%;
   height: 100%;
   object-fit: cover;

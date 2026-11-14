@@ -17,7 +17,7 @@ import * as storage from '@/storage/db'
 
 const SAVE_DELAY_MS = 400
 
-export type SaveStatus = 'idle' | 'saving' | 'saved' | 'error'
+type SaveStatus = 'idle' | 'saving' | 'saved' | 'error'
 
 interface BoardState {
   board: Board | null

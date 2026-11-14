@@ -21,7 +21,7 @@ import {
 } from './transfer'
 import { fetchImageBlob, parseImageUrl } from './urls'
 
-export interface IngestFailure {
+interface IngestFailure {
   name: string
   reason: string
 }

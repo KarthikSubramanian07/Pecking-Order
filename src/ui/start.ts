@@ -33,8 +33,3 @@ export async function startFromPack(pack: PackSummary): Promise<void> {
     ui().setBusy(null)
   }
 }
-
-/** Opens a board by id from the board list. */
-export function openSaved(id: string): void {
-  navigate(boardPath(id))
-}

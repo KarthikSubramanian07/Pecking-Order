@@ -1,9 +1,10 @@
 /**
  * IndexedDB persistence. Three object stores:
- *   boards , Board JSON keyed by board id
- *   images , processed image Blobs keyed by SHA-256 hash (content-addressed,
- *             so the same picture used on five boards is stored once)
- *   meta   , small key/value settings (last opened board, preferences)
+ *   boards: Board JSON keyed by board id
+ *   images: processed image Blobs keyed by SHA-256 hash (content-addressed,
+ *           so the same picture used on five boards is stored once)
+ *   meta:   reserved for small key/value data; kept so existing databases
+ *           never need a version bump
  *
  * localStorage is never used for images: it is synchronous, string-only and
  * capped at ~5 MB, which is the #1 way tier-list apps lose people's work.
@@ -32,7 +33,7 @@ const DB_VERSION = 1
 
 let dbPromise: Promise<IDBPDatabase<PeckDB>> | null = null
 
-export function db(): Promise<IDBPDatabase<PeckDB>> {
+function db(): Promise<IDBPDatabase<PeckDB>> {
   dbPromise ??= openDB<PeckDB>(DB_NAME, DB_VERSION, {
     upgrade(database) {
       database.createObjectStore('boards', { keyPath: 'id' })
@@ -116,14 +117,6 @@ export async function collectGarbage(extraKeep: Iterable<ImageHash> = []): Promi
 
 // ─── Meta ─────────────────────────────────────────────────────────────────
 
-export async function getMeta<T>(key: string): Promise<T | undefined> {
-  return (await (await db()).get('meta', key)) as T | undefined
-}
-
-export async function setMeta(key: string, value: unknown): Promise<void> {
-  await (await db()).put('meta', value, key)
-}
-
 /**
  * Asks the browser not to evict our data under storage pressure.
  * Safari otherwise deletes script-written storage after 7 days without a visit.
@@ -135,14 +128,5 @@ export async function requestPersistence(): Promise<boolean> {
     return await navigator.storage.persist()
   } catch {
     return false
-  }
-}
-
-export async function storageEstimate(): Promise<{ usage: number; quota: number } | null> {
-  try {
-    const e = await navigator.storage?.estimate?.()
-    return e ? { usage: e.usage ?? 0, quota: e.quota ?? 0 } : null
-  } catch {
-    return null
   }
 }

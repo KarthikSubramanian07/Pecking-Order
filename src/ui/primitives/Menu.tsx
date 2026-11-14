@@ -9,7 +9,7 @@ import {
 } from 'react'
 import styles from './Menu.module.css'
 
-export interface MenuItem {
+interface MenuItem {
   label: string
   icon?: ReactNode
   hint?: string

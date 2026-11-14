@@ -65,7 +65,7 @@ export function findContainer(board: Board, itemId: ItemId): ContainerId | undef
   return undefined
 }
 
-export function tierIndex(board: Board, tierId: TierId): number {
+function tierIndex(board: Board, tierId: TierId): number {
   return board.tiers.findIndex((t) => t.id === tierId)
 }
 

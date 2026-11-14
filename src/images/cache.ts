@@ -34,9 +34,3 @@ export function imageUrl(hash: ImageHash): Promise<string | null> {
 export function primeImageUrl(hash: ImageHash, blob: Blob): void {
   if (!urls.has(hash)) urls.set(hash, URL.createObjectURL(blob))
 }
-
-export function revokeImageUrl(hash: ImageHash): void {
-  const url = urls.get(hash)
-  if (url) URL.revokeObjectURL(url)
-  urls.delete(hash)
-}
