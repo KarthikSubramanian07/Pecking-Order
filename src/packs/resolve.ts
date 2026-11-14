@@ -4,9 +4,11 @@
  *
  * This file is also run directly by Node (scripts/verify-pack-images.mjs, via
  * type stripping) so contributors check images exactly the way the app
- * resolves them. Keep it free of runtime imports and TS-only syntax.
+ * resolves them. Keep it free of `@/` runtime imports and TS-only syntax; the
+ * one runtime import is relative, with its extension, so Node resolves it.
  */
 import type { ImageCredit } from '@/core/types'
+import { parseInertHtml } from '../security/trustedTypes.ts'
 import type { PackItemSpec } from './types'
 
 export interface ResolvedImage {
@@ -148,7 +150,7 @@ async function resolveCommons(
 
 /** Commons metadata is HTML. Parse it inertly and keep only the text, never inject it. */
 export function htmlToText(html: string): string | undefined {
-  const doc = new DOMParser().parseFromString(html, 'text/html')
+  const doc = parseInertHtml(html)
   for (const el of doc.querySelectorAll('script, style')) el.remove()
   const text = (doc.body.textContent ?? '').replace(/\s+/g, ' ').trim()
   return text || undefined

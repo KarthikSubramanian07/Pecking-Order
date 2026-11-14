@@ -8,9 +8,12 @@
  * is only used as a fallback, for SVG (which needs <img>, a DOM-only API) and
  * for browsers without OffscreenCanvas or module workers.
  */
+
+import { trustedScriptUrl } from '@/security/trustedTypes'
 import type { StoredImage } from '@/storage/db'
 import { assertDecodableSize, sniffBlobSize } from './dimensions'
 import { processBitmapBlob, rasterize, type Size, type WorkerResponse } from './pipeline'
+import workerUrl from './process.worker.ts?worker&url'
 
 export const MAX_INPUT_BYTES = 25 * 1024 * 1024
 /** SVGs have no natural pixel size worth trusting; rasterise at this long side. */
@@ -57,7 +60,8 @@ class ProcessingWorker {
   private nextId = 0
 
   constructor(onBroken: () => void) {
-    this.worker = new Worker(new URL('./process.worker.ts', import.meta.url), { type: 'module' })
+    // Through the Trusted Types policy: the CSP refuses a plain string here.
+    this.worker = new Worker(trustedScriptUrl(workerUrl), { type: 'module' })
     this.worker.addEventListener('message', (e: MessageEvent<WorkerResponse>) => {
       const msg = e.data
       const job = this.pending.get(msg.id)
