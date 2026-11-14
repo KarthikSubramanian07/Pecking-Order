@@ -23,8 +23,8 @@ export function Coop({ items, dragging }: { items: ItemId[]; dragging: boolean }
   const quickAdd = useRef<HTMLTextAreaElement>(null)
   const dock = useRef<HTMLElement>(null)
 
-  // Publish the dock height so toasts can float just above it. On short screens
-  // the dock stops sticking and covers nothing, so it publishes zero.
+  // Publish the dock height so toasts and focused tiles stay clear of it. On short
+  // screens the dock stops sticking and covers nothing, so it publishes zero.
   useEffect(() => {
     const el = dock.current
     if (!el) return

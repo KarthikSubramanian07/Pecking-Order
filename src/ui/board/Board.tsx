@@ -159,7 +159,7 @@ export function Board() {
     boardActions().applyLive((d) => opMoveItem(d, String(active.id), to, index))
   }
 
-  const onDragEnd = ({ active, over }: DragEndEvent) => {
+  const onDragEnd = ({ active, over, activatorEvent }: DragEndEvent) => {
     const id = String(active.id)
     const b = boardActions().board
     if (b && over) {
@@ -174,6 +174,15 @@ export function Board() {
     }
     boardActions().endGesture(Boolean(over))
     finish(id)
+    // dnd-kit refocuses the tile without scrolling. Once the ducked Coop has grown
+    // back, bring the tile out from behind it.
+    if (activatorEvent instanceof KeyboardEvent) {
+      setTimeout(() => {
+        document
+          .querySelector(`[data-item-id="${CSS.escape(id)}"]`)
+          ?.scrollIntoView({ block: 'nearest' })
+      }, 260)
+    }
   }
 
   const onDragCancel = () => {
