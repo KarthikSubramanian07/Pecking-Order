@@ -77,7 +77,7 @@
   place-items: center;
   width: calc(var(--item) * 0.72);
   height: var(--item);
-  border: 1.5px dashed color-mix(in oklab, var(--tier) 55%, var(--line));
+  border: 1.5px dashed color-mix(in oklab, var(--tier) 25%, var(--muted));
   border-radius: var(--r-egg);
   color: transparent;
   font-size: var(--text-xs);
@@ -88,8 +88,8 @@
 }
 .row:hover .hint,
 .row:has([data-over]) .hint {
-  color: var(--muted);
-  border-color: var(--tier);
+  color: var(--ink-soft);
+  border-color: var(--muted);
 }
 .row:has([data-over]) .hint {
   transform: scale(1.06);

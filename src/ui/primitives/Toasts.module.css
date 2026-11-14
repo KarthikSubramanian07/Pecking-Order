@@ -27,7 +27,7 @@
 }
 .toast[data-tone="error"] {
   background: var(--danger);
-  color: #fff;
+  color: var(--paper);
 }
 .message {
   max-width: 52ch;
@@ -44,7 +44,7 @@
   color: #a9472e;
 }
 .toast[data-tone="error"] .action {
-  color: #fff;
+  color: inherit;
   text-decoration: underline;
 }
 .dismiss {
