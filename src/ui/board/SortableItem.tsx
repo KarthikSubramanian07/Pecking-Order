@@ -26,6 +26,7 @@ export const SortableItem = memo(function SortableItem({
   const showLabels = useUiStore((s) => s.showLabels)
   const selected = useUiStore((s) => s.selected === id)
   const landed = useUiStore((s) => s.landed === id)
+  const hatchIndex = useUiStore((s) => s.fresh.get(id))
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
     id,
     data: { container },
@@ -61,7 +62,15 @@ export const SortableItem = memo(function SortableItem({
     listeners?.onKeyDown?.(e)
   }
 
-  const state = isDragging ? 'placeholder' : landed ? 'landed' : selected ? 'selected' : 'idle'
+  const state = isDragging
+    ? 'placeholder'
+    : landed
+      ? 'landed'
+      : selected
+        ? 'selected'
+        : hatchIndex !== undefined
+          ? 'hatching'
+          : 'idle'
 
   return (
     <ItemTile
@@ -70,7 +79,11 @@ export const SortableItem = memo(function SortableItem({
       showLabel={showLabels}
       state={state}
       data-item-id={id}
-      style={{ transform: CSS.Translate.toString(transform), transition }}
+      style={{
+        transform: CSS.Translate.toString(transform),
+        transition,
+        animationDelay: hatchIndex ? `${hatchIndex * 28}ms` : undefined,
+      }}
       {...attributes}
       {...listeners}
       aria-label={`${item.label || 'Untitled item'}, ${containerLabel}, ${index + 1} of ${total}`}
