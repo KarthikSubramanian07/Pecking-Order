@@ -1,0 +1,198 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "backyard-birds",
+  "version": "1.0.0",
+  "title": "Backyard Birds",
+  "description": "Free entertainment, provided you keep the feeder full.",
+  "category": "Animals",
+  "accent": "Eucalyptus",
+  "author": "Pecking Order",
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Male_northern_cardinal_in_Central_Park_%2852612%29.jpg/500px-Male_northern_cardinal_in_Central_Park_%2852612%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Erithacus_rubecula_with_cocked_head.jpg/500px-Erithacus_rubecula_with_cocked_head.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Blue_jay_in_PP_%2830960%29.jpg/500px-Blue_jay_in_PP_%2830960%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Eurasian_blue_tit_Lancashire.jpg/500px-Eurasian_blue_tit_Lancashire.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  ],
+  "items": [
+    {
+      "id": "northern-cardinal",
+      "label": "Northern cardinal",
+      "wikipedia": "Northern cardinal"
+    },
+    {
+      "id": "european-robin",
+      "label": "European robin",
+      "wikipedia": "European robin"
+    },
+    {
+      "id": "blue-jay",
+      "label": "Blue jay",
+      "wikipedia": "Blue jay"
+    },
+    {
+      "id": "eurasian-blue-tit",
+      "label": "Eurasian blue tit",
+      "wikipedia": "Eurasian blue tit"
+    },
+    {
+      "id": "american-robin",
+      "label": "American robin",
+      "wikipedia": "American robin"
+    },
+    {
+      "id": "black-capped-chickadee",
+      "label": "Black-capped chickadee",
+      "wikipedia": "Black-capped chickadee"
+    },
+    {
+      "id": "american-goldfinch",
+      "label": "American goldfinch",
+      "wikipedia": "American goldfinch"
+    },
+    {
+      "id": "house-finch",
+      "label": "House finch",
+      "wikipedia": "House finch"
+    },
+    {
+      "id": "house-sparrow",
+      "label": "House sparrow",
+      "wikipedia": "House sparrow"
+    },
+    {
+      "id": "mourning-dove",
+      "label": "Mourning dove",
+      "wikipedia": "Mourning dove"
+    },
+    {
+      "id": "downy-woodpecker",
+      "label": "Downy woodpecker",
+      "wikipedia": "Downy woodpecker"
+    },
+    {
+      "id": "red-winged-blackbird",
+      "label": "Red-winged blackbird",
+      "wikipedia": "Red-winged blackbird"
+    },
+    {
+      "id": "dark-eyed-junco",
+      "label": "Dark-eyed junco",
+      "wikipedia": "Dark-eyed junco"
+    },
+    {
+      "id": "tufted-titmouse",
+      "label": "Tufted titmouse",
+      "wikipedia": "Tufted titmouse"
+    },
+    {
+      "id": "white-breasted-nuthatch",
+      "label": "White-breasted nuthatch",
+      "wikipedia": "White-breasted nuthatch"
+    },
+    {
+      "id": "eastern-bluebird",
+      "label": "Eastern bluebird",
+      "wikipedia": "Eastern bluebird"
+    },
+    {
+      "id": "northern-mockingbird",
+      "label": "Northern mockingbird",
+      "wikipedia": "Northern mockingbird"
+    },
+    {
+      "id": "ruby-throated-hummingbird",
+      "label": "Ruby-throated hummingbird",
+      "wikipedia": "Ruby-throated hummingbird"
+    },
+    {
+      "id": "common-grackle",
+      "label": "Common grackle",
+      "wikipedia": "Common grackle"
+    },
+    {
+      "id": "american-crow",
+      "label": "American crow",
+      "wikipedia": "American crow"
+    },
+    {
+      "id": "song-sparrow",
+      "label": "Song sparrow",
+      "wikipedia": "Song sparrow"
+    },
+    {
+      "id": "cedar-waxwing",
+      "label": "Cedar waxwing",
+      "wikipedia": "Cedar waxwing"
+    },
+    {
+      "id": "carolina-wren",
+      "label": "Carolina wren",
+      "wikipedia": "Carolina wren"
+    },
+    {
+      "id": "common-starling",
+      "label": "Common starling",
+      "wikipedia": "Common starling"
+    },
+    {
+      "id": "great-tit",
+      "label": "Great tit",
+      "wikipedia": "Great tit"
+    },
+    {
+      "id": "common-blackbird",
+      "label": "Common blackbird",
+      "wikipedia": "Common blackbird"
+    },
+    {
+      "id": "european-goldfinch",
+      "label": "European goldfinch",
+      "wikipedia": "European goldfinch"
+    },
+    {
+      "id": "eurasian-wren",
+      "label": "Eurasian wren",
+      "wikipedia": "Eurasian wren"
+    },
+    {
+      "id": "common-chaffinch",
+      "label": "Common chaffinch",
+      "wikipedia": "Common chaffinch"
+    },
+    {
+      "id": "eurasian-magpie",
+      "label": "Eurasian magpie",
+      "wikipedia": "Eurasian magpie"
+    },
+    {
+      "id": "wood-pigeon",
+      "label": "Wood pigeon",
+      "wikipedia": "Common wood pigeon"
+    },
+    {
+      "id": "song-thrush",
+      "label": "Song thrush",
+      "wikipedia": "Song thrush"
+    },
+    {
+      "id": "long-tailed-tit",
+      "label": "Long-tailed tit",
+      "wikipedia": "Long-tailed tit"
+    },
+    {
+      "id": "dunnock",
+      "label": "Dunnock",
+      "wikipedia": "Dunnock"
+    },
+    {
+      "id": "great-spotted-woodpecker",
+      "label": "Great spotted woodpecker",
+      "wikipedia": "Great spotted woodpecker"
+    },
+    {
+      "id": "eurasian-bullfinch",
+      "label": "Eurasian bullfinch",
+      "wikipedia": "Eurasian bullfinch"
+    }
+  ]
+}

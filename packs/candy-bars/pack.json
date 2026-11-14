@@ -1,0 +1,179 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "candy-bars",
+  "version": "1.0.0",
+  "title": "Candy Bars",
+  "description": "The true currency of Halloween, finally given an exchange rate.",
+  "category": "Food & Drink",
+  "accent": "Speckle",
+  "author": "Pecking Order",
+  "tiers": ["Full-size bar", "Fun size", "Trade bait", "Bottom of the bag", "Left in the bowl"],
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Snickers-broken.png/500px-Snickers-broken.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/MBar_700.jpg/500px-MBar_700.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Twix-broken.jpg/500px-Twix-broken.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Kit-Kat-Split.jpg/500px-Kit-Kat-Split.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  ],
+  "items": [
+    {
+      "id": "snickers",
+      "label": "Snickers",
+      "wikipedia": "Snickers"
+    },
+    {
+      "id": "mars",
+      "label": "Mars",
+      "wikipedia": "Mars bar"
+    },
+    {
+      "id": "twix",
+      "label": "Twix",
+      "commons": "File:Twix-broken.jpg"
+    },
+    {
+      "id": "kit-kat",
+      "label": "Kit Kat",
+      "commons": "File:Kit-Kat-Split.jpg"
+    },
+    {
+      "id": "milky-way",
+      "label": "Milky Way",
+      "wikipedia": "Milky Way (chocolate bar)"
+    },
+    {
+      "id": "three-musketeers",
+      "label": "3 Musketeers",
+      "commons": "File:3-Musketeers-Broken.jpg"
+    },
+    {
+      "id": "reeses-peanut-butter-cups",
+      "label": "Reese's Peanut Butter Cups",
+      "commons": "File:Reeses-PB-Cups.jpg"
+    },
+    {
+      "id": "butterfinger",
+      "label": "Butterfinger",
+      "commons": "File:Butterfinger-broken.JPG"
+    },
+    {
+      "id": "baby-ruth",
+      "label": "Baby Ruth",
+      "wikipedia": "Baby Ruth"
+    },
+    {
+      "id": "hersheys-milk-chocolate",
+      "label": "Hershey's Milk Chocolate",
+      "wikipedia": "Hershey bar"
+    },
+    {
+      "id": "crunch",
+      "label": "Crunch",
+      "wikipedia": "Crunch (chocolate bar)"
+    },
+    {
+      "id": "payday",
+      "label": "PayDay",
+      "commons": "File:Candy-PayDay-Broken.jpg"
+    },
+    {
+      "id": "almond-joy",
+      "label": "Almond Joy",
+      "wikipedia": "Almond Joy"
+    },
+    {
+      "id": "mounds",
+      "label": "Mounds",
+      "commons": "File:Candy-Mounds-Broken.jpg"
+    },
+    {
+      "id": "one-hundred-grand",
+      "label": "100 Grand",
+      "wikipedia": "100 Grand Bar"
+    },
+    {
+      "id": "toblerone",
+      "label": "Toblerone",
+      "wikipedia": "Toblerone"
+    },
+    {
+      "id": "bounty",
+      "label": "Bounty",
+      "wikipedia": "Bounty (chocolate bar)"
+    },
+    {
+      "id": "crunchie",
+      "label": "Crunchie",
+      "commons": "File:Cadbury-Crunchie-Split.jpg"
+    },
+    {
+      "id": "cadbury-dairy-milk",
+      "label": "Cadbury Dairy Milk",
+      "wikipedia": "Cadbury Dairy Milk"
+    },
+    {
+      "id": "aero",
+      "label": "Aero",
+      "commons": "File:Aero-Bar-Split.jpg"
+    },
+    {
+      "id": "wispa",
+      "label": "Wispa",
+      "commons": "File:Wispa-Split.jpg"
+    },
+    {
+      "id": "double-decker",
+      "label": "Double Decker",
+      "wikipedia": "Double Decker (chocolate bar)"
+    },
+    {
+      "id": "flake",
+      "label": "Flake",
+      "commons": "File:Cadbury-Flake-Split.jpg"
+    },
+    {
+      "id": "lion",
+      "label": "Lion",
+      "commons": "File:Lion-Bar-Split.jpg"
+    },
+    {
+      "id": "yorkie",
+      "label": "Yorkie",
+      "commons": "File:Yorkie-Bar.jpg"
+    },
+    {
+      "id": "toffee-crisp",
+      "label": "Toffee Crisp",
+      "commons": "File:Toffee-Crisp-Split.jpg"
+    },
+    {
+      "id": "heath",
+      "label": "Heath",
+      "commons": "File:Heath-broken.JPG"
+    },
+    {
+      "id": "whatchamacallit",
+      "label": "Whatchamacallit",
+      "commons": "File:Candy-Whatchamacallit-Broken.jpg"
+    },
+    {
+      "id": "take-five",
+      "label": "Take 5",
+      "commons": "File:Candy-Take5-Broken.jpg"
+    },
+    {
+      "id": "coffee-crisp",
+      "label": "Coffee Crisp",
+      "wikipedia": "Coffee Crisp"
+    },
+    {
+      "id": "kinder-bueno",
+      "label": "Kinder Bueno",
+      "commons": "File:Kinder-Bueno-Split.jpg"
+    },
+    {
+      "id": "galaxy",
+      "label": "Galaxy",
+      "wikipedia": "Galaxy (chocolate bar)"
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "marvel-cinematic-universe-films",
+  "version": "1.0.0",
+  "title": "Marvel Cinematic Universe Films",
+  "description": "You sat through every end credit for this. You've earned an opinion.",
+  "category": "Film & TV",
+  "accent": "Comb",
+  "author": "Pecking Order",
+  "featured": true,
+  "cover": [
+    "https://upload.wikimedia.org/wikipedia/en/8/8a/The_Avengers_%282012_film%29_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "https://upload.wikimedia.org/wikipedia/en/7/7d/Thor_Ragnarok_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "https://upload.wikimedia.org/wikipedia/en/3/32/Guardians_of_the_Galaxy_Vol._2_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "https://upload.wikimedia.org/wikipedia/en/0/0d/Avengers_Endgame_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+  ],
+  "items": [
+    {
+      "id": "iron-man",
+      "label": "Iron Man",
+      "wikipedia": "Iron Man (2008 film)"
+    },
+    {
+      "id": "the-incredible-hulk",
+      "label": "The Incredible Hulk",
+      "wikipedia": "The Incredible Hulk (film)"
+    },
+    {
+      "id": "iron-man-2",
+      "label": "Iron Man 2",
+      "wikipedia": "Iron Man 2"
+    },
+    {
+      "id": "thor",
+      "label": "Thor",
+      "wikipedia": "Thor (film)"
+    },
+    {
+      "id": "captain-america-the-first-avenger",
+      "label": "Captain America: The First Avenger",
+      "wikipedia": "Captain America: The First Avenger"
+    },
+    {
+      "id": "the-avengers",
+      "label": "The Avengers",
+      "wikipedia": "The Avengers (2012 film)"
+    },
+    {
+      "id": "iron-man-3",
+      "label": "Iron Man 3",
+      "wikipedia": "Iron Man 3"
+    },
+    {
+      "id": "thor-the-dark-world",
+      "label": "Thor: The Dark World",
+      "wikipedia": "Thor: The Dark World"
+    },
+    {
+      "id": "captain-america-the-winter-soldier",
+      "label": "Captain America: The Winter Soldier",
+      "wikipedia": "Captain America: The Winter Soldier"
+    },
+    {
+      "id": "guardians-of-the-galaxy",
+      "label": "Guardians of the Galaxy",
+      "wikipedia": "Guardians of the Galaxy (film)"
+    },
+    {
+      "id": "avengers-age-of-ultron",
+      "label": "Avengers: Age of Ultron",
+      "wikipedia": "Avengers: Age of Ultron"
+    },
+    {
+      "id": "ant-man",
+      "label": "Ant-Man",
+      "wikipedia": "Ant-Man (film)"
+    },
+    {
+      "id": "captain-america-civil-war",
+      "label": "Captain America: Civil War",
+      "wikipedia": "Captain America: Civil War"
+    },
+    {
+      "id": "doctor-strange",
+      "label": "Doctor Strange",
+      "wikipedia": "Doctor Strange (2016 film)"
+    },
+    {
+      "id": "guardians-of-the-galaxy-vol-2",
+      "label": "Guardians of the Galaxy Vol. 2",
+      "wikipedia": "Guardians of the Galaxy Vol. 2"
+    },
+    {
+      "id": "spider-man-homecoming",
+      "label": "Spider-Man: Homecoming",
+      "wikipedia": "Spider-Man: Homecoming"
+    },
+    {
+      "id": "thor-ragnarok",
+      "label": "Thor: Ragnarok",
+      "wikipedia": "Thor: Ragnarok"
+    },
+    {
+      "id": "black-panther",
+      "label": "Black Panther",
+      "wikipedia": "Black Panther (film)"
+    },
+    {
+      "id": "avengers-infinity-war",
+      "label": "Avengers: Infinity War",
+      "wikipedia": "Avengers: Infinity War"
+    },
+    {
+      "id": "ant-man-and-the-wasp",
+      "label": "Ant-Man and the Wasp",
+      "wikipedia": "Ant-Man and the Wasp"
+    },
+    {
+      "id": "captain-marvel",
+      "label": "Captain Marvel",
+      "wikipedia": "Captain Marvel (film)"
+    },
+    {
+      "id": "avengers-endgame",
+      "label": "Avengers: Endgame",
+      "wikipedia": "Avengers: Endgame"
+    },
+    {
+      "id": "spider-man-far-from-home",
+      "label": "Spider-Man: Far From Home",
+      "wikipedia": "Spider-Man: Far From Home"
+    },
+    {
+      "id": "black-widow",
+      "label": "Black Widow",
+      "wikipedia": "Black Widow (2021 film)"
+    },
+    {
+      "id": "shang-chi-and-the-legend-of-the-ten-rings",
+      "label": "Shang-Chi and the Legend of the Ten Rings",
+      "wikipedia": "Shang-Chi and the Legend of the Ten Rings"
+    },
+    {
+      "id": "eternals",
+      "label": "Eternals",
+      "wikipedia": "Eternals (film)"
+    },
+    {
+      "id": "spider-man-no-way-home",
+      "label": "Spider-Man: No Way Home",
+      "wikipedia": "Spider-Man: No Way Home"
+    },
+    {
+      "id": "doctor-strange-in-the-multiverse-of-madness",
+      "label": "Doctor Strange in the Multiverse of Madness",
+      "wikipedia": "Doctor Strange in the Multiverse of Madness"
+    },
+    {
+      "id": "thor-love-and-thunder",
+      "label": "Thor: Love and Thunder",
+      "wikipedia": "Thor: Love and Thunder"
+    },
+    {
+      "id": "black-panther-wakanda-forever",
+      "label": "Black Panther: Wakanda Forever",
+      "wikipedia": "Black Panther: Wakanda Forever"
+    },
+    {
+      "id": "ant-man-and-the-wasp-quantumania",
+      "label": "Ant-Man and the Wasp: Quantumania",
+      "wikipedia": "Ant-Man and the Wasp: Quantumania"
+    },
+    {
+      "id": "guardians-of-the-galaxy-vol-3",
+      "label": "Guardians of the Galaxy Vol. 3",
+      "wikipedia": "Guardians of the Galaxy Vol. 3"
+    },
+    {
+      "id": "the-marvels",
+      "label": "The Marvels",
+      "wikipedia": "The Marvels"
+    },
+    {
+      "id": "deadpool-and-wolverine",
+      "label": "Deadpool & Wolverine",
+      "wikipedia": "Deadpool & Wolverine"
+    },
+    {
+      "id": "captain-america-brave-new-world",
+      "label": "Captain America: Brave New World",
+      "wikipedia": "Captain America: Brave New World"
+    },
+    {
+      "id": "thunderbolts",
+      "label": "Thunderbolts*",
+      "wikipedia": "Thunderbolts*"
+    },
+    {
+      "id": "the-fantastic-four-first-steps",
+      "label": "The Fantastic Four: First Steps",
+      "wikipedia": "The Fantastic Four: First Steps"
+    },
+    {
+      "id": "spider-man-brand-new-day",
+      "label": "Spider-Man: Brand New Day",
+      "wikipedia": "Spider-Man: Brand New Day"
+    }
+  ]
+}

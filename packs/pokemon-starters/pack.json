@@ -1,0 +1,155 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "pokemon-starters",
+  "version": "1.0.0",
+  "title": "Pokémon Starters",
+  "description": "Three choices, one professor, a lifetime of second-guessing.",
+  "category": "Games",
+  "accent": "Yolk",
+  "author": "Pecking Order",
+  "tiers": ["I choose you", "Strong pick", "Solid", "Box it", "Released"],
+  "featured": true,
+  "cover": [
+    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
+    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/152.png"
+  ],
+  "items": [
+    {
+      "id": "bulbasaur",
+      "label": "Bulbasaur",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
+    },
+    {
+      "id": "charmander",
+      "label": "Charmander",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png"
+    },
+    {
+      "id": "squirtle",
+      "label": "Squirtle",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png"
+    },
+    {
+      "id": "chikorita",
+      "label": "Chikorita",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/152.png"
+    },
+    {
+      "id": "cyndaquil",
+      "label": "Cyndaquil",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/155.png"
+    },
+    {
+      "id": "totodile",
+      "label": "Totodile",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/158.png"
+    },
+    {
+      "id": "treecko",
+      "label": "Treecko",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/252.png"
+    },
+    {
+      "id": "torchic",
+      "label": "Torchic",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/255.png"
+    },
+    {
+      "id": "mudkip",
+      "label": "Mudkip",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/258.png"
+    },
+    {
+      "id": "turtwig",
+      "label": "Turtwig",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/387.png"
+    },
+    {
+      "id": "chimchar",
+      "label": "Chimchar",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/390.png"
+    },
+    {
+      "id": "piplup",
+      "label": "Piplup",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/393.png"
+    },
+    {
+      "id": "snivy",
+      "label": "Snivy",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/495.png"
+    },
+    {
+      "id": "tepig",
+      "label": "Tepig",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/498.png"
+    },
+    {
+      "id": "oshawott",
+      "label": "Oshawott",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/501.png"
+    },
+    {
+      "id": "chespin",
+      "label": "Chespin",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/650.png"
+    },
+    {
+      "id": "fennekin",
+      "label": "Fennekin",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/653.png"
+    },
+    {
+      "id": "froakie",
+      "label": "Froakie",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/656.png"
+    },
+    {
+      "id": "rowlet",
+      "label": "Rowlet",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/722.png"
+    },
+    {
+      "id": "litten",
+      "label": "Litten",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/725.png"
+    },
+    {
+      "id": "popplio",
+      "label": "Popplio",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/728.png"
+    },
+    {
+      "id": "grookey",
+      "label": "Grookey",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/810.png"
+    },
+    {
+      "id": "scorbunny",
+      "label": "Scorbunny",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/813.png"
+    },
+    {
+      "id": "sobble",
+      "label": "Sobble",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/816.png"
+    },
+    {
+      "id": "sprigatito",
+      "label": "Sprigatito",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/906.png"
+    },
+    {
+      "id": "fuecoco",
+      "label": "Fuecoco",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/909.png"
+    },
+    {
+      "id": "quaxly",
+      "label": "Quaxly",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/912.png"
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "disney-animated-classics",
+  "version": "1.0.0",
+  "title": "Disney Animated Classics",
+  "description": "Ninety years of talking animals and suspiciously absent parents.",
+  "category": "Film & TV",
+  "accent": "Heather",
+  "author": "Pecking Order",
+  "cover": [
+    "https://upload.wikimedia.org/wikipedia/en/1/1d/Thejunglebook_movieposter.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "https://upload.wikimedia.org/wikipedia/en/c/c0/The_Little_Mermaid_%28Official_1989_Film_Poster%29.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "https://upload.wikimedia.org/wikipedia/en/0/05/Frozen_%282013_film%29_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "https://upload.wikimedia.org/wikipedia/en/2/26/Moana_Teaser_Poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+  ],
+  "items": [
+    {
+      "id": "snow-white-and-the-seven-dwarfs",
+      "label": "Snow White and the Seven Dwarfs",
+      "wikipedia": "Snow White and the Seven Dwarfs (film)"
+    },
+    {
+      "id": "pinocchio",
+      "label": "Pinocchio",
+      "wikipedia": "Pinocchio (1940 film)"
+    },
+    {
+      "id": "fantasia",
+      "label": "Fantasia",
+      "wikipedia": "Fantasia (1940 film)"
+    },
+    {
+      "id": "dumbo",
+      "label": "Dumbo",
+      "wikipedia": "Dumbo"
+    },
+    {
+      "id": "bambi",
+      "label": "Bambi",
+      "wikipedia": "Bambi"
+    },
+    {
+      "id": "cinderella",
+      "label": "Cinderella",
+      "wikipedia": "Cinderella (1950 film)"
+    },
+    {
+      "id": "alice-in-wonderland",
+      "label": "Alice in Wonderland",
+      "wikipedia": "Alice in Wonderland (1951 film)"
+    },
+    {
+      "id": "peter-pan",
+      "label": "Peter Pan",
+      "wikipedia": "Peter Pan (1953 film)"
+    },
+    {
+      "id": "lady-and-the-tramp",
+      "label": "Lady and the Tramp",
+      "wikipedia": "Lady and the Tramp"
+    },
+    {
+      "id": "sleeping-beauty",
+      "label": "Sleeping Beauty",
+      "wikipedia": "Sleeping Beauty (1959 film)"
+    },
+    {
+      "id": "one-hundred-and-one-dalmatians",
+      "label": "One Hundred and One Dalmatians",
+      "wikipedia": "One Hundred and One Dalmatians"
+    },
+    {
+      "id": "the-sword-in-the-stone",
+      "label": "The Sword in the Stone",
+      "wikipedia": "The Sword in the Stone (1963 film)"
+    },
+    {
+      "id": "the-jungle-book",
+      "label": "The Jungle Book",
+      "wikipedia": "The Jungle Book (1967 film)"
+    },
+    {
+      "id": "the-aristocats",
+      "label": "The Aristocats",
+      "wikipedia": "The Aristocats"
+    },
+    {
+      "id": "robin-hood",
+      "label": "Robin Hood",
+      "wikipedia": "Robin Hood (1973 film)"
+    },
+    {
+      "id": "the-many-adventures-of-winnie-the-pooh",
+      "label": "The Many Adventures of Winnie the Pooh",
+      "wikipedia": "The Many Adventures of Winnie the Pooh"
+    },
+    {
+      "id": "the-rescuers",
+      "label": "The Rescuers",
+      "wikipedia": "The Rescuers"
+    },
+    {
+      "id": "the-fox-and-the-hound",
+      "label": "The Fox and the Hound",
+      "wikipedia": "The Fox and the Hound"
+    },
+    {
+      "id": "the-little-mermaid",
+      "label": "The Little Mermaid",
+      "wikipedia": "The Little Mermaid (1989 film)"
+    },
+    {
+      "id": "beauty-and-the-beast",
+      "label": "Beauty and the Beast",
+      "wikipedia": "Beauty and the Beast (1991 film)"
+    },
+    {
+      "id": "aladdin",
+      "label": "Aladdin",
+      "wikipedia": "Aladdin (1992 Disney film)"
+    },
+    {
+      "id": "the-lion-king",
+      "label": "The Lion King",
+      "wikipedia": "The Lion King"
+    },
+    {
+      "id": "pocahontas",
+      "label": "Pocahontas",
+      "wikipedia": "Pocahontas (1995 film)"
+    },
+    {
+      "id": "the-hunchback-of-notre-dame",
+      "label": "The Hunchback of Notre Dame",
+      "wikipedia": "The Hunchback of Notre Dame (1996 film)"
+    },
+    {
+      "id": "hercules",
+      "label": "Hercules",
+      "wikipedia": "Hercules (1997 film)"
+    },
+    {
+      "id": "mulan",
+      "label": "Mulan",
+      "wikipedia": "Mulan (1998 film)"
+    },
+    {
+      "id": "tarzan",
+      "label": "Tarzan",
+      "wikipedia": "Tarzan (1999 film)"
+    },
+    {
+      "id": "the-emperors-new-groove",
+      "label": "The Emperor's New Groove",
+      "wikipedia": "The Emperor's New Groove"
+    },
+    {
+      "id": "lilo-and-stitch",
+      "label": "Lilo & Stitch",
+      "wikipedia": "Lilo & Stitch"
+    },
+    {
+      "id": "bolt",
+      "label": "Bolt",
+      "wikipedia": "Bolt (2008 film)"
+    },
+    {
+      "id": "the-princess-and-the-frog",
+      "label": "The Princess and the Frog",
+      "wikipedia": "The Princess and the Frog"
+    },
+    {
+      "id": "tangled",
+      "label": "Tangled",
+      "wikipedia": "Tangled"
+    },
+    {
+      "id": "wreck-it-ralph",
+      "label": "Wreck-It Ralph",
+      "wikipedia": "Wreck-It Ralph"
+    },
+    {
+      "id": "frozen",
+      "label": "Frozen",
+      "wikipedia": "Frozen (2013 film)"
+    },
+    {
+      "id": "big-hero-6",
+      "label": "Big Hero 6",
+      "wikipedia": "Big Hero 6 (film)"
+    },
+    {
+      "id": "zootopia",
+      "label": "Zootopia",
+      "wikipedia": "Zootopia"
+    },
+    {
+      "id": "moana",
+      "label": "Moana",
+      "wikipedia": "Moana (2016 film)"
+    },
+    {
+      "id": "encanto",
+      "label": "Encanto",
+      "wikipedia": "Encanto"
+    }
+  ]
+}

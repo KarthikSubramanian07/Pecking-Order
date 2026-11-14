@@ -1,0 +1,184 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "fast-food-chains",
+  "version": "1.0.0",
+  "title": "Fast Food Chains",
+  "description": "Ranked from a car park at 11pm, as is tradition.",
+  "category": "Food & Drink",
+  "accent": "Rhubarb",
+  "author": "Pecking Order",
+  "tiers": ["Worth the drive", "Solid", "If it's there", "Desperate", "Never"],
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/500px-McDonald%27s_Golden_Arches.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Burger_King_2020.svg/500px-Burger_King_2020.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Kentucky_Fried_Chicken_%28Tallulah%2C_Louisiana%29_01.jpg/500px-Kentucky_Fried_Chicken_%28Tallulah%2C_Louisiana%29_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/A_Subway_restaurant_in_a_strip_mall_in_Franklin%2C_North_Carolina%2C_United_States.jpg/500px-A_Subway_restaurant_in_a_strip_mall_in_Franklin%2C_North_Carolina%2C_United_States.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  ],
+  "items": [
+    {
+      "id": "mcdonalds",
+      "label": "McDonald's",
+      "wikipedia": "McDonald's"
+    },
+    {
+      "id": "burger-king",
+      "label": "Burger King",
+      "wikipedia": "Burger King"
+    },
+    {
+      "id": "kfc",
+      "label": "KFC",
+      "wikipedia": "KFC"
+    },
+    {
+      "id": "subway",
+      "label": "Subway",
+      "wikipedia": "Subway (restaurant)"
+    },
+    {
+      "id": "wendys",
+      "label": "Wendy's",
+      "wikipedia": "Wendy's"
+    },
+    {
+      "id": "taco-bell",
+      "label": "Taco Bell",
+      "wikipedia": "Taco Bell"
+    },
+    {
+      "id": "dominos",
+      "label": "Domino's",
+      "commons": "File:Dominos pizza logo.svg"
+    },
+    {
+      "id": "pizza-hut",
+      "label": "Pizza Hut",
+      "wikipedia": "Pizza Hut"
+    },
+    {
+      "id": "popeyes",
+      "label": "Popeyes",
+      "wikipedia": "Popeyes"
+    },
+    {
+      "id": "chick-fil-a",
+      "label": "Chick-fil-A",
+      "wikipedia": "Chick-fil-A"
+    },
+    {
+      "id": "five-guys",
+      "label": "Five Guys",
+      "wikipedia": "Five Guys"
+    },
+    {
+      "id": "in-n-out-burger",
+      "label": "In-N-Out Burger",
+      "wikipedia": "In-N-Out Burger"
+    },
+    {
+      "id": "shake-shack",
+      "label": "Shake Shack",
+      "wikipedia": "Shake Shack"
+    },
+    {
+      "id": "dunkin",
+      "label": "Dunkin'",
+      "wikipedia": "Dunkin'"
+    },
+    {
+      "id": "tim-hortons",
+      "label": "Tim Hortons",
+      "wikipedia": "Tim Hortons"
+    },
+    {
+      "id": "starbucks",
+      "label": "Starbucks",
+      "wikipedia": "Starbucks"
+    },
+    {
+      "id": "arbys",
+      "label": "Arby's",
+      "wikipedia": "Arby's"
+    },
+    {
+      "id": "sonic-drive-in",
+      "label": "Sonic Drive-In",
+      "wikipedia": "Sonic Drive-In"
+    },
+    {
+      "id": "jack-in-the-box",
+      "label": "Jack in the Box",
+      "wikipedia": "Jack in the Box"
+    },
+    {
+      "id": "chipotle",
+      "label": "Chipotle",
+      "wikipedia": "Chipotle Mexican Grill"
+    },
+    {
+      "id": "panda-express",
+      "label": "Panda Express",
+      "wikipedia": "Panda Express"
+    },
+    {
+      "id": "dairy-queen",
+      "label": "Dairy Queen",
+      "wikipedia": "Dairy Queen"
+    },
+    {
+      "id": "carls-jr",
+      "label": "Carl's Jr.",
+      "wikipedia": "Carl's Jr."
+    },
+    {
+      "id": "whataburger",
+      "label": "Whataburger",
+      "wikipedia": "Whataburger"
+    },
+    {
+      "id": "little-caesars",
+      "label": "Little Caesars",
+      "commons": "File:Little Caesars in Racine wi.jpg"
+    },
+    {
+      "id": "papa-johns",
+      "label": "Papa John's",
+      "commons": "File:A Papa John's pizza restaurant in Asheville, North Carolina 01.jpg"
+    },
+    {
+      "id": "wingstop",
+      "label": "Wingstop",
+      "wikipedia": "Wingstop"
+    },
+    {
+      "id": "nandos",
+      "label": "Nando's",
+      "wikipedia": "Nando's"
+    },
+    {
+      "id": "jollibee",
+      "label": "Jollibee",
+      "wikipedia": "Jollibee"
+    },
+    {
+      "id": "greggs",
+      "label": "Greggs",
+      "wikipedia": "Greggs"
+    },
+    {
+      "id": "culvers",
+      "label": "Culver's",
+      "commons": "File:Culver's on North Monroe Street, Tallahassee, Florida.jpg"
+    },
+    {
+      "id": "white-castle",
+      "label": "White Castle",
+      "wikipedia": "White Castle (restaurant)"
+    },
+    {
+      "id": "raising-canes",
+      "label": "Raising Cane's",
+      "wikipedia": "Raising Cane's Chicken Fingers"
+    }
+  ]
+}

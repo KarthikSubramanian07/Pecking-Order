@@ -1,0 +1,178 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "best-selling-video-games",
+  "version": "1.0.0",
+  "title": "Best-Selling Video Games",
+  "description": "Hundreds of millions of copies sold. Your opinion still counts, technically.",
+  "category": "Games",
+  "accent": "Pasture",
+  "author": "Pecking Order",
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Tetris_logo_2019.svg/500px-Tetris_logo_2019.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://upload.wikimedia.org/wikipedia/en/b/b5/MarioKart8Boxart.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "https://thumb.wikimedia.org/wikipedia/en/thumb/a/af/Pok%C3%A9mon_Red_and_Blue_cover_art.webp/500px-Pok%C3%A9mon_Red_and_Blue_cover_art.webp?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://upload.wikimedia.org/wikipedia/en/1/1f/Animal_Crossing_New_Horizons.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+  ],
+  "items": [
+    {
+      "id": "minecraft",
+      "label": "Minecraft",
+      "commons": "File:Minecraft Creeper (Crop).png"
+    },
+    {
+      "id": "grand-theft-auto-v",
+      "label": "Grand Theft Auto V",
+      "wikipedia": "Grand Theft Auto V"
+    },
+    {
+      "id": "tetris",
+      "label": "Tetris",
+      "wikipedia": "Tetris"
+    },
+    {
+      "id": "wii-sports",
+      "label": "Wii Sports",
+      "wikipedia": "Wii Sports"
+    },
+    {
+      "id": "pubg-battlegrounds",
+      "label": "PUBG: Battlegrounds",
+      "wikipedia": "PUBG: Battlegrounds"
+    },
+    {
+      "id": "mario-kart-8-deluxe",
+      "label": "Mario Kart 8 Deluxe",
+      "wikipedia": "Mario Kart 8"
+    },
+    {
+      "id": "red-dead-redemption-2",
+      "label": "Red Dead Redemption 2",
+      "wikipedia": "Red Dead Redemption 2"
+    },
+    {
+      "id": "super-mario-bros",
+      "label": "Super Mario Bros.",
+      "wikipedia": "Super Mario Bros."
+    },
+    {
+      "id": "pokemon-red-and-blue",
+      "label": "Pokémon Red and Blue",
+      "wikipedia": "Pokémon Red, Blue, and Yellow"
+    },
+    {
+      "id": "terraria",
+      "label": "Terraria",
+      "wikipedia": "Terraria"
+    },
+    {
+      "id": "the-witcher-3-wild-hunt",
+      "label": "The Witcher 3: Wild Hunt",
+      "wikipedia": "The Witcher 3: Wild Hunt"
+    },
+    {
+      "id": "animal-crossing-new-horizons",
+      "label": "Animal Crossing: New Horizons",
+      "wikipedia": "Animal Crossing: New Horizons"
+    },
+    {
+      "id": "super-smash-bros-ultimate",
+      "label": "Super Smash Bros. Ultimate",
+      "wikipedia": "Super Smash Bros. Ultimate"
+    },
+    {
+      "id": "the-elder-scrolls-v-skyrim",
+      "label": "The Elder Scrolls V: Skyrim",
+      "wikipedia": "The Elder Scrolls V: Skyrim"
+    },
+    {
+      "id": "wii-fit",
+      "label": "Wii Fit",
+      "wikipedia": "Wii Fit"
+    },
+    {
+      "id": "pac-man",
+      "label": "Pac-Man",
+      "wikipedia": "Pac-Man"
+    },
+    {
+      "id": "grand-theft-auto-san-andreas",
+      "label": "Grand Theft Auto: San Andreas",
+      "wikipedia": "Grand Theft Auto: San Andreas"
+    },
+    {
+      "id": "mario-kart-wii",
+      "label": "Mario Kart Wii",
+      "wikipedia": "Mario Kart Wii"
+    },
+    {
+      "id": "stardew-valley",
+      "label": "Stardew Valley",
+      "wikipedia": "Stardew Valley"
+    },
+    {
+      "id": "new-super-mario-bros",
+      "label": "New Super Mario Bros.",
+      "wikipedia": "New Super Mario Bros."
+    },
+    {
+      "id": "diablo-iii",
+      "label": "Diablo III",
+      "wikipedia": "Diablo III"
+    },
+    {
+      "id": "pokemon-gold-and-silver",
+      "label": "Pokémon Gold and Silver",
+      "wikipedia": "Pokémon Gold and Silver"
+    },
+    {
+      "id": "super-mario-world",
+      "label": "Super Mario World",
+      "wikipedia": "Super Mario World"
+    },
+    {
+      "id": "the-legend-of-zelda-breath-of-the-wild",
+      "label": "The Legend of Zelda: Breath of the Wild",
+      "wikipedia": "The Legend of Zelda: Breath of the Wild"
+    },
+    {
+      "id": "elden-ring",
+      "label": "Elden Ring",
+      "wikipedia": "Elden Ring"
+    },
+    {
+      "id": "cyberpunk-2077",
+      "label": "Cyberpunk 2077",
+      "wikipedia": "Cyberpunk 2077"
+    },
+    {
+      "id": "sonic-the-hedgehog",
+      "label": "Sonic the Hedgehog",
+      "wikipedia": "Sonic the Hedgehog (1991 video game)"
+    },
+    {
+      "id": "pokemon-sword-and-shield",
+      "label": "Pokémon Sword and Shield",
+      "wikipedia": "Pokémon Sword and Shield"
+    },
+    {
+      "id": "super-mario-odyssey",
+      "label": "Super Mario Odyssey",
+      "wikipedia": "Super Mario Odyssey"
+    },
+    {
+      "id": "call-of-duty-black-ops",
+      "label": "Call of Duty: Black Ops",
+      "wikipedia": "Call of Duty: Black Ops"
+    },
+    {
+      "id": "wii-sports-resort",
+      "label": "Wii Sports Resort",
+      "wikipedia": "Wii Sports Resort"
+    },
+    {
+      "id": "duck-hunt",
+      "label": "Duck Hunt",
+      "wikipedia": "Duck Hunt"
+    }
+  ]
+}

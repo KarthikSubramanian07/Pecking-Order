@@ -1,0 +1,179 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "cat-breeds",
+  "version": "1.0.0",
+  "title": "Cat Breeds",
+  "description": "They won't care how you rank them. Rank them anyway.",
+  "category": "Animals",
+  "accent": "Speckle",
+  "author": "Pecking Order",
+  "tiers": ["Royalty", "Approved", "Tolerated", "Suspicious", "Off the table"],
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/M%C3%A2le_Black_Silver_Blotched_Tabby.jpeg/500px-M%C3%A2le_Black_Silver_Blotched_Tabby.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Persialainen.jpg/330px-Persialainen.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Siamese_cat_Vaillante.JPG/330px-Siamese_cat_Vaillante.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Ragdoll_from_Gatil_Ragbelas.jpg/500px-Ragdoll_from_Gatil_Ragbelas.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  ],
+  "items": [
+    {
+      "id": "maine-coon",
+      "label": "Maine Coon",
+      "wikipedia": "Maine Coon"
+    },
+    {
+      "id": "persian",
+      "label": "Persian",
+      "wikipedia": "Persian cat"
+    },
+    {
+      "id": "siamese",
+      "label": "Siamese",
+      "wikipedia": "Siamese cat"
+    },
+    {
+      "id": "ragdoll",
+      "label": "Ragdoll",
+      "wikipedia": "Ragdoll"
+    },
+    {
+      "id": "bengal",
+      "label": "Bengal",
+      "wikipedia": "Bengal cat"
+    },
+    {
+      "id": "sphynx",
+      "label": "Sphynx",
+      "wikipedia": "Sphynx cat"
+    },
+    {
+      "id": "british-shorthair",
+      "label": "British Shorthair",
+      "wikipedia": "British Shorthair"
+    },
+    {
+      "id": "abyssinian",
+      "label": "Abyssinian",
+      "wikipedia": "Abyssinian cat"
+    },
+    {
+      "id": "scottish-fold",
+      "label": "Scottish Fold",
+      "wikipedia": "Scottish Fold"
+    },
+    {
+      "id": "russian-blue",
+      "label": "Russian Blue",
+      "wikipedia": "Russian Blue"
+    },
+    {
+      "id": "birman",
+      "label": "Birman",
+      "wikipedia": "Birman"
+    },
+    {
+      "id": "norwegian-forest-cat",
+      "label": "Norwegian Forest Cat",
+      "wikipedia": "Norwegian Forest cat"
+    },
+    {
+      "id": "devon-rex",
+      "label": "Devon Rex",
+      "wikipedia": "Devon Rex"
+    },
+    {
+      "id": "cornish-rex",
+      "label": "Cornish Rex",
+      "wikipedia": "Cornish Rex"
+    },
+    {
+      "id": "exotic-shorthair",
+      "label": "Exotic Shorthair",
+      "wikipedia": "Exotic Shorthair"
+    },
+    {
+      "id": "oriental-shorthair",
+      "label": "Oriental Shorthair",
+      "wikipedia": "Oriental Shorthair"
+    },
+    {
+      "id": "american-shorthair",
+      "label": "American Shorthair",
+      "wikipedia": "American Shorthair"
+    },
+    {
+      "id": "burmese",
+      "label": "Burmese",
+      "wikipedia": "Burmese cat"
+    },
+    {
+      "id": "siberian",
+      "label": "Siberian",
+      "wikipedia": "Siberian cat"
+    },
+    {
+      "id": "savannah",
+      "label": "Savannah",
+      "wikipedia": "Savannah cat"
+    },
+    {
+      "id": "turkish-angora",
+      "label": "Turkish Angora",
+      "wikipedia": "Turkish Angora"
+    },
+    {
+      "id": "turkish-van",
+      "label": "Turkish Van",
+      "wikipedia": "Turkish Van"
+    },
+    {
+      "id": "egyptian-mau",
+      "label": "Egyptian Mau",
+      "wikipedia": "Egyptian Mau"
+    },
+    {
+      "id": "manx",
+      "label": "Manx",
+      "wikipedia": "Manx cat"
+    },
+    {
+      "id": "himalayan",
+      "label": "Himalayan",
+      "wikipedia": "Himalayan cat"
+    },
+    {
+      "id": "tonkinese",
+      "label": "Tonkinese",
+      "wikipedia": "Tonkinese cat"
+    },
+    {
+      "id": "bombay",
+      "label": "Bombay",
+      "wikipedia": "Bombay cat"
+    },
+    {
+      "id": "chartreux",
+      "label": "Chartreux",
+      "wikipedia": "Chartreux"
+    },
+    {
+      "id": "japanese-bobtail",
+      "label": "Japanese Bobtail",
+      "wikipedia": "Japanese Bobtail"
+    },
+    {
+      "id": "somali",
+      "label": "Somali",
+      "wikipedia": "Somali cat"
+    },
+    {
+      "id": "american-curl",
+      "label": "American Curl",
+      "wikipedia": "American Curl"
+    },
+    {
+      "id": "munchkin",
+      "label": "Munchkin",
+      "wikipedia": "Munchkin cat"
+    }
+  ]
+}
