@@ -42,7 +42,12 @@ export async function resolvePackImage(
 }
 
 async function getJson(url: string, signal: AbortSignal | undefined, what: string) {
-  const res = await fetch(url, { headers: WIKIMEDIA_HEADERS, signal })
+  const res = await fetch(url, {
+    headers: WIKIMEDIA_HEADERS,
+    credentials: 'omit',
+    referrerPolicy: 'no-referrer',
+    signal,
+  })
   if (res.status === 404) throw new Error(`${what} not found`)
   if (!res.ok) throw new Error(`${what}: HTTP ${res.status}`)
   return (await res.json()) as unknown

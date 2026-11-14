@@ -74,7 +74,8 @@ describe('resolvePackImage', () => {
     })
     expect(fetch).toHaveBeenCalledWith(
       'https://en.wikipedia.org/api/rest_v1/page/summary/Rhode_Island_Red',
-      { headers: WIKIMEDIA_HEADERS, signal },
+      // No cookies and no referrer: Wikimedia learns nothing about the page.
+      { headers: WIKIMEDIA_HEADERS, credentials: 'omit', referrerPolicy: 'no-referrer', signal },
     )
   })
 
