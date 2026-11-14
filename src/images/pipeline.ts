@@ -138,16 +138,12 @@ export async function rasterize(source: CanvasImageSource, size: Size): Promise<
 }
 
 /**
- * Decodes with EXIF orientation applied. Animated GIFs/WebPs yield their first
- * frame only — fine for v1 tier cards.
+ * Full pipeline from encoded bytes; what the worker runs. Decoding applies
+ * EXIF orientation. Animated GIFs/WebPs yield their first frame only, which
+ * is fine for v1 tier cards.
  */
-export async function decodeBitmap(blob: Blob): Promise<ImageBitmap> {
-  return createImageBitmap(blob, { imageOrientation: 'from-image' })
-}
-
-/** Full pipeline from encoded bytes; what the worker runs. */
 export async function processBitmapBlob(blob: Blob): Promise<StoredImage> {
-  const bitmap = await decodeBitmap(blob)
+  const bitmap = await createImageBitmap(blob, { imageOrientation: 'from-image' })
   try {
     return await rasterize(bitmap, { width: bitmap.width, height: bitmap.height })
   } finally {

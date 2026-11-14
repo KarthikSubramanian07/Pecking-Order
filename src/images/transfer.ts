@@ -8,7 +8,7 @@ import { isImageishUrl, tryParseImageUrl } from './urls'
 
 export const MAX_TEXT_LINES = 200
 /** Sanity bound on a folder walk, so dropping a whole drive can't hang the tab. */
-export const MAX_WALKED_FILES = 5000
+const MAX_WALKED_FILES = 5000
 
 export interface TransferSnapshot {
   files: File[]
