@@ -1,0 +1,114 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "zelda-games",
+  "version": "1.0.0",
+  "title": "Zelda Games",
+  "description": "It's dangerous to go alone. Take a tier list.",
+  "category": "Games",
+  "accent": "Pasture",
+  "author": "Pecking Order",
+  "tiers": ["Triforce", "Master Sword", "Hookshot", "Empty Bottle", "Angry Cucco"],
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/en/thumb/2/21/The_Legend_of_Zelda_A_Link_to_the_Past_SNES_Game_Cover.jpg/330px-The_Legend_of_Zelda_A_Link_to_the_Past_SNES_Game_Cover.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/en/thumb/5/57/The_Legend_of_Zelda_Ocarina_of_Time.jpg/330px-The_Legend_of_Zelda_Ocarina_of_Time.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://upload.wikimedia.org/wikipedia/en/7/79/The_Legend_of_Zelda_The_Wind_Waker.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "https://upload.wikimedia.org/wikipedia/en/c/c6/The_Legend_of_Zelda_Breath_of_the_Wild.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+  ],
+  "items": [
+    {
+      "id": "the-legend-of-zelda",
+      "label": "The Legend of Zelda",
+      "wikipedia": "The Legend of Zelda (video game)"
+    },
+    {
+      "id": "the-adventure-of-link",
+      "label": "The Adventure of Link",
+      "wikipedia": "Zelda II: The Adventure of Link"
+    },
+    {
+      "id": "a-link-to-the-past",
+      "label": "A Link to the Past",
+      "wikipedia": "The Legend of Zelda: A Link to the Past"
+    },
+    {
+      "id": "links-awakening",
+      "label": "Link's Awakening",
+      "wikipedia": "The Legend of Zelda: Link's Awakening"
+    },
+    {
+      "id": "ocarina-of-time",
+      "label": "Ocarina of Time",
+      "wikipedia": "The Legend of Zelda: Ocarina of Time"
+    },
+    {
+      "id": "majoras-mask",
+      "label": "Majora's Mask",
+      "wikipedia": "The Legend of Zelda: Majora's Mask"
+    },
+    {
+      "id": "oracle-of-seasons-and-ages",
+      "label": "Oracle of Seasons and Oracle of Ages",
+      "wikipedia": "The Legend of Zelda: Oracle of Seasons and Oracle of Ages"
+    },
+    {
+      "id": "the-wind-waker",
+      "label": "The Wind Waker",
+      "wikipedia": "The Legend of Zelda: The Wind Waker"
+    },
+    {
+      "id": "four-swords-adventures",
+      "label": "Four Swords Adventures",
+      "wikipedia": "The Legend of Zelda: Four Swords Adventures"
+    },
+    {
+      "id": "the-minish-cap",
+      "label": "The Minish Cap",
+      "wikipedia": "The Legend of Zelda: The Minish Cap"
+    },
+    {
+      "id": "twilight-princess",
+      "label": "Twilight Princess",
+      "wikipedia": "The Legend of Zelda: Twilight Princess"
+    },
+    {
+      "id": "phantom-hourglass",
+      "label": "Phantom Hourglass",
+      "wikipedia": "The Legend of Zelda: Phantom Hourglass"
+    },
+    {
+      "id": "spirit-tracks",
+      "label": "Spirit Tracks",
+      "wikipedia": "The Legend of Zelda: Spirit Tracks"
+    },
+    {
+      "id": "skyward-sword",
+      "label": "Skyward Sword",
+      "wikipedia": "The Legend of Zelda: Skyward Sword"
+    },
+    {
+      "id": "a-link-between-worlds",
+      "label": "A Link Between Worlds",
+      "wikipedia": "The Legend of Zelda: A Link Between Worlds"
+    },
+    {
+      "id": "tri-force-heroes",
+      "label": "Tri Force Heroes",
+      "wikipedia": "The Legend of Zelda: Tri Force Heroes"
+    },
+    {
+      "id": "breath-of-the-wild",
+      "label": "Breath of the Wild",
+      "wikipedia": "The Legend of Zelda: Breath of the Wild"
+    },
+    {
+      "id": "tears-of-the-kingdom",
+      "label": "Tears of the Kingdom",
+      "wikipedia": "The Legend of Zelda: Tears of the Kingdom"
+    },
+    {
+      "id": "echoes-of-wisdom",
+      "label": "Echoes of Wisdom",
+      "wikipedia": "The Legend of Zelda: Echoes of Wisdom"
+    }
+  ]
+}

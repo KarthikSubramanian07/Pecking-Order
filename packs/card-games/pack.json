@@ -1,0 +1,149 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "card-games",
+  "version": "1.0.0",
+  "title": "Card Games",
+  "description": "Fifty-two cards and a lifetime of house rules.",
+  "category": "Games",
+  "accent": "Eucalyptus",
+  "author": "Pecking Order",
+  "tiers": ["Royal Flush", "Full House", "Two Pair", "High Card", "Fold"],
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Holdem.jpg/500px-Holdem.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/BlackJackGame.jpg/500px-BlackJackGame.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Bridge-Gro%C3%9Fschlemm.JPG/500px-Bridge-Gro%C3%9Fschlemm.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/GNOME_Aisleriot_Solitaire_%28cropped%29.png/500px-GNOME_Aisleriot_Solitaire_%28cropped%29.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  ],
+  "items": [
+    {
+      "id": "texas-hold-em",
+      "label": "Texas Hold 'em",
+      "wikipedia": "Texas hold 'em"
+    },
+    {
+      "id": "blackjack",
+      "label": "Blackjack",
+      "wikipedia": "Blackjack"
+    },
+    {
+      "id": "contract-bridge",
+      "label": "Bridge",
+      "wikipedia": "Contract bridge"
+    },
+    {
+      "id": "klondike",
+      "label": "Klondike Solitaire",
+      "wikipedia": "Klondike (solitaire)"
+    },
+    {
+      "id": "freecell",
+      "label": "FreeCell",
+      "wikipedia": "FreeCell"
+    },
+    {
+      "id": "spider-solitaire",
+      "label": "Spider Solitaire",
+      "wikipedia": "Spider (solitaire)"
+    },
+    {
+      "id": "gin-rummy",
+      "label": "Gin Rummy",
+      "wikipedia": "Gin rummy"
+    },
+    {
+      "id": "rummy",
+      "label": "Rummy",
+      "wikipedia": "Rummy"
+    },
+    {
+      "id": "canasta",
+      "label": "Canasta",
+      "wikipedia": "Canasta"
+    },
+    {
+      "id": "hearts",
+      "label": "Hearts",
+      "wikipedia": "Hearts (card game)"
+    },
+    {
+      "id": "spades",
+      "label": "Spades",
+      "wikipedia": "Spades (card game)"
+    },
+    {
+      "id": "euchre",
+      "label": "Euchre",
+      "wikipedia": "Euchre"
+    },
+    {
+      "id": "cribbage",
+      "label": "Cribbage",
+      "wikipedia": "Cribbage"
+    },
+    {
+      "id": "pinochle",
+      "label": "Pinochle",
+      "wikipedia": "Pinochle"
+    },
+    {
+      "id": "whist",
+      "label": "Whist",
+      "wikipedia": "Whist"
+    },
+    {
+      "id": "go-fish",
+      "label": "Go Fish",
+      "wikipedia": "Go Fish"
+    },
+    {
+      "id": "crazy-eights",
+      "label": "Crazy Eights",
+      "wikipedia": "Crazy Eights"
+    },
+    {
+      "id": "war",
+      "label": "War",
+      "wikipedia": "War (card game)"
+    },
+    {
+      "id": "old-maid",
+      "label": "Old Maid",
+      "wikipedia": "Old maid (card game)"
+    },
+    {
+      "id": "snap",
+      "label": "Snap",
+      "wikipedia": "Snap (card game)"
+    },
+    {
+      "id": "egyptian-ratscrew",
+      "label": "Egyptian Ratscrew",
+      "wikipedia": "Egyptian Ratscrew"
+    },
+    {
+      "id": "speed",
+      "label": "Speed",
+      "wikipedia": "Speed (card game)"
+    },
+    {
+      "id": "cheat",
+      "label": "Cheat",
+      "wikipedia": "Cheat (game)"
+    },
+    {
+      "id": "president",
+      "label": "President",
+      "wikipedia": "President (card game)"
+    },
+    {
+      "id": "uno",
+      "label": "Uno",
+      "wikipedia": "Uno (card game)"
+    },
+    {
+      "id": "durak",
+      "label": "Durak",
+      "wikipedia": "Durak"
+    }
+  ]
+}

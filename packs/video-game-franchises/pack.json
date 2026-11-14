@@ -1,0 +1,208 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "video-game-franchises",
+  "version": "1.0.0",
+  "title": "Video Game Franchises",
+  "description": "Decades of lost weekends, ranked by the people who lost them.",
+  "category": "Games",
+  "accent": "Duck Egg",
+  "author": "Pecking Order",
+  "cover": [
+    "https://upload.wikimedia.org/wikipedia/en/5/5c/Mario_by_Shigehisa_Nakaue.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "https://upload.wikimedia.org/wikipedia/en/9/9d/Link_%28Hyrule_Historia%29.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "https://upload.wikimedia.org/wikipedia/en/a/a6/Pok%C3%A9mon_Pikachu_art.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "https://upload.wikimedia.org/wikipedia/en/4/4a/Tetris_Boxshot.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+  ],
+  "items": [
+    {
+      "id": "super-mario",
+      "label": "Super Mario",
+      "wikipedia": "Mario"
+    },
+    {
+      "id": "the-legend-of-zelda",
+      "label": "The Legend of Zelda",
+      "wikipedia": "Link (The Legend of Zelda)"
+    },
+    {
+      "id": "pokemon",
+      "label": "Pokémon",
+      "wikipedia": "Pikachu"
+    },
+    {
+      "id": "tetris",
+      "label": "Tetris",
+      "wikipedia": "Tetris (Game Boy video game)"
+    },
+    {
+      "id": "sonic-the-hedgehog",
+      "label": "Sonic the Hedgehog",
+      "wikipedia": "Sonic the Hedgehog (character)"
+    },
+    {
+      "id": "pac-man",
+      "label": "Pac-Man",
+      "wikipedia": "Pac-Man (character)"
+    },
+    {
+      "id": "minecraft",
+      "label": "Minecraft",
+      "wikipedia": "Steve (Minecraft)"
+    },
+    {
+      "id": "halo",
+      "label": "Halo",
+      "wikipedia": "Master Chief (Halo)"
+    },
+    {
+      "id": "final-fantasy",
+      "label": "Final Fantasy",
+      "wikipedia": "Final Fantasy VII"
+    },
+    {
+      "id": "street-fighter",
+      "label": "Street Fighter",
+      "wikipedia": "Ryu (Street Fighter)"
+    },
+    {
+      "id": "metroid",
+      "label": "Metroid",
+      "wikipedia": "Samus Aran"
+    },
+    {
+      "id": "kirby",
+      "label": "Kirby",
+      "wikipedia": "Kirby (character)"
+    },
+    {
+      "id": "donkey-kong",
+      "label": "Donkey Kong",
+      "wikipedia": "Donkey Kong (character)"
+    },
+    {
+      "id": "mario-kart",
+      "label": "Mario Kart",
+      "wikipedia": "Mario Kart 8"
+    },
+    {
+      "id": "super-smash-bros",
+      "label": "Super Smash Bros.",
+      "wikipedia": "Super Smash Bros. Ultimate"
+    },
+    {
+      "id": "animal-crossing",
+      "label": "Animal Crossing",
+      "wikipedia": "Isabelle (Animal Crossing)"
+    },
+    {
+      "id": "the-sims",
+      "label": "The Sims",
+      "wikipedia": "The Sims"
+    },
+    {
+      "id": "tomb-raider",
+      "label": "Tomb Raider",
+      "wikipedia": "Lara Croft"
+    },
+    {
+      "id": "dragon-quest",
+      "label": "Dragon Quest",
+      "wikipedia": "Slime (Dragon Quest)"
+    },
+    {
+      "id": "kingdom-hearts",
+      "label": "Kingdom Hearts",
+      "wikipedia": "Sora (Kingdom Hearts)"
+    },
+    {
+      "id": "crash-bandicoot",
+      "label": "Crash Bandicoot",
+      "wikipedia": "Crash Bandicoot (character)"
+    },
+    {
+      "id": "spyro",
+      "label": "Spyro",
+      "wikipedia": "Spyro (character)"
+    },
+    {
+      "id": "mega-man",
+      "label": "Mega Man",
+      "wikipedia": "Mega Man (character)"
+    },
+    {
+      "id": "tekken",
+      "label": "Tekken",
+      "wikipedia": "Tekken (video game)"
+    },
+    {
+      "id": "fifa",
+      "label": "FIFA",
+      "wikipedia": "FIFA (video game series)"
+    },
+    {
+      "id": "need-for-speed",
+      "label": "Need for Speed",
+      "wikipedia": "Need for Speed: Most Wanted (2005 video game)"
+    },
+    {
+      "id": "gran-turismo",
+      "label": "Gran Turismo",
+      "wikipedia": "Gran Turismo 7"
+    },
+    {
+      "id": "civilization",
+      "label": "Civilization",
+      "wikipedia": "Civilization (video game)"
+    },
+    {
+      "id": "fire-emblem",
+      "label": "Fire Emblem",
+      "wikipedia": "Fire Emblem: Three Houses"
+    },
+    {
+      "id": "monster-hunter",
+      "label": "Monster Hunter",
+      "wikipedia": "Monster Hunter: World"
+    },
+    {
+      "id": "splatoon",
+      "label": "Splatoon",
+      "wikipedia": "Splatoon 3"
+    },
+    {
+      "id": "warcraft",
+      "label": "Warcraft",
+      "wikipedia": "World of Warcraft"
+    },
+    {
+      "id": "guitar-hero",
+      "label": "Guitar Hero",
+      "wikipedia": "Guitar Hero (video game)"
+    },
+    {
+      "id": "angry-birds",
+      "label": "Angry Birds",
+      "wikipedia": "Angry Birds (video game)"
+    },
+    {
+      "id": "space-invaders",
+      "label": "Space Invaders",
+      "wikipedia": "Space Invaders"
+    },
+    {
+      "id": "portal",
+      "label": "Portal",
+      "wikipedia": "Portal (video game)"
+    },
+    {
+      "id": "pikmin",
+      "label": "Pikmin",
+      "wikipedia": "Pikmin (video game)"
+    },
+    {
+      "id": "assassins-creed",
+      "label": "Assassin's Creed",
+      "wikipedia": "Assassin's Creed"
+    }
+  ]
+}
