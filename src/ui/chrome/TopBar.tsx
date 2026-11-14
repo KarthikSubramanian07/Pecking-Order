@@ -40,6 +40,10 @@ export function TopBar() {
 
   useEffect(() => setDraft(title), [title])
 
+  useEffect(() => {
+    if (title) document.title = `${title} · Pecking Order`
+  }, [title])
+
   const commit = () => {
     if (draft.trim() !== title) boardActions().apply((b) => opSetTitle(b, draft))
     else setDraft(title)
