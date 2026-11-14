@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/KarthikSubramanian07/Pecking-Order/blob/main/packs/pack.schema.json",
+  "title": "Pecking Order category pack",
+  "description": "A ready-made topic for Pecking Order. Lives at packs/<id>/pack.json. Validated by `npm run packs:validate` (scripts/pack-validate.mjs is the source of truth).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "version", "title", "description", "category", "author", "items"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "id": {
+      "description": "Kebab-case id. Must equal the folder name. Never change it once published.",
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "maxLength": 64
+    },
+    "version": {
+      "description": "Semantic version. Bump the minor for new items, the patch for fixes.",
+      "type": "string",
+      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$"
+    },
+    "title": {
+      "$ref": "#/$defs/text",
+      "maxLength": 60,
+      "description": "Shown on the catalog card and used as the board title."
+    },
+    "description": {
+      "$ref": "#/$defs/text",
+      "maxLength": 140,
+      "description": "One dry, witty line."
+    },
+    "author": { "$ref": "#/$defs/text", "maxLength": 80, "description": "Your name or handle." },
+    "category": {
+      "description": "Catalog shelf. Add a new one in scripts/pack-validate.mjs in the same PR if none fit.",
+      "enum": [
+        "Animals",
+        "Food & Drink",
+        "Film & TV",
+        "Games",
+        "Music",
+        "Places",
+        "Science & Nature",
+        "Sports",
+        "Tech",
+        "Miscellaneous"
+      ]
+    },
+    "accent": {
+      "description": "Palette swatch used to tint the catalog card (see src/core/palette.ts).",
+      "enum": [
+        "Comb",
+        "Yolk",
+        "Corn",
+        "Pasture",
+        "Eucalyptus",
+        "Duck Egg",
+        "Heather",
+        "Speckle",
+        "Rhubarb",
+        "Oat"
+      ]
+    },
+    "tiers": {
+      "description": "Custom tier labels, top to bottom. Omit for the classic S, A, B, C, D, F.",
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 20,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/text", "maxLength": 32 }
+    },
+    "items": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 150,
+      "items": { "$ref": "#/$defs/item" }
+    }
+  },
+  "$defs": {
+    "text": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^\\S(?:.*\\S)?$"
+    },
+    "item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "label"],
+      "properties": {
+        "id": {
+          "description": "Kebab-case id, unique within the pack. Never change it once published.",
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "maxLength": 64
+        },
+        "label": {
+          "$ref": "#/$defs/text",
+          "maxLength": 80,
+          "description": "Shown on the tile. Unique within the pack."
+        },
+        "wikipedia": {
+          "description": "English Wikipedia article title. The app uses the article's lead image.",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 255,
+          "pattern": "^(?!https?:)[^#<>\\[\\]{}|]+$"
+        },
+        "commons": {
+          "description": "Wikimedia Commons file, e.g. \"File:Pizza.jpg\". Preferred for free licences.",
+          "type": "string",
+          "pattern": "^File:[^#<>\\[\\]|{}/]+\\.(?:[jJ][pP][eE]?[gG]|[pP][nN][gG]|[gG][iI][fF]|[sS][vV][gG]|[wW][eE][bB][pP]|[tT][iI][fF][fF]?)$"
+        },
+        "image": {
+          "description": "Direct https image URL on an allow-listed host (see CONTRIBUTING-PACKS.md).",
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://(upload\\.wikimedia\\.org|thumb\\.wikimedia\\.org|raw\\.githubusercontent\\.com|covers\\.openlibrary\\.org|www\\.themealdb\\.com|static\\.tvmaze\\.com)/"
+        },
+        "tags": {
+          "type": "array",
+          "maxItems": 10,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$", "maxLength": 32 }
+        }
+      },
+      "not": {
+        "anyOf": [
+          { "required": ["wikipedia", "commons"] },
+          { "required": ["wikipedia", "image"] },
+          { "required": ["commons", "image"] }
+        ]
+      }
+    }
+  }
+}

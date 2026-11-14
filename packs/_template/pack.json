@@ -1,0 +1,20 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "my-pack",
+  "version": "1.0.0",
+  "title": "My Pack",
+  "description": "One dry line about the topic. Understated beats exclamation marks.",
+  "category": "Miscellaneous",
+  "accent": "Yolk",
+  "author": "Your Name",
+  "tiers": ["Delightful", "Good", "Fine", "Hmm", "No"],
+  "items": [
+    {
+      "id": "from-wikipedia",
+      "label": "Uses an article's lead image",
+      "wikipedia": "Rhode Island Red"
+    },
+    { "id": "from-commons", "label": "Uses a Commons file", "commons": "File:Pizza.jpg" },
+    { "id": "text-only", "label": "No image, just words" }
+  ]
+}

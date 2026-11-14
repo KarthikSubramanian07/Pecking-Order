@@ -9,12 +9,15 @@
     "node": ">=22.12"
   },
   "scripts": {
+    "predev": "npm run packs:build",
     "dev": "vite",
     "build": "npm run packs:build && tsc --noEmit && vite build",
     "preview": "vite preview",
+    "pretypecheck": "npm run packs:build",
     "typecheck": "tsc --noEmit",
     "lint": "biome check .",
     "lint:fix": "biome check --write .",
+    "pretest": "npm run packs:build",
     "test": "vitest run",
     "test:watch": "vitest",
     "e2e": "playwright test",
