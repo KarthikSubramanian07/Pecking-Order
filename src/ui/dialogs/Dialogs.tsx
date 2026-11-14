@@ -8,6 +8,7 @@ import { ShortcutsDialog } from './ShortcutsDialog'
 // Heavier dialogs load on demand to keep first paint lean.
 const SearchDialog = lazy(() => import('./SearchDialog'))
 const ExportDialog = lazy(() => import('./ExportDialog'))
+const PeckOffDialog = lazy(() => import('./PeckOffDialog'))
 
 export function Dialogs() {
   const dialog = useUiStore((s) => s.dialog)
@@ -21,6 +22,7 @@ export function Dialogs() {
       <Suspense fallback={null}>
         {dialog === 'search' && <SearchDialog open onClose={close} />}
         {dialog === 'export' && <ExportDialog open onClose={close} />}
+        {dialog === 'peckoff' && <PeckOffDialog open onClose={close} />}
       </Suspense>
     </>
   )

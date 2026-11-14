@@ -71,7 +71,7 @@ export function ItemDialog({ open, onClose }: { open: boolean; onClose: () => vo
           <ItemTile item={{ ...item, label }} showLabel={false} />
         </div>
         <label className={styles.field}>
-          <span className="mono">Label</span>
+          <span className="label">Label</span>
           <input
             className={styles.input}
             value={label}

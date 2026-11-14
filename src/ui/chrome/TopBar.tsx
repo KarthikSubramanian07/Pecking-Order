@@ -184,19 +184,17 @@ export function TopBar() {
         >
           <path d="M2 8c40-5 90-6 140-3s100 2 156-3" />
         </svg>
-        <p className={`mono ${styles.meta}`}>
+        <p className={`aside ${styles.meta}`}>
           <span>
-            {total} {total === 1 ? 'item' : 'items'}
+            {total} {total === 1 ? 'item' : 'items'}, {total - unranked} ranked
           </span>
-          <span aria-hidden>·</span>
-          <span>{total - unranked} ranked</span>
-          <span aria-hidden>·</span>
+          <span aria-hidden>—</span>
           <span className={styles.save} data-status={saveStatus} aria-live="polite">
             {saveStatus === 'saving'
-              ? 'Saving…'
+              ? 'saving…'
               : saveStatus === 'error'
-                ? 'Not saved — storage full?'
-                : 'Saved on this device'}
+                ? 'not saved — storage may be full'
+                : 'saved on this device'}
           </span>
         </p>
       </div>

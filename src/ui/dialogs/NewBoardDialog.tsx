@@ -69,7 +69,7 @@ export function NewBoardDialog({ open, onClose }: { open: boolean; onClose: () =
         }}
       >
         <label className={styles.field}>
-          <span className="mono">Title</span>
+          <span className="label">Title</span>
           <input
             className={styles.input}
             data-size="lg"
@@ -80,7 +80,7 @@ export function NewBoardDialog({ open, onClose }: { open: boolean; onClose: () =
           />
         </label>
         <fieldset className={styles.presets}>
-          <legend className="mono">Tiers</legend>
+          <legend className="label">Tiers</legend>
           {TIER_PRESETS.map((p) => (
             <label key={p.id} className={styles.preset}>
               <input
@@ -114,7 +114,7 @@ export function NewBoardDialog({ open, onClose }: { open: boolean; onClose: () =
           </h3>
           {categories.map((cat) => (
             <div key={cat} className={styles.packGroup}>
-              <p className="mono">{cat}</p>
+              <p className="label">{cat}</p>
               <ul className={styles.packGrid}>
                 {packs
                   .filter((p) => p.category === cat)

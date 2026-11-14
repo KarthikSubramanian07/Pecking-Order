@@ -141,7 +141,7 @@ export default function ExportDialog({ open, onClose }: { open: boolean; onClose
         </div>
         <div className={styles.exportOptions}>
           <fieldset className={styles.segmented}>
-            <legend className="mono">Size</legend>
+            <legend className="label">Size</legend>
             {FORMATS.map((f) => (
               <label key={f.id}>
                 <input
@@ -157,7 +157,7 @@ export default function ExportDialog({ open, onClose }: { open: boolean; onClose
             ))}
           </fieldset>
           <fieldset className={styles.segmented} data-cols="2">
-            <legend className="mono">Theme</legend>
+            <legend className="label">Theme</legend>
             {(['light', 'dark'] as const).map((t) => (
               <label key={t}>
                 <input
@@ -172,7 +172,7 @@ export default function ExportDialog({ open, onClose }: { open: boolean; onClose
             ))}
           </fieldset>
           <label className={styles.field}>
-            <span className="mono">Byline (optional)</span>
+            <span className="label">Byline (optional)</span>
             <input
               className={styles.input}
               placeholder="ranked by @you"

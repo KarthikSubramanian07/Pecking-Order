@@ -1,4 +1,11 @@
-import { ArrowsDownUp, ImageSquare, MagnifyingGlass, Plus, Shuffle } from '@phosphor-icons/react'
+import {
+  ArrowsDownUp,
+  ImageSquare,
+  MagnifyingGlass,
+  Plus,
+  Scales,
+  Shuffle,
+} from '@phosphor-icons/react'
 import { useMemo, useRef, useState } from 'react'
 import { opShuffleCoop, opSortContainer } from '@/core/board'
 import { COOP, type ItemId } from '@/core/types'
@@ -52,7 +59,7 @@ export function Coop({ items }: { items: ItemId[] }) {
           <h2 id="coop-title" className={styles.title}>
             The Coop
           </h2>
-          <span className="mono">
+          <span className="aside">
             {items.length} unranked{total > 0 ? ` · ${total - items.length} ranked` : ''}
           </span>
         </div>
@@ -72,6 +79,16 @@ export function Coop({ items }: { items: ItemId[] }) {
           )}
           {items.length > 1 && (
             <>
+              <button
+                type="button"
+                className={btn.button}
+                data-size="sm"
+                data-variant="accent"
+                onClick={() => open('peckoff')}
+                title="Rank by head-to-head picks"
+              >
+                <Scales size={16} aria-hidden /> Peck-off
+              </button>
               <button
                 type="button"
                 className={btn.icon}
