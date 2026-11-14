@@ -23,16 +23,22 @@ export function Coop({ items, dragging }: { items: ItemId[]; dragging: boolean }
   const quickAdd = useRef<HTMLTextAreaElement>(null)
   const dock = useRef<HTMLElement>(null)
 
-  // Publish the dock height so toasts can float just above it.
+  // Publish the dock height so toasts can float just above it. On short screens
+  // the dock stops sticking and covers nothing, so it publishes zero.
   useEffect(() => {
     const el = dock.current
     if (!el) return
-    const ro = new ResizeObserver(([entry]) => {
-      const h = entry?.borderBoxSize[0]?.blockSize ?? el.offsetHeight
-      document.documentElement.style.setProperty('--coop-height', `${Math.round(h)}px`)
-    })
+    const publish = () => {
+      const h = getComputedStyle(el).position === 'sticky' ? el.offsetHeight : 0
+      document.documentElement.style.setProperty('--coop-height', `${h}px`)
+    }
+    const ro = new ResizeObserver(publish)
     ro.observe(el)
-    return () => ro.disconnect()
+    window.addEventListener('resize', publish)
+    return () => {
+      ro.disconnect()
+      window.removeEventListener('resize', publish)
+    }
   }, [])
 
   const visible = useMemo(() => {
@@ -205,10 +211,11 @@ export function Coop({ items, dragging }: { items: ItemId[]; dragging: boolean }
           or
         </span>
         <button type="button" className={btn.button} data-size="sm" onClick={() => void upload()}>
-          <ImageSquare size={16} aria-hidden /> Upload
+          <ImageSquare size={16} aria-hidden /> <span className={styles.buttonText}>Upload</span>
         </button>
         <button type="button" className={btn.button} data-size="sm" onClick={() => open('search')}>
-          <MagnifyingGlass size={16} aria-hidden /> Search
+          <MagnifyingGlass size={16} aria-hidden />{' '}
+          <span className={styles.buttonText}>Search</span>
         </button>
       </form>
     </section>

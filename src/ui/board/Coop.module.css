@@ -35,6 +35,8 @@
 }
 .tools {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   align-items: center;
   gap: var(--s-1);
 }
@@ -57,7 +59,8 @@
   outline-offset: 2px;
 }
 .filter input {
-  width: 120px;
+  width: 100px;
+  min-width: 0;
   border: 0;
   background: transparent;
   outline: none;
@@ -113,10 +116,30 @@
   font-size: var(--text-sm);
 }
 
+/* Narrow screens keep Upload and Search, as icons, so nothing is lost on reflow. */
 @media (max-width: 640px) {
-  .or,
-  .quick > button:not([type="submit"]) {
+  .or {
     display: none;
+  }
+  .quick > button:not([type="submit"]) {
+    width: 32px;
+    padding: 0;
+  }
+  .quick > button:not([type="submit"]) .buttonText {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+}
+
+/* On short screens (landscape phones, 200% zoom) a docked Coop would hide most
+   of the board, so it joins the page flow instead. */
+@media (max-height: 500px) {
+  .coop {
+    position: static;
   }
 }
 

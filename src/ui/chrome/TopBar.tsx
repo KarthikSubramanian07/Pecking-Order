@@ -153,7 +153,7 @@ export function TopBar() {
             onClick={() => open('export')}
           >
             <Export size={18} weight="bold" aria-hidden />
-            Export
+            <span className={styles.hideXs}>Export</span>
           </button>
         </nav>
       </div>

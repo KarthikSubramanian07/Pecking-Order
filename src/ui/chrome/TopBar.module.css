@@ -3,6 +3,7 @@
 }
 .top {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: var(--s-3);
@@ -106,6 +107,18 @@
   }
   70% {
     transform: rotate(5deg);
+  }
+}
+@media (max-width: 440px) {
+  .hideXs {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+  .divider {
+    display: none;
   }
 }
 @media (max-width: 720px) {

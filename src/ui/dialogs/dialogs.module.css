@@ -555,8 +555,10 @@
   .exportGrid {
     grid-template-columns: 1fr;
   }
-  .previewPane,
-  .previewPane img {
+  .previewPane {
     max-height: 42vh;
+  }
+  .previewPane img {
+    max-height: calc(42vh - 24px);
   }
 }
