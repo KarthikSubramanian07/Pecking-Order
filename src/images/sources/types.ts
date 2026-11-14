@@ -12,7 +12,7 @@ export interface ImageSearchResult {
   credit: ImageCredit
 }
 
-export interface SearchOptions {
+interface SearchOptions {
   signal?: AbortSignal
   page?: number
 }

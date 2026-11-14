@@ -30,7 +30,7 @@ export function swatchAt(index: number): string {
 }
 
 /** Relative luminance per WCAG 2.x. */
-export function luminance(hex: string): number {
+function luminance(hex: string): number {
   const n = parseHex(hex)
   if (!n) return 0
   const [r, g, b] = n.map((c) => {
@@ -56,8 +56,4 @@ export function parseHex(hex: string): [number, number, number] | null {
   const h = m[1].length === 3 ? [...m[1]].map((c) => c + c).join('') : m[1]
   const v = Number.parseInt(h, 16)
   return [(v >> 16) & 255, (v >> 8) & 255, v & 255]
-}
-
-export function isHexColor(value: string): boolean {
-  return parseHex(value) !== null
 }

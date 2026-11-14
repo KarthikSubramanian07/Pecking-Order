@@ -8,7 +8,7 @@ export interface History<T> {
   future: T[]
 }
 
-export const HISTORY_LIMIT = 100
+const HISTORY_LIMIT = 100
 
 export const emptyHistory = <T>(): History<T> => ({ past: [], future: [] })
 

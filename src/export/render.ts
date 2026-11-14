@@ -24,7 +24,7 @@ import type { Measure } from './text'
 import { type ExportPalette, font, mixHex, PALETTES } from './theme'
 
 export type ExportFormat = 'auto' | 'wide' | 'portrait' | 'story'
-export type ExportTheme = 'light' | 'dark'
+type ExportTheme = 'light' | 'dark'
 
 export interface ExportOptions {
   format: ExportFormat

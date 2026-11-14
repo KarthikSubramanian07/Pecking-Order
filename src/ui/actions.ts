@@ -109,7 +109,7 @@ export function reportIngest(result: IngestResult): void {
 }
 
 /** Visual order of every item, used for arrow-key navigation between tiles. */
-export function itemsInOrder(): ItemId[] {
+function itemsInOrder(): ItemId[] {
   const board = boardActions().board
   if (!board) return []
   return containerOrder(board).flatMap((cid) => board.placement[cid] ?? [])
