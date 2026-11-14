@@ -118,14 +118,18 @@ test.describe('keyboard only', () => {
     await openBoard(page)
     await addItems(page, ['Apple', 'Banana', 'Cherry'])
 
-    // Shift+Tab from the quick-add field reaches the last tile in the Coop.
-    await page.keyboard.press('Shift+Tab')
-    await expectFocused(tile(page, 'Cherry'))
+    // Tab from the quick-add field passes Upload and Search, then reaches the
+    // first tile in the Coop. (The add button is disabled while the field is empty.)
+    await page.keyboard.press('Tab')
+    await expect(page.getByRole('button', { name: 'Upload', exact: true })).toBeFocused()
+    await page.keyboard.press('Tab')
+    await page.keyboard.press('Tab')
+    await expectFocused(tile(page, 'Apple'))
 
     // A number key sends the focused item to that tier, and focus follows it.
     await page.keyboard.press('1')
-    await expect(tier(page, 'S').locator('[data-item-id]')).toHaveText(['Cherry'])
-    await expectFocused(tile(page, 'Cherry'))
+    await expect(tier(page, 'S').locator('[data-item-id]')).toHaveText(['Apple'])
+    await expectFocused(tile(page, 'Apple'))
 
     // Keyboard drag: Space picks up, arrows move between rows, Space drops.
     await tile(page, 'Banana').focus()
@@ -163,9 +167,9 @@ test.describe('keyboard only', () => {
     await expectFocused(exportButton)
 
     // Deleting the focused item moves focus to its neighbour, not to <body>.
-    await tile(page, 'Apple').focus()
+    await tile(page, 'Cherry').focus()
     await page.keyboard.press('Delete')
-    await expect(tile(page, 'Apple')).toHaveCount(0)
+    await expect(tile(page, 'Cherry')).toHaveCount(0)
     await expectFocused(tile(page, 'Banana'))
   })
 

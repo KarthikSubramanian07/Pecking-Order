@@ -296,25 +296,29 @@ export function Board() {
       onDragEnd={onDragEnd}
       onDragCancel={onDragCancel}
     >
-      {Object.keys(board.items).length === 0 && <Welcome />}
-      <div className={styles.tiers} data-dragging={activeId ? true : undefined}>
-        <AnimatePresence initial={false}>
-          {board.tiers.map((tier, i) => (
-            <m.div
-              key={tier.id}
-              // Rows glide when reordered, but never while dnd-kit is measuring a drag.
-              layout={activeId || reducedMotion ? false : 'position'}
-              initial={reducedMotion ? false : { opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={reducedMotion ? { opacity: 0 } : { opacity: 0, height: 0, scale: 0.98 }}
-              transition={{ type: 'spring', stiffness: 520, damping: 40, mass: 0.9 }}
-            >
-              <TierRow tier={tier} index={i} count={board.tiers.length} />
-            </m.div>
-          ))}
-        </AnimatePresence>
+      <div className={styles.workspace}>
+        <div className={styles.rank}>
+          {Object.keys(board.items).length === 0 && <Welcome />}
+          <div className={styles.tiers} data-dragging={activeId ? true : undefined}>
+            <AnimatePresence initial={false}>
+              {board.tiers.map((tier, i) => (
+                <m.div
+                  key={tier.id}
+                  // Rows glide when reordered, but never while dnd-kit is measuring a drag.
+                  layout={activeId || reducedMotion ? false : 'position'}
+                  initial={reducedMotion ? false : { opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={reducedMotion ? { opacity: 0 } : { opacity: 0, height: 0, scale: 0.98 }}
+                  transition={{ type: 'spring', stiffness: 520, damping: 40, mass: 0.9 }}
+                >
+                  <TierRow tier={tier} index={i} count={board.tiers.length} />
+                </m.div>
+              ))}
+            </AnimatePresence>
+          </div>
+        </div>
+        <Coop items={board.placement[COOP] ?? []} dragging={activeId !== null} />
       </div>
-      <Coop items={board.placement[COOP] ?? []} dragging={activeId !== null} />
       <DragOverlay dropAnimation={dropAnimation}>
         {activeItem ? (
           <DragGhost item={activeItem} dragX={dragX} reducedMotion={reducedMotion} />

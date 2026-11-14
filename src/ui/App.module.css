@@ -3,6 +3,10 @@
   margin: 0 auto;
   padding: 0 var(--s-5);
 }
+/* Boards get more room: the Coop sits beside the tiers on wide screens. */
+.app[data-wide] {
+  width: min(1520px, 100%);
+}
 .main {
   outline: none;
 }

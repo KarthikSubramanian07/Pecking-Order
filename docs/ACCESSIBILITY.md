@@ -12,7 +12,7 @@ The audit ran in Chromium (Playwright) against a production build, in the light 
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Automated rules | axe-core with the `wcag2a`, `wcag2aa`, `wcag21a`, `wcag21aa` and `wcag22aa` tags on the home page (template gallery, category filters, your boards), the empty board, a populated board, a tap-to-place selection, toasts, the tier settings popover, the settings menu, every dialog and a Peck-off in progress. No serious or critical violations. |
 | Colour contrast | Every token pair measured in the browser, including tier washes for all ten swatches. Text is at least 4.5:1. Field boundaries, focus rings, the selection ring and the dashed egg outlines are at least 3:1.                                                                                                                                        |
-| Keyboard        | Tab order, visible focus, focus that is never hidden behind the docked Coop, keyboard dragging between rows, number-key moves, undo, Escape on every dialog and popover, arrow keys in menus and tabs.                                                                                                                                               |
+| Keyboard        | Tab order, visible focus, focus that is never hidden behind the Coop, keyboard dragging between rows, number-key moves, undo, Escape on every dialog and popover, arrow keys in menus and tabs.                                                                                                                                                      |
 | Pointer         | Every target is at least 24 by 24 pixels (inline links in sentences excepted). Dragging always has a single-pointer alternative: tap an item, then tap **Place here**.                                                                                                                                                                               |
 | Reflow and zoom | No horizontal scrolling at 320 pixels. At 200% zoom on a laptop, and in landscape on a phone, the Coop joins the page flow instead of covering the board. Text spacing overrides (WCAG 1.4.12) do not clip controls.                                                                                                                                 |
 | Motion          | With `prefers-reduced-motion`, the hatch, peck, row and tilt animations are off and the drag drops without animating. Nothing flashes.                                                                                                                                                                                                               |
@@ -22,23 +22,23 @@ The automated part of this lives in [`e2e/app-a11y.spec.ts`](../e2e/app-a11y.spe
 
 ## Keyboard map
 
-| Keys                                                               | What they do                                                                                                        |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------- |
-| <kbd>Tab</kbd>, <kbd>Shift</kbd>+<kbd>Tab</kbd>                    | Move between controls. The first stop is a "Skip to board" link.                                                    |
-| <kbd>Space</kbd> or <kbd>Enter</kbd> on an item                    | Pick it up. Press again to drop it. While you carry it, the Coop leaves the bottom dock so every tier is reachable. |
-| <kbd>↑</kbd> <kbd>↓</kbd> while carrying                           | Move to the row above or below (tiers, then the Coop).                                                              |
-| <kbd>←</kbd> <kbd>→</kbd> while carrying                           | Move along the row.                                                                                                 |
-| <kbd>Esc</kbd> while carrying                                      | Put it back where it was.                                                                                           |
-| <kbd>1</kbd> to <kbd>9</kbd> on an item                            | Send it to that tier, top to bottom. Focus stays on the item.                                                       |
-| <kbd>0</kbd> on an item                                            | Send it back to the Coop.                                                                                           |
-| <kbd>E</kbd> or <kbd>F2</kbd> on an item                           | Edit its label.                                                                                                     |
-| <kbd>Delete</kbd> or <kbd>Backspace</kbd> on an item               | Remove it. Focus moves to the next item.                                                                            |
-| <kbd>Ctrl</kbd>+<kbd>Z</kbd> (<kbd>⌘</kbd>+<kbd>Z</kbd> on a Mac)  | Undo. Add <kbd>Shift</kbd> to redo.                                                                                 |
-| <kbd>Enter</kbd> in the quick-add field                            | Add the typed item. Pasting several lines adds one item per line.                                                   |
-| <kbd>?</kbd>                                                       | Show the shortcuts.                                                                                                 |
-| <kbd>Esc</kbd> in a dialog, menu or popover                        | Close it and return focus to the control that opened it.                                                            |
-| <kbd>↑</kbd> <kbd>↓</kbd> <kbd>Home</kbd> <kbd>End</kbd> in a menu | Move between items.                                                                                                 |
-| <kbd>←</kbd> <kbd>→</kbd> in Peck-off                              | Pick the left or right item. <kbd>↓</kbd> or <kbd>=</kbd> for "can't decide", <kbd>Backspace</kbd> to undo a pick.  |
+| Keys                                                               | What they do                                                                                                                          |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
+| <kbd>Tab</kbd>, <kbd>Shift</kbd>+<kbd>Tab</kbd>                    | Move between controls. The first stop is a "Skip to board" link.                                                                      |
+| <kbd>Space</kbd> or <kbd>Enter</kbd> on an item                    | Pick it up. Press again to drop it. On narrow screens the Coop leaves the bottom dock while you carry it, so every tier is reachable. |
+| <kbd>↑</kbd> <kbd>↓</kbd> while carrying                           | Move to the row above or below (tiers, then the Coop).                                                                                |
+| <kbd>←</kbd> <kbd>→</kbd> while carrying                           | Move along the row.                                                                                                                   |
+| <kbd>Esc</kbd> while carrying                                      | Put it back where it was.                                                                                                             |
+| <kbd>1</kbd> to <kbd>9</kbd> on an item                            | Send it to that tier, top to bottom. Focus stays on the item.                                                                         |
+| <kbd>0</kbd> on an item                                            | Send it back to the Coop.                                                                                                             |
+| <kbd>E</kbd> or <kbd>F2</kbd> on an item                           | Edit its label.                                                                                                                       |
+| <kbd>Delete</kbd> or <kbd>Backspace</kbd> on an item               | Remove it. Focus moves to the next item.                                                                                              |
+| <kbd>Ctrl</kbd>+<kbd>Z</kbd> (<kbd>⌘</kbd>+<kbd>Z</kbd> on a Mac)  | Undo. Add <kbd>Shift</kbd> to redo.                                                                                                   |
+| <kbd>Enter</kbd> in the quick-add field                            | Add the typed item. Pasting several lines adds one item per line.                                                                     |
+| <kbd>?</kbd>                                                       | Show the shortcuts.                                                                                                                   |
+| <kbd>Esc</kbd> in a dialog, menu or popover                        | Close it and return focus to the control that opened it.                                                                              |
+| <kbd>↑</kbd> <kbd>↓</kbd> <kbd>Home</kbd> <kbd>End</kbd> in a menu | Move between items.                                                                                                                   |
+| <kbd>←</kbd> <kbd>→</kbd> in Peck-off                              | Pick the left or right item. <kbd>↓</kbd> or <kbd>=</kbd> for "can't decide", <kbd>Backspace</kbd> to undo a pick.                    |
 
 ## Announcements
 

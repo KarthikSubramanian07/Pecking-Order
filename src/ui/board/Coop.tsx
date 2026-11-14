@@ -3,7 +3,16 @@ import { opShuffleCoop, opSortContainer } from '@/core/board'
 import { COOP, type ItemId } from '@/core/types'
 import { boardActions, useBoardStore } from '@/state/boardStore'
 import { useUiStore } from '@/state/uiStore'
-import { ArrowsDownUp, ImageSquare, MagnifyingGlass, Plus, Scales, Shuffle } from '@/ui/icons'
+import {
+  ArrowsDownUp,
+  CaretDown,
+  CaretUp,
+  ImageSquare,
+  MagnifyingGlass,
+  Plus,
+  Scales,
+  Shuffle,
+} from '@/ui/icons'
 import { addItems, focusItem, moveItemTo } from '../actions'
 import { Hen } from '../brand/Hen'
 import { useIngest } from '../hooks/useIngest'
@@ -11,7 +20,10 @@ import btn from '../primitives/Button.module.css'
 import { Container } from './Container'
 import styles from './Coop.module.css'
 
-/** The unranked pool, docked to the bottom so it's always one drag away. */
+/**
+ * The unranked pool, always one drag away: a sidebar beside the tiers on wide
+ * screens, docked to the bottom edge on narrow ones.
+ */
 export function Coop({ items, dragging }: { items: ItemId[]; dragging: boolean }) {
   const allItems = useBoardStore((s) => s.board?.items)
   const total = useBoardStore((s) => Object.keys(s.board?.items ?? {}).length)
@@ -19,20 +31,28 @@ export function Coop({ items, dragging }: { items: ItemId[]; dragging: boolean }
   const open = useUiStore((s) => s.open)
   const { upload } = useIngest()
   const [filter, setFilter] = useState('')
+  // Docked at the bottom on narrow screens, the Coop can fold down to its header.
+  const [folded, setFolded] = useState(false)
   const [draft, setDraft] = useState('')
   // Quick adds have no toast, so screen readers hear about them here.
   const [added, setAdded] = useState('')
   const quickAdd = useRef<HTMLTextAreaElement>(null)
   const dock = useRef<HTMLElement>(null)
 
-  // Publish the dock height so toasts and focused tiles stay clear of it. On short
-  // screens the dock stops sticking and covers nothing, so it publishes zero.
+  // Publish the dock height so toasts and focused tiles stay clear of it. As a
+  // sidebar, or on short screens, the Coop covers nothing and publishes zero.
   useEffect(() => {
     const el = dock.current
     if (!el) return
     const publish = () => {
-      const h = getComputedStyle(el).position === 'sticky' ? el.offsetHeight : 0
+      const css = getComputedStyle(el)
+      const docked = css.position === 'sticky' && css.getPropertyValue('--docked').trim() === '1'
+      const h = docked ? el.offsetHeight : 0
       document.documentElement.style.setProperty('--coop-height', `${h}px`)
+      // As a sidebar, the Coop is as tall as the space below the board title, so
+      // its header and add box never scroll out of view.
+      const top = (el.parentElement?.getBoundingClientRect().top ?? 0) + window.scrollY
+      el.style.setProperty('--coop-top', `${Math.round(top)}px`)
     }
     const ro = new ResizeObserver(publish)
     ro.observe(el)
@@ -77,6 +97,7 @@ export function Coop({ items, dragging }: { items: ItemId[]; dragging: boolean }
       ref={dock}
       className={styles.coop}
       data-dragging={dragging || undefined}
+      data-folded={folded || undefined}
       aria-labelledby="coop-title"
       data-empty={brandNew || undefined}
     >
@@ -154,25 +175,21 @@ export function Coop({ items, dragging }: { items: ItemId[]; dragging: boolean }
             </button>
           )}
         </div>
+        {!brandNew && (
+          <button
+            type="button"
+            className={`${btn.icon} ${styles.fold}`}
+            data-variant="ghost"
+            data-size="sm"
+            aria-expanded={!folded}
+            aria-label={folded ? 'Show the Coop' : 'Fold the Coop away'}
+            title={folded ? 'Show' : 'Fold away'}
+            onClick={() => setFolded((f) => !f)}
+          >
+            {folded ? <CaretUp size={17} aria-hidden /> : <CaretDown size={17} aria-hidden />}
+          </button>
+        )}
       </header>
-
-      {!brandNew && (
-        <Container
-          id={COOP}
-          items={visible}
-          label="the Coop"
-          className={styles.grid}
-          empty={
-            filter ? (
-              <span>No unranked items match “{filter}”.</span>
-            ) : (
-              <span className={styles.allRanked}>
-                <Hen size={28} /> Everything has a place. The hen approves.
-              </span>
-            )
-          }
-        />
-      )}
 
       <form
         className={styles.quick}
@@ -189,7 +206,7 @@ export function Coop({ items, dragging }: { items: ItemId[]; dragging: boolean }
           ref={quickAdd}
           rows={1}
           value={draft}
-          placeholder="Type an item and press Enter, or paste a whole list"
+          placeholder="Add an item, or paste a list"
           onChange={(e) => setDraft(e.target.value)}
           onKeyDown={(e) => {
             if (e.key === 'Enter' && !e.shiftKey) {
@@ -236,6 +253,24 @@ export function Coop({ items, dragging }: { items: ItemId[]; dragging: boolean }
           {added}
         </p>
       </form>
+
+      {!brandNew && (
+        <Container
+          id={COOP}
+          items={visible}
+          label="the Coop"
+          className={styles.grid}
+          empty={
+            filter ? (
+              <span>No unranked items match “{filter}”.</span>
+            ) : (
+              <span className={styles.allRanked}>
+                <Hen size={28} /> Everything has a place. The hen approves.
+              </span>
+            )
+          }
+        />
+      )}
     </section>
   )
 }

@@ -66,8 +66,11 @@ The board uses `@dnd-kit/core` with `@dnd-kit/sortable`:
   under `prefers-reduced-motion`.
 - **Alternatives to dragging**: dnd-kit's keyboard sensor with spoken
   announcements, number keys that send the focused item straight to a tier, and
-  tap-to-place for touch screens. While a drag is in progress the Coop dock
-  shrinks to one row so every tier stays reachable.
+  tap-to-place for touch screens.
+- **Layout**: from 1000px wide the Coop is a sticky sidebar beside the tiers,
+  sized to the space below the title, so it never covers a tier. On narrower
+  screens it docks to the bottom edge, can fold down to its header, and shrinks
+  to one row while a drag is in progress so every tier stays reachable.
 
 File drops from the operating system use native HTML5 drag events on the
 window, while item drags use pointer events, so the two never interfere.
