@@ -1,0 +1,179 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "airlines",
+  "version": "1.0.0",
+  "title": "Airlines",
+  "description": "Please return your opinions to the upright position.",
+  "category": "Miscellaneous",
+  "accent": "Speckle",
+  "author": "Pecking Order",
+  "tiers": ["First class", "Business", "Premium economy", "Economy", "Middle seat by the loo"],
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Emirates_Airbus_A380-861_A6-EER_MUC_2015_04.jpg/500px-Emirates_Airbus_A380-861_A6-EER_MUC_2015_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Qatar_Airways_Airbus_A350-1000_%28A7-ANA%29.jpg/500px-Qatar_Airways_Airbus_A350-1000_%28A7-ANA%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/9V-SHL%40PEK_%2820200403135704%29.jpg/500px-9V-SHL%40PEK_%2820200403135704%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/B-KPQ%28CX-77W%29.jpg/500px-B-KPQ%28CX-77W%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  ],
+  "items": [
+    {
+      "id": "emirates",
+      "label": "Emirates",
+      "commons": "File:Emirates Airbus A380-861 A6-EER MUC 2015 04.jpg"
+    },
+    {
+      "id": "qatar-airways",
+      "label": "Qatar Airways",
+      "wikipedia": "Qatar Airways"
+    },
+    {
+      "id": "singapore-airlines",
+      "label": "Singapore Airlines",
+      "wikipedia": "Singapore Airlines"
+    },
+    {
+      "id": "cathay-pacific",
+      "label": "Cathay Pacific",
+      "wikipedia": "Cathay Pacific"
+    },
+    {
+      "id": "japan-airlines",
+      "label": "Japan Airlines",
+      "wikipedia": "Japan Airlines"
+    },
+    {
+      "id": "ana",
+      "label": "All Nippon Airways",
+      "wikipedia": "All Nippon Airways"
+    },
+    {
+      "id": "korean-air",
+      "label": "Korean Air",
+      "wikipedia": "Korean Air"
+    },
+    {
+      "id": "qantas",
+      "label": "Qantas",
+      "wikipedia": "Qantas"
+    },
+    {
+      "id": "air-new-zealand",
+      "label": "Air New Zealand",
+      "wikipedia": "Air New Zealand"
+    },
+    {
+      "id": "lufthansa",
+      "label": "Lufthansa",
+      "wikipedia": "Lufthansa"
+    },
+    {
+      "id": "british-airways",
+      "label": "British Airways",
+      "wikipedia": "British Airways"
+    },
+    {
+      "id": "air-france",
+      "label": "Air France",
+      "wikipedia": "Air France"
+    },
+    {
+      "id": "klm",
+      "label": "KLM",
+      "commons": "File:KLM Boeing 777-300ER PH-BVA landing at Schiphol 2016.jpg"
+    },
+    {
+      "id": "turkish-airlines",
+      "label": "Turkish Airlines",
+      "wikipedia": "Turkish Airlines"
+    },
+    {
+      "id": "etihad-airways",
+      "label": "Etihad Airways",
+      "wikipedia": "Etihad Airways"
+    },
+    {
+      "id": "delta-air-lines",
+      "label": "Delta Air Lines",
+      "wikipedia": "Delta Air Lines"
+    },
+    {
+      "id": "american-airlines",
+      "label": "American Airlines",
+      "wikipedia": "American Airlines"
+    },
+    {
+      "id": "united-airlines",
+      "label": "United Airlines",
+      "wikipedia": "United Airlines"
+    },
+    {
+      "id": "southwest-airlines",
+      "label": "Southwest Airlines",
+      "wikipedia": "Southwest Airlines"
+    },
+    {
+      "id": "jetblue",
+      "label": "JetBlue",
+      "wikipedia": "JetBlue"
+    },
+    {
+      "id": "alaska-airlines",
+      "label": "Alaska Airlines",
+      "wikipedia": "Alaska Airlines"
+    },
+    {
+      "id": "hawaiian-airlines",
+      "label": "Hawaiian Airlines",
+      "commons": "File:Airbus A330 N390HA landing at McCarran Airport Oct 2013 (10585611586).jpg"
+    },
+    {
+      "id": "air-canada",
+      "label": "Air Canada",
+      "wikipedia": "Air Canada"
+    },
+    {
+      "id": "ryanair",
+      "label": "Ryanair",
+      "wikipedia": "Ryanair"
+    },
+    {
+      "id": "easyjet",
+      "label": "easyJet",
+      "wikipedia": "EasyJet"
+    },
+    {
+      "id": "virgin-atlantic",
+      "label": "Virgin Atlantic",
+      "wikipedia": "Virgin Atlantic"
+    },
+    {
+      "id": "iberia",
+      "label": "Iberia",
+      "wikipedia": "Iberia (airline)"
+    },
+    {
+      "id": "swiss",
+      "label": "Swiss",
+      "wikipedia": "Swiss International Air Lines"
+    },
+    {
+      "id": "aer-lingus",
+      "label": "Aer Lingus",
+      "wikipedia": "Aer Lingus"
+    },
+    {
+      "id": "finnair",
+      "label": "Finnair",
+      "wikipedia": "Finnair"
+    },
+    {
+      "id": "sas",
+      "label": "SAS",
+      "wikipedia": "Scandinavian Airlines"
+    },
+    {
+      "id": "ethiopian-airlines",
+      "label": "Ethiopian Airlines",
+      "wikipedia": "Ethiopian Airlines"
+    }
+  ]
+}
