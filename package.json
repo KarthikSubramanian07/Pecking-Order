@@ -2,7 +2,7 @@
   "name": "pecking-order",
   "version": "0.1.0",
   "private": true,
-  "description": "Rank anything. A fast, local-first tier list maker with a chicken problem.",
+  "description": "Custom tier lists for anything. Rank it, share it, start a fight.",
   "license": "MIT",
   "type": "module",
   "engines": {

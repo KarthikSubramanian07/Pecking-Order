@@ -4,8 +4,8 @@
 
 # Pecking Order
 
-**Rank anything.** Movies, snacks, programming languages, your friends' cooking.<br />
-Drag it into tiers, export a clean image, start an argument.
+**Custom tier lists for anything. Rank it, share it, start a fight.**<br />
+Movies, snacks, programming languages, your friends' cooking: drag it into tiers and export a clean image.
 
 [**Open the app →**](https://pecking-order.pages.dev) &nbsp;·&nbsp; [Add a template](CONTRIBUTING-PACKS.md) &nbsp;·&nbsp; [How it works](docs/ARCHITECTURE.md)
 
