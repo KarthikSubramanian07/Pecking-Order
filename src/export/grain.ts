@@ -1,5 +1,5 @@
 /**
- * Paper grain. A small seeded noise tile, repeated as a pattern — seeded so
+ * Paper grain. A small seeded noise tile, repeated as a pattern, seeded so
  * the same board always exports byte-identical pixels (stable tests, no
  * flicker between preview and download).
  */

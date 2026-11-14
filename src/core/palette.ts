@@ -1,5 +1,5 @@
 /**
- * Tier colours. Warm, editorial and named — not the stock rainbow.
+ * Tier colours. Warm, editorial and named, not the stock rainbow.
  * Every swatch carries ink text (#1F1A17) at ≥ 4.5:1 contrast (WCAG AA),
  * and adjacent swatches differ by ΔE ≥ 21 so tiers stay distinguishable.
  */
@@ -45,7 +45,7 @@ export function contrastRatio(a: string, b: string): number {
   return (hi + 0.05) / (lo + 0.05)
 }
 
-/** Ink or paper — whichever reads better on a custom user colour. */
+/** Ink or paper, whichever reads better on a custom user colour. */
 export function readableTextOn(bg: string): string {
   return contrastRatio(bg, TIER_INK) >= contrastRatio(bg, '#FBF8F1') ? TIER_INK : '#FBF8F1'
 }

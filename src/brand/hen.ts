@@ -1,5 +1,5 @@
 /**
- * The Pecking Order hen — one line drawing, used everywhere (UI, favicon,
+ * The Pecking Order hen, one line drawing, used everywhere (UI, favicon,
  * export watermark). Plain SVG path data in a 64×64 box so it works both as
  * inline SVG and as `new Path2D(d)` on a canvas.
  */

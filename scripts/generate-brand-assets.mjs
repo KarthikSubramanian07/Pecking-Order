@@ -57,7 +57,7 @@ function themedHen() {
   return hen({ ink: 'currentColor' }).replace(/(<svg[^>]*>)/, `$1${style}`)
 }
 
-/** Rounded paper tile with a heavier hen — legible at 16px, flips in dark mode. */
+/** Rounded paper tile with a heavier hen, legible at 16px, flips in dark mode. */
 function faviconSvg() {
   const style = `<style>.t{fill:${C.paper}}svg{color:${C.ink}}@media (prefers-color-scheme:dark){.t{fill:${C.darkPaper}}svg{color:${C.darkInk}}[fill="${C.clay}"]{fill:${C.darkClay}}}</style>`
   const inner = placeHen(hen({ stroke: 3, ink: 'currentColor' }), 3, 4, 58)

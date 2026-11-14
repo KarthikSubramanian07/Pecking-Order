@@ -123,7 +123,7 @@ async function loadImages(
 
 /**
  * Canvas text silently falls back if a face isn't loaded yet, so warm every
- * face we draw with — passing the real text so unicode-range subsets load too.
+ * face we draw with, passing the real text so unicode-range subsets load too.
  */
 async function loadFonts(board: Board, opts: ExportOptions): Promise<void> {
   const fonts = typeof document === 'undefined' ? undefined : document.fonts
@@ -330,7 +330,7 @@ function drawImageTile(
   ctx.clip()
   ctx.fillStyle = p.surface
   ctx.fillRect(tile.x, tile.y, tile.w, tile.h)
-  // object-fit: cover — centre-crop the source to the tile's square.
+  // object-fit: cover, centre-crop the source to the tile's square.
   const s = Math.max(tile.w / bitmap.width, tile.h / bitmap.height)
   const sw = tile.w / s
   const sh = tile.h / s

@@ -16,7 +16,7 @@ export interface ExportPalette {
   tint: number
   /** Opacity of the paper-grain overlay. */
   grain: number
-  /** Tier label text — dark on every swatch in both themes. */
+  /** Tier label text, dark on every swatch in both themes. */
   tierInk: string
 }
 

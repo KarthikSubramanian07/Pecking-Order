@@ -1,7 +1,7 @@
 /*
  * Pecking Order design tokens.
  * Warm newsprint: paper, ink, one terracotta accent. All text pairs ≥ 4.5:1.
- * Change a value here and it changes everywhere — no colour literals in components.
+ * Change a value here and it changes everywhere, no colour literals in components.
  */
 :root {
   color-scheme: light;
@@ -17,7 +17,7 @@
   --ink: #1f1a17;
   --ink-soft: #3d3631;
   --muted: #6b635a;
-  --faint: #8c8378; /* decorative only — never body text */
+  --faint: #8c8378; /* decorative only, never body text */
 
   /* Lines */
   --hairline: #e2d9c8;
@@ -25,7 +25,7 @@
 
   /* Accent */
   --clay: #d97757;
-  --clay-ink: #a9472e; /* clay for text & focus — 5.1:1 on paper */
+  --clay-ink: #a9472e; /* clay for text & focus, 5.1:1 on paper */
   --clay-wash: #f3dccf;
   --on-clay: #1f1a17;
 
@@ -69,7 +69,7 @@
   --r-pill: 999px;
   --r-egg: 50% 50% 50% 50% / 60% 60% 40% 40%;
 
-  /* Elevation — tinted, offset, never grey blobs */
+  /* Elevation, tinted, offset, never grey blobs */
   --shadow-rest: 0 1px 0 rgb(31 26 23 / 0.05);
   --shadow-hover: 0 1px 0 rgb(31 26 23 / 0.04), 0 8px 24px -14px rgb(169 71 46 / 0.25);
   --shadow-lift: 0 2px 0 rgb(31 26 23 / 0.06), 0 22px 40px -18px rgb(31 26 23 / 0.35);

@@ -120,9 +120,10 @@ export default function PeckOffDialog({ open, onClose }: { open: boolean; onClos
         <div className={styles.intro}>
           <Hen size={72} mood="bob" />
           <p>
-            Can't decide? Answer a few quick head-to-heads and Peck-off ranks everything for you —
-            about {Math.max(1, Math.round(coopCount * Math.log2(Math.max(2, coopCount)) * 0.8))}{' '}
-            picks for the Coop.
+            Can't decide? Answer a few quick head-to-heads and Peck-off ranks everything for you. It
+            takes about{' '}
+            {Math.max(1, Math.round(coopCount * Math.log2(Math.max(2, coopCount)) * 0.8))} picks for
+            the Coop.
           </p>
           <div className={styles.introActions}>
             <button

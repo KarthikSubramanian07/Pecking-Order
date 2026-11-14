@@ -170,7 +170,7 @@ export function Coop({ items, dragging }: { items: ItemId[]; dragging: boolean }
           ref={quickAdd}
           rows={1}
           value={draft}
-          placeholder="Type an item and press Enter — or paste a whole list"
+          placeholder="Type an item and press Enter, or paste a whole list"
           onChange={(e) => setDraft(e.target.value)}
           onKeyDown={(e) => {
             if (e.key === 'Enter' && !e.shiftKey) {

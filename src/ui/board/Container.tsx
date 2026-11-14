@@ -15,7 +15,7 @@ interface ContainerProps {
 
 /**
  * A wrapping grid of sortable items. rectSortingStrategy is what keeps
- * drops correct once a tier wraps onto a second line — the bug that breaks
+ * drops correct once a tier wraps onto a second line, the bug that breaks
  * most list-based tier makers.
  */
 export function Container({ id, items, label, empty, className }: ContainerProps) {

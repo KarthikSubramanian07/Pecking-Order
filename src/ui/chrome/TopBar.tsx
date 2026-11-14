@@ -188,12 +188,12 @@ export function TopBar() {
           <span>
             {total} {total === 1 ? 'item' : 'items'}, {total - unranked} ranked
           </span>
-          <span aria-hidden>—</span>
+          <span aria-hidden>·</span>
           <span className={styles.save} data-status={saveStatus} aria-live="polite">
             {saveStatus === 'saving'
               ? 'saving…'
               : saveStatus === 'error'
-                ? 'not saved — storage may be full'
+                ? 'not saved, storage may be full'
                 : 'saved on this device'}
           </span>
         </p>

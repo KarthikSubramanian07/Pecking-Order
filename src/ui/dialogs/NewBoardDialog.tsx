@@ -145,8 +145,8 @@ export function NewBoardDialog({ open, onClose }: { open: boolean; onClose: () =
               rel="noopener noreferrer"
             >
               Add a pack
-            </a>{' '}
-            — it's one JSON file.
+            </a>
+            . It's one JSON file.
           </p>
         </section>
       )}

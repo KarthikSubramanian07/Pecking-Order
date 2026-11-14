@@ -2,7 +2,7 @@
  * Core domain types for Pecking Order.
  *
  * These are plain, serialisable data shapes. Nothing in `src/core` may import
- * React, the DOM, or storage — keep it pure so it stays trivially testable.
+ * React, the DOM, or storage, keep it pure so it stays trivially testable.
  */
 
 /** The id of the unranked pool. Every board has exactly one. */
@@ -24,7 +24,7 @@ export interface Tier {
   color: string
 }
 
-/** Where an image came from — required for attribution of free sources. */
+/** Where an image came from, required for attribution of free sources. */
 export interface ImageCredit {
   provider: 'upload' | 'paste' | 'url' | 'openverse' | 'wikimedia' | 'wikipedia' | 'pack'
   /** Page a human can visit to see the original + licence. */
@@ -49,7 +49,7 @@ export interface PackRef {
 }
 
 export interface Board {
-  /** Schema version — bump and add a migration in `migrate.ts` on change. */
+  /** Schema version, bump and add a migration in `migrate.ts` on change. */
   v: 1
   id: string
   title: string

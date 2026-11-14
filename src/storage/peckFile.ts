@@ -1,5 +1,5 @@
 /**
- * `.peck` files: a whole board — tiers, items and images — in one portable
+ * `.peck` files: a whole board, tiers, items and images, in one portable
  * zip, for backups and moving between devices without an account.
  *
  *   board.json          the Board (validated on import like any untrusted input)
@@ -35,7 +35,7 @@ export async function exportPeck(board: Board): Promise<Blob> {
   return new Blob([zipped as BlobPart], { type: 'application/zip' })
 }
 
-/** Sniffs common image formats by magic bytes — never trust the extension. */
+/** Sniffs common image formats by magic bytes, never trust the extension. */
 export function sniffImageType(bytes: Uint8Array): string | null {
   const b = (i: number) => bytes[i] ?? -1
   if (b(0) === 0x89 && b(1) === 0x50 && b(2) === 0x4e && b(3) === 0x47) return 'image/png'

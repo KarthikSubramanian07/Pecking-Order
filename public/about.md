@@ -1,5 +1,5 @@
 ---
-title: About Pecking Order — a free, local-first tier list maker
+title: About Pecking Order: a free, local-first tier list maker
 description: Why Pecking Order exists, how it works without accounts or uploads, and how it is built.
 url: https://pecking-order.pages.dev/about/
 ---

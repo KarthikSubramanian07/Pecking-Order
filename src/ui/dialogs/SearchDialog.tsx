@@ -165,7 +165,7 @@ export default function SearchDialog({ open, onClose }: { open: boolean; onClose
                   className={styles.result}
                   aria-pressed={on}
                   onClick={() => toggle(r)}
-                  title={r.credit.author ? `${r.title} — ${r.credit.author}` : r.title}
+                  title={r.credit.author ? `${r.title} by ${r.credit.author}` : r.title}
                 >
                   <img src={r.thumbUrl} alt="" loading="lazy" referrerPolicy="no-referrer" />
                   <span className={styles.resultLabel}>{r.title}</span>

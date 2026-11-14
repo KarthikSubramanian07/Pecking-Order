@@ -15,7 +15,7 @@ interface DialogProps {
 
 /**
  * Native <dialog> with showModal(): the browser handles the focus trap,
- * Escape, inert background and top-layer stacking for us — no library needed.
+ * Escape, inert background and top-layer stacking for us, no library needed.
  */
 export function Dialog({
   open,

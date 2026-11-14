@@ -29,7 +29,7 @@ const str = (v: unknown, max: number, fallback = ''): string =>
 const safeId = (v: unknown, prefix: 't' | 'i' | 'b'): string =>
   typeof v === 'string' && ID_RE.test(v) ? v : newId(prefix)
 
-/** Only http(s) links survive — no javascript:, data: or other schemes. */
+/** Only http(s) links survive, no javascript:, data: or other schemes. */
 export function safeHttpUrl(v: unknown): string | undefined {
   if (typeof v !== 'string' || v.length > 2048) return undefined
   try {

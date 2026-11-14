@@ -1,5 +1,5 @@
 ---
-title: Contact — Pecking Order
+title: Contact · Pecking Order
 description: Report a bug, suggest a feature, request a category pack or report a security issue.
 url: https://pecking-order.pages.dev/contact/
 ---
