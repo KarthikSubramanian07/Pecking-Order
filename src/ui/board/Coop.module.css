@@ -44,13 +44,17 @@
   gap: var(--s-2);
   height: 32px;
   padding: 0 var(--s-3);
-  border: 1px solid var(--line);
+  border: 1px solid var(--field-line);
   border-radius: var(--r-pill);
   background: var(--surface-raised);
   color: var(--muted);
 }
 .filter:focus-within {
   border-color: var(--focus);
+}
+.filter:has(input:focus-visible) {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
 }
 .filter input {
   width: 120px;
@@ -89,7 +93,7 @@
   height: 32px;
   padding: 6px var(--s-3);
   resize: none;
-  border: 1px solid var(--line);
+  border: 1px solid var(--field-line);
   border-radius: var(--r-pill);
   background: var(--surface-raised);
   font-size: var(--text-sm);

@@ -17,11 +17,13 @@
   --ink: #1f1a17;
   --ink-soft: #3d3631;
   --muted: #6b635a;
-  --faint: #8c8378; /* decorative only, never body text */
+  --faint: #8c8378; /* never body text; 3:1 for boundaries only */
 
   /* Lines */
   --hairline: #e2d9c8;
   --line: #cfc4b0;
+  /* Boundaries that identify a control (text fields), 3:1 on every surface. */
+  --field-line: var(--faint);
 
   /* Accent */
   --clay: #d97757;

@@ -8,7 +8,7 @@
 .input {
   min-height: 42px;
   padding: 0 var(--s-3);
-  border: 1px solid var(--line);
+  border: 1px solid var(--field-line);
   border-radius: 12px;
   background: var(--surface-raised);
   color: var(--ink);
@@ -376,14 +376,17 @@
   gap: var(--s-2);
   min-height: 48px;
   padding: 0 var(--s-4);
-  border: 1px solid var(--line);
+  border: 1px solid var(--field-line);
   border-radius: 14px;
   background: var(--surface-raised);
   color: var(--muted);
 }
 .searchBox:focus-within {
   border-color: var(--focus);
-  box-shadow: 0 0 0 3px var(--clay-wash);
+}
+.searchBox:has(input:focus-visible) {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
 }
 .searchBox input {
   flex: 1;
