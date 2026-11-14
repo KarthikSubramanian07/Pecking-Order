@@ -4,7 +4,7 @@ import { COOP, type ItemId } from '@/core/types'
 import { boardActions, useBoardStore } from '@/state/boardStore'
 import { useUiStore } from '@/state/uiStore'
 import { ArrowsDownUp, ImageSquare, MagnifyingGlass, Plus, Scales, Shuffle } from '@/ui/icons'
-import { addItems, moveItemTo } from '../actions'
+import { addItems, focusItem, moveItemTo } from '../actions'
 import { Hen } from '../brand/Hen'
 import { useIngest } from '../hooks/useIngest'
 import btn from '../primitives/Button.module.css'
@@ -135,6 +135,7 @@ export function Coop({ items, dragging }: { items: ItemId[]; dragging: boolean }
               onClick={() => {
                 moveItemTo(selected, COOP)
                 useUiStore.getState().select(null)
+                focusItem(selected)
               }}
             >
               Back to the Coop

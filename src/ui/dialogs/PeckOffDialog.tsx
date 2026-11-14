@@ -1,6 +1,6 @@
 import { AnimatePresence } from 'motion/react'
 import * as m from 'motion/react-m'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { containerOrder } from '@/core/board'
 import {
   answer,
@@ -25,12 +25,17 @@ import styles from './PeckOff.module.css'
 
 type Scope = 'coop' | 'all'
 
+// Stable, so it runs once when the result appears rather than on every render.
+const focusOnMount = (el: HTMLElement | null) => el?.focus()
+
 export default function PeckOffDialog({ open, onClose }: { open: boolean; onClose: () => void }) {
   const board = useBoardStore((s) => s.board)
   const reduced = usePrefersReducedMotion()
   const [scope, setScope] = useState<Scope>('coop')
   const [history, setHistory] = useState<PeckoffState[]>([])
   const state = history.at(-1)
+  // Each pick swaps the buttons out; this side's new button takes focus.
+  const refocus = useRef<'left' | 'right' | null>(null)
 
   const pool = (s: Scope): ItemId[] =>
     !board
@@ -43,6 +48,7 @@ export default function PeckOffDialog({ open, onClose }: { open: boolean; onClos
   const allCount = Object.keys(board?.items ?? {}).length
 
   const begin = (s: Scope) => {
+    refocus.current = 'left'
     setScope(s)
     setHistory([startPeckoff(pool(s))])
   }
@@ -50,6 +56,8 @@ export default function PeckOffDialog({ open, onClose }: { open: boolean; onClos
   const pick = useCallback(
     (p: Pick) => {
       if (!state || isDone(state)) return
+      const side = (document.activeElement as HTMLElement | null)?.dataset.side
+      if (side === 'left' || side === 'right') refocus.current = side
       setHistory((h) => [...h, answer(state, p)])
     },
     [state],
@@ -83,6 +91,14 @@ export default function PeckOffDialog({ open, onClose }: { open: boolean; onClos
   useEffect(() => {
     if (!open) setHistory([])
   }, [open])
+
+  const round = state?.answered
+  useEffect(() => {
+    const side = refocus.current
+    if (round === undefined || !side) return
+    refocus.current = null
+    document.querySelector<HTMLElement>(`[data-round="${round}"][data-side="${side}"]`)?.focus()
+  }, [round])
 
   const apply = () => {
     if (!state || !board) return
@@ -185,6 +201,8 @@ export default function PeckOffDialog({ open, onClose }: { open: boolean; onClos
                     whileHover={reduced ? undefined : { y: -4 }}
                     whileTap={reduced ? undefined : { scale: 0.96 }}
                     transition={{ type: 'spring', stiffness: 520, damping: 32 }}
+                    data-side={side}
+                    data-round={state.answered}
                     onClick={() => pickSide(side)}
                     aria-label={`Pick ${item.label || 'this item'}`}
                     aria-keyshortcuts={side === 'left' ? 'ArrowLeft' : 'ArrowRight'}
@@ -229,7 +247,7 @@ export default function PeckOffDialog({ open, onClose }: { open: boolean; onClos
 
       {state && isDone(state) && (
         <div className={styles.result}>
-          <p className={styles.resultTitle}>
+          <p className={styles.resultTitle} tabIndex={-1} ref={focusOnMount}>
             Done in {state.answered} {state.answered === 1 ? 'pick' : 'picks'}.
           </p>
           <ol className={styles.ranking}>

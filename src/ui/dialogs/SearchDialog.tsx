@@ -132,8 +132,7 @@ export default function SearchDialog({ open, onClose }: { open: boolean; onClose
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             aria-label="Search images"
-            // biome-ignore lint/a11y/noAutofocus: search is the only thing this dialog does
-            autoFocus
+            data-autofocus
           />
         </label>
         {source && <p className={styles.blurb}>{source.blurb}</p>}

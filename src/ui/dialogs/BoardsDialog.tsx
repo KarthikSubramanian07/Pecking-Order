@@ -15,6 +15,8 @@ const dateFmt = new Intl.DateTimeFormat(undefined, {
   year: 'numeric',
 })
 
+const focusOnMount = (el: HTMLElement | null) => el?.focus()
+
 function Thumb({ hash }: { hash: string }) {
   const url = useImageUrl(hash)
   return url ? <img src={url} alt="" /> : <span />
@@ -102,6 +104,8 @@ export function BoardsDialog({ open, onClose }: { open: boolean; onClose: () => 
                   className={btn.button}
                   data-variant="danger"
                   data-size="sm"
+                  // Replaces the trash button under focus, so it must take focus itself.
+                  ref={focusOnMount}
                   onClick={() => {
                     setConfirming(null)
                     void useBoardStore.getState().deleteBoard(b.id)

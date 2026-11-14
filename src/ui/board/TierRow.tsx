@@ -4,7 +4,7 @@ import type { Tier } from '@/core/types'
 import { useBoardStore } from '@/state/boardStore'
 import { useUiStore } from '@/state/uiStore'
 import { ArrowElbowDownLeft } from '@/ui/icons'
-import { moveItemTo } from '../actions'
+import { focusItem, moveItemTo } from '../actions'
 import { Container } from './Container'
 import styles from './TierRow.module.css'
 import { TierSettings } from './TierSettings'
@@ -66,6 +66,7 @@ export const TierRow = memo(function TierRow({ tier, index, count }: TierRowProp
           onClick={() => {
             moveItemTo(selected, tier.id)
             useUiStore.getState().select(null)
+            focusItem(selected)
           }}
         >
           <ArrowElbowDownLeft size={15} weight="bold" aria-hidden />

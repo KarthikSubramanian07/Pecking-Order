@@ -44,7 +44,7 @@ export function ItemDialog({ open, onClose }: { open: boolean; onClose: () => vo
             data-variant="danger"
             onClick={() => {
               onClose()
-              removeItems([id])
+              removeItems([id], { refocus: true })
             }}
           >
             <Trash size={16} aria-hidden /> Remove
@@ -77,8 +77,7 @@ export function ItemDialog({ open, onClose }: { open: boolean; onClose: () => vo
             value={label}
             maxLength={80}
             onChange={(e) => setLabel(e.target.value)}
-            // biome-ignore lint/a11y/noAutofocus: the dialog exists to edit this field
-            autoFocus
+            data-autofocus
           />
         </label>
         {item.credit && item.credit.provider !== 'upload' && item.credit.provider !== 'paste' && (

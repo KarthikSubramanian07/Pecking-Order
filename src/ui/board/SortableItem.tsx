@@ -47,7 +47,7 @@ export const SortableItem = memo(function SortableItem({
     }
     if (e.key === 'Delete' || e.key === 'Backspace') {
       e.preventDefault()
-      removeItems([id])
+      removeItems([id], { refocus: true })
       return
     }
     if (e.key === 'e' || e.key === 'F2') {

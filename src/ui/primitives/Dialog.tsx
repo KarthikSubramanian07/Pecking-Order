@@ -1,4 +1,4 @@
-import { type ReactNode, useEffect, useId, useRef } from 'react'
+import { type ReactNode, useCallback, useEffect, useId, useRef } from 'react'
 import { X } from '@/ui/icons'
 import styles from './Dialog.module.css'
 
@@ -16,6 +16,7 @@ interface DialogProps {
 /**
  * Native <dialog> with showModal(): the browser handles the focus trap,
  * Escape, inert background and top-layer stacking for us, no library needed.
+ * Mark the field that should take focus on open with `data-autofocus`.
  */
 export function Dialog({
   open,
@@ -28,24 +29,28 @@ export function Dialog({
 }: DialogProps) {
   const ref = useRef<HTMLDialogElement>(null)
   const titleId = useId()
-  const returnFocus = useRef<Element | null>(null)
+
+  const opener = useRef<Element | null>(null)
+  const restoreFocus = useCallback(() => {
+    const target = opener.current
+    if (target instanceof HTMLElement && target.isConnected) target.focus()
+  }, [])
 
   useEffect(() => {
     const el = ref.current
     if (!el) return
     if (open && !el.open) {
-      returnFocus.current = document.activeElement
+      opener.current = document.activeElement
       el.showModal()
+      el.querySelector<HTMLElement>('[data-autofocus]')?.focus()
     } else if (!open && el.open) {
       el.close()
+      restoreFocus()
     }
-  }, [open])
+  }, [open, restoreFocus])
 
-  useEffect(() => {
-    if (open) return
-    const target = returnFocus.current
-    if (target instanceof HTMLElement && target.isConnected) target.focus()
-  }, [open])
+  // Lazily mounted dialogs unmount instead of closing; hand focus back then too.
+  useEffect(() => restoreFocus, [restoreFocus])
 
   return (
     // biome-ignore lint/a11y/useKeyWithClickEvents: backdrop click is a mouse nicety; Escape is the keyboard path (native)

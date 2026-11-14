@@ -49,9 +49,25 @@ export function focusItem(id: ItemId): void {
   })
 }
 
-export function removeItems(ids: ItemId[]): void {
+/**
+ * Removes items with an undo toast. `refocus` moves keyboard focus to the
+ * next surviving item (or the quick-add field) so it isn't dropped on <body>.
+ */
+export function removeItems(ids: ItemId[], { refocus = false } = {}): void {
   if (!ids.length) return
   const label = ids.length === 1 ? itemLabel(ids[0] as ItemId) : `${ids.length} items`
+  if (refocus) {
+    const gone = new Set(ids)
+    const order = itemsInOrder()
+    const at = order.findIndex((id) => gone.has(id))
+    const next =
+      order.slice(at + 1).find((id) => !gone.has(id)) ??
+      order.slice(0, Math.max(0, at)).findLast((id) => !gone.has(id))
+    requestAnimationFrame(() => {
+      if (next) focusItem(next)
+      else document.getElementById('quick-add')?.focus()
+    })
+  }
   boardActions().apply((b) => opRemoveItems(b, ids))
   ui().select(null)
   ui().toast({
