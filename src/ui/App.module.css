@@ -1,0 +1,33 @@
+.app {
+  width: min(1240px, 100%);
+  margin: 0 auto;
+  padding: 0 var(--s-5);
+}
+.main {
+  outline: none;
+}
+.hatching {
+  padding: var(--s-8) 0;
+  color: var(--muted);
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+}
+.skip {
+  position: absolute;
+  left: var(--s-4);
+  top: -100px;
+  z-index: 100;
+  padding: var(--s-2) var(--s-4);
+  border-radius: var(--r-pill);
+  background: var(--ink);
+  color: var(--paper);
+  text-decoration: none;
+}
+.skip:focus {
+  top: var(--s-3);
+}
+@media (max-width: 560px) {
+  .app {
+    padding: 0 var(--s-3);
+  }
+}
