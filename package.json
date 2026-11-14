@@ -20,7 +20,8 @@
     "e2e": "playwright test",
     "knip": "knip",
     "packs:build": "node scripts/build-packs.mjs",
-    "packs:validate": "node scripts/build-packs.mjs --check"
+    "packs:validate": "node scripts/build-packs.mjs --check",
+    "icons": "node scripts/generate-icons.mjs"
   },
   "dependencies": {
     "@dnd-kit/core": "6.3.1",
