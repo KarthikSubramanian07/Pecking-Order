@@ -2,8 +2,8 @@
   position: relative;
   display: grid;
   grid-template-columns: minmax(var(--item), auto) 1fr;
-  gap: 6px;
-  padding: 6px;
+  gap: 4px;
+  padding: 4px;
   border-radius: var(--r-row);
   background: color-mix(in oklab, var(--tier) 11%, var(--sunken));
   transition: background var(--t-fast);
@@ -82,12 +82,13 @@
 .hint {
   display: grid;
   place-items: center;
-  width: calc(var(--item) * 0.72);
+  width: calc(var(--item) * 0.78);
   height: var(--item);
   border: 1.5px dashed color-mix(in oklab, var(--tier) 25%, var(--muted));
   border-radius: var(--r-egg);
   color: transparent;
-  font-size: var(--text-xs);
+  font-size: min(var(--text-xs), calc(var(--item) * 0.14));
+  white-space: nowrap;
   transition:
     color var(--t-fast),
     border-color var(--t-fast),

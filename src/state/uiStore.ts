@@ -9,7 +9,7 @@ type ThemePref = 'system' | 'light' | 'dark'
 export type ItemSize = 'sm' | 'md' | 'lg'
 type DialogId = 'new' | 'search' | 'export' | 'shortcuts' | 'item' | 'peckoff' | null
 
-export const ITEM_SIZE_PX: Record<ItemSize, number> = { sm: 64, md: 88, lg: 116 }
+export const ITEM_SIZE_PX: Record<ItemSize, number> = { sm: 64, md: 80, lg: 112 }
 
 interface Toast {
   id: number
