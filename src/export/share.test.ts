@@ -109,12 +109,12 @@ describe('Web Share', () => {
     expect(await shareImage(png(), 'x')).toBe(false)
   })
 
-  it('rethrows real failures so the caller can fall back to download', async () => {
+  it('resolves false instead of throwing when the browser refuses', async () => {
     setNavigator('canShare', () => true)
     setNavigator(
       'share',
       vi.fn(async () => Promise.reject(new DOMException('no gesture', 'NotAllowedError'))),
     )
-    await expect(shareImage(png(), 'x')).rejects.toThrow('no gesture')
+    expect(await shareImage(png(), 'x')).toBe(false)
   })
 })

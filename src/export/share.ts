@@ -53,9 +53,9 @@ export function canShareFiles(): boolean {
 }
 
 /**
- * Opens the native share sheet. Resolves false if unsupported or the user
- * cancelled; other failures (e.g. an expired user gesture) reject so the
- * caller can fall back to downloading.
+ * Opens the native share sheet. Resolves false if unsupported, cancelled
+ * (AbortError) or refused (e.g. an expired user gesture), so callers can offer
+ * a download instead without wrapping every call in try/catch.
  */
 export async function shareImage(blob: Blob, title: string): Promise<boolean> {
   if (typeof navigator === 'undefined' || typeof navigator.share !== 'function') return false
@@ -65,9 +65,7 @@ export async function shareImage(blob: Blob, title: string): Promise<boolean> {
   try {
     await navigator.share(data)
     return true
-  } catch (err) {
-    // DOMException isn't an Error subclass in every engine, so check the name.
-    if ((err as { name?: unknown } | null)?.name === 'AbortError') return false
-    throw err
+  } catch {
+    return false
   }
 }
