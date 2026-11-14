@@ -1,0 +1,32 @@
+{
+  "result_count": 240,
+  "page_count": 12,
+  "page_size": 20,
+  "page": 1,
+  "results": [
+    {
+      "id": "d50e8a0f-ed1d-40ac-b645-7453053dcabe",
+      "title": "panda",
+      "foreign_landing_url": "https://www.flickr.com/photos/91501748@N07/26251937355",
+      "url": "https://live.staticflickr.com/1561/26251937355_afe920667a_b.jpg",
+      "creator": "Mathias Appel",
+      "license": "cc0",
+      "license_version": "1.0",
+      "provider": "flickr",
+      "attribution": "\"panda\" by Mathias Appel is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+      "thumbnail": "https://api.openverse.org/v1/images/d50e8a0f-ed1d-40ac-b645-7453053dcabe/thumb/"
+    },
+    {
+      "id": "ff959567-880a-40d2-9205-2130c08a9c6b",
+      "title": "panda",
+      "foreign_landing_url": "https://www.flickr.com/photos/91501748@N07/26109514806",
+      "url": "https://live.staticflickr.com/1667/26109514806_60b1a9fff4_b.jpg",
+      "creator": "Mathias Appel",
+      "license": "cc0",
+      "license_version": "1.0",
+      "provider": "flickr",
+      "attribution": "\"panda\" by Mathias Appel is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+      "thumbnail": "https://api.openverse.org/v1/images/ff959567-880a-40d2-9205-2130c08a9c6b/thumb/"
+    }
+  ]
+}
