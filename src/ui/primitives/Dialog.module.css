@@ -1,0 +1,116 @@
+.dialog {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  max-width: min(calc(100vw - 24px), var(--dialog-w, 640px));
+  width: 100%;
+  max-height: min(calc(100dvh - 32px), 860px);
+  overflow: visible;
+}
+.dialog[data-size="sm"] {
+  --dialog-w: 440px;
+}
+.dialog[data-size="lg"] {
+  --dialog-w: 920px;
+}
+.dialog::backdrop {
+  background: var(--overlay);
+  backdrop-filter: blur(2px);
+}
+.dialog[open] {
+  animation: rise var(--t-med) var(--ease-out);
+}
+.dialog[open]::backdrop {
+  animation: fade var(--t-med) var(--ease-out);
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  max-height: inherit;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-panel);
+  box-shadow: var(--shadow-panel);
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--s-4);
+  padding: var(--s-5) var(--s-5) var(--s-3);
+}
+.title {
+  font-size: var(--text-2xl);
+}
+.subtitle {
+  margin-top: var(--s-1);
+  color: var(--muted);
+  font-size: var(--text-sm);
+}
+.close {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--r-pill);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  transition:
+    background var(--t-fast),
+    color var(--t-fast);
+}
+.close:hover {
+  background: var(--sunken);
+  color: var(--ink);
+}
+.body {
+  padding: var(--s-2) var(--s-5) var(--s-5);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--s-2);
+  padding: var(--s-4) var(--s-5);
+  border-top: 1px solid var(--hairline);
+  background: var(--paper);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.985);
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .dialog {
+    max-width: 100vw;
+    margin: auto 0 0;
+    max-height: 92dvh;
+  }
+  .panel {
+    border-radius: var(--r-panel) var(--r-panel) 0 0;
+  }
+  .dialog[open] {
+    animation: sheet var(--t-med) var(--ease-out);
+  }
+}
+@keyframes sheet {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+}
