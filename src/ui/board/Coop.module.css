@@ -1,0 +1,116 @@
+.coop {
+  position: sticky;
+  bottom: 0;
+  z-index: 5;
+  margin-top: var(--s-5);
+  border: 1px solid var(--hairline);
+  border-bottom: 0;
+  border-radius: var(--r-panel) var(--r-panel) 0 0;
+  background: color-mix(in oklab, var(--surface) 94%, transparent);
+  backdrop-filter: blur(10px) saturate(1.1);
+  box-shadow: 0 -18px 40px -30px rgb(31 26 23 / 0.35);
+  padding: var(--s-3) var(--s-4) calc(var(--s-3) + env(safe-area-inset-bottom));
+}
+.coop[data-empty] .quick {
+  margin-top: 0;
+  padding-top: var(--s-2);
+  border-top: 0;
+}
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+  flex-wrap: wrap;
+}
+.titleWrap {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-3);
+  color: var(--muted);
+}
+.title {
+  font-size: var(--text-xl);
+  color: var(--ink);
+}
+.tools {
+  display: flex;
+  align-items: center;
+  gap: var(--s-1);
+}
+.filter {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  height: 32px;
+  padding: 0 var(--s-3);
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  background: var(--surface-raised);
+  color: var(--muted);
+}
+.filter:focus-within {
+  border-color: var(--focus);
+}
+.filter input {
+  width: 120px;
+  border: 0;
+  background: transparent;
+  outline: none;
+  color: var(--ink);
+  font-size: var(--text-sm);
+}
+
+.grid {
+  max-height: min(34vh, calc(var(--item) * 2.6 + 24px));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  margin: var(--s-2) calc(var(--s-2) * -1) 0;
+  scrollbar-gutter: stable;
+}
+.allRanked {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+
+.quick {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  margin-top: var(--s-2);
+  padding-top: var(--s-3);
+  border-top: 1px dashed var(--hairline);
+}
+.quick textarea {
+  flex: 1;
+  min-width: 0;
+  height: 32px;
+  padding: 6px var(--s-3);
+  resize: none;
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  background: var(--surface-raised);
+  font-size: var(--text-sm);
+  line-height: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.quick textarea:focus-visible {
+  border-color: var(--focus);
+  outline-offset: 0;
+}
+.quick textarea::placeholder {
+  color: var(--muted);
+}
+.or {
+  color: var(--muted);
+  font-size: var(--text-sm);
+}
+
+@media (max-width: 640px) {
+  .or,
+  .quick > button:not([type="submit"]) {
+    display: none;
+  }
+}

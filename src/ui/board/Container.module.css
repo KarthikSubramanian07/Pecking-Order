@@ -1,0 +1,18 @@
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 6px;
+  min-height: calc(var(--item) + 12px);
+  padding: 6px;
+  border-radius: 10px;
+}
+.empty {
+  display: flex;
+  align-items: center;
+  min-height: var(--item);
+  padding: 0 var(--s-3);
+  color: var(--muted);
+  font-size: var(--text-sm);
+  pointer-events: none;
+}
