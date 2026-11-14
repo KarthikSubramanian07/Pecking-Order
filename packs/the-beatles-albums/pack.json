@@ -1,0 +1,98 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "the-beatles-albums",
+  "version": "1.0.0",
+  "title": "The Beatles Albums",
+  "description": "Thirteen albums in seven years. Take as long as you like.",
+  "category": "Music",
+  "accent": "Heather",
+  "author": "Pecking Order",
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Sgt._Pepper%27s_Lonely_Hearts_Club_Band_album_art.jpg/500px-Sgt._Pepper%27s_Lonely_Hearts_Club_Band_album_art.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/The_Beatles_Abbey_Road_album_cover.jpg/500px-The_Beatles_Abbey_Road_album_cover.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/TheBeatles-YellowSubmarinealbumcover.jpg/500px-TheBeatles-YellowSubmarinealbumcover.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://upload.wikimedia.org/wikipedia/en/5/5b/Rubber_Soul.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+  ],
+  "items": [
+    {
+      "id": "please-please-me",
+      "label": "Please Please Me",
+      "wikipedia": "Please Please Me"
+    },
+    {
+      "id": "with-the-beatles",
+      "label": "With the Beatles",
+      "wikipedia": "With the Beatles"
+    },
+    {
+      "id": "a-hard-days-night",
+      "label": "A Hard Day's Night",
+      "wikipedia": "A Hard Day's Night (album)"
+    },
+    {
+      "id": "beatles-for-sale",
+      "label": "Beatles for Sale",
+      "wikipedia": "Beatles for Sale"
+    },
+    {
+      "id": "help",
+      "label": "Help!",
+      "wikipedia": "Help! (album)"
+    },
+    {
+      "id": "rubber-soul",
+      "label": "Rubber Soul",
+      "wikipedia": "Rubber Soul"
+    },
+    {
+      "id": "revolver",
+      "label": "Revolver",
+      "wikipedia": "Revolver (Beatles album)"
+    },
+    {
+      "id": "sgt-peppers-lonely-hearts-club-band",
+      "label": "Sgt. Pepper's Lonely Hearts Club Band",
+      "wikipedia": "Sgt. Pepper's Lonely Hearts Club Band"
+    },
+    {
+      "id": "magical-mystery-tour",
+      "label": "Magical Mystery Tour",
+      "wikipedia": "Magical Mystery Tour (album)"
+    },
+    {
+      "id": "the-white-album",
+      "label": "The White Album",
+      "wikipedia": "The Beatles (album)"
+    },
+    {
+      "id": "yellow-submarine",
+      "label": "Yellow Submarine",
+      "wikipedia": "Yellow Submarine (album)"
+    },
+    {
+      "id": "abbey-road",
+      "label": "Abbey Road",
+      "wikipedia": "Abbey Road"
+    },
+    {
+      "id": "let-it-be",
+      "label": "Let It Be",
+      "wikipedia": "Let It Be (album)"
+    },
+    {
+      "id": "past-masters",
+      "label": "Past Masters",
+      "wikipedia": "Past Masters"
+    },
+    {
+      "id": "one",
+      "label": "1",
+      "wikipedia": "1 (Beatles album)"
+    },
+    {
+      "id": "live-at-the-bbc",
+      "label": "Live at the BBC",
+      "wikipedia": "Live at the BBC (Beatles album)"
+    }
+  ]
+}

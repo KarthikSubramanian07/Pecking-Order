@@ -1,0 +1,168 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "nba-teams",
+  "version": "1.0.0",
+  "title": "NBA Teams",
+  "description": "Thirty teams, one trophy and an awful lot of rebuilding years.",
+  "category": "Sports",
+  "accent": "Comb",
+  "author": "Pecking Order",
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Logo_of_Chicago_Bulls.svg/500px-Logo_of_Chicago_Bulls.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/en/thumb/8/8f/Boston_Celtics.svg/500px-Boston_Celtics.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Los_Angeles_Lakers_logo.svg/500px-Los_Angeles_Lakers_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/en/thumb/0/01/Golden_State_Warriors_logo.svg/500px-Golden_State_Warriors_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  ],
+  "items": [
+    {
+      "id": "atlanta-hawks",
+      "label": "Atlanta Hawks",
+      "wikipedia": "Atlanta Hawks"
+    },
+    {
+      "id": "boston-celtics",
+      "label": "Boston Celtics",
+      "wikipedia": "Boston Celtics"
+    },
+    {
+      "id": "brooklyn-nets",
+      "label": "Brooklyn Nets",
+      "wikipedia": "Brooklyn Nets"
+    },
+    {
+      "id": "charlotte-hornets",
+      "label": "Charlotte Hornets",
+      "wikipedia": "Charlotte Hornets"
+    },
+    {
+      "id": "chicago-bulls",
+      "label": "Chicago Bulls",
+      "wikipedia": "Chicago Bulls"
+    },
+    {
+      "id": "cleveland-cavaliers",
+      "label": "Cleveland Cavaliers",
+      "wikipedia": "Cleveland Cavaliers"
+    },
+    {
+      "id": "dallas-mavericks",
+      "label": "Dallas Mavericks",
+      "wikipedia": "Dallas Mavericks"
+    },
+    {
+      "id": "denver-nuggets",
+      "label": "Denver Nuggets",
+      "wikipedia": "Denver Nuggets"
+    },
+    {
+      "id": "detroit-pistons",
+      "label": "Detroit Pistons",
+      "wikipedia": "Detroit Pistons"
+    },
+    {
+      "id": "golden-state-warriors",
+      "label": "Golden State Warriors",
+      "wikipedia": "Golden State Warriors"
+    },
+    {
+      "id": "houston-rockets",
+      "label": "Houston Rockets",
+      "wikipedia": "Houston Rockets"
+    },
+    {
+      "id": "indiana-pacers",
+      "label": "Indiana Pacers",
+      "wikipedia": "Indiana Pacers"
+    },
+    {
+      "id": "la-clippers",
+      "label": "LA Clippers",
+      "wikipedia": "Los Angeles Clippers"
+    },
+    {
+      "id": "los-angeles-lakers",
+      "label": "Los Angeles Lakers",
+      "wikipedia": "Los Angeles Lakers"
+    },
+    {
+      "id": "memphis-grizzlies",
+      "label": "Memphis Grizzlies",
+      "wikipedia": "Memphis Grizzlies"
+    },
+    {
+      "id": "miami-heat",
+      "label": "Miami Heat",
+      "wikipedia": "Miami Heat"
+    },
+    {
+      "id": "milwaukee-bucks",
+      "label": "Milwaukee Bucks",
+      "wikipedia": "Milwaukee Bucks"
+    },
+    {
+      "id": "minnesota-timberwolves",
+      "label": "Minnesota Timberwolves",
+      "wikipedia": "Minnesota Timberwolves"
+    },
+    {
+      "id": "new-orleans-pelicans",
+      "label": "New Orleans Pelicans",
+      "wikipedia": "New Orleans Pelicans"
+    },
+    {
+      "id": "new-york-knicks",
+      "label": "New York Knicks",
+      "wikipedia": "New York Knicks"
+    },
+    {
+      "id": "oklahoma-city-thunder",
+      "label": "Oklahoma City Thunder",
+      "wikipedia": "Oklahoma City Thunder"
+    },
+    {
+      "id": "orlando-magic",
+      "label": "Orlando Magic",
+      "wikipedia": "Orlando Magic"
+    },
+    {
+      "id": "philadelphia-76ers",
+      "label": "Philadelphia 76ers",
+      "wikipedia": "Philadelphia 76ers"
+    },
+    {
+      "id": "phoenix-suns",
+      "label": "Phoenix Suns",
+      "wikipedia": "Phoenix Suns"
+    },
+    {
+      "id": "portland-trail-blazers",
+      "label": "Portland Trail Blazers",
+      "wikipedia": "Portland Trail Blazers"
+    },
+    {
+      "id": "sacramento-kings",
+      "label": "Sacramento Kings",
+      "wikipedia": "Sacramento Kings"
+    },
+    {
+      "id": "san-antonio-spurs",
+      "label": "San Antonio Spurs",
+      "wikipedia": "San Antonio Spurs"
+    },
+    {
+      "id": "toronto-raptors",
+      "label": "Toronto Raptors",
+      "wikipedia": "Toronto Raptors"
+    },
+    {
+      "id": "utah-jazz",
+      "label": "Utah Jazz",
+      "wikipedia": "Utah Jazz"
+    },
+    {
+      "id": "washington-wizards",
+      "label": "Washington Wizards",
+      "wikipedia": "Washington Wizards"
+    }
+  ]
+}

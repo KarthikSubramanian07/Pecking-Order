@@ -1,0 +1,188 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "musical-instruments",
+  "version": "1.0.0",
+  "title": "Musical Instruments",
+  "description": "Some take a lifetime to master. The kazoo takes an afternoon.",
+  "category": "Music",
+  "accent": "Corn",
+  "author": "Pecking Order",
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Steinway_Vienna_002.JPG/500px-Steinway_Vienna_002.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Gibson_SJ200.jpg/500px-Gibson_SJ200.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Violin_VL100.png/500px-Violin_VL100.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Yamaha_Trumpet_YTR-8335LA_crop.jpg/500px-Yamaha_Trumpet_YTR-8335LA_crop.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  ],
+  "items": [
+    {
+      "id": "piano",
+      "label": "Piano",
+      "wikipedia": "Piano"
+    },
+    {
+      "id": "acoustic-guitar",
+      "label": "Acoustic guitar",
+      "wikipedia": "Steel-string acoustic guitar"
+    },
+    {
+      "id": "electric-guitar",
+      "label": "Electric guitar",
+      "commons": "File:Fender Highway 1 Stratocaster.jpg"
+    },
+    {
+      "id": "bass-guitar",
+      "label": "Bass guitar",
+      "wikipedia": "Bass guitar"
+    },
+    {
+      "id": "violin",
+      "label": "Violin",
+      "wikipedia": "Violin"
+    },
+    {
+      "id": "cello",
+      "label": "Cello",
+      "wikipedia": "Cello"
+    },
+    {
+      "id": "double-bass",
+      "label": "Double bass",
+      "wikipedia": "Double bass"
+    },
+    {
+      "id": "harp",
+      "label": "Harp",
+      "wikipedia": "Harp"
+    },
+    {
+      "id": "flute",
+      "label": "Flute",
+      "wikipedia": "Western concert flute"
+    },
+    {
+      "id": "clarinet",
+      "label": "Clarinet",
+      "wikipedia": "Clarinet"
+    },
+    {
+      "id": "oboe",
+      "label": "Oboe",
+      "wikipedia": "Oboe"
+    },
+    {
+      "id": "bassoon",
+      "label": "Bassoon",
+      "wikipedia": "Bassoon"
+    },
+    {
+      "id": "saxophone",
+      "label": "Saxophone",
+      "wikipedia": "Saxophone"
+    },
+    {
+      "id": "trumpet",
+      "label": "Trumpet",
+      "wikipedia": "Trumpet"
+    },
+    {
+      "id": "trombone",
+      "label": "Trombone",
+      "wikipedia": "Trombone"
+    },
+    {
+      "id": "french-horn",
+      "label": "French horn",
+      "wikipedia": "French horn"
+    },
+    {
+      "id": "tuba",
+      "label": "Tuba",
+      "wikipedia": "Tuba"
+    },
+    {
+      "id": "drum-kit",
+      "label": "Drum kit",
+      "commons": "File:A drum kit made by Mapex Drums - Cacon Photos- Copyleft - Creative Commons 01.jpg"
+    },
+    {
+      "id": "xylophone",
+      "label": "Xylophone",
+      "commons": "File:Xylophone rn.jpg"
+    },
+    {
+      "id": "accordion",
+      "label": "Accordion",
+      "wikipedia": "Accordion"
+    },
+    {
+      "id": "harmonica",
+      "label": "Harmonica",
+      "wikipedia": "Harmonica"
+    },
+    {
+      "id": "ukulele",
+      "label": "Ukulele",
+      "wikipedia": "Ukulele"
+    },
+    {
+      "id": "banjo",
+      "label": "Banjo",
+      "commons": "File:Banjo (AM 1998.60.131-1).jpg"
+    },
+    {
+      "id": "mandolin",
+      "label": "Mandolin",
+      "wikipedia": "Mandolin"
+    },
+    {
+      "id": "bagpipes",
+      "label": "Bagpipes",
+      "wikipedia": "Bagpipes"
+    },
+    {
+      "id": "sitar",
+      "label": "Sitar",
+      "wikipedia": "Sitar"
+    },
+    {
+      "id": "theremin",
+      "label": "Theremin",
+      "wikipedia": "Theremin"
+    },
+    {
+      "id": "pipe-organ",
+      "label": "Pipe organ",
+      "wikipedia": "Pipe organ"
+    },
+    {
+      "id": "recorder",
+      "label": "Recorder",
+      "wikipedia": "Recorder (musical instrument)"
+    },
+    {
+      "id": "triangle",
+      "label": "Triangle",
+      "wikipedia": "Triangle (musical instrument)"
+    },
+    {
+      "id": "tambourine",
+      "label": "Tambourine",
+      "wikipedia": "Tambourine"
+    },
+    {
+      "id": "steelpan",
+      "label": "Steelpan",
+      "wikipedia": "Steelpan"
+    },
+    {
+      "id": "synthesizer",
+      "label": "Synthesizer",
+      "wikipedia": "Synthesizer"
+    },
+    {
+      "id": "kazoo",
+      "label": "Kazoo",
+      "wikipedia": "Kazoo"
+    }
+  ]
+}
