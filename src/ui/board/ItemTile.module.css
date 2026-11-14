@@ -114,6 +114,25 @@
   animation: peck 300ms var(--ease-peck);
 }
 
+/* Fresh items hatch: a small rise and wobble, staggered by index. */
+.tile[data-state="hatching"] {
+  animation: hatch 420ms var(--ease-peck) both;
+}
+
+@keyframes hatch {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.6) rotate(-6deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-2px) scale(1.04) rotate(2deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+
 @keyframes peck {
   0% {
     transform: scale(1.06, 0.9);

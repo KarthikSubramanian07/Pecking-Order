@@ -37,6 +37,8 @@ interface UiState extends Prefs {
   selected: ItemId | null
   /** Item that just landed — drives the "peck" squash animation. */
   landed: ItemId | null
+  /** Newly added items, in order — they hatch in with a staggered pop. */
+  fresh: Map<ItemId, number>
   dialog: DialogId
   editingItem: ItemId | null
   toasts: Toast[]
@@ -45,6 +47,7 @@ interface UiState extends Prefs {
   setPref<K extends keyof Prefs>(key: K, value: Prefs[K]): void
   select(id: ItemId | null): void
   land(id: ItemId): void
+  hatch(ids: ItemId[]): void
   open(dialog: Exclude<DialogId, null>, itemId?: ItemId): void
   close(): void
   toast(t: Omit<Toast, 'id'>): void
@@ -77,6 +80,7 @@ export const useUiStore = create<UiState>()((set, get) => ({
   ...loadPrefs(),
   selected: null,
   landed: null,
+  fresh: new Map(),
   dialog: null,
   editingItem: null,
   toasts: [],
@@ -98,6 +102,12 @@ export const useUiStore = create<UiState>()((set, get) => ({
     clearTimeout(landTimer)
     set({ landed: id })
     landTimer = setTimeout(() => set({ landed: null }), 320)
+  },
+
+  hatch(ids) {
+    if (!ids.length) return
+    set({ fresh: new Map(ids.map((id, i) => [id, Math.min(i, 24)])) })
+    setTimeout(() => set({ fresh: new Map() }), 900)
   },
 
   open: (dialog, itemId) => set({ dialog, editingItem: itemId ?? null }),

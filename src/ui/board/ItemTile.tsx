@@ -6,7 +6,7 @@ import styles from './ItemTile.module.css'
 interface ItemTileProps extends HTMLAttributes<HTMLDivElement> {
   item: Item
   showLabel: boolean
-  state?: 'idle' | 'placeholder' | 'overlay' | 'selected' | 'landed'
+  state?: 'idle' | 'placeholder' | 'overlay' | 'selected' | 'landed' | 'hatching'
 }
 
 /** The visual tile. Pure presentation — dragging lives in SortableItem. */

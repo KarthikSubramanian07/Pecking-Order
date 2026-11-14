@@ -66,6 +66,7 @@ export function addItems(items: NewItem[], to: ContainerId = COOP): ItemId[] {
   boardActions().apply((b) => {
     ids = opAddItems(b, items, to)
   })
+  ui().hatch(ids)
   return ids
 }
 
