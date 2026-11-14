@@ -1,0 +1,187 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "sports",
+  "version": "1.0.0",
+  "title": "Sports",
+  "description": "Some of them involve running. You may rank those lower.",
+  "category": "Sports",
+  "accent": "Pasture",
+  "author": "Pecking Order",
+  "items": [
+    {
+      "id": "soccer",
+      "label": "Soccer",
+      "wikipedia": "Association football"
+    },
+    {
+      "id": "basketball",
+      "label": "Basketball",
+      "wikipedia": "Basketball"
+    },
+    {
+      "id": "american-football",
+      "label": "American football",
+      "wikipedia": "American football"
+    },
+    {
+      "id": "baseball",
+      "label": "Baseball",
+      "wikipedia": "Baseball"
+    },
+    {
+      "id": "cricket",
+      "label": "Cricket",
+      "wikipedia": "Cricket"
+    },
+    {
+      "id": "tennis",
+      "label": "Tennis",
+      "wikipedia": "Tennis"
+    },
+    {
+      "id": "golf",
+      "label": "Golf",
+      "wikipedia": "Golf"
+    },
+    {
+      "id": "ice-hockey",
+      "label": "Ice hockey",
+      "wikipedia": "Ice hockey"
+    },
+    {
+      "id": "rugby-union",
+      "label": "Rugby union",
+      "wikipedia": "Rugby union"
+    },
+    {
+      "id": "volleyball",
+      "label": "Volleyball",
+      "wikipedia": "Volleyball"
+    },
+    {
+      "id": "table-tennis",
+      "label": "Table tennis",
+      "wikipedia": "Table tennis"
+    },
+    {
+      "id": "badminton",
+      "label": "Badminton",
+      "wikipedia": "Badminton"
+    },
+    {
+      "id": "swimming",
+      "label": "Swimming",
+      "wikipedia": "Competitive swimming"
+    },
+    {
+      "id": "track-and-field",
+      "label": "Track and field",
+      "wikipedia": "Track and field"
+    },
+    {
+      "id": "gymnastics",
+      "label": "Gymnastics",
+      "wikipedia": "Gymnastics"
+    },
+    {
+      "id": "cycling",
+      "label": "Cycling",
+      "wikipedia": "Road bicycle racing"
+    },
+    {
+      "id": "alpine-skiing",
+      "label": "Alpine skiing",
+      "commons": "File:Iver Bjerkestrand giant slalom Norway 2011.jpg"
+    },
+    {
+      "id": "snowboarding",
+      "label": "Snowboarding",
+      "wikipedia": "Snowboarding"
+    },
+    {
+      "id": "surfing",
+      "label": "Surfing",
+      "wikipedia": "Surfing"
+    },
+    {
+      "id": "skateboarding",
+      "label": "Skateboarding",
+      "wikipedia": "Skateboarding"
+    },
+    {
+      "id": "curling",
+      "label": "Curling",
+      "wikipedia": "Curling"
+    },
+    {
+      "id": "fencing",
+      "label": "Fencing",
+      "wikipedia": "Fencing"
+    },
+    {
+      "id": "archery",
+      "label": "Archery",
+      "wikipedia": "Archery"
+    },
+    {
+      "id": "bowling",
+      "label": "Bowling",
+      "wikipedia": "Bowling"
+    },
+    {
+      "id": "lacrosse",
+      "label": "Lacrosse",
+      "wikipedia": "Lacrosse"
+    },
+    {
+      "id": "handball",
+      "label": "Handball",
+      "wikipedia": "Handball"
+    },
+    {
+      "id": "water-polo",
+      "label": "Water polo",
+      "wikipedia": "Water polo"
+    },
+    {
+      "id": "formula-one",
+      "label": "Formula One",
+      "wikipedia": "Formula One"
+    },
+    {
+      "id": "darts",
+      "label": "Darts",
+      "wikipedia": "Darts"
+    },
+    {
+      "id": "snooker",
+      "label": "Snooker",
+      "wikipedia": "Snooker"
+    },
+    {
+      "id": "rowing",
+      "label": "Rowing",
+      "wikipedia": "Rowing (sport)"
+    },
+    {
+      "id": "sport-climbing",
+      "label": "Sport climbing",
+      "wikipedia": "Sport climbing"
+    },
+    {
+      "id": "ultimate-frisbee",
+      "label": "Ultimate frisbee",
+      "wikipedia": "Ultimate frisbee"
+    },
+    {
+      "id": "pickleball",
+      "label": "Pickleball",
+      "wikipedia": "Pickleball"
+    },
+    {
+      "id": "sumo",
+      "label": "Sumo",
+      "wikipedia": "Sumo"
+    }
+  ]
+}

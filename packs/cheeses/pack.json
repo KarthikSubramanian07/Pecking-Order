@@ -1,0 +1,183 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "cheeses",
+  "version": "1.0.0",
+  "title": "Cheeses",
+  "description": "Milk, but with ambition.",
+  "category": "Food & Drink",
+  "accent": "Yolk",
+  "author": "Pecking Order",
+  "tiers": ["Life-changing", "Great", "Fine", "Squeaky", "Why"],
+  "items": [
+    {
+      "id": "cheddar",
+      "label": "Cheddar",
+      "wikipedia": "Cheddar cheese"
+    },
+    {
+      "id": "brie",
+      "label": "Brie",
+      "wikipedia": "Brie"
+    },
+    {
+      "id": "camembert",
+      "label": "Camembert",
+      "wikipedia": "Camembert"
+    },
+    {
+      "id": "parmigiano-reggiano",
+      "label": "Parmigiano Reggiano",
+      "wikipedia": "Parmesan"
+    },
+    {
+      "id": "mozzarella",
+      "label": "Mozzarella",
+      "wikipedia": "Mozzarella"
+    },
+    {
+      "id": "gouda",
+      "label": "Gouda",
+      "wikipedia": "Gouda cheese"
+    },
+    {
+      "id": "roquefort",
+      "label": "Roquefort",
+      "wikipedia": "Roquefort"
+    },
+    {
+      "id": "stilton",
+      "label": "Stilton",
+      "wikipedia": "Stilton"
+    },
+    {
+      "id": "gorgonzola",
+      "label": "Gorgonzola",
+      "wikipedia": "Gorgonzola"
+    },
+    {
+      "id": "feta",
+      "label": "Feta",
+      "wikipedia": "Feta"
+    },
+    {
+      "id": "halloumi",
+      "label": "Halloumi",
+      "wikipedia": "Halloumi"
+    },
+    {
+      "id": "gruyere",
+      "label": "Gruyère",
+      "wikipedia": "Gruyère"
+    },
+    {
+      "id": "emmental",
+      "label": "Emmental",
+      "wikipedia": "Emmental cheese"
+    },
+    {
+      "id": "manchego",
+      "label": "Manchego",
+      "wikipedia": "Manchego"
+    },
+    {
+      "id": "pecorino-romano",
+      "label": "Pecorino Romano",
+      "wikipedia": "Pecorino romano"
+    },
+    {
+      "id": "ricotta",
+      "label": "Ricotta",
+      "wikipedia": "Ricotta"
+    },
+    {
+      "id": "mascarpone",
+      "label": "Mascarpone",
+      "wikipedia": "Mascarpone"
+    },
+    {
+      "id": "burrata",
+      "label": "Burrata",
+      "wikipedia": "Burrata"
+    },
+    {
+      "id": "comte",
+      "label": "Comté",
+      "wikipedia": "Comté cheese"
+    },
+    {
+      "id": "raclette",
+      "label": "Raclette",
+      "wikipedia": "Raclette"
+    },
+    {
+      "id": "paneer",
+      "label": "Paneer",
+      "wikipedia": "Paneer"
+    },
+    {
+      "id": "cottage-cheese",
+      "label": "Cottage cheese",
+      "wikipedia": "Cottage cheese"
+    },
+    {
+      "id": "cream-cheese",
+      "label": "Cream cheese",
+      "wikipedia": "Cream cheese"
+    },
+    {
+      "id": "monterey-jack",
+      "label": "Monterey Jack",
+      "wikipedia": "Monterey Jack"
+    },
+    {
+      "id": "american-cheese",
+      "label": "American cheese",
+      "wikipedia": "American cheese"
+    },
+    {
+      "id": "cheese-curds",
+      "label": "Cheese curds",
+      "wikipedia": "Cheese curd"
+    },
+    {
+      "id": "limburger",
+      "label": "Limburger",
+      "wikipedia": "Limburger"
+    },
+    {
+      "id": "epoisses",
+      "label": "Époisses",
+      "wikipedia": "Époisses"
+    },
+    {
+      "id": "taleggio",
+      "label": "Taleggio",
+      "wikipedia": "Taleggio cheese"
+    },
+    {
+      "id": "havarti",
+      "label": "Havarti",
+      "commons": "File:Cream havarti on bread.jpg"
+    },
+    {
+      "id": "edam",
+      "label": "Edam",
+      "wikipedia": "Edam cheese"
+    },
+    {
+      "id": "provolone",
+      "label": "Provolone",
+      "wikipedia": "Provolone"
+    },
+    {
+      "id": "wensleydale",
+      "label": "Wensleydale",
+      "wikipedia": "Wensleydale cheese"
+    },
+    {
+      "id": "string-cheese",
+      "label": "String cheese",
+      "wikipedia": "String cheese"
+    }
+  ]
+}

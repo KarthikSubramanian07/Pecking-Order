@@ -1,0 +1,146 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "text-editors-and-ides",
+  "version": "1.0.0",
+  "title": "Text Editors & IDEs",
+  "description": "Pick carefully. Some of these are easier to quit than others.",
+  "category": "Tech",
+  "accent": "Eucalyptus",
+  "author": "Pecking Order",
+  "items": [
+    {
+      "id": "vim",
+      "label": "Vim",
+      "wikipedia": "Vim (text editor)"
+    },
+    {
+      "id": "emacs",
+      "label": "Emacs",
+      "commons": "File:EmacsIcon.svg"
+    },
+    {
+      "id": "visual-studio-code",
+      "label": "Visual Studio Code",
+      "wikipedia": "Visual Studio Code"
+    },
+    {
+      "id": "sublime-text",
+      "label": "Sublime Text",
+      "wikipedia": "Sublime Text"
+    },
+    {
+      "id": "notepadpp",
+      "label": "Notepad++",
+      "wikipedia": "Notepad++"
+    },
+    {
+      "id": "intellij-idea",
+      "label": "IntelliJ IDEA",
+      "commons": "File:IntelliJ IDEA Icon.svg"
+    },
+    {
+      "id": "visual-studio",
+      "label": "Visual Studio",
+      "wikipedia": "Visual Studio"
+    },
+    {
+      "id": "eclipse",
+      "label": "Eclipse",
+      "wikipedia": "Eclipse (software)"
+    },
+    {
+      "id": "xcode",
+      "label": "Xcode",
+      "wikipedia": "Xcode"
+    },
+    {
+      "id": "atom",
+      "label": "Atom",
+      "commons": "File:Atom editor logo.svg"
+    },
+    {
+      "id": "gnu-nano",
+      "label": "GNU nano",
+      "wikipedia": "GNU nano"
+    },
+    {
+      "id": "neovim",
+      "label": "Neovim",
+      "commons": "File:Neovim-mark.svg"
+    },
+    {
+      "id": "notepad",
+      "label": "Notepad",
+      "wikipedia": "Windows Notepad"
+    },
+    {
+      "id": "zed",
+      "label": "Zed",
+      "wikipedia": "Zed (text editor)"
+    },
+    {
+      "id": "cursor",
+      "label": "Cursor"
+    },
+    {
+      "id": "android-studio",
+      "label": "Android Studio",
+      "wikipedia": "Android Studio"
+    },
+    {
+      "id": "pycharm",
+      "label": "PyCharm",
+      "commons": "File:PyCharm Icon.svg"
+    },
+    {
+      "id": "bbedit",
+      "label": "BBEdit",
+      "wikipedia": "BBEdit"
+    },
+    {
+      "id": "textmate",
+      "label": "TextMate",
+      "wikipedia": "TextMate"
+    },
+    {
+      "id": "kate",
+      "label": "Kate",
+      "commons": "File:Sc-apps-kate-editor.svg"
+    },
+    {
+      "id": "gedit",
+      "label": "gedit",
+      "commons": "File:Gedit-logo.svg"
+    },
+    {
+      "id": "netbeans",
+      "label": "NetBeans",
+      "wikipedia": "NetBeans"
+    },
+    {
+      "id": "code-blocks",
+      "label": "Code::Blocks",
+      "wikipedia": "Code::Blocks"
+    },
+    {
+      "id": "rstudio",
+      "label": "RStudio",
+      "commons": "File:RStudio logo flat.svg"
+    },
+    {
+      "id": "jupyter",
+      "label": "Jupyter",
+      "wikipedia": "Project Jupyter"
+    },
+    {
+      "id": "ed",
+      "label": "ed",
+      "wikipedia": "Ed (text editor)"
+    },
+    {
+      "id": "microsoft-word",
+      "label": "Microsoft Word",
+      "commons": "File:Microsoft Office Word (2025–present).svg"
+    }
+  ]
+}

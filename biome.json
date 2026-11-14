@@ -12,7 +12,8 @@
       "!**/src/packs/generated",
       "!**/public/packs",
       "!**/public/*.svg",
-      "!**/.claude"
+      "!**/.claude",
+      "!**/src/ui/icons.tsx"
     ]
   },
   "formatter": {

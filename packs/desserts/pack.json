@@ -1,0 +1,192 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "desserts",
+  "version": "1.0.0",
+  "title": "Desserts",
+  "description": "There's always room. The question is where.",
+  "category": "Food & Drink",
+  "accent": "Rhubarb",
+  "author": "Pecking Order",
+  "items": [
+    {
+      "id": "tiramisu",
+      "label": "Tiramisu",
+      "wikipedia": "Tiramisu"
+    },
+    {
+      "id": "creme-brulee",
+      "label": "Crème brûlée",
+      "wikipedia": "Crème brûlée"
+    },
+    {
+      "id": "cheesecake",
+      "label": "Cheesecake",
+      "wikipedia": "Cheesecake"
+    },
+    {
+      "id": "brownie",
+      "label": "Brownie",
+      "wikipedia": "Chocolate brownie"
+    },
+    {
+      "id": "apple-pie",
+      "label": "Apple pie",
+      "wikipedia": "Apple pie"
+    },
+    {
+      "id": "ice-cream",
+      "label": "Ice cream",
+      "wikipedia": "Ice cream"
+    },
+    {
+      "id": "gelato",
+      "label": "Gelato",
+      "wikipedia": "Gelato"
+    },
+    {
+      "id": "macaron",
+      "label": "Macaron",
+      "wikipedia": "Macaron"
+    },
+    {
+      "id": "baklava",
+      "label": "Baklava",
+      "wikipedia": "Baklava"
+    },
+    {
+      "id": "churro",
+      "label": "Churro",
+      "wikipedia": "Churro"
+    },
+    {
+      "id": "panna-cotta",
+      "label": "Panna cotta",
+      "wikipedia": "Panna cotta"
+    },
+    {
+      "id": "pavlova",
+      "label": "Pavlova",
+      "wikipedia": "Pavlova"
+    },
+    {
+      "id": "mochi",
+      "label": "Mochi",
+      "wikipedia": "Mochi"
+    },
+    {
+      "id": "creme-caramel",
+      "label": "Crème caramel",
+      "wikipedia": "Crème caramel"
+    },
+    {
+      "id": "black-forest-cake",
+      "label": "Black Forest cake",
+      "wikipedia": "Black Forest gateau"
+    },
+    {
+      "id": "key-lime-pie",
+      "label": "Key lime pie",
+      "wikipedia": "Key lime pie"
+    },
+    {
+      "id": "banana-split",
+      "label": "Banana split",
+      "wikipedia": "Banana split"
+    },
+    {
+      "id": "profiterole",
+      "label": "Profiterole",
+      "wikipedia": "Profiterole"
+    },
+    {
+      "id": "eclair",
+      "label": "Éclair",
+      "wikipedia": "Éclair"
+    },
+    {
+      "id": "cannoli",
+      "label": "Cannoli",
+      "wikipedia": "Cannoli"
+    },
+    {
+      "id": "doughnut",
+      "label": "Doughnut",
+      "wikipedia": "Doughnut"
+    },
+    {
+      "id": "cupcake",
+      "label": "Cupcake",
+      "wikipedia": "Cupcake"
+    },
+    {
+      "id": "carrot-cake",
+      "label": "Carrot cake",
+      "wikipedia": "Carrot cake"
+    },
+    {
+      "id": "red-velvet-cake",
+      "label": "Red velvet cake",
+      "wikipedia": "Red velvet cake"
+    },
+    {
+      "id": "gulab-jamun",
+      "label": "Gulab jamun",
+      "wikipedia": "Gulab jamun"
+    },
+    {
+      "id": "pecan-pie",
+      "label": "Pecan pie",
+      "wikipedia": "Pecan pie"
+    },
+    {
+      "id": "sticky-toffee-pudding",
+      "label": "Sticky toffee pudding",
+      "wikipedia": "Sticky toffee pudding"
+    },
+    {
+      "id": "mille-feuille",
+      "label": "Mille-feuille",
+      "wikipedia": "Mille-feuille"
+    },
+    {
+      "id": "trifle",
+      "label": "Trifle",
+      "wikipedia": "Trifle"
+    },
+    {
+      "id": "chocolate-chip-cookie",
+      "label": "Chocolate chip cookie",
+      "wikipedia": "Chocolate chip cookie"
+    },
+    {
+      "id": "lemon-meringue-pie",
+      "label": "Lemon meringue pie",
+      "wikipedia": "Lemon meringue pie"
+    },
+    {
+      "id": "baked-alaska",
+      "label": "Baked Alaska",
+      "wikipedia": "Baked Alaska"
+    },
+    {
+      "id": "tres-leches-cake",
+      "label": "Tres leches cake",
+      "wikipedia": "Tres leches cake"
+    },
+    {
+      "id": "halo-halo",
+      "label": "Halo-halo",
+      "wikipedia": "Halo-halo"
+    },
+    {
+      "id": "sachertorte",
+      "label": "Sachertorte",
+      "wikipedia": "Sachertorte"
+    },
+    {
+      "id": "mango-sticky-rice",
+      "label": "Mango sticky rice",
+      "wikipedia": "Mango sticky rice"
+    }
+  ]
+}

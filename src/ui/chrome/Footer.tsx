@@ -1,4 +1,4 @@
-import { Coffee, GithubLogo } from '@phosphor-icons/react'
+import { Coffee, GithubLogo } from '@/ui/icons'
 import styles from './Footer.module.css'
 
 export function Footer() {

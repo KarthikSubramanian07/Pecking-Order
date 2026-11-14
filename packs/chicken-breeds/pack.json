@@ -1,0 +1,173 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "chicken-breeds",
+  "version": "1.0.0",
+  "title": "Chicken Breeds",
+  "description": "Know your flock. Rank them before they rank you.",
+  "category": "Animals",
+  "accent": "Comb",
+  "author": "Pecking Order",
+  "tiers": ["Top Chicken", "Free Range", "Barnyard", "Nugget", "Plucked"],
+  "items": [
+    {
+      "id": "rhode-island-red",
+      "label": "Rhode Island Red",
+      "wikipedia": "Rhode Island Red"
+    },
+    {
+      "id": "plymouth-rock",
+      "label": "Plymouth Rock",
+      "wikipedia": "Plymouth Rock chicken"
+    },
+    {
+      "id": "leghorn",
+      "label": "Leghorn",
+      "wikipedia": "Leghorn chicken"
+    },
+    {
+      "id": "orpington",
+      "label": "Orpington",
+      "wikipedia": "Orpington chicken"
+    },
+    {
+      "id": "silkie",
+      "label": "Silkie",
+      "wikipedia": "Silkie (chicken breed)"
+    },
+    {
+      "id": "wyandotte",
+      "label": "Wyandotte",
+      "wikipedia": "Wyandotte chicken"
+    },
+    {
+      "id": "australorp",
+      "label": "Australorp",
+      "wikipedia": "Australorp"
+    },
+    {
+      "id": "sussex",
+      "label": "Sussex",
+      "wikipedia": "Sussex chicken"
+    },
+    {
+      "id": "brahma",
+      "label": "Brahma",
+      "wikipedia": "Brahma chicken"
+    },
+    {
+      "id": "cochin",
+      "label": "Cochin",
+      "wikipedia": "Cochin chicken"
+    },
+    {
+      "id": "polish",
+      "label": "Polish",
+      "wikipedia": "Polish chicken"
+    },
+    {
+      "id": "ayam-cemani",
+      "label": "Ayam Cemani",
+      "wikipedia": "Ayam Cemani"
+    },
+    {
+      "id": "marans",
+      "label": "Marans",
+      "wikipedia": "Marans"
+    },
+    {
+      "id": "araucana",
+      "label": "Araucana",
+      "wikipedia": "Araucana"
+    },
+    {
+      "id": "ameraucana",
+      "label": "Ameraucana",
+      "wikipedia": "Ameraucana"
+    },
+    {
+      "id": "faverolles",
+      "label": "Faverolles",
+      "wikipedia": "Faverolles chicken"
+    },
+    {
+      "id": "barnevelder",
+      "label": "Barnevelder",
+      "wikipedia": "Barnevelder"
+    },
+    {
+      "id": "welsummer",
+      "label": "Welsummer",
+      "wikipedia": "Welsummer"
+    },
+    {
+      "id": "serama",
+      "label": "Serama",
+      "wikipedia": "Serama"
+    },
+    {
+      "id": "sebright",
+      "label": "Sebright",
+      "wikipedia": "Sebright chicken"
+    },
+    {
+      "id": "jersey-giant",
+      "label": "Jersey Giant",
+      "wikipedia": "Jersey Giant"
+    },
+    {
+      "id": "new-hampshire-red",
+      "label": "New Hampshire Red",
+      "wikipedia": "New Hampshire Red"
+    },
+    {
+      "id": "dorking",
+      "label": "Dorking",
+      "wikipedia": "Dorking chicken"
+    },
+    {
+      "id": "hamburg",
+      "label": "Hamburg",
+      "wikipedia": "Hamburg chicken"
+    },
+    {
+      "id": "naked-neck",
+      "label": "Naked Neck",
+      "wikipedia": "Naked Neck"
+    },
+    {
+      "id": "onagadori",
+      "label": "Onagadori",
+      "wikipedia": "Onagadori"
+    },
+    {
+      "id": "phoenix",
+      "label": "Phoenix",
+      "wikipedia": "Phoenix chicken"
+    },
+    {
+      "id": "cream-legbar",
+      "label": "Cream Legbar",
+      "wikipedia": "Legbar"
+    },
+    {
+      "id": "dominique",
+      "label": "Dominique",
+      "wikipedia": "Dominique chicken"
+    },
+    {
+      "id": "langshan",
+      "label": "Langshan",
+      "commons": "File:Black Langshans (21403472993).jpg"
+    },
+    {
+      "id": "minorca",
+      "label": "Minorca",
+      "wikipedia": "Minorca chicken"
+    },
+    {
+      "id": "appenzeller-spitzhauben",
+      "label": "Appenzeller Spitzhauben",
+      "wikipedia": "Appenzeller Spitzhauben"
+    }
+  ]
+}

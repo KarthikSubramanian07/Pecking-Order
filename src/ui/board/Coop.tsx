@@ -1,16 +1,9 @@
-import {
-  ArrowsDownUp,
-  ImageSquare,
-  MagnifyingGlass,
-  Plus,
-  Scales,
-  Shuffle,
-} from '@phosphor-icons/react'
-import { useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { opShuffleCoop, opSortContainer } from '@/core/board'
 import { COOP, type ItemId } from '@/core/types'
 import { boardActions, useBoardStore } from '@/state/boardStore'
 import { useUiStore } from '@/state/uiStore'
+import { ArrowsDownUp, ImageSquare, MagnifyingGlass, Plus, Scales, Shuffle } from '@/ui/icons'
 import { addItems, moveItemTo } from '../actions'
 import { Hen } from '../brand/Hen'
 import { useIngest } from '../hooks/useIngest'
@@ -28,6 +21,19 @@ export function Coop({ items }: { items: ItemId[] }) {
   const [filter, setFilter] = useState('')
   const [draft, setDraft] = useState('')
   const quickAdd = useRef<HTMLTextAreaElement>(null)
+  const dock = useRef<HTMLElement>(null)
+
+  // Publish the dock height so toasts can float just above it.
+  useEffect(() => {
+    const el = dock.current
+    if (!el) return
+    const ro = new ResizeObserver(([entry]) => {
+      const h = entry?.borderBoxSize[0]?.blockSize ?? el.offsetHeight
+      document.documentElement.style.setProperty('--coop-height', `${Math.round(h)}px`)
+    })
+    ro.observe(el)
+    return () => ro.disconnect()
+  }, [])
 
   const visible = useMemo(() => {
     const q = filter.trim().toLowerCase()
@@ -50,6 +56,7 @@ export function Coop({ items }: { items: ItemId[] }) {
 
   return (
     <section
+      ref={dock}
       className={styles.coop}
       aria-labelledby="coop-title"
       data-empty={brandNew || undefined}

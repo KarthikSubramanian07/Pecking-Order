@@ -13,7 +13,15 @@ export function useTheme(): void {
         .querySelector('meta[name="theme-color"]:not([media])')
         ?.setAttribute('content', dark ? '#1a1714' : '#f6f1e7')
     }
-    apply()
+    const current = document.documentElement.dataset.theme
+    const next = pref === 'dark' || (pref === 'system' && mq.matches) ? 'dark' : 'light'
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    // A soft cross-fade between themes where the browser supports it.
+    if (current && current !== next && document.startViewTransition && !reduce) {
+      document.startViewTransition(apply)
+    } else {
+      apply()
+    }
     mq.addEventListener('change', apply)
     return () => mq.removeEventListener('change', apply)
   }, [pref])

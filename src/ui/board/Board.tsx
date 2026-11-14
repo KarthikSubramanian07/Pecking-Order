@@ -21,7 +21,8 @@ import {
   useSensors,
 } from '@dnd-kit/core'
 import { sortableKeyboardCoordinates } from '@dnd-kit/sortable'
-import { useMotionValue } from 'motion/react'
+import { AnimatePresence, useMotionValue } from 'motion/react'
+import * as m from 'motion/react-m'
 import { useCallback, useMemo, useRef, useState } from 'react'
 import { findContainer, opMoveItem } from '@/core/board'
 import { type Board as BoardData, COOP, type ContainerId, type ItemId } from '@/core/types'
@@ -217,9 +218,21 @@ export function Board() {
     >
       {Object.keys(board.items).length === 0 && <Welcome />}
       <div className={styles.tiers} data-dragging={activeId ? true : undefined}>
-        {board.tiers.map((tier, i) => (
-          <TierRow key={tier.id} tier={tier} index={i} count={board.tiers.length} />
-        ))}
+        <AnimatePresence initial={false}>
+          {board.tiers.map((tier, i) => (
+            <m.div
+              key={tier.id}
+              // Rows glide when reordered, but never while dnd-kit is measuring a drag.
+              layout={activeId || reducedMotion ? false : 'position'}
+              initial={reducedMotion ? false : { opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={reducedMotion ? { opacity: 0 } : { opacity: 0, height: 0, scale: 0.98 }}
+              transition={{ type: 'spring', stiffness: 520, damping: 40, mass: 0.9 }}
+            >
+              <TierRow tier={tier} index={i} count={board.tiers.length} />
+            </m.div>
+          ))}
+        </AnimatePresence>
       </div>
       <Coop items={board.placement[COOP] ?? []} />
       <DragOverlay dropAnimation={dropAnimation}>

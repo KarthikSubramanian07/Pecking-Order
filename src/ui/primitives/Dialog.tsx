@@ -1,5 +1,5 @@
-import { X } from '@phosphor-icons/react'
 import { type ReactNode, useEffect, useId, useRef } from 'react'
+import { X } from '@/ui/icons'
 import styles from './Dialog.module.css'
 
 interface DialogProps {

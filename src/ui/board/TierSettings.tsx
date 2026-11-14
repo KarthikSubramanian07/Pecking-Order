@@ -1,10 +1,10 @@
-import { ArrowDown, ArrowUp, Broom, Plus, Trash } from '@phosphor-icons/react'
 import { type ReactNode, useId, useLayoutEffect, useRef, useState } from 'react'
 import { opAddTier, opClearTier, opMoveTier, opRemoveTier, opUpdateTier } from '@/core/board'
 import { SWATCHES } from '@/core/palette'
 import type { Tier } from '@/core/types'
 import { boardActions } from '@/state/boardStore'
 import { ui } from '@/state/uiStore'
+import { ArrowDown, ArrowUp, Broom, Plus, Trash } from '@/ui/icons'
 import styles from './TierSettings.module.css'
 
 interface TierSettingsProps {

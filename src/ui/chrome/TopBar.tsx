@@ -1,3 +1,8 @@
+import { useEffect, useState } from 'react'
+import { opSetTitle } from '@/core/board'
+import { COOP } from '@/core/types'
+import { boardActions, useBoardStore } from '@/state/boardStore'
+import { type ItemSize, useUiStore } from '@/state/uiStore'
 import {
   ArrowArcLeft,
   ArrowArcRight,
@@ -9,12 +14,7 @@ import {
   Plus,
   SquaresFour,
   Sun,
-} from '@phosphor-icons/react'
-import { useEffect, useState } from 'react'
-import { opSetTitle } from '@/core/board'
-import { COOP } from '@/core/types'
-import { boardActions, useBoardStore } from '@/state/boardStore'
-import { type ItemSize, useUiStore } from '@/state/uiStore'
+} from '@/ui/icons'
 import { Hen } from '../brand/Hen'
 import btn from '../primitives/Button.module.css'
 import { Menu } from '../primitives/Menu'
