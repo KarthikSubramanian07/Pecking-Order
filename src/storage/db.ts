@@ -48,9 +48,11 @@ export function db(): Promise<IDBPDatabase<PeckDB>> {
   return dbPromise
 }
 
-/** Test hook: forget the cached connection. */
-export function resetDbForTests(): void {
+/** Test hook: close and forget the cached connection. */
+export async function resetDbForTests(): Promise<void> {
+  const open = dbPromise
   dbPromise = null
+  if (open) (await open).close()
 }
 
 // ─── Boards ───────────────────────────────────────────────────────────────

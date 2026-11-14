@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useUiStore } from '@/state/uiStore'
+import { isPeckFile, restoreBackup } from '../backup'
 import { Hen } from '../brand/Hen'
 import { ingestTransfer } from '../hooks/useIngest'
 import styles from './DropZone.module.css'
@@ -38,7 +39,9 @@ export function DropZone() {
       if (!accepts(e.dataTransfer) || !e.dataTransfer) return
       e.preventDefault()
       if (useUiStore.getState().dialog) return
-      ingestTransfer(e.dataTransfer)
+      const peck = [...e.dataTransfer.files].find(isPeckFile)
+      if (peck) void restoreBackup(peck)
+      else ingestTransfer(e.dataTransfer)
     }
     window.addEventListener('dragenter', enter)
     window.addEventListener('dragover', over)
