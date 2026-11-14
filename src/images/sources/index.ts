@@ -1,6 +1,9 @@
-// CONTRACT STUB — implemented by the images workstream.
+import { openverse } from './openverse'
 import type { ImageSource } from './types'
+import { wikimedia } from './wikimedia'
+import { wikipedia } from './wikipedia'
 
 export type { ImageSearchResult, ImageSource, SearchOptions } from './types'
 
-export const SOURCES: ImageSource[] = []
+/** Search tabs, in display order: named things first, then broader free photo pools. */
+export const SOURCES: ImageSource[] = [wikipedia, wikimedia, openverse]
