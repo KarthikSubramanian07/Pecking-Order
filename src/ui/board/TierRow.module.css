@@ -15,6 +15,10 @@
   background: color-mix(in oklab, var(--tier) 22%, var(--sunken));
 }
 
+.labelCell {
+  position: relative;
+  display: grid;
+}
 .label {
   position: relative;
   display: grid;
@@ -54,19 +58,22 @@
 .labelText {
   max-width: 100%;
 }
+/* Outside the button so the shortcut digit never becomes part of its name. */
 .key {
   position: absolute;
   top: 5px;
   right: 6px;
+  color: var(--tier-text);
   font-family: var(--font-ui);
   font-size: 10px;
   font-weight: 600;
+  pointer-events: none;
   opacity: 0;
   transition: opacity var(--t-fast);
 }
 .row:hover .key,
 .row:focus-within .key {
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .items {
