@@ -6,7 +6,14 @@
     "useIgnoreFile": true
   },
   "files": {
-    "includes": ["**", "!**/dist", "!**/src/packs/generated", "!**/public/packs", "!**/.claude"]
+    "includes": [
+      "**",
+      "!**/dist",
+      "!**/src/packs/generated",
+      "!**/public/packs",
+      "!**/public/*.svg",
+      "!**/.claude"
+    ]
   },
   "formatter": {
     "indentStyle": "space",
@@ -51,6 +58,10 @@
     }
   },
   "overrides": [
+    {
+      "includes": ["public/**/*.md"],
+      "formatter": { "enabled": false }
+    },
     {
       "includes": ["**/*.test.ts", "**/*.test.tsx", "e2e/**"],
       "linter": {

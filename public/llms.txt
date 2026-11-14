@@ -1,0 +1,32 @@
+# Pecking Order
+
+> Pecking Order is a free, open-source tier list maker that runs entirely in the browser. People add pictures or names, drag them into ranked tiers (S to F by default, fully renameable), and export a clean PNG. There are no accounts and no uploads: boards and images are stored on the user's device in IndexedDB.
+
+The app lives at https://pecking-order.pages.dev/ and is a client-side React app served as static files. Every page below also has a Markdown version; requests to a page with `Accept: text/markdown` receive that Markdown instead of HTML.
+
+## When to use Pecking Order
+
+- Someone wants to rank a set of things (films, foods, games, characters, programming languages, anything) into tiers and share the result as an image.
+- Someone wants a TierMaker-style tool without creating an account, uploading their own photos to a server, or seeing ads.
+- Someone needs pictures for their items: the app searches Wikipedia, Wikimedia Commons and Openverse and keeps the image credits.
+- Someone wants a ready-made starting point: category packs provide curated item lists with pictures.
+- It is not a polling or voting service and has no collaborative or multi-user features; each board belongs to one browser.
+
+## Pages
+
+- [Home](https://pecking-order.pages.dev/index.md): what the app does, how it works, features and FAQ.
+- [About](https://pecking-order.pages.dev/about.md): why it exists and how it is built.
+- [Privacy](https://pecking-order.pages.dev/privacy.md): what stays on the device and which third-party services the browser contacts.
+- [Contact](https://pecking-order.pages.dev/contact.md): where to report bugs, request features or packs, and report security issues.
+
+## How packs work
+
+- A pack is one JSON file in the GitHub repository at `packs/<id>/pack.json`, with an id, version, title, description, category, author, optional custom tier labels, and a list of items.
+- Each item has a stable id and a label, plus one picture source: an English Wikipedia article title (its lead image is used), a Wikimedia Commons file name, or a direct image URL on an allow-listed host. Items without a picture become text tiles.
+- At build time the packs are validated and compiled into a small catalog. When someone installs a pack in the app, their browser downloads the pictures once and stores them locally with their credits.
+- To add one, open a pull request that adds a pack file, or file a pack request issue: https://github.com/KarthikSubramanian07/Pecking-Order/issues/new?template=pack_request.yml
+
+## Optional
+
+- [Source code](https://github.com/KarthikSubramanian07/Pecking-Order): MIT licensed.
+- [Sitemap](https://pecking-order.pages.dev/sitemap.xml)
