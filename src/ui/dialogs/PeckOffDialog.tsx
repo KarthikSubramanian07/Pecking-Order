@@ -19,6 +19,7 @@ import { ArrowLeft, ArrowRight, ArrowUUpLeft, Equals } from '@/ui/icons'
 import { ItemTile } from '../board/ItemTile'
 import { Hen } from '../brand/Hen'
 import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion'
+import { MotionProvider } from '../MotionProvider'
 import btn from '../primitives/Button.module.css'
 import { Dialog } from '../primitives/Dialog'
 import styles from './PeckOff.module.css'
@@ -125,149 +126,151 @@ export default function PeckOffDialog({ open, onClose }: { open: boolean; onClos
   const progress = state && total ? state.answered / total : 0
 
   return (
-    <Dialog
-      open={open}
-      onClose={onClose}
-      title="Peck-off"
-      subtitle="Two at a time. Pick the better one; the hen does the sorting."
-      size="lg"
-    >
-      {!state && (
-        <div className={styles.intro}>
-          <Hen size={72} mood="bob" />
-          <p>
-            Can't decide? Answer a few quick head-to-heads and Peck-off ranks everything for you. It
-            takes about{' '}
-            {Math.max(1, Math.round(coopCount * Math.log2(Math.max(2, coopCount)) * 0.8))} picks for
-            the Coop.
-          </p>
-          <div className={styles.introActions}>
-            <button
-              type="button"
-              className={btn.button}
-              data-variant="accent"
-              disabled={coopCount < 2}
-              onClick={() => begin('coop')}
-            >
-              Rank the Coop ({coopCount})
-            </button>
-            <button
-              type="button"
-              className={btn.button}
-              disabled={allCount < 2}
-              onClick={() => begin('all')}
-            >
-              Re-rank everything ({allCount})
-            </button>
+    <MotionProvider>
+      <Dialog
+        open={open}
+        onClose={onClose}
+        title="Peck-off"
+        subtitle="Two at a time. Pick the better one; the hen does the sorting."
+        size="lg"
+      >
+        {!state && (
+          <div className={styles.intro}>
+            <Hen size={72} mood="bob" />
+            <p>
+              Can't decide? Answer a few quick head-to-heads and Peck-off ranks everything for you.
+              It takes about{' '}
+              {Math.max(1, Math.round(coopCount * Math.log2(Math.max(2, coopCount)) * 0.8))} picks
+              for the Coop.
+            </p>
+            <div className={styles.introActions}>
+              <button
+                type="button"
+                className={btn.button}
+                data-variant="accent"
+                disabled={coopCount < 2}
+                onClick={() => begin('coop')}
+              >
+                Rank the Coop ({coopCount})
+              </button>
+              <button
+                type="button"
+                className={btn.button}
+                disabled={allCount < 2}
+                onClick={() => begin('all')}
+              >
+                Re-rank everything ({allCount})
+              </button>
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {state && q && left && right && (
-        <div className={styles.arena}>
-          <div
-            className={styles.progress}
-            role="progressbar"
-            aria-label="Peck-off progress"
-            aria-valuemin={0}
-            aria-valuemax={100}
-            aria-valuenow={Math.round(progress * 100)}
-          >
-            <span style={{ transform: `scaleX(${progress})` }} />
-          </div>
-          <p className={`aside ${styles.count}`} aria-live="polite">
-            Pick {state.answered + 1} · about {estimateRemaining(state)} to go
-          </p>
-          <div className={styles.pair}>
-            <AnimatePresence mode="popLayout" initial={false}>
-              {[
-                { side: 'left' as const, id: left },
-                { side: 'right' as const, id: right },
-              ].map(({ side, id }) => {
-                const item = items[id]
-                if (!item) return null
-                return (
-                  <m.button
-                    key={`${side}-${id}-${state.answered}`}
-                    type="button"
-                    className={styles.choice}
-                    initial={reduced ? false : { opacity: 0, y: 14, scale: 0.96 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={
-                      reduced
-                        ? { opacity: 0 }
-                        : { opacity: 0, scale: 0.92, transition: { duration: 0.12 } }
-                    }
-                    whileHover={reduced ? undefined : { y: -4 }}
-                    whileTap={reduced ? undefined : { scale: 0.96 }}
-                    transition={{ type: 'spring', stiffness: 520, damping: 32 }}
-                    data-side={side}
-                    data-round={state.answered}
-                    onClick={() => pickSide(side)}
-                    aria-label={`Pick ${item.label || 'this item'}`}
-                    aria-keyshortcuts={side === 'left' ? 'ArrowLeft' : 'ArrowRight'}
-                  >
-                    <span className={styles.tileWrap}>
-                      <ItemTile item={item} showLabel={false} />
-                    </span>
-                    {item.image && (
-                      <span className={styles.choiceLabel}>{item.label || 'Untitled'}</span>
-                    )}
-                    <span className={styles.key} aria-hidden>
-                      {side === 'left' ? (
-                        <ArrowLeft size={14} weight="bold" />
-                      ) : (
-                        <ArrowRight size={14} weight="bold" />
+        {state && q && left && right && (
+          <div className={styles.arena}>
+            <div
+              className={styles.progress}
+              role="progressbar"
+              aria-label="Peck-off progress"
+              aria-valuemin={0}
+              aria-valuemax={100}
+              aria-valuenow={Math.round(progress * 100)}
+            >
+              <span style={{ transform: `scaleX(${progress})` }} />
+            </div>
+            <p className={`aside ${styles.count}`} aria-live="polite">
+              Pick {state.answered + 1} · about {estimateRemaining(state)} to go
+            </p>
+            <div className={styles.pair}>
+              <AnimatePresence mode="popLayout" initial={false}>
+                {[
+                  { side: 'left' as const, id: left },
+                  { side: 'right' as const, id: right },
+                ].map(({ side, id }) => {
+                  const item = items[id]
+                  if (!item) return null
+                  return (
+                    <m.button
+                      key={`${side}-${id}-${state.answered}`}
+                      type="button"
+                      className={styles.choice}
+                      initial={reduced ? false : { opacity: 0, y: 14, scale: 0.96 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={
+                        reduced
+                          ? { opacity: 0 }
+                          : { opacity: 0, scale: 0.92, transition: { duration: 0.12 } }
+                      }
+                      whileHover={reduced ? undefined : { y: -4 }}
+                      whileTap={reduced ? undefined : { scale: 0.96 }}
+                      transition={{ type: 'spring', stiffness: 520, damping: 32 }}
+                      data-side={side}
+                      data-round={state.answered}
+                      onClick={() => pickSide(side)}
+                      aria-label={`Pick ${item.label || 'this item'}`}
+                      aria-keyshortcuts={side === 'left' ? 'ArrowLeft' : 'ArrowRight'}
+                    >
+                      <span className={styles.tileWrap}>
+                        <ItemTile item={item} showLabel={false} />
+                      </span>
+                      {item.image && (
+                        <span className={styles.choiceLabel}>{item.label || 'Untitled'}</span>
                       )}
-                    </span>
-                  </m.button>
-                )
-              })}
-            </AnimatePresence>
-            <span className={styles.vs} aria-hidden>
-              vs
-            </span>
+                      <span className={styles.key} aria-hidden>
+                        {side === 'left' ? (
+                          <ArrowLeft size={14} weight="bold" />
+                        ) : (
+                          <ArrowRight size={14} weight="bold" />
+                        )}
+                      </span>
+                    </m.button>
+                  )
+                })}
+              </AnimatePresence>
+              <span className={styles.vs} aria-hidden>
+                vs
+              </span>
+            </div>
+            <div className={styles.controls}>
+              <button
+                type="button"
+                className={btn.button}
+                data-variant="ghost"
+                onClick={undo}
+                disabled={history.length < 2}
+              >
+                <ArrowUUpLeft size={16} aria-hidden /> Undo
+              </button>
+              <button type="button" className={btn.button} onClick={() => pick('tie')}>
+                <Equals size={16} aria-hidden /> Can't decide
+              </button>
+            </div>
           </div>
-          <div className={styles.controls}>
-            <button
-              type="button"
-              className={btn.button}
-              data-variant="ghost"
-              onClick={undo}
-              disabled={history.length < 2}
-            >
-              <ArrowUUpLeft size={16} aria-hidden /> Undo
-            </button>
-            <button type="button" className={btn.button} onClick={() => pick('tie')}>
-              <Equals size={16} aria-hidden /> Can't decide
-            </button>
-          </div>
-        </div>
-      )}
+        )}
 
-      {state && isDone(state) && (
-        <div className={styles.result}>
-          <p className={styles.resultTitle} tabIndex={-1} ref={focusOnMount}>
-            Done in {state.answered} {state.answered === 1 ? 'pick' : 'picks'}.
-          </p>
-          <ol className={styles.ranking}>
-            {state.ranked.map((id, i) => (
-              <li key={id}>
-                <span className={styles.rank}>{i + 1}</span>
-                {items[id]?.label || 'Untitled'}
-              </li>
-            ))}
-          </ol>
-          <div className={styles.introActions}>
-            <button type="button" className={btn.button} data-variant="accent" onClick={apply}>
-              Spread across {board?.tiers.length} tiers
-            </button>
-            <button type="button" className={btn.button} onClick={() => begin(scope)}>
-              Start over
-            </button>
+        {state && isDone(state) && (
+          <div className={styles.result}>
+            <p className={styles.resultTitle} tabIndex={-1} ref={focusOnMount}>
+              Done in {state.answered} {state.answered === 1 ? 'pick' : 'picks'}.
+            </p>
+            <ol className={styles.ranking}>
+              {state.ranked.map((id, i) => (
+                <li key={id}>
+                  <span className={styles.rank}>{i + 1}</span>
+                  {items[id]?.label || 'Untitled'}
+                </li>
+              ))}
+            </ol>
+            <div className={styles.introActions}>
+              <button type="button" className={btn.button} data-variant="accent" onClick={apply}>
+                Spread across {board?.tiers.length} tiers
+              </button>
+              <button type="button" className={btn.button} onClick={() => begin(scope)}>
+                Start over
+              </button>
+            </div>
           </div>
-        </div>
-      )}
-    </Dialog>
+        )}
+      </Dialog>
+    </MotionProvider>
   )
 }

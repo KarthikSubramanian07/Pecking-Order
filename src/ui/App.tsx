@@ -1,4 +1,3 @@
-import { LazyMotion } from 'motion/react'
 import { lazy, Suspense, useEffect } from 'react'
 import { useBoardStore } from '@/state/boardStore'
 import { ITEM_SIZE_PX, useUiStore } from '@/state/uiStore'
@@ -13,10 +12,6 @@ import { useGlobalShortcuts } from './hooks/useGlobalShortcuts'
 import { useTheme } from './hooks/useTheme'
 import { Toasts } from './primitives/Toasts'
 import { useRoute } from './router'
-
-// The animation engine streams in after first paint; until then motion
-// components render statically, which is exactly what reduced motion wants anyway.
-const loadMotionFeatures = () => import('./motionFeatures').then((mod) => mod.default)
 
 const HOME_TITLE = 'Pecking Order: rank anything'
 
@@ -53,27 +48,25 @@ export function App() {
   }, [itemSize])
 
   return (
-    <LazyMotion features={loadMotionFeatures} strict>
-      <div className={styles.app}>
-        <a className={styles.skip} href="#main">
-          Skip to content
-        </a>
-        <TopBar onBoard={route.name === 'board'} />
-        {!ready ? (
-          <p className={styles.hatching}>Hatching…</p>
-        ) : route.name === 'board' ? (
-          <Suspense fallback={<p className={styles.hatching}>Hatching…</p>}>
-            <BoardPage key={route.id} id={route.id} />
-          </Suspense>
-        ) : (
-          <Home />
-        )}
-        <Footer />
-        <Dialogs />
-        <DropZone />
-        <Busy />
-        <Toasts />
-      </div>
-    </LazyMotion>
+    <div className={styles.app}>
+      <a className={styles.skip} href="#main">
+        Skip to content
+      </a>
+      <TopBar onBoard={route.name === 'board'} />
+      {!ready ? (
+        <p className={styles.hatching}>Hatching…</p>
+      ) : route.name === 'board' ? (
+        <Suspense fallback={<p className={styles.hatching}>Hatching…</p>}>
+          <BoardPage key={route.id} id={route.id} />
+        </Suspense>
+      ) : (
+        <Home />
+      )}
+      <Footer />
+      <Dialogs />
+      <DropZone />
+      <Busy />
+      <Toasts />
+    </div>
   )
 }
