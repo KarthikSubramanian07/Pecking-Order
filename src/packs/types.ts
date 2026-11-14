@@ -25,6 +25,10 @@ export interface PackSpec {
   author: string
   /** Optional custom tier labels; defaults to the classic S–F preset. */
   tiers?: string[]
+  /** Shown first on the home page. Curated, since there is no usage data. */
+  featured?: boolean
+  /** Source URLs of the cover mosaic, kept for provenance (`npm run packs:covers`). */
+  cover?: string[]
   items: PackItemSpec[]
 }
 
@@ -40,4 +44,7 @@ export interface PackSummary {
   itemCount: number
   /** First few labels, for previews. */
   sample: string[]
+  featured?: boolean
+  /** Same-origin cover mosaic, e.g. "/packs/fruits.webp". */
+  coverImage?: string
 }

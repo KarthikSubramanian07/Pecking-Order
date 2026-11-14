@@ -8,6 +8,13 @@
   "accent": "Comb",
   "author": "Pecking Order",
   "tiers": ["Top Chicken", "Free Range", "Barnyard", "Nugget", "Plucked"],
+  "featured": true,
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Rhode_Island_Red_cock%2C_cropped.jpg/500px-Rhode_Island_Red_cock%2C_cropped.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Sophia_and_ZsuZsu_walking_the_property.jpg/500px-Sophia_and_ZsuZsu_walking_the_property.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Leghorn_cockerel_and_hen.jpg/500px-Leghorn_cockerel_and_hen.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Buff_Orpington_chicken%2C_UK.jpg/500px-Buff_Orpington_chicken%2C_UK.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  ],
   "items": [
     {
       "id": "rhode-island-red",

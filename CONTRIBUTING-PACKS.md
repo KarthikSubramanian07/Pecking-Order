@@ -124,11 +124,26 @@ The verify script resolves each image exactly the way the app does and
 downloads it, so a green run means users will see every picture. It talks to
 Wikipedia and Commons, which is why it doesn't run in CI.
 
+## Making the cover
+
+Every pack gets a card on the home page with a 2x2 picture mosaic. Generate it once:
+
+```sh
+npm run packs:covers -- <id>
+```
+
+This resolves the first four items' pictures, records their URLs in the pack's
+`cover` field, and renders `packs/<id>/cover.webp` with headless Chromium. Commit
+both. The cover is served from the app's own domain, so the home page never makes
+third-party requests. To pick different pictures, edit `cover` by hand and run the
+command again. `featured: true` is set by maintainers to pin a pack to the top.
+
 ## Pull request checklist
 
 - [ ] The folder name equals `id`, and the pack has 15 to 40 items.
 - [ ] `npm run packs:validate` passes.
 - [ ] `node scripts/verify-pack-images.mjs <id>` reports 0 broken.
+- [ ] `npm run packs:covers -- <id>` made a `cover.webp` that looks good.
 - [ ] You opened the pack with `npm run dev` and the tiles look right.
 - [ ] The topic is family friendly and not a culture-war magnet.
 - [ ] Editing an existing pack? Item ids are unchanged and `version` is bumped.

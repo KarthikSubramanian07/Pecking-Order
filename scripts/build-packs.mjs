@@ -8,8 +8,10 @@
  * Outputs (both git-ignored, rebuilt on dev/build/test):
  *   src/packs/generated/catalog.json  PackSummary[] bundled into the app
  *   public/packs/<id>.json            full pack, fetched when installed
+ *   public/packs/<id>.webp            home page cover (from packs/<id>/cover.webp)
  */
-import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises'
+import { existsSync } from 'node:fs'
+import { copyFile, mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises'
 import { join, relative } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import {
@@ -69,12 +71,22 @@ if (checkOnly) {
   process.exit(0)
 }
 
+const coverOf = (id) => join(packsDir, id, 'cover.webp')
+const summaries = packs.map((p) => {
+  const summary = toSummary(p)
+  // Covers are served from our own origin so the home page makes no third-party requests.
+  if (existsSync(coverOf(p.id))) summary.coverImage = `/packs/${p.id}.webp`
+  return summary
+})
 await mkdir(join(catalogFile, '..'), { recursive: true })
-await writeFile(catalogFile, `${JSON.stringify(sortCatalog(packs.map(toSummary)), null, 2)}\n`)
+await writeFile(catalogFile, `${JSON.stringify(sortCatalog(summaries), null, 2)}\n`)
 // Start clean so packs deleted from the repo don't linger in public/.
 await rm(publicDir, { recursive: true, force: true })
 await mkdir(publicDir, { recursive: true })
 await Promise.all(
-  packs.map((p) => writeFile(join(publicDir, `${p.id}.json`), JSON.stringify(toPublicPack(p)))),
+  packs.flatMap((p) => [
+    writeFile(join(publicDir, `${p.id}.json`), JSON.stringify(toPublicPack(p))),
+    existsSync(coverOf(p.id)) ? copyFile(coverOf(p.id), join(publicDir, `${p.id}.webp`)) : [],
+  ]),
 )
 console.log(`✓ built ${packs.length} packs (${itemCount} items)`)

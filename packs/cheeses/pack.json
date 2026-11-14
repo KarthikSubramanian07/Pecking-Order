@@ -8,6 +8,13 @@
   "accent": "Yolk",
   "author": "Pecking Order",
   "tiers": ["Life-changing", "Great", "Fine", "Squeaky", "Why"],
+  "featured": true,
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Somerset-Cheddar.jpg/500px-Somerset-Cheddar.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Brie_01.jpg/500px-Brie_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Camembert_de_Normandie_%28AOP%29_11.jpg/500px-Camembert_de_Normandie_%28AOP%29_11.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Parmigiano_Reggiano%2C_Italien%2C_Europ%C3%A4ische_Union.jpg/500px-Parmigiano_Reggiano%2C_Italien%2C_Europ%C3%A4ische_Union.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  ],
   "items": [
     {
       "id": "cheddar",

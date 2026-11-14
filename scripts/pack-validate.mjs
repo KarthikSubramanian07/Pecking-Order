@@ -62,6 +62,8 @@ const PACK_KEYS = new Set([
   'category',
   'author',
   'tiers',
+  'featured',
+  'cover',
   'items',
 ])
 const ITEM_KEYS = new Set(['id', 'label', 'wikipedia', 'commons', 'image', 'tags'])
@@ -249,6 +251,21 @@ export function validatePack(pack, { folder, swatchNames }) {
     }
   }
 
+  if (pack.featured !== undefined && typeof pack.featured !== 'boolean') {
+    add('featured', 'must be true or false')
+  }
+
+  if (pack.cover !== undefined) {
+    if (!Array.isArray(pack.cover) || pack.cover.length < 1 || pack.cover.length > 4) {
+      add('cover', 'must be an array of 1 to 4 image URLs (run `npm run packs:covers`)')
+    } else {
+      pack.cover.forEach((url, i) => {
+        const err = checkImageUrl(url)
+        if (err) add(`cover[${i}]`, err)
+      })
+    }
+  }
+
   if (!Array.isArray(pack.items)) {
     add('items', 'is required and must be an array')
     return errors
@@ -283,6 +300,7 @@ export function toSummary(pack) {
     sample: pack.items.slice(0, 5).map((item) => item.label),
   }
   if (pack.accent !== undefined) summary.accent = pack.accent
+  if (pack.featured) summary.featured = true
   return summary
 }
 

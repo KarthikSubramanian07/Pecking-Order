@@ -7,6 +7,13 @@
   "category": "Film & TV",
   "accent": "Duck Egg",
   "author": "Pecking Order",
+  "featured": true,
+  "cover": [
+    "https://upload.wikimedia.org/wikipedia/en/1/13/Toy_Story.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "https://upload.wikimedia.org/wikipedia/en/c/cc/A_Bug%27s_Life.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "https://upload.wikimedia.org/wikipedia/en/c/c0/Toy_Story_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "https://upload.wikimedia.org/wikipedia/en/6/63/Monsters_Inc.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+  ],
   "items": [
     {
       "id": "toy-story",
