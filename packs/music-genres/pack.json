@@ -1,0 +1,169 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "music-genres",
+  "version": "1.0.0",
+  "title": "Music Genres",
+  "description": "Every one of these was, at some point, accused of ruining music.",
+  "category": "Music",
+  "accent": "Heather",
+  "author": "Pecking Order",
+  "tiers": ["On repeat", "Good playlist", "Background", "Skip", "Mute"],
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/1958_Fender_Stratocaster.jpg/500px-1958_Fender_Stratocaster.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Disco_TGI_Bar_by_John_Vance.jpg/500px-Disco_TGI_Bar_by_John_Vance.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Shure_mikrofon_55S.jpg/500px-Shure_mikrofon_55S.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Eight_saxophone_sizes_smaller.png/500px-Eight_saxophone_sizes_smaller.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  ],
+  "items": [
+    {
+      "id": "rock",
+      "label": "Rock",
+      "commons": "File:1958 Fender Stratocaster.jpg"
+    },
+    {
+      "id": "pop",
+      "label": "Pop",
+      "wikipedia": "Microphone"
+    },
+    {
+      "id": "jazz",
+      "label": "Jazz",
+      "wikipedia": "Saxophone"
+    },
+    {
+      "id": "blues",
+      "label": "Blues",
+      "wikipedia": "Harmonica"
+    },
+    {
+      "id": "country",
+      "label": "Country",
+      "wikipedia": "Pedal steel guitar"
+    },
+    {
+      "id": "hip-hop",
+      "label": "Hip-hop",
+      "wikipedia": "Boombox"
+    },
+    {
+      "id": "r-and-b",
+      "label": "R&B",
+      "wikipedia": "Rhodes piano"
+    },
+    {
+      "id": "soul",
+      "label": "Soul",
+      "wikipedia": "Hammond organ"
+    },
+    {
+      "id": "funk",
+      "label": "Funk",
+      "wikipedia": "Funk"
+    },
+    {
+      "id": "disco",
+      "label": "Disco",
+      "wikipedia": "Disco"
+    },
+    {
+      "id": "reggae",
+      "label": "Reggae",
+      "commons": "File:Bass Odyssey Sound System speaker column, Tropical Hut, St. Mary, May 2012.jpg"
+    },
+    {
+      "id": "punk",
+      "label": "Punk",
+      "commons": "File:Punkjacket.jpg"
+    },
+    {
+      "id": "heavy-metal",
+      "label": "Heavy metal",
+      "wikipedia": "Sign of the horns"
+    },
+    {
+      "id": "grunge",
+      "label": "Grunge",
+      "wikipedia": "Flannel"
+    },
+    {
+      "id": "classical",
+      "label": "Classical",
+      "wikipedia": "Classical music"
+    },
+    {
+      "id": "opera",
+      "label": "Opera",
+      "wikipedia": "Opera"
+    },
+    {
+      "id": "folk",
+      "label": "Folk",
+      "commons": "File:Martin D-28 Acoustic Guitar.jpg"
+    },
+    {
+      "id": "bluegrass",
+      "label": "Bluegrass",
+      "wikipedia": "Bluegrass music"
+    },
+    {
+      "id": "house",
+      "label": "House",
+      "wikipedia": "Roland TR-909"
+    },
+    {
+      "id": "techno",
+      "label": "Techno",
+      "wikipedia": "Technics SL-1200"
+    },
+    {
+      "id": "drum-and-bass",
+      "label": "Drum and bass",
+      "wikipedia": "Drum and bass"
+    },
+    {
+      "id": "dubstep",
+      "label": "Dubstep",
+      "wikipedia": "Subwoofer"
+    },
+    {
+      "id": "ambient",
+      "label": "Ambient",
+      "wikipedia": "Ambient music"
+    },
+    {
+      "id": "ska",
+      "label": "Ska",
+      "wikipedia": "Ska"
+    },
+    {
+      "id": "salsa",
+      "label": "Salsa",
+      "wikipedia": "Salsa music"
+    },
+    {
+      "id": "bossa-nova",
+      "label": "Bossa nova",
+      "wikipedia": "Bossa nova"
+    },
+    {
+      "id": "k-pop",
+      "label": "K-pop",
+      "commons": "File:Super Junior Lightstick.JPG"
+    },
+    {
+      "id": "indie-rock",
+      "label": "Indie rock",
+      "wikipedia": "Fender Jazzmaster"
+    },
+    {
+      "id": "emo",
+      "label": "Emo",
+      "wikipedia": "Chuck Taylor All-Stars"
+    },
+    {
+      "id": "synth-pop",
+      "label": "Synth-pop",
+      "wikipedia": "Yamaha DX7"
+    }
+  ]
+}
