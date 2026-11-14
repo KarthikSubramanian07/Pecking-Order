@@ -1,0 +1,153 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "pizza-toppings",
+  "version": "1.0.0",
+  "title": "Pizza Toppings",
+  "description": "The pineapple question, settled at last. Probably not.",
+  "category": "Food & Drink",
+  "accent": "Comb",
+  "author": "Pecking Order",
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Pepperoni_Pizza_%2829204589095%29.jpg/500px-Pepperoni_Pizza_%2829204589095%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/ChampignonMushroom.jpg/500px-ChampignonMushroom.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Mixed_onions.jpg/500px-Mixed_onions.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Salsiccia_Italian_pork_sausage.jpg/500px-Salsiccia_Italian_pork_sausage.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  ],
+  "items": [
+    {
+      "id": "pepperoni",
+      "label": "Pepperoni",
+      "wikipedia": "Pepperoni"
+    },
+    {
+      "id": "mushrooms",
+      "label": "Mushrooms",
+      "wikipedia": "Agaricus bisporus"
+    },
+    {
+      "id": "onions",
+      "label": "Onions",
+      "wikipedia": "Onion"
+    },
+    {
+      "id": "sausage",
+      "label": "Sausage",
+      "wikipedia": "Italian sausage"
+    },
+    {
+      "id": "bacon",
+      "label": "Bacon",
+      "wikipedia": "Bacon"
+    },
+    {
+      "id": "extra-cheese",
+      "label": "Extra cheese",
+      "wikipedia": "Mozzarella"
+    },
+    {
+      "id": "black-olives",
+      "label": "Black olives",
+      "commons": "File:Kalamataolives.jpg"
+    },
+    {
+      "id": "green-peppers",
+      "label": "Green peppers",
+      "wikipedia": "Bell pepper"
+    },
+    {
+      "id": "pineapple",
+      "label": "Pineapple",
+      "wikipedia": "Pineapple"
+    },
+    {
+      "id": "ham",
+      "label": "Ham",
+      "wikipedia": "Ham"
+    },
+    {
+      "id": "spinach",
+      "label": "Spinach",
+      "commons": "File:Spinach leaves.jpg"
+    },
+    {
+      "id": "anchovies",
+      "label": "Anchovies",
+      "commons": "File:Filetti di Alici.jpg"
+    },
+    {
+      "id": "jalapenos",
+      "label": "Jalapeños",
+      "wikipedia": "Jalapeño"
+    },
+    {
+      "id": "chicken",
+      "label": "Chicken",
+      "commons": "File:Grilled chicken breast, Santo Domingo, La Palma.jpg"
+    },
+    {
+      "id": "tomatoes",
+      "label": "Tomatoes",
+      "wikipedia": "Tomato"
+    },
+    {
+      "id": "garlic",
+      "label": "Garlic",
+      "commons": "File:Garlic Bulbs (Unsplash).jpg"
+    },
+    {
+      "id": "fresh-basil",
+      "label": "Fresh basil",
+      "wikipedia": "Basil"
+    },
+    {
+      "id": "artichoke-hearts",
+      "label": "Artichoke hearts",
+      "wikipedia": "Artichoke"
+    },
+    {
+      "id": "sun-dried-tomatoes",
+      "label": "Sun-dried tomatoes",
+      "wikipedia": "Sun-dried tomato"
+    },
+    {
+      "id": "ground-beef",
+      "label": "Ground beef",
+      "wikipedia": "Ground beef"
+    },
+    {
+      "id": "salami",
+      "label": "Salami",
+      "wikipedia": "Salami"
+    },
+    {
+      "id": "prosciutto",
+      "label": "Prosciutto",
+      "commons": "File:Prosciutto di parma.jpg"
+    },
+    {
+      "id": "arugula",
+      "label": "Arugula",
+      "commons": "File:Eruca sativa II.jpg"
+    },
+    {
+      "id": "feta",
+      "label": "Feta",
+      "wikipedia": "Feta"
+    },
+    {
+      "id": "banana-peppers",
+      "label": "Banana peppers",
+      "wikipedia": "Banana pepper"
+    },
+    {
+      "id": "meatballs",
+      "label": "Meatballs",
+      "commons": "File:Meatballs on a plate.jpg"
+    },
+    {
+      "id": "sweetcorn",
+      "label": "Sweetcorn",
+      "wikipedia": "Sweet corn"
+    }
+  ]
+}

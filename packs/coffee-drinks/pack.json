@@ -1,0 +1,128 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "coffee-drinks",
+  "version": "1.0.0",
+  "title": "Coffee Drinks",
+  "description": "Mostly espresso and milk, arranged with great seriousness.",
+  "category": "Food & Drink",
+  "accent": "Oat",
+  "author": "Pecking Order",
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Tazzina_di_caff%C3%A8_a_Ventimiglia.jpg/500px-Tazzina_di_caff%C3%A8_a_Ventimiglia.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Cappuccino_in_original.jpg/500px-Cappuccino_in_original.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Flat_white_coffee_with_pretty_feather_pattern.jpg/500px-Flat_white_coffee_with_pretty_feather_pattern.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Affogato_al_Caffe.jpg/500px-Affogato_al_Caffe.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  ],
+  "items": [
+    {
+      "id": "espresso",
+      "label": "Espresso",
+      "wikipedia": "Espresso"
+    },
+    {
+      "id": "ristretto",
+      "label": "Ristretto",
+      "wikipedia": "Ristretto"
+    },
+    {
+      "id": "lungo",
+      "label": "Lungo",
+      "wikipedia": "Lungo"
+    },
+    {
+      "id": "americano",
+      "label": "Americano",
+      "wikipedia": "Caffè Americano"
+    },
+    {
+      "id": "long-black",
+      "label": "Long black",
+      "wikipedia": "Long black"
+    },
+    {
+      "id": "cappuccino",
+      "label": "Cappuccino",
+      "wikipedia": "Cappuccino"
+    },
+    {
+      "id": "latte",
+      "label": "Latte",
+      "wikipedia": "Caffè latte"
+    },
+    {
+      "id": "flat-white",
+      "label": "Flat white",
+      "wikipedia": "Flat white"
+    },
+    {
+      "id": "macchiato",
+      "label": "Macchiato",
+      "wikipedia": "Caffè macchiato"
+    },
+    {
+      "id": "latte-macchiato",
+      "label": "Latte macchiato",
+      "wikipedia": "Latte macchiato"
+    },
+    {
+      "id": "cortado",
+      "label": "Cortado",
+      "wikipedia": "Cortado"
+    },
+    {
+      "id": "mocha",
+      "label": "Mocha",
+      "wikipedia": "Caffè mocha"
+    },
+    {
+      "id": "affogato",
+      "label": "Affogato",
+      "wikipedia": "Affogato"
+    },
+    {
+      "id": "irish-coffee",
+      "label": "Irish coffee",
+      "wikipedia": "Irish coffee"
+    },
+    {
+      "id": "iced-coffee",
+      "label": "Iced coffee",
+      "wikipedia": "Iced coffee"
+    },
+    {
+      "id": "cold-brew",
+      "label": "Cold brew",
+      "wikipedia": "Cold brew coffee"
+    },
+    {
+      "id": "frappe",
+      "label": "Frappé",
+      "wikipedia": "Frappé coffee"
+    },
+    {
+      "id": "turkish-coffee",
+      "label": "Turkish coffee",
+      "wikipedia": "Turkish coffee"
+    },
+    {
+      "id": "vietnamese-iced-coffee",
+      "label": "Vietnamese iced coffee",
+      "wikipedia": "Vietnamese iced coffee"
+    },
+    {
+      "id": "cafe-au-lait",
+      "label": "Café au lait",
+      "wikipedia": "Café au lait"
+    },
+    {
+      "id": "drip-coffee",
+      "label": "Drip coffee",
+      "wikipedia": "Drip coffee"
+    },
+    {
+      "id": "dalgona-coffee",
+      "label": "Dalgona coffee",
+      "wikipedia": "Dalgona coffee"
+    }
+  ]
+}
