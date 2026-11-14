@@ -107,11 +107,30 @@ a {
   border: 0;
 }
 
-.mono {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+/* Small field labels: sentence case, a touch heavier — never shouty caps. */
+.label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+/* Quiet asides and meta lines: the soft serif carries the warmth. */
+.aside {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-variation-settings:
+    "SOFT" 100,
+    "WONK" 0;
+  font-size: var(--text-md);
+  color: var(--muted);
+  font-feature-settings: "lnum", "tnum";
+}
+
+kbd {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -123,4 +142,10 @@ a {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 280ms;
+  animation-timing-function: var(--ease-out);
 }

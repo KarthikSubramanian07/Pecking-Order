@@ -1,0 +1,10 @@
+.tiers {
+  display: grid;
+  gap: 8px;
+}
+.tiers > * {
+  min-width: 0;
+}
+.tiers[data-dragging] {
+  cursor: grabbing;
+}

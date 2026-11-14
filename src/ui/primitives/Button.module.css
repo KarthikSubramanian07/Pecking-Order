@@ -1,0 +1,84 @@
+/* Shared button styles. Usage: className={btn.button} data-variant="primary" */
+.button {
+  --btn-bg: var(--surface-raised);
+  --btn-fg: var(--ink);
+  --btn-border: var(--line);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-2);
+  min-height: 40px;
+  padding: 0 var(--s-4);
+  border-radius: var(--r-pill);
+  border: 1px solid var(--btn-border);
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  font-weight: 560;
+  font-size: var(--text-md);
+  white-space: nowrap;
+  transition:
+    background var(--t-fast),
+    border-color var(--t-fast),
+    transform var(--t-fast) var(--ease-out),
+    box-shadow var(--t-fast);
+}
+.button:hover {
+  border-color: var(--ink-soft);
+}
+.button:active {
+  transform: translateY(1px) scale(0.98);
+}
+.button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+.button[data-variant="primary"] {
+  --btn-bg: var(--ink);
+  --btn-fg: var(--paper);
+  --btn-border: var(--ink);
+}
+.button[data-variant="primary"]:hover {
+  --btn-bg: var(--ink-soft);
+}
+.button[data-variant="accent"] {
+  --btn-bg: var(--clay);
+  --btn-fg: var(--on-clay);
+  --btn-border: var(--clay);
+}
+.button[data-variant="accent"]:hover {
+  box-shadow: var(--shadow-hover);
+}
+.button[data-variant="ghost"] {
+  --btn-bg: transparent;
+  --btn-border: transparent;
+}
+.button[data-variant="ghost"]:hover {
+  --btn-bg: var(--sunken);
+}
+.button[data-variant="danger"] {
+  --btn-bg: var(--danger-wash);
+  --btn-fg: var(--danger);
+  --btn-border: transparent;
+}
+.button[data-size="sm"] {
+  min-height: 32px;
+  padding: 0 var(--s-3);
+  font-size: var(--text-sm);
+}
+
+/* Square icon-only button. Always paired with aria-label. */
+.icon {
+  composes: button;
+  padding: 0;
+  width: 40px;
+  min-width: 40px;
+}
+.icon[data-size="sm"] {
+  width: 32px;
+  min-width: 32px;
+  padding: 0;
+}
+.button svg {
+  flex: none;
+}

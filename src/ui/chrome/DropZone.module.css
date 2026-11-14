@@ -1,0 +1,46 @@
+.zone {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  padding: var(--s-5);
+  background: color-mix(in oklab, var(--paper) 70%, transparent);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity var(--t-med) var(--ease-out),
+    visibility 0s var(--t-med);
+}
+.zone[data-active] {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity var(--t-fast) var(--ease-out);
+}
+.card {
+  display: grid;
+  justify-items: center;
+  gap: var(--s-2);
+  width: min(520px, 100%);
+  padding: var(--s-7) var(--s-6);
+  border: 2px dashed var(--clay);
+  border-radius: 28px;
+  background: var(--surface);
+  text-align: center;
+  box-shadow: var(--shadow-panel);
+  transform: scale(0.96);
+  transition: transform var(--t-med) var(--ease-peck);
+}
+.zone[data-active] .card {
+  transform: none;
+}
+.title {
+  font-family: var(--font-display);
+  font-variation-settings: var(--font-display-settings);
+  font-size: var(--text-2xl);
+}
+.sub {
+  color: var(--muted);
+}

@@ -8,3 +8,4 @@ test-results
 .DS_Store
 src/packs/generated
 public/packs
+.claude/worktrees

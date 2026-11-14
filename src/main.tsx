@@ -10,3 +10,6 @@ createRoot(root).render(
     <App />
   </StrictMode>,
 )
+
+// Agent tools are optional and off the critical path.
+void import('./agent/webmcp').then((m) => m.registerAgentTools())

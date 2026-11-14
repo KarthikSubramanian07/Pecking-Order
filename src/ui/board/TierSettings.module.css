@@ -1,0 +1,132 @@
+.pop {
+  position: fixed;
+  inset: auto;
+  margin: 0;
+  width: min(300px, calc(100vw - 16px));
+  padding: var(--s-4);
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  background: var(--surface-raised);
+  color: var(--ink);
+  box-shadow: var(--shadow-panel);
+}
+.pop:popover-open {
+  animation: pop 160ms var(--ease-out);
+}
+.form {
+  display: grid;
+  gap: var(--s-4);
+}
+.field {
+  display: grid;
+  gap: var(--s-1);
+  color: var(--muted);
+}
+.input {
+  min-height: 40px;
+  padding: 0 var(--s-3);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: var(--text-lg);
+  font-weight: 600;
+}
+.input:focus-visible {
+  border-color: var(--focus);
+  outline-offset: 0;
+}
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: var(--muted);
+}
+.swatches legend {
+  margin-bottom: var(--s-1);
+}
+.swatch,
+.custom {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: var(--r-pill);
+  background: var(--c);
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.08);
+  transition: transform var(--t-fast) var(--ease-peck);
+}
+.swatch:hover {
+  transform: scale(1.08);
+}
+.swatch:has(input:checked) {
+  box-shadow:
+    0 0 0 2px var(--surface-raised),
+    0 0 0 4px var(--ink);
+}
+.swatch:has(input:focus-visible) {
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+}
+.custom {
+  background: conic-gradient(
+    #d9694a,
+    #e9a23b,
+    #d8c25a,
+    #9db37a,
+    #8db4cf,
+    #aba0cf,
+    #d98ca0,
+    #d9694a
+  );
+  overflow: hidden;
+}
+.custom input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.custom:has(input:focus-visible) {
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+}
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--hairline);
+}
+.actions button {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  min-height: 36px;
+  padding: 0 var(--s-2);
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  font-size: var(--text-sm);
+  text-align: left;
+}
+.actions button:hover:not(:disabled) {
+  background: var(--sunken);
+}
+.actions button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.actions button[data-danger] {
+  color: var(--danger);
+}
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.98);
+  }
+}

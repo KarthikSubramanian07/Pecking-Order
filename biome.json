@@ -6,7 +6,14 @@
     "useIgnoreFile": true
   },
   "files": {
-    "includes": ["**", "!**/dist", "!**/src/packs/generated", "!**/public/packs"]
+    "includes": [
+      "**",
+      "!**/dist",
+      "!**/src/packs/generated",
+      "!**/public/packs",
+      "!**/.claude",
+      "!**/src/ui/icons.tsx"
+    ]
   },
   "formatter": {
     "indentStyle": "space",
@@ -28,9 +35,9 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true,
+      "preset": "recommended",
       "a11y": {
-        "recommended": true
+        "preset": "recommended"
       },
       "suspicious": {
         "noArrayIndexKey": "warn"

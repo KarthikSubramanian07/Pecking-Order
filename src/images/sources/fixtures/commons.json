@@ -1,0 +1,75 @@
+{
+  "batchcomplete": true,
+  "continue": {
+    "gsroffset": 20,
+    "continue": "gsroffset||"
+  },
+  "query": {
+    "pages": [
+      {
+        "pageid": 3445307,
+        "ns": 6,
+        "title": "File:Lesser panda standing.jpg",
+        "index": 15,
+        "imageinfo": [
+          {
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Lesser_panda_standing.jpg/500px-Lesser_panda_standing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 500,
+            "thumbheight": 375,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/25/Lesser_panda_standing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Lesser_panda_standing.jpg",
+            "extmetadata": {
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/57397458@N00\">DANIEL WONG</a> from Newark, CA, USA",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              }
+            },
+            "mime": "image/jpeg"
+          }
+        ]
+      },
+      {
+        "pageid": 39790,
+        "ns": 6,
+        "title": "File:Red Panda.JPG",
+        "index": 2,
+        "imageinfo": [
+          {
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Red_Panda.JPG/500px-Red_Panda.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 500,
+            "thumbheight": 333,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Red_Panda.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Red_Panda.JPG",
+            "extmetadata": {
+              "Artist": {
+                "value": "User <a href=\"//commons.wikimedia.org/wiki/User:Baerni\" title=\"User:Baerni\">Bernard Landgraf</a> on <a class=\"external text\" data-mw-original-href=\"http://de.wikipedia.org\" href=\"https://de.wikipedia.org\">de.wikipedia.org</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              }
+            },
+            "mime": "image/jpeg"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+.hen {
+  flex: none;
+  overflow: visible;
+}
+.line {
+  stroke: var(--ink);
+  fill: var(--surface-raised);
+}
+/* Only the outline gets the paper fill; inner strokes stay hollow. */
+.line:not(:nth-child(2)) {
+  fill: none;
+}
+.accent {
+  stroke: var(--ink);
+  fill: var(--clay);
+}
+.ink {
+  fill: var(--ink);
+}
+.body {
+  transform-origin: 32px 56px;
+  transform-box: view-box;
+}
+.hen[data-mood="bob"] .body {
+  animation: bob 1.8s ease-in-out infinite;
+}
+.hen[data-mood="peck"] .body {
+  animation: peck 2.6s var(--ease-out) infinite;
+}
+@keyframes bob {
+  50% {
+    transform: translateY(-1.5px) rotate(-1.5deg);
+  }
+}
+@keyframes peck {
+  0%,
+  70%,
+  100% {
+    transform: none;
+  }
+  78% {
+    transform: rotate(14deg) translate(3px, 2px);
+  }
+  86% {
+    transform: rotate(4deg);
+  }
+  92% {
+    transform: rotate(12deg) translate(2px, 2px);
+  }
+}
