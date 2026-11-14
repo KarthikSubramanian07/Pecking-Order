@@ -1,4 +1,5 @@
-import { type MotionValue, motion, useSpring, useTransform, useVelocity } from 'motion/react'
+import { type MotionValue, useSpring, useTransform, useVelocity } from 'motion/react'
+import * as m from 'motion/react-m'
 import type { Item } from '@/core/types'
 import { useUiStore } from '@/state/uiStore'
 import { ItemTile } from './ItemTile'
@@ -20,13 +21,13 @@ export function DragGhost({ item, dragX, reducedMotion }: DragGhostProps) {
   const rotate = useSpring(lean, { stiffness: 500, damping: 30, mass: 0.8 })
 
   return (
-    <motion.div
+    <m.div
       initial={reducedMotion ? false : { scale: 1 }}
       animate={reducedMotion ? undefined : { scale: 1.06 }}
       transition={{ type: 'spring', stiffness: 600, damping: 28 }}
       style={reducedMotion ? undefined : { rotate }}
     >
       <ItemTile item={item} showLabel={showLabels} state="overlay" aria-hidden />
-    </motion.div>
+    </m.div>
   )
 }

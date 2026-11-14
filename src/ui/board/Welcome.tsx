@@ -1,5 +1,5 @@
-import { FolderSimplePlus, ImageSquare, MagnifyingGlass, Sparkle } from '@phosphor-icons/react'
 import { useUiStore } from '@/state/uiStore'
+import { FolderSimplePlus, ImageSquare, MagnifyingGlass, Sparkle } from '@/ui/icons'
 import { Hen } from '../brand/Hen'
 import { isMac } from '../chrome/keys'
 import { useIngest } from '../hooks/useIngest'

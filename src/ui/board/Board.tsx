@@ -21,7 +21,8 @@ import {
   useSensors,
 } from '@dnd-kit/core'
 import { sortableKeyboardCoordinates } from '@dnd-kit/sortable'
-import { AnimatePresence, motion, useMotionValue } from 'motion/react'
+import { AnimatePresence, useMotionValue } from 'motion/react'
+import * as m from 'motion/react-m'
 import { useCallback, useMemo, useRef, useState } from 'react'
 import { findContainer, opMoveItem } from '@/core/board'
 import { type Board as BoardData, COOP, type ContainerId, type ItemId } from '@/core/types'
@@ -219,7 +220,7 @@ export function Board() {
       <div className={styles.tiers} data-dragging={activeId ? true : undefined}>
         <AnimatePresence initial={false}>
           {board.tiers.map((tier, i) => (
-            <motion.div
+            <m.div
               key={tier.id}
               // Rows glide when reordered, but never while dnd-kit is measuring a drag.
               layout={activeId || reducedMotion ? false : 'position'}
@@ -229,7 +230,7 @@ export function Board() {
               transition={{ type: 'spring', stiffness: 520, damping: 40, mass: 0.9 }}
             >
               <TierRow tier={tier} index={i} count={board.tiers.length} />
-            </motion.div>
+            </m.div>
           ))}
         </AnimatePresence>
       </div>

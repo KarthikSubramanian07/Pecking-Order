@@ -1,5 +1,5 @@
-import { X } from '@phosphor-icons/react'
 import { useUiStore } from '@/state/uiStore'
+import { X } from '@/ui/icons'
 import styles from './Toasts.module.css'
 
 /** Polite live region: screen readers hear every toast without losing focus. */

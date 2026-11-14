@@ -1,3 +1,4 @@
+import { LazyMotion } from 'motion/react'
 import { useEffect } from 'react'
 import { useBoardStore } from '@/state/boardStore'
 import { ITEM_SIZE_PX, useUiStore } from '@/state/uiStore'
@@ -11,6 +12,10 @@ import { Dialogs } from './dialogs/Dialogs'
 import { useGlobalShortcuts } from './hooks/useGlobalShortcuts'
 import { useTheme } from './hooks/useTheme'
 import { Toasts } from './primitives/Toasts'
+
+// The animation engine streams in after first paint; until then motion
+// components render statically, which is exactly what reduced motion wants anyway.
+const loadMotionFeatures = () => import('./motionFeatures').then((mod) => mod.default)
 
 export function App() {
   const ready = useBoardStore((s) => s.ready)
@@ -34,19 +39,21 @@ export function App() {
   }, [itemSize])
 
   return (
-    <div className={styles.app}>
-      <a className={styles.skip} href="#board">
-        Skip to board
-      </a>
-      <TopBar />
-      <main id="board" className={styles.main} tabIndex={-1} aria-busy={!ready}>
-        {ready ? <Board /> : <p className={styles.hatching}>Hatching…</p>}
-      </main>
-      <Footer />
-      <Dialogs />
-      <DropZone />
-      <Busy />
-      <Toasts />
-    </div>
+    <LazyMotion features={loadMotionFeatures} strict>
+      <div className={styles.app}>
+        <a className={styles.skip} href="#board">
+          Skip to board
+        </a>
+        <TopBar />
+        <main id="board" className={styles.main} tabIndex={-1} aria-busy={!ready}>
+          {ready ? <Board /> : <p className={styles.hatching}>Hatching…</p>}
+        </main>
+        <Footer />
+        <Dialogs />
+        <DropZone />
+        <Busy />
+        <Toasts />
+      </div>
+    </LazyMotion>
   )
 }

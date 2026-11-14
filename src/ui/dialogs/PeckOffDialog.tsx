@@ -1,5 +1,5 @@
-import { ArrowLeft, ArrowRight, ArrowUUpLeft, Equals } from '@phosphor-icons/react'
-import { AnimatePresence, motion } from 'motion/react'
+import { AnimatePresence } from 'motion/react'
+import * as m from 'motion/react-m'
 import { useCallback, useEffect, useState } from 'react'
 import { containerOrder } from '@/core/board'
 import {
@@ -15,6 +15,7 @@ import {
 import { COOP, type ItemId } from '@/core/types'
 import { boardActions, useBoardStore } from '@/state/boardStore'
 import { ui } from '@/state/uiStore'
+import { ArrowLeft, ArrowRight, ArrowUUpLeft, Equals } from '@/ui/icons'
 import { ItemTile } from '../board/ItemTile'
 import { Hen } from '../brand/Hen'
 import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion'
@@ -169,7 +170,7 @@ export default function PeckOffDialog({ open, onClose }: { open: boolean; onClos
                 const item = items[id]
                 if (!item) return null
                 return (
-                  <motion.button
+                  <m.button
                     key={`${side}-${id}-${state.answered}`}
                     type="button"
                     className={styles.choice}
@@ -200,7 +201,7 @@ export default function PeckOffDialog({ open, onClose }: { open: boolean; onClos
                         <ArrowRight size={14} weight="bold" />
                       )}
                     </span>
-                  </motion.button>
+                  </m.button>
                 )
               })}
             </AnimatePresence>
