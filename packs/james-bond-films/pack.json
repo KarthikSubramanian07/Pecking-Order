@@ -1,0 +1,144 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "james-bond-films",
+  "version": "1.0.0",
+  "title": "James Bond Films",
+  "description": "Shaken, not stirred, and now sorted.",
+  "category": "Film & TV",
+  "accent": "Speckle",
+  "author": "Pecking Order",
+  "tiers": ["Licensed to Thrill", "Shaken", "Stirred", "Warm Martini", "Henchman"],
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/en/thumb/9/9a/Goldfinger_-_UK_cinema_poster.jpg/330px-Goldfinger_-_UK_cinema_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/en/thumb/6/66/Moonraker_%28UK_cinema_poster%29.jpg/330px-Moonraker_%28UK_cinema_poster%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/en/thumb/2/24/GoldenEye_-_UK_cinema_poster.jpg/330px-GoldenEye_-_UK_cinema_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/en/thumb/a/a7/Skyfall_poster.jpg/330px-Skyfall_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  ],
+  "items": [
+    {
+      "id": "dr-no",
+      "label": "Dr. No",
+      "wikipedia": "Dr. No (film)"
+    },
+    {
+      "id": "from-russia-with-love",
+      "label": "From Russia with Love",
+      "wikipedia": "From Russia with Love (film)"
+    },
+    {
+      "id": "goldfinger",
+      "label": "Goldfinger",
+      "wikipedia": "Goldfinger (film)"
+    },
+    {
+      "id": "thunderball",
+      "label": "Thunderball",
+      "wikipedia": "Thunderball (film)"
+    },
+    {
+      "id": "you-only-live-twice",
+      "label": "You Only Live Twice",
+      "wikipedia": "You Only Live Twice (film)"
+    },
+    {
+      "id": "on-her-majestys-secret-service",
+      "label": "On Her Majesty's Secret Service",
+      "wikipedia": "On Her Majesty's Secret Service (film)"
+    },
+    {
+      "id": "diamonds-are-forever",
+      "label": "Diamonds Are Forever",
+      "wikipedia": "Diamonds Are Forever (film)"
+    },
+    {
+      "id": "live-and-let-die",
+      "label": "Live and Let Die",
+      "wikipedia": "Live and Let Die (film)"
+    },
+    {
+      "id": "the-man-with-the-golden-gun",
+      "label": "The Man with the Golden Gun",
+      "wikipedia": "The Man with the Golden Gun (film)"
+    },
+    {
+      "id": "the-spy-who-loved-me",
+      "label": "The Spy Who Loved Me",
+      "wikipedia": "The Spy Who Loved Me (film)"
+    },
+    {
+      "id": "moonraker",
+      "label": "Moonraker",
+      "wikipedia": "Moonraker (film)"
+    },
+    {
+      "id": "for-your-eyes-only",
+      "label": "For Your Eyes Only",
+      "wikipedia": "For Your Eyes Only (film)"
+    },
+    {
+      "id": "octopussy",
+      "label": "Octopussy",
+      "wikipedia": "Octopussy"
+    },
+    {
+      "id": "a-view-to-a-kill",
+      "label": "A View to a Kill",
+      "wikipedia": "A View to a Kill"
+    },
+    {
+      "id": "the-living-daylights",
+      "label": "The Living Daylights",
+      "wikipedia": "The Living Daylights"
+    },
+    {
+      "id": "licence-to-kill",
+      "label": "Licence to Kill",
+      "wikipedia": "Licence to Kill"
+    },
+    {
+      "id": "goldeneye",
+      "label": "GoldenEye",
+      "wikipedia": "GoldenEye"
+    },
+    {
+      "id": "tomorrow-never-dies",
+      "label": "Tomorrow Never Dies",
+      "wikipedia": "Tomorrow Never Dies"
+    },
+    {
+      "id": "the-world-is-not-enough",
+      "label": "The World Is Not Enough",
+      "wikipedia": "The World Is Not Enough"
+    },
+    {
+      "id": "die-another-day",
+      "label": "Die Another Day",
+      "wikipedia": "Die Another Day"
+    },
+    {
+      "id": "casino-royale",
+      "label": "Casino Royale",
+      "wikipedia": "Casino Royale (2006 film)"
+    },
+    {
+      "id": "quantum-of-solace",
+      "label": "Quantum of Solace",
+      "wikipedia": "Quantum of Solace"
+    },
+    {
+      "id": "skyfall",
+      "label": "Skyfall",
+      "wikipedia": "Skyfall"
+    },
+    {
+      "id": "spectre",
+      "label": "Spectre",
+      "wikipedia": "Spectre (2015 film)"
+    },
+    {
+      "id": "no-time-to-die",
+      "label": "No Time to Die",
+      "wikipedia": "No Time to Die"
+    }
+  ]
+}

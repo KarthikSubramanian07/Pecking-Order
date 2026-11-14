@@ -1,0 +1,149 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "gemstones",
+  "version": "1.0.0",
+  "title": "Gemstones",
+  "description": "Rocks that got very good at marketing.",
+  "category": "Science & Nature",
+  "accent": "Heather",
+  "author": "Pecking Order",
+  "tiers": ["Crown jewels", "Engagement ring", "Birthstone", "Gift shop", "Gravel"],
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Corundum-215330.jpg/500px-Corundum-215330.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Logan_Sapphire_10956420_cropped.png/500px-Logan_Sapphire_10956420_cropped.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/B%C3%A9ryl_var._%C3%A9meraude_sur_gangue_%28Muzo_Mine_Boyaca_-_Colombie%29_2.jpg/500px-B%C3%A9ryl_var._%C3%A9meraude_sur_gangue_%28Muzo_Mine_Boyaca_-_Colombie%29_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Amatista_Laye_2.jpg/500px-Amatista_Laye_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  ],
+  "items": [
+    {
+      "id": "diamond",
+      "label": "Diamond",
+      "commons": "File:Round Brilliant Cut Diamond.jpg"
+    },
+    {
+      "id": "ruby",
+      "label": "Ruby",
+      "wikipedia": "Ruby"
+    },
+    {
+      "id": "sapphire",
+      "label": "Sapphire",
+      "wikipedia": "Sapphire"
+    },
+    {
+      "id": "emerald",
+      "label": "Emerald",
+      "wikipedia": "Emerald"
+    },
+    {
+      "id": "amethyst",
+      "label": "Amethyst",
+      "wikipedia": "Amethyst"
+    },
+    {
+      "id": "topaz",
+      "label": "Topaz",
+      "wikipedia": "Topaz"
+    },
+    {
+      "id": "opal",
+      "label": "Opal",
+      "wikipedia": "Opal"
+    },
+    {
+      "id": "garnet",
+      "label": "Garnet",
+      "wikipedia": "Garnet"
+    },
+    {
+      "id": "peridot",
+      "label": "Peridot",
+      "wikipedia": "Peridot"
+    },
+    {
+      "id": "aquamarine",
+      "label": "Aquamarine",
+      "wikipedia": "Aquamarine (gem)"
+    },
+    {
+      "id": "tourmaline",
+      "label": "Tourmaline",
+      "wikipedia": "Tourmaline"
+    },
+    {
+      "id": "tanzanite",
+      "label": "Tanzanite",
+      "wikipedia": "Tanzanite"
+    },
+    {
+      "id": "turquoise",
+      "label": "Turquoise",
+      "wikipedia": "Turquoise"
+    },
+    {
+      "id": "jade",
+      "label": "Jade",
+      "wikipedia": "Jade"
+    },
+    {
+      "id": "pearl",
+      "label": "Pearl",
+      "wikipedia": "Pearl"
+    },
+    {
+      "id": "amber",
+      "label": "Amber",
+      "wikipedia": "Amber"
+    },
+    {
+      "id": "lapis-lazuli",
+      "label": "Lapis lazuli",
+      "wikipedia": "Lapis lazuli"
+    },
+    {
+      "id": "moonstone",
+      "label": "Moonstone",
+      "wikipedia": "Moonstone (gemstone)"
+    },
+    {
+      "id": "citrine",
+      "label": "Citrine",
+      "wikipedia": "Citrine (quartz)"
+    },
+    {
+      "id": "spinel",
+      "label": "Spinel",
+      "wikipedia": "Spinel"
+    },
+    {
+      "id": "alexandrite",
+      "label": "Alexandrite",
+      "wikipedia": "Alexandrite"
+    },
+    {
+      "id": "zircon",
+      "label": "Zircon",
+      "wikipedia": "Zircon"
+    },
+    {
+      "id": "onyx",
+      "label": "Onyx",
+      "wikipedia": "Onyx"
+    },
+    {
+      "id": "malachite",
+      "label": "Malachite",
+      "wikipedia": "Malachite"
+    },
+    {
+      "id": "obsidian",
+      "label": "Obsidian",
+      "wikipedia": "Obsidian"
+    },
+    {
+      "id": "tigers-eye",
+      "label": "Tiger's eye",
+      "wikipedia": "Tiger's eye"
+    }
+  ]
+}

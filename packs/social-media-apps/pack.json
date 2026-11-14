@@ -1,0 +1,144 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "social-media-apps",
+  "version": "1.0.0",
+  "title": "Social Media Apps",
+  "description": "Rank them, then post the ranking on every one of them.",
+  "category": "Tech",
+  "accent": "Duck Egg",
+  "author": "Pecking Order",
+  "tiers": ["Can't log off", "Daily scroll", "Lurk only", "Muted", "Deleted the app"],
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/2023_Facebook_icon.svg/500px-2023_Facebook_icon.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/500px-Instagram_logo_2022.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/X_%28formerly_Twitter%29_logo_late_2025.svg/500px-X_%28formerly_Twitter%29_logo_late_2025.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Tiktok_icon.svg/500px-Tiktok_icon.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  ],
+  "items": [
+    {
+      "id": "facebook",
+      "label": "Facebook",
+      "commons": "File:2023 Facebook icon.svg"
+    },
+    {
+      "id": "instagram",
+      "label": "Instagram",
+      "commons": "File:Instagram logo 2022.svg"
+    },
+    {
+      "id": "x-twitter",
+      "label": "X (Twitter)",
+      "wikipedia": "Twitter"
+    },
+    {
+      "id": "tiktok",
+      "label": "TikTok",
+      "commons": "File:Tiktok icon.svg"
+    },
+    {
+      "id": "snapchat",
+      "label": "Snapchat",
+      "image": "https://thumb.wikimedia.org/wikipedia/en/thumb/c/c4/Snapchat_logo.svg/500px-Snapchat_logo.svg.png"
+    },
+    {
+      "id": "youtube",
+      "label": "YouTube",
+      "commons": "File:YouTube full-color icon (2017).svg"
+    },
+    {
+      "id": "whatsapp",
+      "label": "WhatsApp",
+      "wikipedia": "WhatsApp"
+    },
+    {
+      "id": "reddit",
+      "label": "Reddit",
+      "image": "https://thumb.wikimedia.org/wikipedia/en/thumb/b/bd/Reddit_Logo_Icon.svg/500px-Reddit_Logo_Icon.svg.png"
+    },
+    {
+      "id": "pinterest",
+      "label": "Pinterest",
+      "commons": "File:Pinterest.svg"
+    },
+    {
+      "id": "linkedin",
+      "label": "LinkedIn",
+      "commons": "File:LinkedIn icon.svg"
+    },
+    {
+      "id": "discord",
+      "label": "Discord",
+      "commons": "File:Discord logo simplified.svg"
+    },
+    {
+      "id": "telegram",
+      "label": "Telegram",
+      "wikipedia": "Telegram (software)"
+    },
+    {
+      "id": "tumblr",
+      "label": "Tumblr",
+      "commons": "File:Tumblr.svg"
+    },
+    {
+      "id": "twitch",
+      "label": "Twitch",
+      "commons": "File:Twitch Glitch Logo Purple.svg"
+    },
+    {
+      "id": "threads",
+      "label": "Threads",
+      "wikipedia": "Threads (social network)"
+    },
+    {
+      "id": "bluesky",
+      "label": "Bluesky",
+      "wikipedia": "Bluesky"
+    },
+    {
+      "id": "mastodon",
+      "label": "Mastodon",
+      "commons": "File:Mastodon Logotype (Simple).svg"
+    },
+    {
+      "id": "bereal",
+      "label": "BeReal",
+      "wikipedia": "BeReal"
+    },
+    {
+      "id": "messenger",
+      "label": "Messenger",
+      "commons": "File:Facebook Messenger logo 2020.svg"
+    },
+    {
+      "id": "signal",
+      "label": "Signal",
+      "wikipedia": "Signal (software)"
+    },
+    {
+      "id": "vine",
+      "label": "Vine",
+      "commons": "File:Vine logo.svg"
+    },
+    {
+      "id": "myspace",
+      "label": "Myspace",
+      "commons": "File:Myspace.svg"
+    },
+    {
+      "id": "flickr",
+      "label": "Flickr",
+      "commons": "File:Flickr logo - SuperTinyIcons.svg"
+    },
+    {
+      "id": "quora",
+      "label": "Quora",
+      "commons": "File:Quora Q icon 2015.svg"
+    },
+    {
+      "id": "google-plus",
+      "label": "Google+",
+      "commons": "File:Google Plus icon (2011-2015).svg"
+    }
+  ]
+}

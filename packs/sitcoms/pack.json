@@ -1,0 +1,190 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "sitcoms",
+  "version": "1.0.0",
+  "title": "Sitcoms",
+  "description": "Same couch, same friends, same three sets. Ranked anyway.",
+  "category": "Film & TV",
+  "accent": "Yolk",
+  "author": "Pecking Order",
+  "tiers": [
+    "Rewatch forever",
+    "Classic",
+    "Good background noise",
+    "Laugh track only",
+    "Changed the channel"
+  ],
+  "cover": [
+    "https://static.tvmaze.com/uploads/images/original_untouched/41/104565.jpg",
+    "https://static.tvmaze.com/uploads/images/original_untouched/83/207960.jpg",
+    "https://static.tvmaze.com/uploads/images/original_untouched/481/1204342.jpg",
+    "https://static.tvmaze.com/uploads/images/original_untouched/637/1594614.jpg"
+  ],
+  "items": [
+    {
+      "id": "friends",
+      "label": "Friends",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/41/104565.jpg"
+    },
+    {
+      "id": "seinfeld",
+      "label": "Seinfeld",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/83/207960.jpg"
+    },
+    {
+      "id": "the-office-us",
+      "label": "The Office (US)",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/481/1204342.jpg"
+    },
+    {
+      "id": "parks-and-recreation",
+      "label": "Parks and Recreation",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/481/1204341.jpg"
+    },
+    {
+      "id": "brooklyn-nine-nine",
+      "label": "Brooklyn Nine-Nine",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/402/1007484.jpg"
+    },
+    {
+      "id": "the-big-bang-theory",
+      "label": "The Big Bang Theory",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/173/433868.jpg"
+    },
+    {
+      "id": "how-i-met-your-mother",
+      "label": "How I Met Your Mother",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/0/2451.jpg"
+    },
+    {
+      "id": "frasier",
+      "label": "Frasier",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/611/1528088.jpg"
+    },
+    {
+      "id": "cheers",
+      "label": "Cheers",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/495/1238129.jpg"
+    },
+    {
+      "id": "the-simpsons",
+      "label": "The Simpsons",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/637/1594614.jpg"
+    },
+    {
+      "id": "arrested-development",
+      "label": "Arrested Development",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/338/846049.jpg"
+    },
+    {
+      "id": "modern-family",
+      "label": "Modern Family",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/359/898320.jpg"
+    },
+    {
+      "id": "schitts-creek",
+      "label": "Schitt's Creek",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/279/697623.jpg"
+    },
+    {
+      "id": "its-always-sunny-in-philadelphia",
+      "label": "It's Always Sunny in Philadelphia",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/636/1592247.jpg"
+    },
+    {
+      "id": "scrubs",
+      "label": "Scrubs",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/4/11371.jpg"
+    },
+    {
+      "id": "the-fresh-prince-of-bel-air",
+      "label": "The Fresh Prince of Bel-Air",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/4/11889.jpg"
+    },
+    {
+      "id": "full-house",
+      "label": "Full House",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/7/17933.jpg"
+    },
+    {
+      "id": "everybody-loves-raymond",
+      "label": "Everybody Loves Raymond",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/495/1238665.jpg"
+    },
+    {
+      "id": "i-love-lucy",
+      "label": "I Love Lucy",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/19/48076.jpg"
+    },
+    {
+      "id": "the-golden-girls",
+      "label": "The Golden Girls",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/6/15097.jpg"
+    },
+    {
+      "id": "fawlty-towers",
+      "label": "Fawlty Towers",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/4/11842.jpg"
+    },
+    {
+      "id": "mr-bean",
+      "label": "Mr. Bean",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/45/113952.jpg"
+    },
+    {
+      "id": "only-fools-and-horses",
+      "label": "Only Fools and Horses",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/11/29077.jpg"
+    },
+    {
+      "id": "the-it-crowd",
+      "label": "The IT Crowd",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/4/11405.jpg"
+    },
+    {
+      "id": "community",
+      "label": "Community",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/2/5134.jpg"
+    },
+    {
+      "id": "30-rock",
+      "label": "30 Rock",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/467/1167896.jpg"
+    },
+    {
+      "id": "malcolm-in-the-middle",
+      "label": "Malcolm in the Middle",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/549/1373492.jpg"
+    },
+    {
+      "id": "that-70s-show",
+      "label": "That '70s Show",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/4/11921.jpg"
+    },
+    {
+      "id": "abbott-elementary",
+      "label": "Abbott Elementary",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/644/1611887.jpg"
+    },
+    {
+      "id": "the-good-place",
+      "label": "The Good Place",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/395/989291.jpg"
+    },
+    {
+      "id": "new-girl",
+      "label": "New Girl",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/481/1202650.jpg"
+    },
+    {
+      "id": "blackadder",
+      "label": "Blackadder",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/6/17102.jpg"
+    },
+    {
+      "id": "mash",
+      "label": "M*A*S*H",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/5/14728.jpg"
+    }
+  ]
+}

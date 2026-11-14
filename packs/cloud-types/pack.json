@@ -1,0 +1,124 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "cloud-types",
+  "version": "1.0.0",
+  "title": "Cloud Types",
+  "description": "Fluffy, ominous, or just fog with ambition.",
+  "category": "Science & Nature",
+  "accent": "Duck Egg",
+  "author": "Pecking Order",
+  "tiers": ["Majestic", "Photogenic", "Fine", "Gloomy", "Run inside"],
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/GoldenMedows.jpg/500px-GoldenMedows.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Mammatus_clouds_in_the_Nepal_Himalayas.jpg/500px-Mammatus_clouds_in_the_Nepal_Himalayas.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Lenticular_Cloud_over_Harold%27s_Cross_Dublin_Ireland_30-6-15.jpg/500px-Lenticular_Cloud_over_Harold%27s_Cross_Dublin_Ireland_30-6-15.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Cumulonimbus_incus_over_Warsaw%2C_Poland.jpg/500px-Cumulonimbus_incus_over_Warsaw%2C_Poland.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  ],
+  "items": [
+    {
+      "id": "cumulus",
+      "label": "Cumulus",
+      "wikipedia": "Cumulus cloud"
+    },
+    {
+      "id": "stratus",
+      "label": "Stratus",
+      "wikipedia": "Stratus cloud"
+    },
+    {
+      "id": "cirrus",
+      "label": "Cirrus",
+      "wikipedia": "Cirrus cloud"
+    },
+    {
+      "id": "cumulonimbus",
+      "label": "Cumulonimbus",
+      "wikipedia": "Cumulonimbus cloud"
+    },
+    {
+      "id": "nimbostratus",
+      "label": "Nimbostratus",
+      "wikipedia": "Nimbostratus cloud"
+    },
+    {
+      "id": "stratocumulus",
+      "label": "Stratocumulus",
+      "wikipedia": "Stratocumulus cloud"
+    },
+    {
+      "id": "altocumulus",
+      "label": "Altocumulus",
+      "wikipedia": "Altocumulus cloud"
+    },
+    {
+      "id": "altostratus",
+      "label": "Altostratus",
+      "wikipedia": "Altostratus cloud"
+    },
+    {
+      "id": "cirrocumulus",
+      "label": "Cirrocumulus",
+      "wikipedia": "Cirrocumulus cloud"
+    },
+    {
+      "id": "cirrostratus",
+      "label": "Cirrostratus",
+      "wikipedia": "Cirrostratus cloud"
+    },
+    {
+      "id": "mammatus",
+      "label": "Mammatus",
+      "wikipedia": "Mammatus cloud"
+    },
+    {
+      "id": "lenticular",
+      "label": "Lenticular",
+      "wikipedia": "Lenticular cloud"
+    },
+    {
+      "id": "asperitas",
+      "label": "Asperitas",
+      "wikipedia": "Asperitas (cloud)"
+    },
+    {
+      "id": "fluctus",
+      "label": "Fluctus",
+      "commons": "File:Kelvin Helmholtz cloud formation during Hartford sunset.jpg"
+    },
+    {
+      "id": "shelf-cloud",
+      "label": "Shelf cloud",
+      "wikipedia": "Arcus cloud"
+    },
+    {
+      "id": "pileus",
+      "label": "Pileus",
+      "wikipedia": "Pileus (meteorology)"
+    },
+    {
+      "id": "wall-cloud",
+      "label": "Wall cloud",
+      "wikipedia": "Wall cloud"
+    },
+    {
+      "id": "noctilucent",
+      "label": "Noctilucent",
+      "wikipedia": "Noctilucent cloud"
+    },
+    {
+      "id": "nacreous",
+      "label": "Nacreous",
+      "wikipedia": "Polar stratospheric cloud"
+    },
+    {
+      "id": "contrail",
+      "label": "Contrail",
+      "wikipedia": "Contrail"
+    },
+    {
+      "id": "fog",
+      "label": "Fog",
+      "wikipedia": "Fog"
+    }
+  ]
+}

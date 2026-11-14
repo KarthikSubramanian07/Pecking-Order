@@ -7,6 +7,12 @@
   "category": "Food & Drink",
   "accent": "Corn",
   "author": "Pecking Order",
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Spaghettoni.jpg/500px-Spaghettoni.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Pennelisce_closeup.png/500px-Pennelisce_closeup.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Fusilli_pasta.jpg/500px-Fusilli_pasta.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Farfalle_Pasta.JPG/500px-Farfalle_Pasta.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  ],
   "items": [
     {
       "id": "spaghetti",

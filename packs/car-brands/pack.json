@@ -1,0 +1,209 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "car-brands",
+  "version": "1.0.0",
+  "title": "Car Brands",
+  "description": "Four wheels, a badge, and a fan club that will not take this well.",
+  "category": "Miscellaneous",
+  "accent": "Comb",
+  "author": "Pecking Order",
+  "tiers": ["Dream garage", "Would drive", "Rental car", "Hard shoulder"],
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/F40_Ferrari_20090509.jpg/500px-F40_Ferrari_20090509.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/VW_K%C3%A4fer_Baujahr_1966.jpg/500px-VW_K%C3%A4fer_Baujahr_1966.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Porsche_911_No_1000000%2C_70_Years_Porsche_Sports_Car%2C_Berlin_%281X7A3888%29.jpg/500px-Porsche_911_No_1000000%2C_70_Years_Porsche_Sports_Car%2C_Berlin_%281X7A3888%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Morris_Mini-Minor_1959_%28621_AOK%29.jpg/500px-Morris_Mini-Minor_1959_%28621_AOK%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  ],
+  "items": [
+    {
+      "id": "toyota",
+      "label": "Toyota",
+      "wikipedia": "Toyota Corolla"
+    },
+    {
+      "id": "honda",
+      "label": "Honda",
+      "wikipedia": "Honda Civic"
+    },
+    {
+      "id": "ford",
+      "label": "Ford",
+      "wikipedia": "Ford Mustang"
+    },
+    {
+      "id": "chevrolet",
+      "label": "Chevrolet",
+      "wikipedia": "Chevrolet Corvette"
+    },
+    {
+      "id": "volkswagen",
+      "label": "Volkswagen",
+      "wikipedia": "Volkswagen Beetle"
+    },
+    {
+      "id": "bmw",
+      "label": "BMW",
+      "wikipedia": "BMW 3 Series"
+    },
+    {
+      "id": "mercedes-benz",
+      "label": "Mercedes-Benz",
+      "wikipedia": "Mercedes-Benz 300 SL"
+    },
+    {
+      "id": "audi",
+      "label": "Audi",
+      "wikipedia": "Audi TT"
+    },
+    {
+      "id": "porsche",
+      "label": "Porsche",
+      "wikipedia": "Porsche 911"
+    },
+    {
+      "id": "ferrari",
+      "label": "Ferrari",
+      "wikipedia": "Ferrari F40"
+    },
+    {
+      "id": "lamborghini",
+      "label": "Lamborghini",
+      "wikipedia": "Lamborghini Countach"
+    },
+    {
+      "id": "nissan",
+      "label": "Nissan",
+      "wikipedia": "Nissan GT-R"
+    },
+    {
+      "id": "hyundai",
+      "label": "Hyundai",
+      "wikipedia": "Hyundai Ioniq 5"
+    },
+    {
+      "id": "kia",
+      "label": "Kia",
+      "wikipedia": "Kia EV6"
+    },
+    {
+      "id": "mazda",
+      "label": "Mazda",
+      "wikipedia": "Mazda MX-5"
+    },
+    {
+      "id": "subaru",
+      "label": "Subaru",
+      "wikipedia": "Subaru Impreza"
+    },
+    {
+      "id": "volvo",
+      "label": "Volvo",
+      "wikipedia": "Volvo 240"
+    },
+    {
+      "id": "jaguar",
+      "label": "Jaguar",
+      "wikipedia": "Jaguar E-Type"
+    },
+    {
+      "id": "land-rover",
+      "label": "Land Rover",
+      "wikipedia": "Land Rover Defender"
+    },
+    {
+      "id": "mini",
+      "label": "Mini",
+      "wikipedia": "Mini"
+    },
+    {
+      "id": "fiat",
+      "label": "Fiat",
+      "wikipedia": "Fiat 500"
+    },
+    {
+      "id": "alfa-romeo",
+      "label": "Alfa Romeo",
+      "wikipedia": "Alfa Romeo Spider"
+    },
+    {
+      "id": "maserati",
+      "label": "Maserati",
+      "wikipedia": "Maserati GranTurismo"
+    },
+    {
+      "id": "aston-martin",
+      "label": "Aston Martin",
+      "wikipedia": "Aston Martin DB5"
+    },
+    {
+      "id": "bentley",
+      "label": "Bentley",
+      "wikipedia": "Bentley Continental GT"
+    },
+    {
+      "id": "rolls-royce",
+      "label": "Rolls-Royce",
+      "wikipedia": "Rolls-Royce Silver Ghost"
+    },
+    {
+      "id": "mclaren",
+      "label": "McLaren",
+      "wikipedia": "McLaren F1"
+    },
+    {
+      "id": "bugatti",
+      "label": "Bugatti",
+      "wikipedia": "Bugatti Veyron"
+    },
+    {
+      "id": "lexus",
+      "label": "Lexus",
+      "wikipedia": "Lexus LS"
+    },
+    {
+      "id": "jeep",
+      "label": "Jeep",
+      "wikipedia": "Jeep Wrangler"
+    },
+    {
+      "id": "cadillac",
+      "label": "Cadillac",
+      "wikipedia": "Cadillac Eldorado"
+    },
+    {
+      "id": "peugeot",
+      "label": "Peugeot",
+      "wikipedia": "Peugeot 205"
+    },
+    {
+      "id": "renault",
+      "label": "Renault",
+      "wikipedia": "Renault 4"
+    },
+    {
+      "id": "citroen",
+      "label": "Citroën",
+      "wikipedia": "Citroën 2CV"
+    },
+    {
+      "id": "skoda",
+      "label": "Škoda",
+      "wikipedia": "Škoda Octavia"
+    },
+    {
+      "id": "lotus",
+      "label": "Lotus",
+      "wikipedia": "Lotus Elise"
+    },
+    {
+      "id": "saab",
+      "label": "Saab",
+      "wikipedia": "Saab 900"
+    },
+    {
+      "id": "delorean",
+      "label": "DeLorean",
+      "wikipedia": "DeLorean DMC-12"
+    }
+  ]
+}

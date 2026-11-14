@@ -1,0 +1,74 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "harry-potter-films",
+  "version": "1.0.0",
+  "title": "Harry Potter Films",
+  "description": "Eleven films. Sorting them is your job now.",
+  "category": "Film & TV",
+  "accent": "Yolk",
+  "author": "Pecking Order",
+  "tiers": ["Outstanding", "Exceeds Expectations", "Acceptable", "Poor", "Dreadful", "Troll"],
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/en/thumb/7/7a/Harry_Potter_and_the_Philosopher%27s_Stone_banner.jpg/330px-Harry_Potter_and_the_Philosopher%27s_Stone_banner.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/en/thumb/c/c0/Harry_Potter_and_the_Chamber_of_Secrets_movie.jpg/330px-Harry_Potter_and_the_Chamber_of_Secrets_movie.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://upload.wikimedia.org/wikipedia/en/1/18/Harry_Potter_and_the_Prisoner_of_Azkaban_film_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "https://thumb.wikimedia.org/wikipedia/en/thumb/c/c9/Harry_Potter_and_the_Goblet_of_Fire_Poster.jpg/330px-Harry_Potter_and_the_Goblet_of_Fire_Poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  ],
+  "items": [
+    {
+      "id": "philosophers-stone",
+      "label": "The Philosopher's Stone",
+      "wikipedia": "Harry Potter and the Philosopher's Stone (film)"
+    },
+    {
+      "id": "chamber-of-secrets",
+      "label": "The Chamber of Secrets",
+      "wikipedia": "Harry Potter and the Chamber of Secrets (film)"
+    },
+    {
+      "id": "prisoner-of-azkaban",
+      "label": "The Prisoner of Azkaban",
+      "wikipedia": "Harry Potter and the Prisoner of Azkaban (film)"
+    },
+    {
+      "id": "goblet-of-fire",
+      "label": "The Goblet of Fire",
+      "wikipedia": "Harry Potter and the Goblet of Fire (film)"
+    },
+    {
+      "id": "order-of-the-phoenix",
+      "label": "The Order of the Phoenix",
+      "wikipedia": "Harry Potter and the Order of the Phoenix (film)"
+    },
+    {
+      "id": "half-blood-prince",
+      "label": "The Half-Blood Prince",
+      "wikipedia": "Harry Potter and the Half-Blood Prince (film)"
+    },
+    {
+      "id": "deathly-hallows-part-1",
+      "label": "The Deathly Hallows: Part 1",
+      "wikipedia": "Harry Potter and the Deathly Hallows – Part 1"
+    },
+    {
+      "id": "deathly-hallows-part-2",
+      "label": "The Deathly Hallows: Part 2",
+      "wikipedia": "Harry Potter and the Deathly Hallows – Part 2"
+    },
+    {
+      "id": "fantastic-beasts",
+      "label": "Fantastic Beasts and Where to Find Them",
+      "wikipedia": "Fantastic Beasts and Where to Find Them (film)"
+    },
+    {
+      "id": "crimes-of-grindelwald",
+      "label": "The Crimes of Grindelwald",
+      "wikipedia": "Fantastic Beasts: The Crimes of Grindelwald"
+    },
+    {
+      "id": "secrets-of-dumbledore",
+      "label": "The Secrets of Dumbledore",
+      "wikipedia": "Fantastic Beasts: The Secrets of Dumbledore"
+    }
+  ]
+}

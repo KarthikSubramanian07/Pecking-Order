@@ -97,14 +97,22 @@ const KEY_STEPS: Record<string, [axis: 'row' | 'slot', step: number]> = {
  * dnd-kit's stock getter searches by on-screen distance, which skips rows and
  * wanders between them once rows wrap.
  */
+/**
+ * Where the arrow keys sent the current keyboard drag. Collision detection
+ * uses this instead of geometry, because the page reflows when a keyboard drag
+ * starts (the Coop leaves its dock) and any position-based guess would land
+ * the item on whatever row slid under it.
+ */
+let keyboardTarget: UniqueIdentifier | null = null
+
 const keyboardCoordinates: KeyboardCoordinateGetter = (event, { context }) => {
   const move = KEY_STEPS[event.code]
   if (!move) return undefined
   event.preventDefault()
   const b = boardActions().board
-  const { active, over, droppableRects } = context
+  const { active, over, droppableContainers } = context
   if (!b || !active) return undefined
-  const here = over?.id ?? active.id
+  const here = keyboardTarget ?? over?.id ?? active.id
   const row = containerOf(b, here)
   if (!row) return undefined
   const [axis, step] = move
@@ -117,7 +125,12 @@ const keyboardCoordinates: KeyboardCoordinateGetter = (event, { context }) => {
     const at = slots.indexOf(String(here))
     target = slots[at === -1 ? 0 : at + step]
   }
-  const rect = target === undefined ? undefined : droppableRects.get(target)
+  if (target === undefined) return undefined
+  keyboardTarget = target
+  // Measure the target live: cached droppable rects lag a frame behind the
+  // scroll, so quick repeated presses would aim at stale positions.
+  const node = droppableContainers.get(target)?.node.current
+  const rect = node?.getBoundingClientRect()
   return rect ? { x: rect.left, y: rect.top } : undefined
 }
 
@@ -138,7 +151,9 @@ export function Board() {
     useSensor(MouseSensor, { activationConstraint: { distance: 4 } }),
     // A short press delay lets people scroll the page with a finger.
     useSensor(TouchSensor, { activationConstraint: { delay: 160, tolerance: 8 } }),
-    useSensor(KeyboardSensor, { coordinateGetter: keyboardCoordinates }),
+    // Instant scrolling: a smooth scroll leaves stale rects, so a quick second
+    // arrow press would read old positions and the move would be lost.
+    useSensor(KeyboardSensor, { coordinateGetter: keyboardCoordinates, scrollBehavior: 'auto' }),
   )
 
   /**
@@ -151,6 +166,8 @@ export function Board() {
     (args) => {
       const b = boardActions().board
       if (!b) return []
+      // Keyboard drags have no pointer: go exactly where the arrow keys said.
+      if (!args.pointerCoordinates) return [{ id: keyboardTarget ?? args.active.id }]
       const pointer = pointerWithin(args)
       const hits = pointer.length > 0 ? pointer : rectIntersection(args)
       let overId = getFirstCollision(hits, 'id')
@@ -177,6 +194,7 @@ export function Board() {
   )
 
   const onDragStart = ({ active }: DragStartEvent) => {
+    keyboardTarget = null
     setActiveId(String(active.id))
     document.documentElement.dataset.dragging = ''
     useUiStore.getState().select(null)
@@ -240,6 +258,7 @@ export function Board() {
   }
 
   const finish = (landed: ItemId | null) => {
+    keyboardTarget = null
     setActiveId(null)
     delete document.documentElement.dataset.dragging
     delete document.documentElement.dataset.keyboardDrag

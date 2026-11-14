@@ -1,20 +1,33 @@
 import { beforeEach, describe, expect, it } from 'vitest'
 import { opAddItems, opMoveItem } from '@/core/board'
 import { COOP } from '@/core/types'
+import { resetDbForTests } from '@/storage/db'
 import { useBoardStore } from './boardStore'
 
 const s = () => useBoardStore.getState()
 
 beforeEach(async () => {
-  indexedDB.deleteDatabase('pecking-order')
-  useBoardStore.setState({ ready: false, board: null })
+  // Settle any debounced save from the previous test before wiping the DB.
+  await s().flush()
+  await resetDbForTests()
+  await new Promise((r) => {
+    const req = indexedDB.deleteDatabase('pecking-order')
+    req.onsuccess = req.onerror = r
+  })
+  useBoardStore.setState({ ready: false, board: null, boards: [] })
   await s().init()
+  await s().newBoard()
 })
 
 describe('boardStore', () => {
-  it('initializes with a board', () => {
-    expect(s().board?.tiers.length).toBeGreaterThan(0)
+  it('starts on no board, then opens new ones', async () => {
+    useBoardStore.setState({ ready: false, board: null })
+    await s().init()
+    expect(s().ready).toBe(true)
     expect(s().boards).toHaveLength(1)
+    const id = await s().newBoard({ title: 'Snacks' })
+    expect(s().board?.id).toBe(id)
+    expect(s().boards).toHaveLength(2)
   })
 
   it('applies ops with undo/redo', () => {
@@ -50,10 +63,11 @@ describe('boardStore', () => {
     const firstId = s().board?.id as string
     await s().newBoard({ title: 'Second' })
     expect(s().boards).toHaveLength(2)
-    await s().switchBoard(firstId)
+    expect(await s().loadBoard(firstId)).toBe(true)
     expect(Object.values(s().board?.items ?? {})[0]?.label).toBe('Saved')
     await s().deleteBoard(firstId)
-    expect(s().board?.title).toBe('Second')
-    expect(s().boards).toHaveLength(1)
+    expect(s().board).toBeNull()
+    expect(s().boards.map((b) => b.title)).toEqual(['Second'])
+    expect(await s().loadBoard('b_missing')).toBe(false)
   })
 })

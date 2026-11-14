@@ -5,6 +5,7 @@
 import {
   containerOrder,
   findContainer,
+  MAX_ITEMS,
   type NewItem,
   opAddItems,
   opMoveItem,
@@ -31,7 +32,7 @@ export function moveItemTo(id: ItemId, to: ContainerId): void {
   if (!board || findContainer(board, id) === to) return
   boardActions().apply((b) => opMoveItem(b, id, to))
   ui().land(id)
-  ui().toast({ message: `${itemLabel(id)} moved to ${containerName(to)}` })
+  ui().toast({ key: 'move', message: `${itemLabel(id)} moved to ${containerName(to)}` })
 }
 
 /** Number key → container: 1–9 are tiers top-down, 0 is the coop. */
@@ -90,6 +91,13 @@ export function addItems(items: NewItem[], to: ContainerId = COOP): ItemId[] {
 export function reportIngest(result: IngestResult): void {
   const ids = addItems(result.items)
   const added = ids.length
+  if (added < result.items.length) {
+    ui().toast({
+      message: `This board is full. A board holds up to ${MAX_ITEMS} items.`,
+      tone: 'error',
+    })
+    return
+  }
   const failed = result.failed.length
   if (added && !failed) {
     ui().toast({ message: `Added ${added} ${added === 1 ? 'item' : 'items'} to the Coop` })

@@ -1,15 +1,23 @@
 # Cloudflare Pages response headers. https://developers.cloudflare.com/pages/configuration/headers/
 # Applied to static assets (including ones served through functions/_middleware.ts via next()
-# or env.ASSETS). JSON-LD <script type="application/ld+json"> is a data block, which browsers
-# never execute, so script-src 'self' does not block it. style-src needs 'unsafe-inline' for
-# React style attributes and the inline loading-shell styles in index.html.
+# or env.ASSETS). docs/SECURITY-AUDIT.md explains every directive.
+#
+# - script-src 'self': no inline or third-party script. JSON-LD <script type="application/ld+json">
+#   is a data block, which browsers never execute, so script-src does not apply to it.
+# - style-src: 'inline-style-hashes' is a placeholder that the build (csp.config.ts, run from
+#   vite.config.ts) replaces with the sha256 of index.html's inline loading-shell <style>, so no
+#   'unsafe-inline' is needed. React and Motion set styles through the CSSOM, which CSP allows.
+# - require-trusted-types-for 'script' + trusted-types: the only way to reach an HTML or
+#   script-URL sink is the one policy in src/security/trustedTypes.ts.
+# - connect-src/img-src list the image hosts the app talks to; pasted data: images are decoded
+#   in JavaScript, so data: is not in connect-src.
 
 /*
-  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data: https://upload.wikimedia.org https://*.wikimedia.org https://api.openverse.org https://raw.githubusercontent.com https://covers.openlibrary.org https://www.themealdb.com https://static.tvmaze.com; connect-src 'self' https://*.wikipedia.org https://*.wikimedia.org https://api.openverse.org https://upload.wikimedia.org https://raw.githubusercontent.com https://covers.openlibrary.org https://www.themealdb.com https://static.tvmaze.com; font-src 'self'; worker-src 'self' blob:; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'inline-style-hashes'; img-src 'self' blob: data: https://upload.wikimedia.org https://*.wikimedia.org https://api.openverse.org https://raw.githubusercontent.com https://covers.openlibrary.org https://www.themealdb.com https://static.tvmaze.com; connect-src 'self' https://*.wikipedia.org https://*.wikimedia.org https://api.openverse.org https://raw.githubusercontent.com https://covers.openlibrary.org https://www.themealdb.com https://static.tvmaze.com; font-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types pecking-order
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Permissions-Policy: accelerometer=(), autoplay=(), bluetooth=(), browsing-topics=(), camera=(), display-capture=(), geolocation=(), gyroscope=(), hid=(), magnetometer=(), microphone=(), midi=(), payment=(), publickey-credentials-get=(), serial=(), usb=(), xr-spatial-tracking=()
   Cross-Origin-Opener-Policy: same-origin
   Strict-Transport-Security: max-age=31536000; includeSubDomains
 
@@ -19,6 +27,10 @@
 
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
+  Cross-Origin-Resource-Policy: same-origin
+
+/packs/*
+  Cross-Origin-Resource-Policy: same-origin
 
 /*.md
   Content-Type: text/markdown; charset=utf-8

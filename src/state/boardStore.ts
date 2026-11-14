@@ -15,7 +15,6 @@ import type { TierPreset } from '@/core/presets'
 import type { Board, BoardSummary } from '@/core/types'
 import * as storage from '@/storage/db'
 
-const LAST_BOARD_KEY = 'lastBoardId'
 const SAVE_DELAY_MS = 400
 
 export type SaveStatus = 'idle' | 'saving' | 'saved' | 'error'
@@ -36,19 +35,22 @@ interface BoardState {
   endGesture(commit?: boolean): void
   undo(): void
   redo(): void
-  canUndo(): boolean
-  canRedo(): boolean
 
-  newBoard(opts?: { title?: string; preset?: TierPreset }): Promise<void>
-  openBoard(board: Board): Promise<void>
-  switchBoard(id: string): Promise<void>
-  duplicateBoard(): Promise<void>
+  /** Creates and opens a board; resolves with its id (for navigation). */
+  newBoard(opts?: { title?: string; preset?: TierPreset }): Promise<string>
+  /** Saves and opens an already-built board (packs, backups, duplicates). */
+  openBoard(board: Board): Promise<string>
+  /** Loads a saved board by id; resolves false if it doesn't exist. */
+  loadBoard(id: string): Promise<boolean>
+  closeBoard(): Promise<void>
+  duplicateBoard(): Promise<string | null>
   deleteBoard(id: string): Promise<void>
   refreshBoards(): Promise<void>
   flush(): Promise<void>
 }
 
 let saveTimer: ReturnType<typeof setTimeout> | undefined
+let refreshSeq = 0
 let gestureStart: Board | null = null
 
 export const useBoardStore = create<BoardState>()((set, get) => {
@@ -58,10 +60,7 @@ export const useBoardStore = create<BoardState>()((set, get) => {
     saveTimer = setTimeout(() => void get().flush(), SAVE_DELAY_MS)
   }
 
-  const setBoard = (board: Board, history: History<Board> = emptyHistory()) => {
-    set({ board, history })
-    void storage.setMeta(LAST_BOARD_KEY, board.id)
-  }
+  const setBoard = (board: Board | null) => set({ board, history: emptyHistory() })
 
   return {
     board: null,
@@ -73,10 +72,6 @@ export const useBoardStore = create<BoardState>()((set, get) => {
     async init() {
       if (get().ready) return
       void storage.requestPersistence()
-      const lastId = await storage.getMeta<string>(LAST_BOARD_KEY)
-      const board = (lastId && (await storage.getBoard(lastId))) || createBoard()
-      setBoard(board)
-      await storage.putBoard(board)
       await get().refreshBoards()
       set({ ready: true })
     },
@@ -134,12 +129,8 @@ export const useBoardStore = create<BoardState>()((set, get) => {
       scheduleSave()
     },
 
-    canUndo: () => get().history.past.length > 0,
-    canRedo: () => get().history.future.length > 0,
-
-    async newBoard(opts) {
-      await get().flush()
-      await get().openBoard(createBoard(opts))
+    newBoard(opts) {
+      return get().openBoard(createBoard(opts))
     },
 
     async openBoard(board) {
@@ -147,35 +138,41 @@ export const useBoardStore = create<BoardState>()((set, get) => {
       setBoard(board)
       await storage.putBoard(board)
       await get().refreshBoards()
+      return board.id
     },
 
-    async switchBoard(id) {
-      if (get().board?.id === id) return
+    async loadBoard(id) {
+      if (get().board?.id === id) return true
       await get().flush()
       const board = await storage.getBoard(id)
-      if (board) setBoard(board)
+      setBoard(board ?? null)
+      return Boolean(board)
+    },
+
+    async closeBoard() {
+      await get().flush()
+      setBoard(null)
     },
 
     async duplicateBoard() {
       const { board } = get()
-      if (board) await get().openBoard(cloneBoard(board))
+      return board ? get().openBoard(cloneBoard(board)) : null
     },
 
     async deleteBoard(id) {
-      await storage.deleteBoard(id)
-      const remaining = (await storage.listBoards()).filter((b) => b.id !== id)
-      if (get().board?.id === id) {
-        const next = remaining[0] ? await storage.getBoard(remaining[0].id) : undefined
-        await get().openBoard(next ?? createBoard())
-      }
-      await get().refreshBoards()
       // Keep images still referenced by the undo stack of the open board.
       const keep = get().history.past.flatMap((b) => [...referencedImages(b)])
+      if (get().board?.id === id) setBoard(null)
+      await storage.deleteBoard(id)
+      await get().refreshBoards()
       void storage.collectGarbage(keep)
     },
 
     async refreshBoards() {
-      set({ boards: await storage.listBoards() })
+      // Only the latest refresh may win; a slow earlier one could resurrect a deleted board.
+      const seq = ++refreshSeq
+      const boards = await storage.listBoards()
+      if (seq === refreshSeq) set({ boards })
     },
 
     async flush() {

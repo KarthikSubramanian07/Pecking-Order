@@ -1,0 +1,205 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "famous-landmarks",
+  "version": "1.0.0",
+  "title": "Famous Landmarks",
+  "description": "Postcards, ranked. Bring comfortable shoes.",
+  "category": "Places",
+  "accent": "Pasture",
+  "author": "Pecking Order",
+  "tiers": [
+    "Worth the Flight",
+    "Worth the Train",
+    "Worth the Bus",
+    "Saw It on a Postcard",
+    "Gift Shop Was Better"
+  ],
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Tour_Eiffel_Wikimedia_Commons.jpg/500px-Tour_Eiffel_Wikimedia_Commons.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Front_view_of_Statue_of_Liberty_%28cropped%29.jpg/500px-Front_view_of_Statue_of_Liberty_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/The_Great_Wall_of_China_at_Jinshanling-edit.jpg/500px-The_Great_Wall_of_China_at_Jinshanling-edit.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Taj_Mahal_%28Edited%29.jpeg/500px-Taj_Mahal_%28Edited%29.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  ],
+  "items": [
+    {
+      "id": "eiffel-tower",
+      "label": "Eiffel Tower",
+      "commons": "File:Tour Eiffel Wikimedia Commons.jpg"
+    },
+    {
+      "id": "statue-of-liberty",
+      "label": "Statue of Liberty",
+      "wikipedia": "Statue of Liberty"
+    },
+    {
+      "id": "great-wall-of-china",
+      "label": "Great Wall of China",
+      "wikipedia": "Great Wall of China"
+    },
+    {
+      "id": "taj-mahal",
+      "label": "Taj Mahal",
+      "wikipedia": "Taj Mahal"
+    },
+    {
+      "id": "colosseum",
+      "label": "Colosseum",
+      "wikipedia": "Colosseum"
+    },
+    {
+      "id": "machu-picchu",
+      "label": "Machu Picchu",
+      "wikipedia": "Machu Picchu"
+    },
+    {
+      "id": "great-pyramid-of-giza",
+      "label": "Great Pyramid of Giza",
+      "wikipedia": "Great Pyramid of Giza"
+    },
+    {
+      "id": "big-ben",
+      "label": "Big Ben",
+      "wikipedia": "Big Ben"
+    },
+    {
+      "id": "sydney-opera-house",
+      "label": "Sydney Opera House",
+      "wikipedia": "Sydney Opera House"
+    },
+    {
+      "id": "golden-gate-bridge",
+      "label": "Golden Gate Bridge",
+      "wikipedia": "Golden Gate Bridge"
+    },
+    {
+      "id": "leaning-tower-of-pisa",
+      "label": "Leaning Tower of Pisa",
+      "wikipedia": "Leaning Tower of Pisa"
+    },
+    {
+      "id": "petra",
+      "label": "Petra",
+      "wikipedia": "Petra"
+    },
+    {
+      "id": "stonehenge",
+      "label": "Stonehenge",
+      "wikipedia": "Stonehenge"
+    },
+    {
+      "id": "acropolis",
+      "label": "Acropolis of Athens",
+      "wikipedia": "Acropolis of Athens"
+    },
+    {
+      "id": "burj-khalifa",
+      "label": "Burj Khalifa",
+      "wikipedia": "Burj Khalifa"
+    },
+    {
+      "id": "empire-state-building",
+      "label": "Empire State Building",
+      "wikipedia": "Empire State Building"
+    },
+    {
+      "id": "chichen-itza",
+      "label": "Chichen Itza",
+      "wikipedia": "Chichen Itza"
+    },
+    {
+      "id": "angkor-wat",
+      "label": "Angkor Wat",
+      "wikipedia": "Angkor Wat"
+    },
+    {
+      "id": "sagrada-familia",
+      "label": "Sagrada Família",
+      "wikipedia": "Sagrada Família"
+    },
+    {
+      "id": "neuschwanstein-castle",
+      "label": "Neuschwanstein Castle",
+      "wikipedia": "Neuschwanstein Castle"
+    },
+    {
+      "id": "tower-bridge",
+      "label": "Tower Bridge",
+      "wikipedia": "Tower Bridge"
+    },
+    {
+      "id": "arc-de-triomphe",
+      "label": "Arc de Triomphe",
+      "wikipedia": "Arc de Triomphe"
+    },
+    {
+      "id": "brandenburg-gate",
+      "label": "Brandenburg Gate",
+      "wikipedia": "Brandenburg Gate"
+    },
+    {
+      "id": "moai",
+      "label": "Moai",
+      "wikipedia": "Moai"
+    },
+    {
+      "id": "space-needle",
+      "label": "Space Needle",
+      "wikipedia": "Space Needle"
+    },
+    {
+      "id": "cn-tower",
+      "label": "CN Tower",
+      "commons": "File:CN Tower from Puente de Luz, Toronto, Ontario, 2025-08-25 01.jpg"
+    },
+    {
+      "id": "gateway-arch",
+      "label": "Gateway Arch",
+      "wikipedia": "Gateway Arch"
+    },
+    {
+      "id": "forbidden-city",
+      "label": "Forbidden City",
+      "wikipedia": "Forbidden City"
+    },
+    {
+      "id": "alhambra",
+      "label": "Alhambra",
+      "wikipedia": "Alhambra"
+    },
+    {
+      "id": "louvre-pyramid",
+      "label": "Louvre Pyramid",
+      "wikipedia": "Louvre Pyramid"
+    },
+    {
+      "id": "hollywood-sign",
+      "label": "Hollywood Sign",
+      "wikipedia": "Hollywood Sign"
+    },
+    {
+      "id": "petronas-towers",
+      "label": "Petronas Towers",
+      "commons": "File:Petronas Twin Towers byD.jpg"
+    },
+    {
+      "id": "brooklyn-bridge",
+      "label": "Brooklyn Bridge",
+      "wikipedia": "Brooklyn Bridge"
+    },
+    {
+      "id": "atomium",
+      "label": "Atomium",
+      "wikipedia": "Atomium"
+    },
+    {
+      "id": "tower-of-london",
+      "label": "Tower of London",
+      "wikipedia": "Tower of London"
+    },
+    {
+      "id": "edinburgh-castle",
+      "label": "Edinburgh Castle",
+      "wikipedia": "Edinburgh Castle"
+    }
+  ]
+}

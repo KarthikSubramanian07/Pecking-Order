@@ -7,20 +7,14 @@ import type { ItemId } from '@/core/types'
 
 export type ThemePref = 'system' | 'light' | 'dark'
 export type ItemSize = 'sm' | 'md' | 'lg'
-export type DialogId =
-  | 'new'
-  | 'search'
-  | 'export'
-  | 'boards'
-  | 'shortcuts'
-  | 'item'
-  | 'peckoff'
-  | null
+export type DialogId = 'new' | 'search' | 'export' | 'shortcuts' | 'item' | 'peckoff' | null
 
 export const ITEM_SIZE_PX: Record<ItemSize, number> = { sm: 64, md: 88, lg: 116 }
 
 export interface Toast {
   id: number
+  /** Toasts sharing a key replace each other instead of stacking. */
+  key?: string
   message: string
   tone?: 'info' | 'error'
   action?: { label: string; run: () => void }
@@ -115,7 +109,8 @@ export const useUiStore = create<UiState>()((set, get) => ({
 
   toast(t) {
     const id = ++toastSeq
-    set({ toasts: [...get().toasts.slice(-2), { ...t, id }] })
+    const rest = t.key ? get().toasts.filter((x) => x.key !== t.key) : get().toasts
+    set({ toasts: [...rest.slice(-2), { ...t, id }] })
     setTimeout(() => get().dismiss(id), t.action ? 6000 : 3500)
   },
   dismiss: (id) => set({ toasts: get().toasts.filter((t) => t.id !== id) }),

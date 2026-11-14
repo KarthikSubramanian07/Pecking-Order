@@ -1,0 +1,203 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "olympic-sports",
+  "version": "1.0.0",
+  "title": "Olympic Sports",
+  "description": "Four years of training, ranked in about four seconds.",
+  "category": "Sports",
+  "accent": "Yolk",
+  "author": "Pecking Order",
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Diving_at_the_2016_Summer_Olympics_%E2%80%93_Men%27s_synchronized_10_metre_platform_3.jpg/500px-Diving_at_the_2016_Summer_Olympics_%E2%80%93_Men%27s_synchronized_10_metre_platform_3.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Final_Trophee_Monal_2012_n08.jpg/500px-Final_Trophee_Monal_2012_n08.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Mavericks_Surf_Contest_2010b.jpg/500px-Mavericks_Surf_Contest_2010b.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/FIS_Ski_Weltcup_Titisee-Neustadt_2016_-_Peter_Prevc1.jpg/500px-FIS_Ski_Weltcup_Titisee-Neustadt_2016_-_Peter_Prevc1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  ],
+  "items": [
+    {
+      "id": "athletics",
+      "label": "Athletics",
+      "wikipedia": "Sport of athletics"
+    },
+    {
+      "id": "swimming",
+      "label": "Swimming",
+      "wikipedia": "Swimming (sport)"
+    },
+    {
+      "id": "artistic-gymnastics",
+      "label": "Artistic gymnastics",
+      "wikipedia": "Artistic gymnastics"
+    },
+    {
+      "id": "diving",
+      "label": "Diving",
+      "wikipedia": "Diving (sport)"
+    },
+    {
+      "id": "fencing",
+      "label": "Fencing",
+      "wikipedia": "Fencing"
+    },
+    {
+      "id": "archery",
+      "label": "Archery",
+      "wikipedia": "Archery"
+    },
+    {
+      "id": "rowing",
+      "label": "Rowing",
+      "wikipedia": "Rowing (sport)"
+    },
+    {
+      "id": "canoe-sprint",
+      "label": "Canoe sprint",
+      "wikipedia": "Canoe sprint"
+    },
+    {
+      "id": "sailing",
+      "label": "Sailing",
+      "wikipedia": "Sailing (sport)"
+    },
+    {
+      "id": "track-cycling",
+      "label": "Track cycling",
+      "wikipedia": "Track cycling"
+    },
+    {
+      "id": "equestrian",
+      "label": "Equestrian",
+      "wikipedia": "Show jumping"
+    },
+    {
+      "id": "boxing",
+      "label": "Boxing",
+      "wikipedia": "Boxing"
+    },
+    {
+      "id": "judo",
+      "label": "Judo",
+      "wikipedia": "Judo"
+    },
+    {
+      "id": "wrestling",
+      "label": "Wrestling",
+      "wikipedia": "Amateur wrestling"
+    },
+    {
+      "id": "weightlifting",
+      "label": "Weightlifting",
+      "wikipedia": "Olympic weightlifting"
+    },
+    {
+      "id": "table-tennis",
+      "label": "Table tennis",
+      "wikipedia": "Table tennis"
+    },
+    {
+      "id": "badminton",
+      "label": "Badminton",
+      "wikipedia": "Badminton"
+    },
+    {
+      "id": "beach-volleyball",
+      "label": "Beach volleyball",
+      "commons": "File:China vs. Austria in Beach Volleyball - Summer Olympics Beijing 2008.jpg"
+    },
+    {
+      "id": "water-polo",
+      "label": "Water polo",
+      "wikipedia": "Water polo"
+    },
+    {
+      "id": "handball",
+      "label": "Handball",
+      "wikipedia": "Handball"
+    },
+    {
+      "id": "triathlon",
+      "label": "Triathlon",
+      "commons": "File:Swim start at Bonn Triathlon 2015.jpg"
+    },
+    {
+      "id": "modern-pentathlon",
+      "label": "Modern pentathlon",
+      "wikipedia": "Modern pentathlon"
+    },
+    {
+      "id": "skateboarding",
+      "label": "Skateboarding",
+      "wikipedia": "Skateboarding"
+    },
+    {
+      "id": "surfing",
+      "label": "Surfing",
+      "wikipedia": "Surfing"
+    },
+    {
+      "id": "sport-climbing",
+      "label": "Sport climbing",
+      "wikipedia": "Sport climbing"
+    },
+    {
+      "id": "artistic-swimming",
+      "label": "Artistic swimming",
+      "wikipedia": "Artistic swimming"
+    },
+    {
+      "id": "alpine-skiing",
+      "label": "Alpine skiing",
+      "commons": "File:Lauberhorn slalom 2011 wengen.jpg"
+    },
+    {
+      "id": "ski-jumping",
+      "label": "Ski jumping",
+      "wikipedia": "Ski jumping"
+    },
+    {
+      "id": "figure-skating",
+      "label": "Figure skating",
+      "wikipedia": "Figure skating"
+    },
+    {
+      "id": "speed-skating",
+      "label": "Speed skating",
+      "wikipedia": "Speed skating"
+    },
+    {
+      "id": "ice-hockey",
+      "label": "Ice hockey",
+      "wikipedia": "Ice hockey"
+    },
+    {
+      "id": "curling",
+      "label": "Curling",
+      "wikipedia": "Curling"
+    },
+    {
+      "id": "bobsleigh",
+      "label": "Bobsleigh",
+      "wikipedia": "Bobsleigh"
+    },
+    {
+      "id": "luge",
+      "label": "Luge",
+      "wikipedia": "Luge"
+    },
+    {
+      "id": "skeleton",
+      "label": "Skeleton",
+      "wikipedia": "Skeleton (sport)"
+    },
+    {
+      "id": "biathlon",
+      "label": "Biathlon",
+      "wikipedia": "Biathlon"
+    },
+    {
+      "id": "snowboarding",
+      "label": "Snowboarding",
+      "wikipedia": "Snowboarding"
+    }
+  ]
+}

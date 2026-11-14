@@ -1,4 +1,5 @@
 /** Shared request plumbing for the image search sources. */
+import { parseInertHtml } from '@/security/trustedTypes'
 import { deadline } from '../net'
 
 const SEARCH_TIMEOUT_MS = 15_000
@@ -75,7 +76,7 @@ export function mediaWikiPages<P extends { index?: number }>(
 
 /** Plain text from an HTML fragment, via an inert DOMParser document. Never rendered. */
 export function htmlToText(html: string): string {
-  const doc = new DOMParser().parseFromString(html, 'text/html')
+  const doc = parseInertHtml(html)
   return (doc.body.textContent ?? '').replace(/\s+/g, ' ').trim()
 }
 

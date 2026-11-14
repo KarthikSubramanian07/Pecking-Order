@@ -20,8 +20,13 @@ async function expectNoSeriousViolations(page: Page, surface: string) {
   ).toEqual([])
 }
 
+/** Starts a board from the home page with the keyboard, like a first-time visitor. */
 async function openBoard(page: Page) {
   await page.goto('/')
+  await expectNoSeriousViolations(page, 'home page')
+  await page.locator('#start-title').fill('Fruit')
+  await page.keyboard.press('Enter')
+  await expect(page).toHaveURL(/\/b\//)
   await expect(page.locator('#quick-add')).toBeVisible()
 }
 
@@ -76,7 +81,6 @@ test.describe('axe, populated board and every dialog', () => {
 
       const dialogs: [string, (p: Page) => Promise<void>][] = [
         ['New pecking order', (p) => p.getByRole('button', { name: 'New', exact: true }).click()],
-        ['My boards', (p) => p.getByRole('button', { name: 'My boards' }).click()],
         ['Export image', (p) => p.getByRole('button', { name: 'Export', exact: true }).click()],
         [
           'Search free images',
@@ -127,11 +131,15 @@ test.describe('keyboard only', () => {
     await tile(page, 'Banana').focus()
     await page.keyboard.press('Space')
     await expect(page.getByText(/^Picked up Banana\./)).toBeAttached()
-    // Each ArrowUp moves it one row up (F, D, C, B, A); stop once it reaches A.
-    await expect(async () => {
+    // dnd-kit attaches its arrow-key listener on the tick after pickup so the
+    // Space press isn't read as a move; a human can't press faster than this.
+    await page.waitForTimeout(150)
+    // Each ArrowUp moves it one row up (F, D, C, B, A). Wait for every
+    // announcement before the next key, as a screen reader user would.
+    for (const row of ['F', 'D', 'C', 'B', 'A']) {
       await page.keyboard.press('ArrowUp')
-      await expect(tier(page, 'A').locator('[data-item-id]')).toHaveCount(1, { timeout: 400 })
-    }).toPass({ timeout: 10_000 })
+      await expect(page.getByText(new RegExp(`^Banana is in tier ${row},`))).toBeAttached()
+    }
     await page.keyboard.press('Space')
     await expect(tier(page, 'A').locator('[data-item-id]')).toHaveText(['Banana'])
     await expect(page.getByText(/^Dropped Banana in tier A/)).toBeAttached()

@@ -1,0 +1,165 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "premier-league-clubs",
+  "version": "1.0.0",
+  "title": "Premier League Clubs",
+  "description": "The clubs with the most top-flight seasons since 1992. Nobody reading this is neutral.",
+  "category": "Sports",
+  "accent": "Pasture",
+  "author": "Pecking Order",
+  "tiers": [
+    "Invincible",
+    "Top four",
+    "Mid-table",
+    "Relegation scrap",
+    "See you in the Championship"
+  ],
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/en/thumb/5/53/Arsenal_FC.svg/500px-Arsenal_FC.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/500px-Chelsea_FC.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/en/thumb/7/7c/Everton_FC_logo.svg/500px-Everton_FC_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/en/thumb/0/0c/Liverpool_FC.svg/500px-Liverpool_FC.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  ],
+  "items": [
+    {
+      "id": "arsenal",
+      "label": "Arsenal",
+      "wikipedia": "Arsenal F.C."
+    },
+    {
+      "id": "chelsea",
+      "label": "Chelsea",
+      "wikipedia": "Chelsea F.C."
+    },
+    {
+      "id": "everton",
+      "label": "Everton",
+      "wikipedia": "Everton F.C."
+    },
+    {
+      "id": "liverpool",
+      "label": "Liverpool",
+      "wikipedia": "Liverpool F.C."
+    },
+    {
+      "id": "manchester-united",
+      "label": "Manchester United",
+      "wikipedia": "Manchester United F.C."
+    },
+    {
+      "id": "tottenham-hotspur",
+      "label": "Tottenham Hotspur",
+      "wikipedia": "Tottenham Hotspur F.C."
+    },
+    {
+      "id": "aston-villa",
+      "label": "Aston Villa",
+      "wikipedia": "Aston Villa F.C."
+    },
+    {
+      "id": "newcastle-united",
+      "label": "Newcastle United",
+      "wikipedia": "Newcastle United F.C."
+    },
+    {
+      "id": "manchester-city",
+      "label": "Manchester City",
+      "wikipedia": "Manchester City F.C."
+    },
+    {
+      "id": "west-ham-united",
+      "label": "West Ham United",
+      "wikipedia": "West Ham United F.C."
+    },
+    {
+      "id": "southampton",
+      "label": "Southampton",
+      "wikipedia": "Southampton F.C."
+    },
+    {
+      "id": "blackburn-rovers",
+      "label": "Blackburn Rovers",
+      "wikipedia": "Blackburn Rovers F.C."
+    },
+    {
+      "id": "leeds-united",
+      "label": "Leeds United",
+      "wikipedia": "Leeds United F.C."
+    },
+    {
+      "id": "sunderland",
+      "label": "Sunderland",
+      "wikipedia": "Sunderland A.F.C."
+    },
+    {
+      "id": "middlesbrough",
+      "label": "Middlesbrough",
+      "wikipedia": "Middlesbrough F.C."
+    },
+    {
+      "id": "fulham",
+      "label": "Fulham",
+      "wikipedia": "Fulham F.C."
+    },
+    {
+      "id": "crystal-palace",
+      "label": "Crystal Palace",
+      "wikipedia": "Crystal Palace F.C."
+    },
+    {
+      "id": "leicester-city",
+      "label": "Leicester City",
+      "wikipedia": "Leicester City F.C."
+    },
+    {
+      "id": "bolton-wanderers",
+      "label": "Bolton Wanderers",
+      "wikipedia": "Bolton Wanderers F.C."
+    },
+    {
+      "id": "west-bromwich-albion",
+      "label": "West Bromwich Albion",
+      "wikipedia": "West Bromwich Albion F.C."
+    },
+    {
+      "id": "wolverhampton-wanderers",
+      "label": "Wolverhampton Wanderers",
+      "wikipedia": "Wolverhampton Wanderers F.C."
+    },
+    {
+      "id": "stoke-city",
+      "label": "Stoke City",
+      "wikipedia": "Stoke City F.C."
+    },
+    {
+      "id": "norwich-city",
+      "label": "Norwich City",
+      "wikipedia": "Norwich City F.C."
+    },
+    {
+      "id": "brighton-and-hove-albion",
+      "label": "Brighton & Hove Albion",
+      "wikipedia": "Brighton & Hove Albion F.C."
+    },
+    {
+      "id": "bournemouth",
+      "label": "Bournemouth",
+      "wikipedia": "AFC Bournemouth"
+    },
+    {
+      "id": "coventry-city",
+      "label": "Coventry City",
+      "wikipedia": "Coventry City F.C."
+    },
+    {
+      "id": "burnley",
+      "label": "Burnley",
+      "wikipedia": "Burnley F.C."
+    },
+    {
+      "id": "nottingham-forest",
+      "label": "Nottingham Forest",
+      "wikipedia": "Nottingham Forest F.C."
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "nintendo-characters",
+  "version": "1.0.0",
+  "title": "Nintendo Characters",
+  "description": "Mostly plumbers, princesses and things that want to eat you.",
+  "category": "Games",
+  "accent": "Comb",
+  "author": "Pecking Order",
+  "cover": [
+    "https://upload.wikimedia.org/wikipedia/en/5/5c/Mario_by_Shigehisa_Nakaue.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "https://upload.wikimedia.org/wikipedia/en/b/be/Luigi_by_Shigehisa_Nakaue.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "https://upload.wikimedia.org/wikipedia/en/1/16/Princess_Peach_Stock_Art.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "https://thumb.wikimedia.org/wikipedia/en/thumb/d/d1/Bowser_by_Shigehisa_Nakaue.png/330px-Bowser_by_Shigehisa_Nakaue.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  ],
+  "items": [
+    {
+      "id": "mario",
+      "label": "Mario",
+      "wikipedia": "Mario"
+    },
+    {
+      "id": "luigi",
+      "label": "Luigi",
+      "wikipedia": "Luigi (character)"
+    },
+    {
+      "id": "princess-peach",
+      "label": "Princess Peach",
+      "wikipedia": "Princess Peach"
+    },
+    {
+      "id": "bowser",
+      "label": "Bowser",
+      "wikipedia": "Bowser"
+    },
+    {
+      "id": "yoshi",
+      "label": "Yoshi",
+      "wikipedia": "Yoshi"
+    },
+    {
+      "id": "donkey-kong",
+      "label": "Donkey Kong",
+      "wikipedia": "Donkey Kong (character)"
+    },
+    {
+      "id": "toad",
+      "label": "Toad",
+      "wikipedia": "Toad (Mario)"
+    },
+    {
+      "id": "wario",
+      "label": "Wario",
+      "wikipedia": "Wario"
+    },
+    {
+      "id": "waluigi",
+      "label": "Waluigi",
+      "wikipedia": "Waluigi"
+    },
+    {
+      "id": "princess-daisy",
+      "label": "Princess Daisy",
+      "wikipedia": "Princess Daisy"
+    },
+    {
+      "id": "rosalina",
+      "label": "Rosalina",
+      "wikipedia": "Rosalina (Mario)"
+    },
+    {
+      "id": "bowser-jr",
+      "label": "Bowser Jr.",
+      "wikipedia": "Bowser Jr."
+    },
+    {
+      "id": "diddy-kong",
+      "label": "Diddy Kong",
+      "wikipedia": "Diddy Kong"
+    },
+    {
+      "id": "link",
+      "label": "Link",
+      "wikipedia": "Link (The Legend of Zelda)"
+    },
+    {
+      "id": "princess-zelda",
+      "label": "Princess Zelda",
+      "wikipedia": "Princess Zelda"
+    },
+    {
+      "id": "ganondorf",
+      "label": "Ganondorf",
+      "wikipedia": "Ganon"
+    },
+    {
+      "id": "samus-aran",
+      "label": "Samus Aran",
+      "wikipedia": "Samus Aran"
+    },
+    {
+      "id": "ridley",
+      "label": "Ridley",
+      "wikipedia": "Ridley (Metroid)"
+    },
+    {
+      "id": "kirby",
+      "label": "Kirby",
+      "wikipedia": "Kirby (character)"
+    },
+    {
+      "id": "meta-knight",
+      "label": "Meta Knight",
+      "wikipedia": "Meta Knight"
+    },
+    {
+      "id": "pikachu",
+      "label": "Pikachu",
+      "wikipedia": "Pikachu"
+    },
+    {
+      "id": "jigglypuff",
+      "label": "Jigglypuff",
+      "wikipedia": "Jigglypuff"
+    },
+    {
+      "id": "fox-mccloud",
+      "label": "Fox McCloud",
+      "wikipedia": "Fox McCloud"
+    },
+    {
+      "id": "ness",
+      "label": "Ness",
+      "wikipedia": "Ness (EarthBound)"
+    },
+    {
+      "id": "isabelle",
+      "label": "Isabelle",
+      "wikipedia": "Isabelle (Animal Crossing)"
+    },
+    {
+      "id": "tom-nook",
+      "label": "Tom Nook",
+      "wikipedia": "Tom Nook"
+    },
+    {
+      "id": "captain-olimar",
+      "label": "Captain Olimar",
+      "wikipedia": "Captain Olimar"
+    },
+    {
+      "id": "marth",
+      "label": "Marth",
+      "wikipedia": "Marth (Fire Emblem)"
+    },
+    {
+      "id": "toadette",
+      "label": "Toadette",
+      "wikipedia": "Toadette"
+    },
+    {
+      "id": "king-k-rool",
+      "label": "King K. Rool",
+      "wikipedia": "King K. Rool"
+    },
+    {
+      "id": "little-mac",
+      "label": "Little Mac",
+      "wikipedia": "Little Mac"
+    },
+    {
+      "id": "pauline",
+      "label": "Pauline",
+      "wikipedia": "Pauline (Nintendo)"
+    }
+  ]
+}

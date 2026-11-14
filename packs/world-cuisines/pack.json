@@ -7,6 +7,12 @@
   "category": "Food & Drink",
   "accent": "Comb",
   "author": "Pecking Order",
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Italian_food.JPG/500px-Italian_food.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Oseti.jpg/500px-Oseti.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Collage_Mexican_Cuisine_by_User-EME.png/500px-Collage_Mexican_Cuisine_by_User-EME.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Tradtional_Thali.jpg/500px-Tradtional_Thali.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  ],
   "items": [
     {
       "id": "italian",

@@ -6,7 +6,7 @@
  * Only the few types used here are declared, so the project does not need
  * @cloudflare/workers-types.
  */
-import { notFoundMarkdown, pagePath, route, varyOnAccept } from './_lib/negotiate'
+import { isAppRoute, notFoundMarkdown, pagePath, route, varyOnAccept } from './_lib/negotiate'
 
 interface AssetFetcher {
   fetch(input: Request | URL | string): Promise<Response>
@@ -58,6 +58,15 @@ export async function onRequest(context: PagesContext): Promise<Response> {
         'Referrer-Policy': 'strict-origin-when-cross-origin',
       },
     })
+  }
+
+  if (isAppRoute(url.pathname)) {
+    // Boards are personal and local to one browser: serve the shell, never index it.
+    const shell = await context.env.ASSETS.fetch(new URL('/', url))
+    const response = new Response(request.method === 'HEAD' ? null : shell.body, shell)
+    response.headers.set('X-Robots-Tag', 'noindex')
+    response.headers.set('Vary', varyOnAccept(response.headers.get('Vary')))
+    return response
   }
 
   const response = await context.next()

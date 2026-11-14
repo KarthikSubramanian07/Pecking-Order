@@ -1,0 +1,164 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "sharks",
+  "version": "1.0.0",
+  "title": "Sharks",
+  "description": "Statistically the vending machine is more dangerous. Rank accordingly.",
+  "category": "Science & Nature",
+  "accent": "Duck Egg",
+  "author": "Pecking Order",
+  "tiers": ["Apex", "Respectable", "Fine, actually", "Weird little guy", "Get out of the water"],
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/White_shark.jpg/500px-White_shark.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Tiger_shark.jpg/500px-Tiger_shark.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Bull_shark_%28Carcharhinus_leucas%29.jpg/500px-Bull_shark_%28Carcharhinus_leucas%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Great_hammerhead2.jpg/500px-Great_hammerhead2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  ],
+  "items": [
+    {
+      "id": "great-white",
+      "label": "Great white",
+      "wikipedia": "Great white shark"
+    },
+    {
+      "id": "tiger-shark",
+      "label": "Tiger shark",
+      "wikipedia": "Tiger shark"
+    },
+    {
+      "id": "bull-shark",
+      "label": "Bull shark",
+      "wikipedia": "Bull shark"
+    },
+    {
+      "id": "great-hammerhead",
+      "label": "Great hammerhead",
+      "wikipedia": "Great hammerhead"
+    },
+    {
+      "id": "whale-shark",
+      "label": "Whale shark",
+      "wikipedia": "Whale shark"
+    },
+    {
+      "id": "basking-shark",
+      "label": "Basking shark",
+      "wikipedia": "Basking shark"
+    },
+    {
+      "id": "shortfin-mako",
+      "label": "Shortfin mako",
+      "wikipedia": "Shortfin mako shark"
+    },
+    {
+      "id": "blue-shark",
+      "label": "Blue shark",
+      "wikipedia": "Blue shark"
+    },
+    {
+      "id": "thresher-shark",
+      "label": "Thresher shark",
+      "wikipedia": "Common thresher"
+    },
+    {
+      "id": "nurse-shark",
+      "label": "Nurse shark",
+      "wikipedia": "Nurse shark"
+    },
+    {
+      "id": "lemon-shark",
+      "label": "Lemon shark",
+      "wikipedia": "Lemon shark"
+    },
+    {
+      "id": "blacktip-reef-shark",
+      "label": "Blacktip reef shark",
+      "wikipedia": "Blacktip reef shark"
+    },
+    {
+      "id": "whitetip-reef-shark",
+      "label": "Whitetip reef shark",
+      "wikipedia": "Whitetip reef shark"
+    },
+    {
+      "id": "oceanic-whitetip",
+      "label": "Oceanic whitetip",
+      "wikipedia": "Oceanic whitetip shark"
+    },
+    {
+      "id": "greenland-shark",
+      "label": "Greenland shark",
+      "wikipedia": "Greenland shark"
+    },
+    {
+      "id": "goblin-shark",
+      "label": "Goblin shark",
+      "wikipedia": "Goblin shark"
+    },
+    {
+      "id": "megamouth-shark",
+      "label": "Megamouth shark",
+      "wikipedia": "Megamouth shark"
+    },
+    {
+      "id": "frilled-shark",
+      "label": "Frilled shark",
+      "wikipedia": "Frilled shark"
+    },
+    {
+      "id": "cookiecutter-shark",
+      "label": "Cookiecutter shark",
+      "wikipedia": "Cookiecutter shark"
+    },
+    {
+      "id": "tasselled-wobbegong",
+      "label": "Tasselled wobbegong",
+      "wikipedia": "Tasselled wobbegong"
+    },
+    {
+      "id": "zebra-shark",
+      "label": "Zebra shark",
+      "wikipedia": "Zebra shark"
+    },
+    {
+      "id": "angelshark",
+      "label": "Angelshark",
+      "wikipedia": "Angelshark"
+    },
+    {
+      "id": "horn-shark",
+      "label": "Horn shark",
+      "wikipedia": "Horn shark"
+    },
+    {
+      "id": "port-jackson-shark",
+      "label": "Port Jackson shark",
+      "wikipedia": "Port Jackson shark"
+    },
+    {
+      "id": "bonnethead",
+      "label": "Bonnethead",
+      "wikipedia": "Bonnethead"
+    },
+    {
+      "id": "sand-tiger-shark",
+      "label": "Sand tiger shark",
+      "wikipedia": "Sand tiger shark"
+    },
+    {
+      "id": "leopard-shark",
+      "label": "Leopard shark",
+      "wikipedia": "Leopard shark"
+    },
+    {
+      "id": "epaulette-shark",
+      "label": "Epaulette shark",
+      "wikipedia": "Epaulette shark"
+    },
+    {
+      "id": "megalodon",
+      "label": "Megalodon",
+      "wikipedia": "Megalodon"
+    }
+  ]
+}

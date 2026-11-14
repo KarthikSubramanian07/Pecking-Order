@@ -6,7 +6,9 @@ import { type ItemSize, useUiStore } from '@/state/uiStore'
 import {
   ArrowArcLeft,
   ArrowArcRight,
+  Copy,
   DotsThreeOutline,
+  DownloadSimple,
   Export,
   Keyboard,
   Monitor,
@@ -14,10 +16,13 @@ import {
   Plus,
   SquaresFour,
   Sun,
+  Trash,
 } from '@/ui/icons'
+import { downloadBackup } from '../backup'
 import { Hen } from '../brand/Hen'
 import btn from '../primitives/Button.module.css'
 import { Menu } from '../primitives/Menu'
+import { boardPath, Link, navigate } from '../router'
 import { isMac } from './keys'
 import styles from './TopBar.module.css'
 
@@ -27,7 +32,9 @@ const SIZE_LABEL: Record<ItemSize, string> = {
   lg: 'Large tiles',
 }
 
-export function TopBar() {
+export function TopBar({ onBoard: onBoardRoute }: { onBoard: boolean }) {
+  // Board controls only make sense once a board has actually loaded.
+  const onBoard = useBoardStore((s) => onBoardRoute && s.board !== null)
   const title = useBoardStore((s) => s.board?.title ?? '')
   const total = useBoardStore((s) => Object.keys(s.board?.items ?? {}).length)
   const unranked = useBoardStore((s) => s.board?.placement[COOP]?.length ?? 0)
@@ -52,21 +59,18 @@ export function TopBar() {
   return (
     <header className={styles.bar}>
       <div className={styles.top}>
-        <a className={styles.brand} href="/" aria-label="Pecking Order home">
+        <Link to="/" className={styles.brand} aria-label="Pecking Order home">
           <Hen size={30} mood="still" />
           <span className={styles.wordmark}>Pecking Order</span>
-        </a>
+        </Link>
 
-        <nav className={styles.actions} aria-label="Board actions">
-          <button
-            type="button"
-            className={btn.button}
-            data-variant="ghost"
-            onClick={() => open('boards')}
-          >
-            <SquaresFour size={18} aria-hidden />
-            <span className={styles.hideSm}>My boards</span>
-          </button>
+        <nav className={styles.actions} aria-label={onBoard ? 'Board actions' : 'Site actions'}>
+          {onBoard && (
+            <Link to="/" className={btn.button} data-variant="ghost">
+              <SquaresFour size={18} aria-hidden />
+              <span className={styles.hideSm}>All boards</span>
+            </Link>
+          )}
           <button
             type="button"
             className={btn.button}
@@ -76,29 +80,33 @@ export function TopBar() {
             <Plus size={18} aria-hidden />
             <span className={styles.hideSm}>New</span>
           </button>
-          <span className={styles.divider} aria-hidden />
-          <button
-            type="button"
-            className={btn.icon}
-            data-variant="ghost"
-            onClick={() => boardActions().undo()}
-            disabled={!canUndo}
-            aria-label="Undo"
-            title={`Undo (${mod}Z)`}
-          >
-            <ArrowArcLeft size={18} aria-hidden />
-          </button>
-          <button
-            type="button"
-            className={btn.icon}
-            data-variant="ghost"
-            onClick={() => boardActions().redo()}
-            disabled={!canRedo}
-            aria-label="Redo"
-            title={`Redo (${mod}⇧Z)`}
-          >
-            <ArrowArcRight size={18} aria-hidden />
-          </button>
+          {onBoard && (
+            <>
+              <span className={styles.divider} aria-hidden />
+              <button
+                type="button"
+                className={btn.icon}
+                data-variant="ghost"
+                onClick={() => boardActions().undo()}
+                disabled={!canUndo}
+                aria-label="Undo"
+                title={`Undo (${mod}Z)`}
+              >
+                <ArrowArcLeft size={18} aria-hidden />
+              </button>
+              <button
+                type="button"
+                className={btn.icon}
+                data-variant="ghost"
+                onClick={() => boardActions().redo()}
+                disabled={!canRedo}
+                aria-label="Redo"
+                title={`Redo (${mod}⇧Z)`}
+              >
+                <ArrowArcRight size={18} aria-hidden />
+              </button>
+            </>
+          )}
           <Menu
             label="View and settings"
             trigger={(props) => (
@@ -141,6 +149,32 @@ export function TopBar() {
                 label: showLabels ? 'Hide image labels' : 'Show image labels',
                 onSelect: () => setPref('showLabels', !showLabels),
               },
+              onBoard && {
+                label: 'Back up this board',
+                icon: <DownloadSimple size={16} />,
+                separated: true,
+                onSelect: () => void downloadBackup(),
+              },
+              onBoard && {
+                label: 'Duplicate board',
+                icon: <Copy size={16} />,
+                onSelect: async () => {
+                  const id = await boardActions().duplicateBoard()
+                  if (id) navigate(boardPath(id))
+                },
+              },
+              onBoard && {
+                label: 'Delete board',
+                icon: <Trash size={16} />,
+                danger: true,
+                onSelect: async () => {
+                  const board = boardActions().board
+                  if (!board || !window.confirm(`Delete “${board.title}”? This can't be undone.`))
+                    return
+                  await boardActions().deleteBoard(board.id)
+                  navigate('/')
+                },
+              },
               {
                 label: 'Keyboard shortcuts',
                 icon: <Keyboard size={16} />,
@@ -150,62 +184,66 @@ export function TopBar() {
               },
             ]}
           />
-          <button
-            type="button"
-            className={btn.button}
-            data-variant="accent"
-            onClick={() => open('export')}
-          >
-            <Export size={18} weight="bold" aria-hidden />
-            <span className={styles.hideXs}>Export</span>
-          </button>
+          {onBoard && (
+            <button
+              type="button"
+              className={btn.button}
+              data-variant="accent"
+              onClick={() => open('export')}
+            >
+              <Export size={18} weight="bold" aria-hidden />
+              <span className={styles.hideXs}>Export</span>
+            </button>
+          )}
         </nav>
       </div>
 
-      <div className={styles.titleRow}>
-        <h1 className="sr-only">{title}</h1>
-        <input
-          className={styles.title}
-          value={draft}
-          maxLength={120}
-          aria-label="Board title"
-          spellCheck={false}
-          onChange={(e) => setDraft(e.target.value)}
-          onBlur={commit}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter') e.currentTarget.blur()
-            if (e.key === 'Escape') {
-              setDraft(title)
-              requestAnimationFrame(() => (e.target as HTMLInputElement).blur())
-            }
-          }}
-        />
-        <svg
-          className={styles.underline}
-          viewBox="0 0 300 12"
-          preserveAspectRatio="none"
-          aria-hidden
-        >
-          <path d="M2 8c40-5 90-6 140-3s100 2 156-3" />
-        </svg>
-        <p className={`aside ${styles.meta}`}>
-          <span>
-            {total} {total === 1 ? 'item' : 'items'}, {total - unranked} ranked
-          </span>
-          <span aria-hidden>·</span>
-          <span className={styles.save} data-status={saveStatus}>
-            {saveStatus === 'saving'
-              ? 'saving…'
-              : saveStatus === 'error'
-                ? 'not saved, storage may be full'
-                : 'saved on this device'}
-          </span>
-        </p>
-        {/* Every edit saves, so only a failure is worth interrupting for. */}
-        <p className="sr-only" role="alert">
-          {saveStatus === 'error' ? 'Not saved. Storage may be full.' : ''}
-        </p>
-      </div>
+      {onBoard && (
+        <div className={styles.titleRow}>
+          <h1 className="sr-only">{title}</h1>
+          <input
+            className={styles.title}
+            value={draft}
+            maxLength={120}
+            aria-label="Board title"
+            spellCheck={false}
+            onChange={(e) => setDraft(e.target.value)}
+            onBlur={commit}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') e.currentTarget.blur()
+              if (e.key === 'Escape') {
+                setDraft(title)
+                requestAnimationFrame(() => (e.target as HTMLInputElement).blur())
+              }
+            }}
+          />
+          <svg
+            className={styles.underline}
+            viewBox="0 0 300 12"
+            preserveAspectRatio="none"
+            aria-hidden
+          >
+            <path d="M2 8c40-5 90-6 140-3s100 2 156-3" />
+          </svg>
+          <p className={`aside ${styles.meta}`}>
+            <span>
+              {total} {total === 1 ? 'item' : 'items'}, {total - unranked} ranked
+            </span>
+            <span aria-hidden>·</span>
+            <span className={styles.save} data-status={saveStatus}>
+              {saveStatus === 'saving'
+                ? 'saving…'
+                : saveStatus === 'error'
+                  ? 'not saved, storage may be full'
+                  : 'saved on this device'}
+            </span>
+          </p>
+          {/* Every edit saves, so only a failure is worth interrupting for. */}
+          <p className="sr-only" role="alert">
+            {saveStatus === 'error' ? 'Not saved. Storage may be full.' : ''}
+          </p>
+        </div>
+      )}
     </header>
   )
 }

@@ -1,0 +1,114 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "queen-albums",
+  "version": "1.0.0",
+  "title": "Queen Albums",
+  "description": "Is this the real ranking? Is this just fantasy?",
+  "category": "Music",
+  "accent": "Rhubarb",
+  "author": "Pecking Order",
+  "tiers": ["Champions", "A kind of magic", "Under pressure", "Bites the dust"],
+  "cover": [
+    "https://upload.wikimedia.org/wikipedia/en/0/03/Queen_Queen.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "https://upload.wikimedia.org/wikipedia/en/4/43/Queen_II_%28album_cover%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "https://upload.wikimedia.org/wikipedia/en/f/f4/Queen_Sheer_Heart_Attack.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "https://upload.wikimedia.org/wikipedia/en/4/4d/Queen_A_Night_At_The_Opera.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+  ],
+  "items": [
+    {
+      "id": "queen",
+      "label": "Queen",
+      "wikipedia": "Queen (Queen album)"
+    },
+    {
+      "id": "queen-ii",
+      "label": "Queen II",
+      "wikipedia": "Queen II"
+    },
+    {
+      "id": "sheer-heart-attack",
+      "label": "Sheer Heart Attack",
+      "wikipedia": "Sheer Heart Attack"
+    },
+    {
+      "id": "a-night-at-the-opera",
+      "label": "A Night at the Opera",
+      "wikipedia": "A Night at the Opera (Queen album)"
+    },
+    {
+      "id": "a-day-at-the-races",
+      "label": "A Day at the Races",
+      "wikipedia": "A Day at the Races (album)"
+    },
+    {
+      "id": "news-of-the-world",
+      "label": "News of the World",
+      "wikipedia": "News of the World (album)"
+    },
+    {
+      "id": "jazz",
+      "label": "Jazz",
+      "wikipedia": "Jazz (Queen album)"
+    },
+    {
+      "id": "live-killers",
+      "label": "Live Killers",
+      "wikipedia": "Live Killers"
+    },
+    {
+      "id": "the-game",
+      "label": "The Game",
+      "wikipedia": "The Game (Queen album)"
+    },
+    {
+      "id": "flash-gordon",
+      "label": "Flash Gordon",
+      "wikipedia": "Flash Gordon (album)"
+    },
+    {
+      "id": "greatest-hits",
+      "label": "Greatest Hits",
+      "wikipedia": "Greatest Hits (Queen album)"
+    },
+    {
+      "id": "hot-space",
+      "label": "Hot Space",
+      "wikipedia": "Hot Space"
+    },
+    {
+      "id": "the-works",
+      "label": "The Works",
+      "wikipedia": "The Works (Queen album)"
+    },
+    {
+      "id": "a-kind-of-magic",
+      "label": "A Kind of Magic",
+      "wikipedia": "A Kind of Magic"
+    },
+    {
+      "id": "the-miracle",
+      "label": "The Miracle",
+      "wikipedia": "The Miracle (album)"
+    },
+    {
+      "id": "innuendo",
+      "label": "Innuendo",
+      "wikipedia": "Innuendo (album)"
+    },
+    {
+      "id": "greatest-hits-ii",
+      "label": "Greatest Hits II",
+      "wikipedia": "Greatest Hits II (Queen album)"
+    },
+    {
+      "id": "live-at-wembley-86",
+      "label": "Live at Wembley '86",
+      "wikipedia": "Live at Wembley '86"
+    },
+    {
+      "id": "made-in-heaven",
+      "label": "Made in Heaven",
+      "wikipedia": "Made in Heaven (album)"
+    }
+  ]
+}

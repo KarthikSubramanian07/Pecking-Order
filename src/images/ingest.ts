@@ -5,6 +5,7 @@
  */
 import type { NewItem } from '@/core/board'
 import type { ImageCredit, ImageHash } from '@/core/types'
+import { parseCredit } from '@/core/validate'
 import { putImage } from '@/storage/db'
 import { primeImageUrl } from './cache'
 import { isHiddenName, labelFromFileName, labelFromUrl } from './labels'
@@ -91,7 +92,8 @@ export async function ingestUrl(
   return {
     label: label ?? labelFromUrl(parsed),
     image,
-    credit: credit ?? creditForUrl(parsed, 'paste'),
+    // Search APIs and pack resolvers supply these: re-check before they become a link.
+    credit: (credit && parseCredit(credit)) || creditForUrl(parsed, 'paste'),
   }
 }
 

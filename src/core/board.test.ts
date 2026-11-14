@@ -2,9 +2,11 @@ import { produce } from 'immer'
 import { describe, expect, it } from 'vitest'
 import {
   assertValidBoard,
+  clampText,
   cloneBoard,
   createBoard,
   findContainer,
+  MAX_ITEMS,
   MAX_TIERS,
   opAddItems,
   opAddTier,
@@ -163,5 +165,35 @@ describe('derived', () => {
     expect(c.id).not.toBe(b.id)
     expect(c.title).toMatch(/\(copy\)$/)
     assertValidBoard(c)
+  })
+})
+
+describe('board size and key safety', () => {
+  it('never grows past MAX_ITEMS', () => {
+    const b = createBoard()
+    const many = Array.from({ length: MAX_ITEMS + 10 }, (_, i) => ({ label: `#${i}` }))
+    expect(opAddItems(b, many)).toHaveLength(MAX_ITEMS)
+    expect(opAddItems(b, [{ label: 'one more' }])).toEqual([])
+    expect(Object.keys(b.items)).toHaveLength(MAX_ITEMS)
+    assertValidBoard(b)
+  })
+
+  it('ignores reserved draft ids and inherited container names', () => {
+    const b = createBoard()
+    const [a, c] = opAddItems(b, [
+      { id: '__proto__', label: 'a' },
+      { id: 'constructor', label: 'c' },
+    ])
+    expect(a).not.toBe('__proto__')
+    expect(c).not.toBe('constructor')
+    expect(Object.getPrototypeOf(b.items)).toBe(Object.prototype)
+    // "toString" is not a container, so the item lands in the coop.
+    const [d] = opAddItems(b, [{ label: 'd' }], 'toString')
+    expect(b.placement[COOP]).toContain(d)
+    assertValidBoard(b)
+  })
+
+  it('clamps very long text cheaply', () => {
+    expect(clampText(`${' '.repeat(10)}${'x'.repeat(10_000_000)}`, 80)).toHaveLength(80)
   })
 })

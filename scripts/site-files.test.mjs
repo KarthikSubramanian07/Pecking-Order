@@ -107,9 +107,12 @@ describe('Cloudflare Pages config', () => {
       'Referrer-Policy: strict-origin-when-cross-origin',
       'Cross-Origin-Opener-Policy: same-origin',
       'Strict-Transport-Security: max-age=31536000',
-      'Permissions-Policy: camera=()',
     ]) {
       expect(headers).toContain(header)
+    }
+    const permissions = headers.match(/Permissions-Policy: (.+)/)?.[1] ?? ''
+    for (const feature of ['camera', 'microphone', 'geolocation', 'payment', 'usb']) {
+      expect(permissions).toContain(`${feature}=()`)
     }
   })
 

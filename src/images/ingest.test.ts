@@ -170,3 +170,49 @@ describe('ingestUrl', () => {
     expect(spy).not.toHaveBeenCalled()
   })
 })
+
+describe('ingestUrl with untrusted inputs', () => {
+  it('re-checks credits from search APIs before they become links', async () => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async () => new Response('owl', { headers: { 'content-type': 'image/jpeg' } })),
+    )
+    const item = await ingestUrl(
+      'https://a.org/owl.jpg',
+      {
+        provider: 'openverse',
+        sourceUrl: 'data:text/html,<script>alert(1)</script>',
+        author: 'x'.repeat(5000),
+      },
+      'Owl',
+    )
+    expect(item.credit?.provider).toBe('openverse')
+    expect(item.credit?.sourceUrl).toBeUndefined()
+    expect(item.credit?.author?.length).toBeLessThanOrEqual(200)
+  })
+
+  it('decodes pasted data: images without any network request', async () => {
+    const spy = vi.fn()
+    vi.stubGlobal('fetch', spy)
+    const item = await ingestUrl(`data:image/png;base64,${btoa('pixels')}`)
+    expect(item).toEqual({
+      label: 'Pasted image',
+      image: 'h-pixels',
+      credit: { provider: 'paste' },
+    })
+    expect(spy).not.toHaveBeenCalled()
+  })
+
+  it.each([
+    'http://localhost:5173/x.png',
+    'http://127.0.0.1/x.png',
+    'http://192.168.1.1/x.png',
+    'http://[::1]/x.png',
+    'http://router.local/x.png',
+  ])('never requests %s', async (url) => {
+    const spy = vi.fn()
+    vi.stubGlobal('fetch', spy)
+    await expect(ingestUrl(url)).rejects.toThrow(/private network/)
+    expect(spy).not.toHaveBeenCalled()
+  })
+})

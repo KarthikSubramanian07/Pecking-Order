@@ -5,7 +5,7 @@
  * inside an Immer `produce` (see `state/boardStore.ts`), which turns them into
  * cheap structurally-shared immutable updates. Tests call them the same way.
  */
-import { newId } from './ids'
+import { isSafeKey, newId } from './ids'
 import { swatchAt } from './palette'
 import { DEFAULT_PRESET, type TierPreset, tiersFromPreset } from './presets'
 import {
@@ -22,6 +22,13 @@ import {
 export const MAX_TIERS = 20
 export const MAX_LABEL = 80
 export const MAX_TITLE = 120
+/**
+ * Most items one board may hold. Enforced when adding and when parsing, so a
+ * board can never grow past what an import or a reload would keep.
+ */
+export const MAX_ITEMS = 2000
+/** Upper bound on the text `clampText` looks at, so a huge string costs nothing. */
+const MAX_RAW_TEXT = 4096
 
 export function createBoard(opts: { title?: string; preset?: TierPreset } = {}): Board {
   const tiers = tiersFromPreset(opts.preset ?? DEFAULT_PRESET)
@@ -39,7 +46,10 @@ export function createBoard(opts: { title?: string; preset?: TierPreset } = {}):
 }
 
 export function clampText(text: string, max: number): string {
-  const t = text.replace(/\s+/g, ' ').trim()
+  const t = text
+    .slice(0, Math.max(max * 8, MAX_RAW_TEXT))
+    .replace(/\s+/g, ' ')
+    .trim()
   return t.length > max ? `${t.slice(0, max - 1)}…` : t
 }
 
@@ -63,13 +73,21 @@ export function tierIndex(board: Board, tierId: TierId): number {
 
 export type NewItem = Omit<Item, 'id'> & { id?: ItemId }
 
-/** Adds items to the end of a container (the coop by default). Returns their ids. */
+/**
+ * Adds items to the end of a container (the coop by default). Returns the ids
+ * of the items added, which stops short once the board holds MAX_ITEMS.
+ */
 export function opAddItems(board: Board, items: NewItem[], to: ContainerId = COOP): ItemId[] {
-  const target = board.placement[to] ?? board.placement[COOP]
+  const target =
+    (Object.hasOwn(board.placement, to) && board.placement[to]) || board.placement[COOP]
   if (!target) throw new Error('board has no coop')
+  const room = MAX_ITEMS - Object.keys(board.items).length
   const ids: ItemId[] = []
-  for (const draft of items) {
-    const id = draft.id && !board.items[draft.id] ? draft.id : newId('i')
+  for (const draft of items.slice(0, Math.max(0, room))) {
+    const id =
+      draft.id && isSafeKey(draft.id) && !Object.hasOwn(board.items, draft.id)
+        ? draft.id
+        : newId('i')
     board.items[id] = { ...draft, id, label: clampText(draft.label, MAX_LABEL) }
     target.push(id)
     ids.push(id)

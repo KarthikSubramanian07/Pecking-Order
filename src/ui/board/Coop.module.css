@@ -149,6 +149,11 @@
 :root[data-keyboard-drag] .coop {
   position: static;
 }
+/* Resize instantly for keyboard drags: an animated height keeps the page
+   moving under the arrow keys and makes quick presses aim at stale rows. */
+:root[data-keyboard-drag] .grid {
+  transition: none;
+}
 
 /* While dragging, the dock ducks to one row so every tier stays reachable. */
 .coop[data-dragging] .grid {

@@ -1,0 +1,218 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "flags-of-the-world",
+  "version": "1.0.0",
+  "title": "Flags of the World",
+  "description": "Mostly rectangles. Nepal didn't get the memo.",
+  "category": "Places",
+  "accent": "Duck Egg",
+  "author": "Pecking Order",
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/500px-Flag_of_the_United_States.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/500px-Flag_of_Canada_%28Pantone%29.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/500px-Flag_of_Mexico.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/500px-Flag_of_Brazil.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  ],
+  "items": [
+    {
+      "id": "united-states",
+      "label": "United States",
+      "commons": "File:Flag of the United States.svg"
+    },
+    {
+      "id": "canada",
+      "label": "Canada",
+      "commons": "File:Flag of Canada (Pantone).svg"
+    },
+    {
+      "id": "mexico",
+      "label": "Mexico",
+      "commons": "File:Flag of Mexico.svg"
+    },
+    {
+      "id": "brazil",
+      "label": "Brazil",
+      "commons": "File:Flag of Brazil.svg"
+    },
+    {
+      "id": "argentina",
+      "label": "Argentina",
+      "commons": "File:Flag of Argentina.svg"
+    },
+    {
+      "id": "chile",
+      "label": "Chile",
+      "commons": "File:Flag of Chile.svg"
+    },
+    {
+      "id": "colombia",
+      "label": "Colombia",
+      "commons": "File:Flag of Colombia.svg"
+    },
+    {
+      "id": "jamaica",
+      "label": "Jamaica",
+      "commons": "File:Flag of Jamaica.svg"
+    },
+    {
+      "id": "united-kingdom",
+      "label": "United Kingdom",
+      "commons": "File:Flag of the United Kingdom.svg"
+    },
+    {
+      "id": "ireland",
+      "label": "Ireland",
+      "commons": "File:Flag of Ireland.svg"
+    },
+    {
+      "id": "france",
+      "label": "France",
+      "commons": "File:Flag of France.svg"
+    },
+    {
+      "id": "germany",
+      "label": "Germany",
+      "commons": "File:Flag of Germany.svg"
+    },
+    {
+      "id": "italy",
+      "label": "Italy",
+      "commons": "File:Flag of Italy.svg"
+    },
+    {
+      "id": "spain",
+      "label": "Spain",
+      "commons": "File:Flag of Spain.svg"
+    },
+    {
+      "id": "portugal",
+      "label": "Portugal",
+      "commons": "File:Flag of Portugal.svg"
+    },
+    {
+      "id": "netherlands",
+      "label": "Netherlands",
+      "commons": "File:Flag of the Netherlands.svg"
+    },
+    {
+      "id": "switzerland",
+      "label": "Switzerland",
+      "commons": "File:Flag of Switzerland.svg"
+    },
+    {
+      "id": "sweden",
+      "label": "Sweden",
+      "commons": "File:Flag of Sweden.svg"
+    },
+    {
+      "id": "norway",
+      "label": "Norway",
+      "commons": "File:Flag of Norway.svg"
+    },
+    {
+      "id": "denmark",
+      "label": "Denmark",
+      "commons": "File:Flag of Denmark.svg"
+    },
+    {
+      "id": "finland",
+      "label": "Finland",
+      "commons": "File:Flag of Finland.svg"
+    },
+    {
+      "id": "iceland",
+      "label": "Iceland",
+      "commons": "File:Flag of Iceland.svg"
+    },
+    {
+      "id": "greece",
+      "label": "Greece",
+      "commons": "File:Flag of Greece.svg"
+    },
+    {
+      "id": "poland",
+      "label": "Poland",
+      "commons": "File:Flag of Poland.svg"
+    },
+    {
+      "id": "japan",
+      "label": "Japan",
+      "commons": "File:Flag of Japan.svg"
+    },
+    {
+      "id": "south-korea",
+      "label": "South Korea",
+      "commons": "File:Flag of South Korea.svg"
+    },
+    {
+      "id": "india",
+      "label": "India",
+      "commons": "File:Flag of India.svg"
+    },
+    {
+      "id": "nepal",
+      "label": "Nepal",
+      "commons": "File:Flag of Nepal.svg"
+    },
+    {
+      "id": "bhutan",
+      "label": "Bhutan",
+      "commons": "File:Flag of Bhutan.svg"
+    },
+    {
+      "id": "thailand",
+      "label": "Thailand",
+      "commons": "File:Flag of Thailand.svg"
+    },
+    {
+      "id": "vietnam",
+      "label": "Vietnam",
+      "commons": "File:Flag of Vietnam.svg"
+    },
+    {
+      "id": "philippines",
+      "label": "Philippines",
+      "commons": "File:Flag of the Philippines.svg"
+    },
+    {
+      "id": "australia",
+      "label": "Australia",
+      "commons": "File:Flag of Australia (converted).svg"
+    },
+    {
+      "id": "new-zealand",
+      "label": "New Zealand",
+      "commons": "File:Flag of New Zealand.svg"
+    },
+    {
+      "id": "south-africa",
+      "label": "South Africa",
+      "commons": "File:Flag of South Africa.svg"
+    },
+    {
+      "id": "kenya",
+      "label": "Kenya",
+      "commons": "File:Flag of Kenya.svg"
+    },
+    {
+      "id": "nigeria",
+      "label": "Nigeria",
+      "commons": "File:Flag of Nigeria.svg"
+    },
+    {
+      "id": "egypt",
+      "label": "Egypt",
+      "commons": "File:Flag of Egypt.svg"
+    },
+    {
+      "id": "seychelles",
+      "label": "Seychelles",
+      "commons": "File:Flag of Seychelles.svg"
+    },
+    {
+      "id": "mongolia",
+      "label": "Mongolia",
+      "commons": "File:Flag of Mongolia.svg"
+    }
+  ]
+}

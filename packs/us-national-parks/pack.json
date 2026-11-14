@@ -1,0 +1,199 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "us-national-parks",
+  "version": "1.0.0",
+  "title": "US National Parks",
+  "description": "America's best idea, ranked mostly by people who saw it from the car.",
+  "category": "Places",
+  "accent": "Pasture",
+  "author": "Pecking Order",
+  "tiers": ["Bucket list", "Worth the trip", "Nice stop", "Drove past", "Gift shop only"],
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Grand_Canyon_of_the_Yellowstone_Lower_Falls_%2895819p%29.jpg/500px-Grand_Canyon_of_the_Yellowstone_Lower_Falls_%2895819p%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Half_Dome_with_Eastern_Yosemite_Valley_%2850MP%29.jpg/500px-Half_Dome_with_Eastern_Yosemite_Valley_%2850MP%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Dawn_on_the_S_rim_of_the_Grand_Canyon_%288645178272%29.jpg/500px-Dawn_on_the_S_rim_of_the_Grand_Canyon_%288645178272%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Zion_angels_landing_view.jpg/500px-Zion_angels_landing_view.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  ],
+  "items": [
+    {
+      "id": "yellowstone",
+      "label": "Yellowstone",
+      "wikipedia": "Yellowstone National Park"
+    },
+    {
+      "id": "yosemite",
+      "label": "Yosemite",
+      "wikipedia": "Yosemite National Park"
+    },
+    {
+      "id": "grand-canyon",
+      "label": "Grand Canyon",
+      "wikipedia": "Grand Canyon National Park"
+    },
+    {
+      "id": "zion",
+      "label": "Zion",
+      "wikipedia": "Zion National Park"
+    },
+    {
+      "id": "glacier",
+      "label": "Glacier",
+      "wikipedia": "Glacier National Park (U.S.)"
+    },
+    {
+      "id": "rocky-mountain",
+      "label": "Rocky Mountain",
+      "wikipedia": "Rocky Mountain National Park"
+    },
+    {
+      "id": "grand-teton",
+      "label": "Grand Teton",
+      "wikipedia": "Grand Teton National Park"
+    },
+    {
+      "id": "acadia",
+      "label": "Acadia",
+      "wikipedia": "Acadia National Park"
+    },
+    {
+      "id": "great-smoky-mountains",
+      "label": "Great Smoky Mountains",
+      "wikipedia": "Great Smoky Mountains National Park"
+    },
+    {
+      "id": "arches",
+      "label": "Arches",
+      "wikipedia": "Arches National Park"
+    },
+    {
+      "id": "bryce-canyon",
+      "label": "Bryce Canyon",
+      "wikipedia": "Bryce Canyon National Park"
+    },
+    {
+      "id": "olympic",
+      "label": "Olympic",
+      "wikipedia": "Olympic National Park"
+    },
+    {
+      "id": "mount-rainier",
+      "label": "Mount Rainier",
+      "wikipedia": "Mount Rainier National Park"
+    },
+    {
+      "id": "joshua-tree",
+      "label": "Joshua Tree",
+      "wikipedia": "Joshua Tree National Park"
+    },
+    {
+      "id": "death-valley",
+      "label": "Death Valley",
+      "wikipedia": "Death Valley National Park"
+    },
+    {
+      "id": "sequoia",
+      "label": "Sequoia",
+      "wikipedia": "Sequoia National Park"
+    },
+    {
+      "id": "everglades",
+      "label": "Everglades",
+      "wikipedia": "Everglades National Park"
+    },
+    {
+      "id": "denali",
+      "label": "Denali",
+      "wikipedia": "Denali National Park and Preserve"
+    },
+    {
+      "id": "glacier-bay",
+      "label": "Glacier Bay",
+      "wikipedia": "Glacier Bay National Park and Preserve"
+    },
+    {
+      "id": "hawaii-volcanoes",
+      "label": "Hawai'i Volcanoes",
+      "wikipedia": "Hawaiʻi Volcanoes National Park"
+    },
+    {
+      "id": "haleakala",
+      "label": "Haleakalā",
+      "wikipedia": "Haleakalā National Park"
+    },
+    {
+      "id": "shenandoah",
+      "label": "Shenandoah",
+      "wikipedia": "Shenandoah National Park"
+    },
+    {
+      "id": "canyonlands",
+      "label": "Canyonlands",
+      "wikipedia": "Canyonlands National Park"
+    },
+    {
+      "id": "capitol-reef",
+      "label": "Capitol Reef",
+      "wikipedia": "Capitol Reef National Park"
+    },
+    {
+      "id": "badlands",
+      "label": "Badlands",
+      "wikipedia": "Badlands National Park"
+    },
+    {
+      "id": "crater-lake",
+      "label": "Crater Lake",
+      "wikipedia": "Crater Lake National Park"
+    },
+    {
+      "id": "redwood",
+      "label": "Redwood",
+      "wikipedia": "Redwood National and State Parks"
+    },
+    {
+      "id": "big-bend",
+      "label": "Big Bend",
+      "wikipedia": "Big Bend National Park"
+    },
+    {
+      "id": "carlsbad-caverns",
+      "label": "Carlsbad Caverns",
+      "wikipedia": "Carlsbad Caverns National Park"
+    },
+    {
+      "id": "mammoth-cave",
+      "label": "Mammoth Cave",
+      "wikipedia": "Mammoth Cave National Park"
+    },
+    {
+      "id": "petrified-forest",
+      "label": "Petrified Forest",
+      "wikipedia": "Petrified Forest National Park"
+    },
+    {
+      "id": "white-sands",
+      "label": "White Sands",
+      "commons": "File:2026 White Sands National Park Dunes Clouds and Sun.jpg"
+    },
+    {
+      "id": "great-sand-dunes",
+      "label": "Great Sand Dunes",
+      "wikipedia": "Great Sand Dunes National Park and Preserve"
+    },
+    {
+      "id": "mesa-verde",
+      "label": "Mesa Verde",
+      "wikipedia": "Mesa Verde National Park"
+    },
+    {
+      "id": "saguaro",
+      "label": "Saguaro",
+      "wikipedia": "Saguaro National Park"
+    },
+    {
+      "id": "kenai-fjords",
+      "label": "Kenai Fjords",
+      "wikipedia": "Kenai Fjords National Park"
+    }
+  ]
+}

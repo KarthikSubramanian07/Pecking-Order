@@ -2,7 +2,7 @@
   "name": "pecking-order",
   "version": "0.1.0",
   "private": true,
-  "description": "Rank anything. A fast, local-first tier list maker with a chicken problem.",
+  "description": "Custom tier lists for anything. Rank it, share it, start a fight.",
   "license": "MIT",
   "type": "module",
   "engines": {
@@ -26,7 +26,8 @@
     "packs:validate": "node scripts/build-packs.mjs --check",
     "packs:verify": "node scripts/verify-pack-images.mjs",
     "icons": "node scripts/generate-icons.mjs",
-    "brand": "node scripts/generate-brand-assets.mjs"
+    "brand": "node scripts/generate-brand-assets.mjs",
+    "packs:covers": "node scripts/pack-covers.mjs"
   },
   "dependencies": {
     "@dnd-kit/core": "6.3.1",

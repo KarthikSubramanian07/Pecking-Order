@@ -27,7 +27,9 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
 
-      - run: npm ci
+      # No dependency needs an install script (npm query ':attr(scripts, [install])' is empty),
+      # so none are allowed to run.
+      - run: npm ci --ignore-scripts
       - run: npx biome ci .
       - run: npm run typecheck
       - run: npm test
@@ -47,7 +49,7 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
 
-      - run: npm ci
+      - run: npm ci --ignore-scripts
       - run: npx playwright install --with-deps chromium
       - run: npm run e2e
 
@@ -74,4 +76,8 @@ jobs:
         with:
           node-version-file: .nvmrc
 
-      - run: npm audit --audit-level=high
+      - run: npm ci --ignore-scripts
+      # Every advisory, at any severity, fails the build.
+      - run: npm audit --audit-level=low
+      # Registry signatures and provenance attestations of every installed package.
+      - run: npm audit signatures
