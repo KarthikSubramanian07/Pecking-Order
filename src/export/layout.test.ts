@@ -127,16 +127,16 @@ describe('rows', () => {
     expect(layout(board, { includeCoop: false }).rows.map((r) => r.kind)).toEqual(['tier', 'tier'])
     const on = layout(board, { includeCoop: true })
     expect(on.rows.map((r) => r.kind)).toEqual(['tier', 'tier', 'coop'])
-    expect(on.rows[2]!.label.lines).toEqual(['UNRANKED'])
+    expect(on.rows[2]!.label.lines).toEqual(['Unranked'])
     expect(on.rows[2]!.tiles).toHaveLength(3)
     const empty = makeBoard({ tiers: [2, 2] })
     expect(layout(empty, { includeCoop: true }).rows).toHaveLength(2)
   })
 
-  it('uses square mono labels for short tier names and wider wrapped ones otherwise', () => {
+  it('uses square serif labels for short tier names and wider wrapped ones otherwise', () => {
     const short = layout(makeBoard({ tiers: [1, 1] }))
     expect(short.rows[0]!.labelBox.w).toBe(short.tile)
-    expect(short.rows[0]!.label.font).toContain('JetBrains Mono')
+    expect(short.rows[0]!.label.font).toMatch(/^560 .*Fraunces/)
 
     const long = layout(
       makeBoard({ tiers: [1, 1], tierLabels: ['Absolutely top chicken material', 'Nope'] }),
@@ -205,12 +205,27 @@ describe('header', () => {
     expect(l.meta.baselines[0]).toBeGreaterThan(l.underline.y)
   })
 
-  it('writes an uppercase meta line with byline, ranked count and month', () => {
+  it('writes a sentence-case italic meta line with byline, item count and month', () => {
     const board = makeBoard({ tiers: [2, 3], coop: 4 })
-    expect(layout(board, { byline: 'ranked by @hen' }).meta.lines[0]).toBe(
-      'RANKED BY @HEN · 5 RANKED · NOV 2026',
-    )
-    expect(layout(board).meta.lines[0]).toBe('5 RANKED · NOV 2026')
+    const l = layout(board, { byline: 'ranked by @hen' })
+    expect(l.meta.lines[0]).toBe('ranked by @hen · 5 items · November 2026')
+    expect(l.meta.font).toMatch(/^italic 400 .*Fraunces/)
+    expect(layout(board).meta.lines[0]).toBe('5 items · November 2026')
+    // Shown coop items count too; singular reads naturally.
+    expect(layout(board, { includeCoop: true }).meta.lines[0]).toBe('9 items · November 2026')
+    expect(layout(makeBoard({ tiers: [1] })).meta.lines[0]).toBe('1 item · November 2026')
+  })
+
+  it('never uses monospace anywhere', () => {
+    const board = makeBoard({ tiers: [2, 0], coop: 2, textEvery: 2 })
+    const l = layout(board, { includeCoop: true })
+    const fonts = [
+      l.title.font,
+      l.meta.font,
+      l.footer.url.font,
+      ...l.rows.flatMap((r) => [r.label.font, ...r.tiles.map((t) => t.text.font)]),
+    ]
+    expect(fonts.some((f) => /mono/i.test(f))).toBe(false)
   })
 })
 

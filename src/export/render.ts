@@ -6,6 +6,8 @@
  * Drawing ourselves avoids all three: every item image is a local Blob
  * decoded with createImageBitmap, so the canvas can never be tainted.
  */
+import frauncesItalicLatinExt from '@fontsource-variable/fraunces/files/fraunces-latin-ext-full-italic.woff2?url'
+import frauncesItalicLatin from '@fontsource-variable/fraunces/files/fraunces-latin-full-italic.woff2?url'
 import { HEN_PATHS, HEN_STROKE_WIDTH, HEN_VIEWBOX } from '@/brand/hen'
 import type { Board, ImageHash } from '@/core/types'
 import { getImage } from '@/storage/db'
@@ -53,6 +55,19 @@ type Canvas = HTMLCanvasElement | OffscreenCanvas
 type Ctx = CanvasRenderingContext2D | OffscreenCanvasRenderingContext2D
 
 const FONT_TIMEOUT_MS = 2500
+
+/** Unicode ranges mirror @fontsource-variable/fraunces/full-italic.css. */
+const ITALIC_FACES: [url: string, unicodeRange: string][] = [
+  [
+    frauncesItalicLatin,
+    'U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD',
+  ],
+  [
+    frauncesItalicLatinExt,
+    'U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF',
+  ],
+]
+let italicRegistered = false
 
 export async function renderBoardImage(
   board: Board,
@@ -113,17 +128,42 @@ async function loadImages(
 async function loadFonts(board: Board, opts: ExportOptions): Promise<void> {
   const fonts = typeof document === 'undefined' ? undefined : document.fonts
   if (!fonts?.load) return
+  registerFrauncesItalic(fonts)
   const text = [
     board.title,
     opts.byline ?? '',
     SITE_URL,
-    'UNRANKED 0123456789 · …',
+    'Unranked items 0123456789 · … January February March April May June July August September October November December',
     ...board.tiers.map((t) => t.label),
     ...Object.values(board.items).map((i) => i.label),
   ].join(' ')
-  const faces = [font.display(16), font.ui(16, 600), font.mono(16, 500), font.mono(16, 700)]
+  const faces = [
+    font.display(16),
+    font.display(16, 560),
+    font.displayItalic(16),
+    font.ui(16, 600),
+    font.ui(16, 500),
+  ]
   const loads = Promise.allSettled(faces.map((f) => fonts.load(f, text)))
   await Promise.race([loads, new Promise((r) => setTimeout(r, FONT_TIMEOUT_MS))])
+}
+
+/**
+ * The app stylesheet only ships upright Fraunces. Register the real italic on
+ * first export so the meta line isn't a synthesised slant. Fetched lazily.
+ */
+function registerFrauncesItalic(fonts: FontFaceSet): void {
+  if (italicRegistered || typeof FontFace === 'undefined') return
+  italicRegistered = true
+  for (const [url, unicodeRange] of ITALIC_FACES) {
+    fonts.add(
+      new FontFace('Fraunces Variable', `url(${url}) format('woff2')`, {
+        style: 'italic',
+        weight: '100 900',
+        unicodeRange,
+      }),
+    )
+  }
 }
 
 function createMeasure(): Measure {
@@ -186,9 +226,7 @@ function drawLayout(
   drawUnderline(ctx, layout.underline, p.accent, seed)
 
   ctx.fillStyle = p.muted
-  setLetterSpacing(ctx, layout.meta.letterSpacing)
   drawText(ctx, layout.meta)
-  setLetterSpacing(ctx, 0)
 
   for (const row of layout.rows) {
     if (row.kind === 'tier' && row.color) {
@@ -222,11 +260,6 @@ function drawText(ctx: Ctx, block: TextBlock): void {
   block.lines.forEach((line, i) => {
     ctx.fillText(line, block.x, block.baselines[i] ?? 0)
   })
-}
-
-function setLetterSpacing(ctx: Ctx, px: number): void {
-  // Safari < 18 lacks canvas letterSpacing; the meta line just sets tighter there.
-  if ('letterSpacing' in ctx) ctx.letterSpacing = `${px}px`
 }
 
 function drawGrain(ctx: Ctx, layout: Layout, opacity: number): void {

@@ -72,7 +72,7 @@ export interface Layout {
   radius: { row: number; label: number; tile: number }
   title: TextBlock
   underline: { x: number; y: number; w: number; thickness: number }
-  meta: TextBlock & { letterSpacing: number }
+  meta: TextBlock
   rows: RowLayout[]
   footer: { hen: Rect; url: TextBlock }
 }
@@ -118,9 +118,23 @@ const FRAMES: Record<Frame['format'], Frame> = {
 /** Underline sits this far below the last title baseline (× font size), clearing descenders. */
 const UNDERLINE_DROP = 0.3
 /** Meta line baseline below the underline, in reference px. */
-const META_DROP = 32
+const META_DROP = 36
+const META_SIZE = 19
 
-const MONTHS = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC']
+const MONTHS = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+]
 
 interface Container {
   kind: 'tier' | 'coop'
@@ -152,7 +166,8 @@ interface Prepared {
   containers: Container[]
   /** Any tier label longer than two characters needs a wider label block. */
   longLabels: boolean
-  ranked: number
+  /** Items that appear in the image (ranked, plus the coop when shown). */
+  shown: number
 }
 
 function prepare(board: Board, opts: ExportOptions): Prepared {
@@ -163,13 +178,13 @@ function prepare(board: Board, opts: ExportOptions): Prepared {
     color: t.color,
     items: present(board.placement[t.id]),
   }))
-  const ranked = containers.reduce((n, c) => n + c.items.length, 0)
   const coop = present(board.placement[COOP])
   if (opts.includeCoop && coop.length > 0) {
-    containers.push({ kind: 'coop', label: 'UNRANKED', color: null, items: coop })
+    containers.push({ kind: 'coop', label: 'Unranked', color: null, items: coop })
   }
   const longLabels = containers.some((c) => c.kind === 'coop' || [...c.label].length > 2)
-  return { board, opts, containers, longLabels, ranked }
+  const shown = containers.reduce((n, c) => n + c.items.length, 0)
+  return { board, opts, containers, longLabels, shown }
 }
 
 /** Largest tile in [minTile, TILE_MAX] whose content fits the fixed height. */
@@ -258,7 +273,7 @@ function header(ctx: Prepared, frame: Frame, measure: Measure): Header {
   const titleH = title.size * 0.78 + (title.lines.length - 1) * title.lineHeight
   // underline gap + stroke + meta line
   const height =
-    titleH + title.size * UNDERLINE_DROP + Math.round(META_DROP * k) + Math.round(4 * k)
+    titleH + title.size * UNDERLINE_DROP + Math.round(META_DROP * k) + Math.round(6 * k)
   return { title, height }
 }
 
@@ -266,17 +281,15 @@ function headerHeight(ctx: Prepared, frame: Frame, measure: Measure): number {
   return header(ctx, frame, measure).height + Math.round(32 * frame.k)
 }
 
+/** Sentence case, as a person would write it: "ranked by @you · 14 items · November 2026". */
 function metaText(ctx: Prepared): string {
   const d = new Date(ctx.board.updatedAt)
   const parts = [
     ctx.opts.byline?.trim(),
-    `${ctx.ranked} RANKED`,
+    `${ctx.shown} ${ctx.shown === 1 ? 'item' : 'items'}`,
     `${MONTHS[d.getMonth()]} ${d.getFullYear()}`,
   ]
-  return parts
-    .filter((p): p is string => Boolean(p))
-    .join(' · ')
-    .toUpperCase()
+  return parts.filter((p): p is string => Boolean(p)).join(' · ')
 }
 
 // ─── Placement ────────────────────────────────────────────────────────────
@@ -304,18 +317,15 @@ function place(ctx: Prepared, frame: Frame, tile: number, measure: Measure): Lay
     w: clamp(widest * 0.4, 80 * k, contentW),
     thickness: 5 * k,
   }
-  const metaSize = 13 * k
-  const metaFont = font.mono(metaSize, 500)
-  const letterSpacing = metaSize * 0.14
-  const spaced: Measure = (s, f) => measure(s, f) + letterSpacing * [...s].length
+  const metaSize = META_SIZE * k
+  const metaFont = font.displayItalic(metaSize)
   const meta = {
-    lines: [ellipsize(metaText(ctx), contentW, metaFont, spaced)],
+    lines: [ellipsize(metaText(ctx), contentW, metaFont, measure)],
     font: metaFont,
     size: metaSize,
     x: left,
     baselines: [underline.y + Math.round(META_DROP * k)],
     align: 'left' as const,
-    letterSpacing,
   }
   y += head.height + headGap
 
@@ -330,15 +340,15 @@ function place(ctx: Prepared, frame: Frame, tile: number, measure: Measure): Lay
 
   const henSize = Math.round(28 * k)
   const henY = height - frame.bottom - henSize
-  const urlSize = 12 * k
+  const urlSize = 13 * k
   const footer = {
     hen: { x: frame.width - frame.side - henSize, y: henY, w: henSize, h: henSize },
     url: {
       lines: [SITE_URL],
-      font: font.mono(urlSize, 500),
+      font: font.ui(urlSize, 500),
       size: urlSize,
       x: frame.width - frame.side - henSize - Math.round(10 * k),
-      baselines: [henY + henSize / 2 + urlSize * 0.36],
+      baselines: [henY + henSize / 2 + urlSize * 0.35],
       align: 'right' as const,
     },
   }
@@ -409,9 +419,9 @@ function tierLabel(c: Container, box: Rect, measure: Measure): TextBlock {
         maxWidth: box.w - inset * 2,
         maxHeight: box.h - inset * 2,
         maxLines: 1,
-        maxSize: Math.min(box.w, box.h, 120) * 0.44,
+        maxSize: Math.min(box.w, box.h, 120) * 0.5,
         minSize: 12,
-        font: (s) => font.mono(s, 700),
+        font: (s) => font.display(s, 560),
         leading: 1,
         measure,
       })
@@ -420,9 +430,9 @@ function tierLabel(c: Container, box: Rect, measure: Measure): TextBlock {
         maxWidth: box.w - inset * 2,
         maxHeight: box.h - inset * 2,
         maxLines: c.kind === 'coop' ? 1 : 3,
-        maxSize: c.kind === 'coop' ? 13 : clamp(box.w * 0.16, 13, 22),
-        minSize: c.kind === 'coop' ? 9 : 10,
-        font: c.kind === 'coop' ? (s) => font.mono(s, 600) : (s) => font.ui(s, 600),
+        maxSize: c.kind === 'coop' ? 16 : clamp(box.w * 0.16, 13, 22),
+        minSize: 10,
+        font: (s) => font.ui(s, 600),
         leading: 1.12,
         measure,
       })

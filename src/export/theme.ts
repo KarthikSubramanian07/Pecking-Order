@@ -50,12 +50,12 @@ export const PALETTES = {
 // Fallbacks keep exports legible when the web fonts are missing (tests, old browsers).
 const DISPLAY = '"Fraunces Variable", Georgia, serif'
 const UI = '"Instrument Sans Variable", system-ui, sans-serif'
-const MONO = '"JetBrains Mono Variable", ui-monospace, monospace'
 
+// Human, sentence-case typography only: no monospace, no letter-spaced caps.
 export const font = {
-  display: (size: number) => `500 ${round(size)}px ${DISPLAY}`,
+  display: (size: number, weight = 500) => `${weight} ${round(size)}px ${DISPLAY}`,
+  displayItalic: (size: number) => `italic 400 ${round(size)}px ${DISPLAY}`,
   ui: (size: number, weight = 600) => `${weight} ${round(size)}px ${UI}`,
-  mono: (size: number, weight = 500) => `${weight} ${round(size)}px ${MONO}`,
 }
 
 /** Mixes `amount` (0–1) of hex colour `b` into hex colour `a`. */
