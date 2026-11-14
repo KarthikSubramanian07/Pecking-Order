@@ -1,0 +1,7 @@
+.tiers {
+  display: grid;
+  gap: 8px;
+}
+.tiers[data-dragging] {
+  cursor: grabbing;
+}
