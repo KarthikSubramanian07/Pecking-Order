@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { opUpdateItem } from '@/core/board'
+import { safeHttpUrl } from '@/core/validate'
 import { boardActions, useBoardStore } from '@/state/boardStore'
 import { useUiStore } from '@/state/uiStore'
 import { Trash } from '@/ui/icons'
@@ -85,10 +86,14 @@ export function ItemDialog({ open, onClose }: { open: boolean; onClose: () => vo
           <p className={styles.credit}>
             Image: {item.credit.author ? `${item.credit.author} · ` : ''}
             {item.credit.license ?? item.credit.provider}
-            {item.credit.sourceUrl && (
+            {safeHttpUrl(item.credit.sourceUrl) && (
               <>
                 {' · '}
-                <a href={item.credit.sourceUrl} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={safeHttpUrl(item.credit.sourceUrl)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   source
                 </a>
               </>
