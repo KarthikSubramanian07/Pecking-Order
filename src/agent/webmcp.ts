@@ -3,8 +3,12 @@
  * in-browser AI agents can call (https://github.com/webmachinelearning/webmcp).
  * Every tool reuses the same undoable actions as the UI, so anything an agent
  * does shows up on screen and can be undone with ⌘Z.
+ *
+ * Agent input is untrusted: every argument is type-checked and length-capped
+ * here, nothing can delete data, and no tool reads more than the labels that
+ * are already on screen (no images, credits or other boards).
  */
-import { containerOrder, opAddTier, opMoveItem, opSetTitle } from '@/core/board'
+import { containerOrder, MAX_ITEMS, opAddTier, opMoveItem, opSetTitle } from '@/core/board'
 import { COOP, type ContainerId } from '@/core/types'
 import { boardActions } from '@/state/boardStore'
 import { ui } from '@/state/uiStore'
@@ -30,6 +34,17 @@ interface ModelContext {
 
 const text = (t: string): ToolResult => ({ content: [{ type: 'text', text: t }] })
 
+/** Far longer than any label or title; the board clamps further. */
+const MAX_ARG = 500
+const MAX_LABELS = 200
+
+/** A trimmed, length-capped string argument, or '' for anything else. */
+const arg = (v: unknown): string => (typeof v === 'string' ? v.slice(0, MAX_ARG).trim() : '')
+
+/** A non-negative integer argument, or undefined. */
+const position = (v: unknown): number | undefined =>
+  typeof v === 'number' && Number.isInteger(v) && v >= 0 ? v : undefined
+
 function snapshot() {
   const b = boardActions().board
   if (!b) return null
@@ -45,16 +60,17 @@ function snapshot() {
 /** Resolves "S", "top", "coop" or "unranked" to a container id. */
 function findContainer(name: string): ContainerId | undefined {
   const b = boardActions().board
-  if (!b) return undefined
   const n = name.trim().toLowerCase()
+  if (!b || !n) return undefined
   if (['coop', 'unranked', 'the coop', 'pool'].includes(n)) return COOP
   return b.tiers.find((t) => t.label.toLowerCase() === n)?.id
 }
 
 function findItem(label: string): string | undefined {
   const b = boardActions().board
-  if (!b) return undefined
   const n = label.trim().toLowerCase()
+  // An empty query would match every label through includes('').
+  if (!b || !n) return undefined
   const order = containerOrder(b).flatMap((c) => b.placement[c] ?? [])
   return (
     order.find((id) => b.items[id]?.label.toLowerCase() === n) ??
@@ -73,7 +89,7 @@ const TOOLS: ModelContextTool[] = [
       required: ['title'],
     },
     async execute(input) {
-      await startBlank(String(input.title ?? ''))
+      await startBlank(arg(input.title))
       return text('New board opened.')
     },
   },
@@ -98,8 +114,8 @@ const TOOLS: ModelContextTool[] = [
       properties: {
         labels: {
           type: 'array',
-          items: { type: 'string' },
-          maxItems: 200,
+          items: { type: 'string', maxLength: MAX_ARG },
+          maxItems: MAX_LABELS,
           description: 'Item names',
         },
         tier: { type: 'string', description: 'Tier label such as "S" or "A"; omit for the Coop' },
@@ -107,15 +123,19 @@ const TOOLS: ModelContextTool[] = [
       required: ['labels'],
     },
     async execute(input) {
-      const labels = (Array.isArray(input.labels) ? input.labels : [])
-        .filter((l): l is string => typeof l === 'string' && l.trim() !== '')
-        .slice(0, 200)
-      const to = typeof input.tier === 'string' ? findContainer(input.tier) : COOP
-      if (!to) return text(`No tier called "${String(input.tier)}".`)
+      const labels = (Array.isArray(input.labels) ? input.labels.slice(0, MAX_LABELS) : [])
+        .map(arg)
+        .filter(Boolean)
+      const tier = arg(input.tier)
+      const to = tier ? findContainer(tier) : COOP
+      if (!to) return text(`No tier called "${tier}".`)
       const ids = addItems(
         labels.map((label) => ({ label })),
         to,
       )
+      if (ids.length < labels.length) {
+        return text(`Added ${ids.length} items. The board is full (${MAX_ITEMS} items at most).`)
+      }
       return text(`Added ${ids.length} items.`)
     },
   },
@@ -137,11 +157,11 @@ const TOOLS: ModelContextTool[] = [
       required: ['item', 'tier'],
     },
     async execute(input) {
-      const id = findItem(String(input.item ?? ''))
-      const to = findContainer(String(input.tier ?? ''))
-      if (!id) return text(`No item matching "${String(input.item)}".`)
-      if (!to) return text(`No tier called "${String(input.tier)}".`)
-      const at = typeof input.position === 'number' ? input.position : undefined
+      const id = findItem(arg(input.item))
+      const to = findContainer(arg(input.tier))
+      if (!id) return text(`No item matching "${arg(input.item)}".`)
+      if (!to) return text(`No tier called "${arg(input.tier)}".`)
+      const at = position(input.position)
       boardActions().apply((b) => opMoveItem(b, id, to, at))
       ui().land(id)
       return text('Moved.')
@@ -153,7 +173,9 @@ const TOOLS: ModelContextTool[] = [
     description: 'Sets the title of the open tier list.',
     inputSchema: { type: 'object', properties: { title: { type: 'string' } }, required: ['title'] },
     async execute(input) {
-      boardActions().apply((b) => opSetTitle(b, String(input.title ?? '')))
+      const title = arg(input.title)
+      if (!title) return text('A title is required.')
+      boardActions().apply((b) => opSetTitle(b, title))
       return text('Renamed.')
     },
   },
@@ -167,13 +189,11 @@ const TOOLS: ModelContextTool[] = [
       required: ['label'],
     },
     async execute(input) {
+      const label = arg(input.label)
+      if (!label) return text('A tier label is required.')
       let created: string | null = null
       boardActions().apply((b) => {
-        created = opAddTier(
-          b,
-          typeof input.position === 'number' ? input.position : undefined,
-          String(input.label),
-        )
+        created = opAddTier(b, position(input.position), label)
       })
       return text(created ? 'Tier added.' : 'There are already too many tiers.')
     },

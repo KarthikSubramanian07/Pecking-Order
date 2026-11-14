@@ -4,9 +4,11 @@
  *
  * This file is also run directly by Node (scripts/verify-pack-images.mjs, via
  * type stripping) so contributors check images exactly the way the app
- * resolves them. Keep it free of runtime imports and TS-only syntax.
+ * resolves them. Keep it free of `@/` runtime imports and TS-only syntax; the
+ * one runtime import is relative, with its extension, so Node resolves it.
  */
 import type { ImageCredit } from '@/core/types'
+import { parseInertHtml } from '../security/trustedTypes.ts'
 import type { PackItemSpec } from './types'
 
 export interface ResolvedImage {
@@ -21,6 +23,7 @@ export const WIKIMEDIA_HEADERS: Readonly<Record<string, string>> = {
 
 /** Wikimedia only renders thumbnails at standard steps; anything else is a 400/429. */
 const TARGET_WIDTH = 500
+const MAX_URL_LENGTH = 2048
 
 type Json = Record<string, unknown>
 const isObj = (v: unknown): v is Json => typeof v === 'object' && v !== null && !Array.isArray(v)
@@ -42,7 +45,12 @@ export async function resolvePackImage(
 }
 
 async function getJson(url: string, signal: AbortSignal | undefined, what: string) {
-  const res = await fetch(url, { headers: WIKIMEDIA_HEADERS, signal })
+  const res = await fetch(url, {
+    headers: WIKIMEDIA_HEADERS,
+    credentials: 'omit',
+    referrerPolicy: 'no-referrer',
+    signal,
+  })
   if (res.status === 404) throw new Error(`${what} not found`)
   if (!res.ok) throw new Error(`${what}: HTTP ${res.status}`)
   return (await res.json()) as unknown
@@ -85,6 +93,8 @@ async function resolveWikipedia(
  * original fails, so smaller images stay as they are.
  */
 export function upscaleThumb(thumb: string, originalWidth: unknown): string {
+  // The pattern backtracks quadratically on long hostile strings; real URLs are short.
+  if (thumb.length > MAX_URL_LENGTH) return thumb
   const m = /^(.*\/thumb\/.+\/)(\d+)px-([^/]+)$/.exec(thumb.split('?')[0] ?? '')
   if (!m) return thumb
   const current = Number(m[2])
@@ -143,7 +153,7 @@ async function resolveCommons(
 
 /** Commons metadata is HTML. Parse it inertly and keep only the text, never inject it. */
 export function htmlToText(html: string): string | undefined {
-  const doc = new DOMParser().parseFromString(html, 'text/html')
+  const doc = parseInertHtml(html)
   for (const el of doc.querySelectorAll('script, style')) el.remove()
   const text = (doc.body.textContent ?? '').replace(/\s+/g, ' ').trim()
   return text || undefined

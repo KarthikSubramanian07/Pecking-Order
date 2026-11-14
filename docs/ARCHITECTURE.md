@@ -143,7 +143,9 @@ On Cloudflare Pages, `functions/_middleware.ts`:
 - serves Markdown twins of the static pages to clients that ask for
   `text/markdown`, which helps AI agents read the site;
 - leaves everything else to static hosting, where `public/_headers` applies a
-  strict Content Security Policy and the usual hardening headers.
+  strict Content Security Policy (with Trusted Types and hashed inline styles)
+  and the usual hardening headers. [SECURITY-AUDIT.md](SECURITY-AUDIT.md) covers
+  the threat model and how each untrusted input is handled.
 
 Real unknown paths return a real 404.
 

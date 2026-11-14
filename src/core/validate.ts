@@ -4,9 +4,9 @@
  * and hashes are format-checked, and placement is repaired so every item is
  * placed exactly once. Never trust input that crossed a file or URL boundary.
  */
-import { assertValidBoard, clampText, MAX_LABEL, MAX_TIERS, MAX_TITLE } from './board'
-import { newId } from './ids'
-import { isHexColor, swatchAt } from './palette'
+import { assertValidBoard, clampText, MAX_ITEMS, MAX_LABEL, MAX_TIERS, MAX_TITLE } from './board'
+import { isSafeKey, newId } from './ids'
+import { swatchAt } from './palette'
 import { type Board, COOP, type ImageCredit, type Item, type Tier } from './types'
 
 const ID_RE = /^[a-z]_[0-9a-z]{6,32}$|^[\w-]{1,64}$/i
@@ -20,14 +20,20 @@ const PROVIDERS = new Set<ImageCredit['provider']>([
   'wikipedia',
   'pack',
 ])
-export const MAX_ITEMS = 2000
+
+export { MAX_ITEMS }
 
 type Json = Record<string, unknown>
 const isObj = (v: unknown): v is Json => typeof v === 'object' && v !== null && !Array.isArray(v)
 const str = (v: unknown, max: number, fallback = ''): string =>
   typeof v === 'string' ? clampText(v, max) : fallback
-const safeId = (v: unknown, prefix: 't' | 'i' | 'b'): string =>
-  typeof v === 'string' && ID_RE.test(v) ? v : newId(prefix)
+
+/** Well-formed and never a key that Object.prototype owns (see `isSafeKey`). */
+function isSafeId(v: unknown): v is string {
+  return typeof v === 'string' && ID_RE.test(v) && isSafeKey(v)
+}
+
+const safeId = (v: unknown, prefix: 't' | 'i' | 'b'): string => (isSafeId(v) ? v : newId(prefix))
 
 /** Only http(s) links survive, no javascript:, data: or other schemes. */
 export function safeHttpUrl(v: unknown): string | undefined {
@@ -40,7 +46,11 @@ export function safeHttpUrl(v: unknown): string | undefined {
   }
 }
 
-function parseCredit(v: unknown): ImageCredit | undefined {
+/**
+ * Credits arrive from imported files and from search APIs, and `sourceUrl`
+ * ends up as a link's href: keep http(s) only and bound every string.
+ */
+export function parseCredit(v: unknown): ImageCredit | undefined {
   if (!isObj(v) || !PROVIDERS.has(v.provider as ImageCredit['provider'])) return undefined
   const credit: ImageCredit = { provider: v.provider as ImageCredit['provider'] }
   const sourceUrl = safeHttpUrl(v.sourceUrl)
@@ -49,6 +59,14 @@ function parseCredit(v: unknown): ImageCredit | undefined {
   if (typeof v.license === 'string') credit.license = clampText(v.license, 80)
   return credit
 }
+
+/**
+ * Tier colours go straight into a CSS custom property and the canvas, so only
+ * an exact `#rgb` / `#rrggbb` survives: no whitespace, no missing `#`.
+ */
+const STRICT_HEX_RE = /^#(?:[0-9a-f]{3}|[0-9a-f]{6})$/i
+const strictHex = (v: unknown): string | undefined =>
+  typeof v === 'string' && STRICT_HEX_RE.test(v) ? v : undefined
 
 export function parseBoard(input: unknown): Board {
   if (!isObj(input)) throw new Error('Invalid board: not an object')
@@ -64,8 +82,7 @@ export function parseBoard(input: unknown): Board {
     tiers.push({
       id,
       label: str(raw.label, MAX_LABEL, '?') || '?',
-      color:
-        typeof raw.color === 'string' && isHexColor(raw.color) ? raw.color : swatchAt(tiers.length),
+      color: strictHex(raw.color) ?? swatchAt(tiers.length),
     })
   }
 
@@ -75,7 +92,7 @@ export function parseBoard(input: unknown): Board {
   for (const raw of rawItems) {
     if (!isObj(raw)) continue
     const original = typeof raw.id === 'string' ? raw.id : ''
-    const id = original && ID_RE.test(original) && !items[original] ? original : newId('i')
+    const id = isSafeId(original) && !Object.hasOwn(items, original) ? original : newId('i')
     if (original) idMap.set(original, id)
     const item: Item = { id, label: str(raw.label, MAX_LABEL) }
     if (typeof raw.image === 'string' && HASH_RE.test(raw.image)) item.image = raw.image
@@ -90,11 +107,11 @@ export function parseBoard(input: unknown): Board {
   const placed = new Set<string>()
   const rawPlacement = isObj(input.placement) ? input.placement : {}
   for (const cid of [...tiers.map((t) => t.id), COOP]) {
-    const list = rawPlacement[cid]
+    const list = Object.hasOwn(rawPlacement, cid) ? rawPlacement[cid] : undefined
     if (!Array.isArray(list)) continue
     for (const rawId of list) {
       const id = typeof rawId === 'string' ? idMap.get(rawId) : undefined
-      if (id && items[id] && !placed.has(id)) {
+      if (id && Object.hasOwn(items, id) && !placed.has(id)) {
         placement[cid]?.push(id)
         placed.add(id)
       }

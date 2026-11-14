@@ -3,6 +3,7 @@
  * event that produced it, so `snapshotDataTransfer` copies out everything we
  * might need synchronously; the rest of the work runs on that snapshot.
  */
+import { parseInertHtml } from '@/security/trustedTypes'
 import { cleanText, isHiddenName } from './labels'
 import { isImageishUrl, tryParseImageUrl } from './urls'
 
@@ -118,7 +119,7 @@ export function draftsFromStrings(snapshot: TransferSnapshot): {
  * don't run and images don't load, and nothing is attached to our document.
  */
 export function imagesFromHtml(html: string): Draft[] {
-  const doc = new DOMParser().parseFromString(html, 'text/html')
+  const doc = parseInertHtml(html)
   const base = doc.querySelector('base[href]')?.getAttribute('href') ?? undefined
   const seen = new Set<string>()
   const drafts: Draft[] = []
