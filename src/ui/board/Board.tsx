@@ -10,6 +10,7 @@ import {
   type DragStartEvent,
   type DropAnimation,
   getFirstCollision,
+  type KeyboardCoordinateGetter,
   KeyboardSensor,
   MeasuringStrategy,
   MouseSensor,
@@ -20,11 +21,10 @@ import {
   useSensor,
   useSensors,
 } from '@dnd-kit/core'
-import { sortableKeyboardCoordinates } from '@dnd-kit/sortable'
 import { AnimatePresence, useMotionValue } from 'motion/react'
 import * as m from 'motion/react-m'
 import { useCallback, useMemo, useRef, useState } from 'react'
-import { findContainer, opMoveItem } from '@/core/board'
+import { containerOrder, findContainer, opMoveItem } from '@/core/board'
 import { type Board as BoardData, COOP, type ContainerId, type ItemId } from '@/core/types'
 import { boardActions, useBoardStore } from '@/state/boardStore'
 import { useUiStore } from '@/state/uiStore'
@@ -72,9 +72,46 @@ const announcements: Announcements = {
   },
 }
 
+const KEY_STEPS: Record<string, [axis: 'row' | 'slot', step: number]> = {
+  ArrowUp: ['row', -1],
+  ArrowDown: ['row', 1],
+  ArrowLeft: ['slot', -1],
+  ArrowRight: ['slot', 1],
+}
+
+/**
+ * Keyboard drags move in board order: Up and Down step to the previous or next
+ * row (tiers, then the Coop), Left and Right to the neighbouring slot in the row.
+ * dnd-kit's stock getter searches by on-screen distance, which skips rows and
+ * wanders between them once rows wrap.
+ */
+const keyboardCoordinates: KeyboardCoordinateGetter = (event, { context }) => {
+  const move = KEY_STEPS[event.code]
+  if (!move) return undefined
+  event.preventDefault()
+  const b = boardActions().board
+  const { active, over, droppableRects } = context
+  if (!b || !active) return undefined
+  const here = over?.id ?? active.id
+  const row = containerOf(b, here)
+  if (!row) return undefined
+  const [axis, step] = move
+  let target: UniqueIdentifier | undefined
+  if (axis === 'row') {
+    const order = containerOrder(b)
+    target = order[order.indexOf(row) + step]
+  } else {
+    const slots = b.placement[row] ?? []
+    const at = slots.indexOf(String(here))
+    target = slots[at === -1 ? 0 : at + step]
+  }
+  const rect = target === undefined ? undefined : droppableRects.get(target)
+  return rect ? { x: rect.left, y: rect.top } : undefined
+}
+
 const screenReaderInstructions = {
   draggable:
-    'To pick up an item, press Space or Enter. Use the arrow keys to move it, then Space or Enter to drop it, or Escape to cancel. You can also press 1 to 9 to send it straight to a tier, 0 for the Coop, E to edit and Delete to remove.',
+    'To pick up an item, press Space or Enter. Up and Down arrows move it to the row above or below, Left and Right move it along the row. Press Space or Enter to drop it, or Escape to cancel. You can also press 1 to 9 to send it straight to a tier, 0 for the Coop, E to edit and Delete to remove.',
 }
 
 export function Board() {
@@ -89,7 +126,7 @@ export function Board() {
     useSensor(MouseSensor, { activationConstraint: { distance: 4 } }),
     // A short press delay lets people scroll the page with a finger.
     useSensor(TouchSensor, { activationConstraint: { delay: 160, tolerance: 8 } }),
-    useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates }),
+    useSensor(KeyboardSensor, { coordinateGetter: keyboardCoordinates }),
   )
 
   /**
@@ -174,8 +211,8 @@ export function Board() {
     }
     boardActions().endGesture(Boolean(over))
     finish(id)
-    // dnd-kit refocuses the tile without scrolling. Once the ducked Coop has grown
-    // back, bring the tile out from behind it.
+    // dnd-kit refocuses the tile without scrolling. Once the Coop has docked and
+    // grown back, bring the tile out from behind it.
     if (activatorEvent instanceof KeyboardEvent) {
       setTimeout(() => {
         document
@@ -193,6 +230,7 @@ export function Board() {
   const finish = (landed: ItemId | null) => {
     setActiveId(null)
     delete document.documentElement.dataset.dragging
+    delete document.documentElement.dataset.keyboardDrag
     lastOverId.current = null
     movedContainer.current = false
     if (landed) useUiStore.getState().land(landed)

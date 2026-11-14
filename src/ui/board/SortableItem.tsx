@@ -59,6 +59,10 @@ export const SortableItem = memo(function SortableItem({
       useUiStore.getState().select(null)
       return
     }
+    // Set before dnd-kit measures, so the drag starts with the Coop undocked.
+    if (e.code === 'Space' || e.code === 'Enter') {
+      document.documentElement.dataset.keyboardDrag = ''
+    }
     listeners?.onKeyDown?.(e)
   }
 

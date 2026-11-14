@@ -143,6 +143,13 @@
   }
 }
 
+/* Arrow keys move a keyboard drag by on-screen position, and the docked Coop sits
+   on top of the lower tiers. For keyboard drags it joins the page flow, so every
+   tier is above it and reachable with the arrow keys. */
+:root[data-keyboard-drag] .coop {
+  position: static;
+}
+
 /* While dragging, the dock ducks to one row so every tier stays reachable. */
 .coop[data-dragging] .grid {
   max-height: calc(var(--item) + 16px);
