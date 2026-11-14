@@ -1,0 +1,27 @@
+name: Feature request
+description: Suggest an improvement or a new feature.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: Describe the problem or the moment where Pecking Order got in your way.
+      placeholder: I rank the same films every year and want to compare this year's board with last year's.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would help?
+      description: Your idea for a solution, if you have one.
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Anything you have tried instead?
+  - type: checkboxes
+    id: local-first
+    attributes:
+      label: Local-first check
+      options:
+        - label: This works without accounts or a server (Pecking Order keeps everything on the device).

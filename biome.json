@@ -11,6 +11,7 @@
       "!**/dist",
       "!**/src/packs/generated",
       "!**/public/packs",
+      "!**/public/*.svg",
       "!**/.claude",
       "!**/src/ui/icons.tsx"
     ]
@@ -58,6 +59,10 @@
     }
   },
   "overrides": [
+    {
+      "includes": ["public/**/*.md"],
+      "formatter": { "enabled": false }
+    },
     {
       "includes": ["**/*.test.ts", "**/*.test.tsx", "e2e/**"],
       "linter": {

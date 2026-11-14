@@ -1,0 +1,7 @@
+# Pecking Order is a public, static site. Every crawler and AI agent is welcome,
+# including search and user-initiated agents (OAI-SearchBot, ChatGPT-User,
+# Claude-User, PerplexityBot, Perplexity-User). A summary for LLMs lives at /llms.txt.
+User-agent: *
+Allow: /
+
+Sitemap: https://pecking-order.pages.dev/sitemap.xml

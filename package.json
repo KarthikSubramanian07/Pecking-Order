@@ -25,7 +25,8 @@
     "packs:build": "node scripts/build-packs.mjs",
     "packs:validate": "node scripts/build-packs.mjs --check",
     "packs:verify": "node scripts/verify-pack-images.mjs",
-    "icons": "node scripts/generate-icons.mjs"
+    "icons": "node scripts/generate-icons.mjs",
+    "brand": "node scripts/generate-brand-assets.mjs"
   },
   "dependencies": {
     "@dnd-kit/core": "6.3.1",

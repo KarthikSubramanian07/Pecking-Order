@@ -1,0 +1,55 @@
+name: Pack request
+description: Ask for a ready-made category pack, or propose one you will build.
+labels: [pack]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A pack is one JSON file, `packs/<id>/pack.json`: a title, a list of items, and where each
+        item's picture lives on Wikipedia or Wikimedia Commons. Pull requests that add one directly
+        are very welcome.
+  - type: input
+    id: title
+    attributes:
+      label: Pack title
+      placeholder: Breakfast cereals
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Food and drink
+        - Films and TV
+        - Games
+        - Music
+        - Books
+        - Sport
+        - Places
+        - Animals
+        - Technology
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: items
+    attributes:
+      label: Items
+      description: One per line. Add the English Wikipedia article title or a Commons file name if you know it.
+      placeholder: |
+        Cornflakes — Wikipedia: Corn flakes
+        Muesli — Wikipedia: Muesli
+    validations:
+      required: true
+  - type: input
+    id: tiers
+    attributes:
+      label: Custom tier labels (optional)
+      placeholder: Breakfast of champions, Fine, Only if starving
+  - type: checkboxes
+    id: build
+    attributes:
+      label: Contribution
+      options:
+        - label: I would like to open the pull request for this pack myself.

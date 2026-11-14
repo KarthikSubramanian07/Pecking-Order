@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>About Pecking Order — a free, local-first tier list maker</title>
+    <meta
+      name="description"
+      content="Why Pecking Order exists, how it works without accounts or uploads, and how it is built: a static, open-source tier list maker that keeps your boards on your device."
+    />
+    <link rel="canonical" href="https://pecking-order.pages.dev/about/" />
+    <link rel="alternate" type="text/markdown" href="/about.md" />
+    <meta name="theme-color" content="#f6f1e7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1a1714" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Pecking Order" />
+    <meta property="og:url" content="https://pecking-order.pages.dev/about/" />
+    <meta property="og:title" content="About Pecking Order" />
+    <meta
+      property="og:description"
+      content="A free, open-source tier list maker with no accounts and no uploads. Your boards stay on your device."
+    />
+    <meta property="og:image" content="https://pecking-order.pages.dev/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="/pages.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="top">
+        <a class="wordmark" href="/"
+          ><img src="/hen.svg" alt="" width="32" height="32" />Pecking Order</a
+        >
+        <nav aria-label="Site">
+          <a href="/about/" aria-current="page">About</a>
+          <a href="/privacy/">Privacy</a>
+          <a href="https://github.com/KarthikSubramanian07/Pecking-Order">GitHub</a>
+        </nav>
+      </header>
+
+      <main>
+        <p class="eyebrow">About</p>
+        <h1>A tier list maker that stays out of the way.</h1>
+        <p class="lede">
+          Pecking Order is a small, free tool for ranking things: films, snacks, programming
+          languages, the bakeries on your street. Drop in pictures or names, drag them into tiers,
+          and export a clean image for the group chat.
+        </p>
+
+        <h2>Why it exists</h2>
+        <p>
+          Most tier list sites ask you to sign up, upload your pictures to their servers, and sit
+          through ads while you work. Pecking Order does none of that. It is a static web page:
+          once it has loaded, the work happens on your device. Your boards are saved in your
+          browser's own storage, and nothing is sent anywhere unless you ask for it.
+        </p>
+
+        <h2>How it is built</h2>
+        <p>
+          It is a React app written in TypeScript and bundled with Vite, served as plain files from
+          Cloudflare Pages. Boards and images live in IndexedDB, the database built into your
+          browser. When you search for a picture, your browser asks Wikipedia, Wikimedia Commons or
+          Openverse directly. There is no Pecking Order server in the middle, because there is no
+          Pecking Order server.
+        </p>
+
+        <h2>Packs and credits</h2>
+        <p>
+          Category packs are community-made starter sets: a list of items, and where each item's
+          picture lives on Wikipedia or Wikimedia Commons. Installing a pack downloads those
+          pictures to your device once. Pictures found through search or packs keep their author
+          and licence details, so credit goes where it is due.
+        </p>
+
+        <h2>Open source</h2>
+        <p>
+          The code is MIT licensed and lives on
+          <a href="https://github.com/KarthikSubramanian07/Pecking-Order">GitHub</a>. Bug reports,
+          ideas and new packs are all welcome; the <a href="/contact/">contact page</a> says where
+          to send them. If it saved you an argument, you can
+          <a href="https://buymeacoffee.com/winnerkarthik">buy the developer a coffee</a>.
+        </p>
+        <p class="note">The name is the joke. The rankings are serious.</p>
+      </main>
+
+      <footer class="foot">
+        <p>Pecking Order · free and open source, MIT licensed</p>
+        <nav aria-label="Footer">
+          <a href="/">App</a>
+          <a href="/privacy/">Privacy</a>
+          <a href="/contact/">Contact</a>
+          <a href="https://buymeacoffee.com/winnerkarthik">Buy me a coffee</a>
+        </nav>
+      </footer>
+    </div>
+  </body>
+</html>

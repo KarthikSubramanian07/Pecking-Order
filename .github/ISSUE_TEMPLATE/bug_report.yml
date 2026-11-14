@@ -1,0 +1,39 @@
+name: Bug report
+description: Something in Pecking Order is broken or behaves unexpectedly.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time. Security problems should be reported privately instead:
+        https://github.com/KarthikSubramanian07/Pecking-Order/security/advisories/new
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what happened instead.
+      placeholder: I dragged an item from the coop into the S tier and it jumped back.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open a new board
+        2. Paste an image link
+        3. …
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and device
+      placeholder: Safari 26 on iPhone 16, Firefox 147 on Windows 11…
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: Screenshots, console errors, or a link to the image or pack involved.
