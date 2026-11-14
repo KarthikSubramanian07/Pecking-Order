@@ -189,13 +189,17 @@ export function TopBar() {
             {total} {total === 1 ? 'item' : 'items'}, {total - unranked} ranked
           </span>
           <span aria-hidden>·</span>
-          <span className={styles.save} data-status={saveStatus} aria-live="polite">
+          <span className={styles.save} data-status={saveStatus}>
             {saveStatus === 'saving'
               ? 'saving…'
               : saveStatus === 'error'
                 ? 'not saved, storage may be full'
                 : 'saved on this device'}
           </span>
+        </p>
+        {/* Every edit saves, so only a failure is worth interrupting for. */}
+        <p className="sr-only" role="alert">
+          {saveStatus === 'error' ? 'Not saved. Storage may be full.' : ''}
         </p>
       </div>
     </header>

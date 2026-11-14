@@ -31,7 +31,7 @@ export function moveItemTo(id: ItemId, to: ContainerId): void {
   if (!board || findContainer(board, id) === to) return
   boardActions().apply((b) => opMoveItem(b, id, to))
   ui().land(id)
-  ui().toast({ message: `${itemLabel(id)} → ${containerName(to)}` })
+  ui().toast({ message: `${itemLabel(id)} moved to ${containerName(to)}` })
 }
 
 /** Number key → container: 1–9 are tiers top-down, 0 is the coop. */

@@ -48,18 +48,30 @@ const position = (board: BoardData, id: ItemId) => {
   return { where: cid ? containerName(cid) : 'nowhere', at: list.indexOf(id) + 1, of: list.length }
 }
 
+// dnd-kit reports "over itself" straight after pick-up; announcing that would
+// replace the "Picked up" message before a screen reader has read it.
+let justPickedUp = false
+
 const announcements: Announcements = {
   onDragStart({ active }) {
     const b = boardActions().board
     if (!b) return
+    justPickedUp = true
     const p = position(b, String(active.id))
     return `Picked up ${itemLabel(String(active.id))}. It is in ${p.where}, position ${p.at} of ${p.of}.`
   },
-  onDragOver({ active }) {
+  onDragOver({ active, over }) {
     const b = boardActions().board
-    if (!b) return
-    const p = position(b, String(active.id))
-    return `${itemLabel(String(active.id))} is in ${p.where}, position ${p.at} of ${p.of}.`
+    const first = justPickedUp
+    justPickedUp = false
+    if (!b || (first && over?.id === active.id)) return
+    const id = String(active.id)
+    const p = position(b, id)
+    // Within a row the order only changes on drop, so report the slot it is over.
+    const list = b.placement[findContainer(b, id) ?? ''] ?? []
+    const overAt = over ? list.indexOf(String(over.id)) : -1
+    const at = overAt >= 0 ? overAt + 1 : p.at
+    return `${itemLabel(id)} is in ${p.where}, position ${at} of ${p.of}.`
   },
   onDragEnd({ active }) {
     const b = boardActions().board

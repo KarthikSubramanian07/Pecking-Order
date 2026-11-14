@@ -149,9 +149,16 @@ export default function SearchDialog({ open, onClose }: { open: boolean; onClose
             {error}
           </p>
         )}
-        {status === 'idle' && query.trim() && results.length === 0 && (
-          <p className={styles.empty}>Nothing found. The hen looked everywhere.</p>
-        )}
+        <div role="status">
+          {status === 'idle' && query.trim() && results.length === 0 && (
+            <p className={styles.empty}>Nothing found. The hen looked everywhere.</p>
+          )}
+          {status === 'idle' && results.length > 0 && (
+            <span className="sr-only">
+              {results.length} {results.length === 1 ? 'picture' : 'pictures'} found
+            </span>
+          )}
+        </div>
         {!query.trim() && <p className={styles.empty}>Type something to start searching.</p>}
         <ul className={styles.results} data-loading={status === 'loading' || undefined}>
           {results.map((r) => {

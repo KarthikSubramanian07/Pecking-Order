@@ -20,6 +20,8 @@ export function Coop({ items, dragging }: { items: ItemId[]; dragging: boolean }
   const { upload } = useIngest()
   const [filter, setFilter] = useState('')
   const [draft, setDraft] = useState('')
+  // Quick adds have no toast, so screen readers hear about them here.
+  const [added, setAdded] = useState('')
   const quickAdd = useRef<HTMLTextAreaElement>(null)
   const dock = useRef<HTMLElement>(null)
 
@@ -47,13 +49,23 @@ export function Coop({ items, dragging }: { items: ItemId[]; dragging: boolean }
     return items.filter((id) => allItems[id]?.label.toLowerCase().includes(q))
   }, [items, allItems, filter])
 
+  const addLabels = (labels: string[]) => {
+    if (!labels.length) return
+    addItems(labels.map((label) => ({ label })))
+    setAdded(
+      labels.length === 1
+        ? `Added ${labels[0]} to the Coop.`
+        : `Added ${labels.length} items to the Coop.`,
+    )
+  }
+
   const addText = () => {
     const labels = draft
       .split(/\r?\n/)
       .map((l) => l.trim())
       .filter(Boolean)
     if (!labels.length) return
-    addItems(labels.map((label) => ({ label })))
+    addLabels(labels)
     setDraft('')
     quickAdd.current?.focus()
   }
@@ -190,11 +202,13 @@ export function Coop({ items, dragging }: { items: ItemId[]; dragging: boolean }
             const text = e.clipboardData.getData('text/plain')
             if (text.includes('\n') && !e.clipboardData.files.length) {
               e.preventDefault()
-              const labels = text
-                .split(/\r?\n/)
-                .map((l) => l.trim())
-                .filter(Boolean)
-              addItems(labels.slice(0, 200).map((label) => ({ label })))
+              addLabels(
+                text
+                  .split(/\r?\n/)
+                  .map((l) => l.trim())
+                  .filter(Boolean)
+                  .slice(0, 200),
+              )
             }
           }}
         />
@@ -218,6 +232,9 @@ export function Coop({ items, dragging }: { items: ItemId[]; dragging: boolean }
           <MagnifyingGlass size={16} aria-hidden />{' '}
           <span className={styles.buttonText}>Search</span>
         </button>
+        <p className="sr-only" role="status">
+          {added}
+        </p>
       </form>
     </section>
   )
