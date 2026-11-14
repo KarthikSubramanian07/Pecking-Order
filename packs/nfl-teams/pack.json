@@ -1,0 +1,179 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "nfl-teams",
+  "version": "1.0.0",
+  "title": "NFL Teams",
+  "description": "Thirty-two franchises, one trophy, and a great deal of feeling about the referees.",
+  "category": "Sports",
+  "accent": "Comb",
+  "author": "Pecking Order",
+  "tiers": ["Dynasty", "Contender", "Wild card", "Rebuilding", "Top draft pick"],
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/en/thumb/7/72/Arizona_Cardinals_logo.svg/500px-Arizona_Cardinals_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/en/thumb/c/c5/Atlanta_Falcons_logo.svg/500px-Atlanta_Falcons_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/en/thumb/1/16/Baltimore_Ravens_logo.svg/500px-Baltimore_Ravens_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Buffalo_Bills_logo_1974-present.svg/500px-Buffalo_Bills_logo_1974-present.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  ],
+  "items": [
+    {
+      "id": "arizona-cardinals",
+      "label": "Arizona Cardinals",
+      "wikipedia": "Arizona Cardinals"
+    },
+    {
+      "id": "atlanta-falcons",
+      "label": "Atlanta Falcons",
+      "wikipedia": "Atlanta Falcons"
+    },
+    {
+      "id": "baltimore-ravens",
+      "label": "Baltimore Ravens",
+      "wikipedia": "Baltimore Ravens"
+    },
+    {
+      "id": "buffalo-bills",
+      "label": "Buffalo Bills",
+      "wikipedia": "Buffalo Bills"
+    },
+    {
+      "id": "carolina-panthers",
+      "label": "Carolina Panthers",
+      "wikipedia": "Carolina Panthers"
+    },
+    {
+      "id": "chicago-bears",
+      "label": "Chicago Bears",
+      "wikipedia": "Chicago Bears"
+    },
+    {
+      "id": "cincinnati-bengals",
+      "label": "Cincinnati Bengals",
+      "wikipedia": "Cincinnati Bengals"
+    },
+    {
+      "id": "cleveland-browns",
+      "label": "Cleveland Browns",
+      "wikipedia": "Cleveland Browns"
+    },
+    {
+      "id": "dallas-cowboys",
+      "label": "Dallas Cowboys",
+      "wikipedia": "Dallas Cowboys"
+    },
+    {
+      "id": "denver-broncos",
+      "label": "Denver Broncos",
+      "wikipedia": "Denver Broncos"
+    },
+    {
+      "id": "detroit-lions",
+      "label": "Detroit Lions",
+      "wikipedia": "Detroit Lions"
+    },
+    {
+      "id": "green-bay-packers",
+      "label": "Green Bay Packers",
+      "wikipedia": "Green Bay Packers"
+    },
+    {
+      "id": "houston-texans",
+      "label": "Houston Texans",
+      "wikipedia": "Houston Texans"
+    },
+    {
+      "id": "indianapolis-colts",
+      "label": "Indianapolis Colts",
+      "wikipedia": "Indianapolis Colts"
+    },
+    {
+      "id": "jacksonville-jaguars",
+      "label": "Jacksonville Jaguars",
+      "wikipedia": "Jacksonville Jaguars"
+    },
+    {
+      "id": "kansas-city-chiefs",
+      "label": "Kansas City Chiefs",
+      "wikipedia": "Kansas City Chiefs"
+    },
+    {
+      "id": "las-vegas-raiders",
+      "label": "Las Vegas Raiders",
+      "wikipedia": "Las Vegas Raiders"
+    },
+    {
+      "id": "los-angeles-chargers",
+      "label": "Los Angeles Chargers",
+      "wikipedia": "Los Angeles Chargers"
+    },
+    {
+      "id": "los-angeles-rams",
+      "label": "Los Angeles Rams",
+      "wikipedia": "Los Angeles Rams"
+    },
+    {
+      "id": "miami-dolphins",
+      "label": "Miami Dolphins",
+      "wikipedia": "Miami Dolphins"
+    },
+    {
+      "id": "minnesota-vikings",
+      "label": "Minnesota Vikings",
+      "wikipedia": "Minnesota Vikings"
+    },
+    {
+      "id": "new-england-patriots",
+      "label": "New England Patriots",
+      "wikipedia": "New England Patriots"
+    },
+    {
+      "id": "new-orleans-saints",
+      "label": "New Orleans Saints",
+      "wikipedia": "New Orleans Saints"
+    },
+    {
+      "id": "new-york-giants",
+      "label": "New York Giants",
+      "wikipedia": "New York Giants"
+    },
+    {
+      "id": "new-york-jets",
+      "label": "New York Jets",
+      "wikipedia": "New York Jets"
+    },
+    {
+      "id": "philadelphia-eagles",
+      "label": "Philadelphia Eagles",
+      "wikipedia": "Philadelphia Eagles"
+    },
+    {
+      "id": "pittsburgh-steelers",
+      "label": "Pittsburgh Steelers",
+      "wikipedia": "Pittsburgh Steelers"
+    },
+    {
+      "id": "san-francisco-49ers",
+      "label": "San Francisco 49ers",
+      "wikipedia": "San Francisco 49ers"
+    },
+    {
+      "id": "seattle-seahawks",
+      "label": "Seattle Seahawks",
+      "wikipedia": "Seattle Seahawks"
+    },
+    {
+      "id": "tampa-bay-buccaneers",
+      "label": "Tampa Bay Buccaneers",
+      "wikipedia": "Tampa Bay Buccaneers"
+    },
+    {
+      "id": "tennessee-titans",
+      "label": "Tennessee Titans",
+      "wikipedia": "Tennessee Titans"
+    },
+    {
+      "id": "washington-commanders",
+      "label": "Washington Commanders",
+      "wikipedia": "Washington Commanders"
+    }
+  ]
+}
