@@ -63,6 +63,7 @@
 
 .grid {
   max-height: min(34vh, calc(var(--item) * 2.6 + 24px));
+  transition: max-height var(--t-med) var(--ease-out);
   overflow-y: auto;
   overscroll-behavior: contain;
   margin: var(--s-2) calc(var(--s-2) * -1) 0;
@@ -113,4 +114,12 @@
   .quick > button:not([type="submit"]) {
     display: none;
   }
+}
+
+/* While dragging, the dock ducks to one row so every tier stays reachable. */
+.coop[data-dragging] .grid {
+  max-height: calc(var(--item) + 16px);
+}
+.coop[data-dragging] .quick {
+  display: none;
 }
