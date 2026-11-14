@@ -9,6 +9,7 @@ import { COOP, type ContainerId } from '@/core/types'
 import { boardActions } from '@/state/boardStore'
 import { ui } from '@/state/uiStore'
 import { addItems } from '@/ui/actions'
+import { startBlank } from '@/ui/start'
 
 interface ToolResult {
   content: { type: 'text'; text: string }[]
@@ -63,13 +64,28 @@ function findItem(label: string): string | undefined {
 
 const TOOLS: ModelContextTool[] = [
   {
+    name: 'new_board',
+    title: 'Start a new tier list',
+    description: 'Creates a new, empty tier list with the given title and opens it.',
+    inputSchema: {
+      type: 'object',
+      properties: { title: { type: 'string', description: 'What is being ranked' } },
+      required: ['title'],
+    },
+    async execute(input) {
+      await startBlank(String(input.title ?? ''))
+      return text('New board opened.')
+    },
+  },
+  {
     name: 'get_board',
     title: 'Read the current tier list',
     description:
       'Returns the open tier list: its title, each tier (top to bottom) with the item labels in order, and the unranked items in the Coop.',
     annotations: { readOnlyHint: true },
     async execute() {
-      return text(JSON.stringify(snapshot()))
+      const board = snapshot()
+      return text(board ? JSON.stringify(board) : 'No board is open. Use new_board first.')
     },
   },
   {

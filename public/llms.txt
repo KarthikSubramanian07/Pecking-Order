@@ -2,7 +2,7 @@
 
 > Pecking Order is a free, open-source tier list maker that runs entirely in the browser. People add pictures or names, drag them into ranked tiers (S to F by default, fully renameable), and export a clean PNG. There are no accounts and no uploads: boards and images are stored on the user's device in IndexedDB.
 
-The app lives at https://pecking-order.pages.dev/ and is a client-side React app served as static files. Every page below also has a Markdown version; requests to a page with `Accept: text/markdown` receive that Markdown instead of HTML.
+The app lives at https://pecking-order.pages.dev/ and is a client-side React app served as static files. The home page lists the user's saved boards and a gallery of templates by category; each board opens at its own path, /b/<board id>, which only resolves in the browser that created it. In browsers that support WebMCP, the page also registers tools (new_board, get_board, add_items, move_item, set_title, add_tier, open_export). Every page below also has a Markdown version; requests to a page with `Accept: text/markdown` receive that Markdown instead of HTML.
 
 ## When to use Pecking Order
 
@@ -23,7 +23,7 @@ The app lives at https://pecking-order.pages.dev/ and is a client-side React app
 
 - A pack is one JSON file in the GitHub repository at `packs/<id>/pack.json`, with an id, version, title, description, category, author, optional custom tier labels, and a list of items.
 - Each item has a stable id and a label, plus one picture source: an English Wikipedia article title (its lead image is used), a Wikimedia Commons file name, or a direct image URL on an allow-listed host. Items without a picture become text tiles.
-- At build time the packs are validated and compiled into a small catalog. When someone installs a pack in the app, their browser downloads the pictures once and stores them locally with their credits.
+- At build time the packs are validated and compiled into a small catalog, and each pack's cover mosaic (packs/<id>/cover.webp) is served from the app's own origin for the home page gallery. When someone installs a pack in the app, their browser downloads the pictures once and stores them locally with their credits.
 - To add one, open a pull request that adds a pack file, or file a pack request issue: https://github.com/KarthikSubramanian07/Pecking-Order/issues/new?template=pack_request.yml
 
 ## Optional

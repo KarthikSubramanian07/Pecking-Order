@@ -16,6 +16,7 @@
   font-weight: 560;
   font-size: var(--text-md);
   white-space: nowrap;
+  text-decoration: none;
   transition:
     background var(--t-fast),
     border-color var(--t-fast),

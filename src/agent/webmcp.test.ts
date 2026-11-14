@@ -16,6 +16,7 @@ beforeEach(async () => {
   })
   useBoardStore.setState({ ready: false, board: null })
   await useBoardStore.getState().init()
+  await useBoardStore.getState().newBoard()
   await registerAgentTools()
 })
 
@@ -44,6 +45,11 @@ describe('WebMCP tools', () => {
     expect(board.title).toBe('Languages')
     expect(board.tiers[0].items).toEqual(['Rust'])
     expect(board.unranked).toEqual(['Go'])
+  })
+
+  it('starts a new board', async () => {
+    await call('new_board', { title: 'Cereals' })
+    expect(useBoardStore.getState().board?.title).toBe('Cereals')
   })
 
   it('explains bad references instead of throwing', async () => {

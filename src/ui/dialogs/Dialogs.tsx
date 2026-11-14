@@ -1,6 +1,5 @@
 import { lazy, Suspense } from 'react'
 import { useUiStore } from '@/state/uiStore'
-import { BoardsDialog } from './BoardsDialog'
 import { ItemDialog } from './ItemDialog'
 import { NewBoardDialog } from './NewBoardDialog'
 import { ShortcutsDialog } from './ShortcutsDialog'
@@ -16,7 +15,6 @@ export function Dialogs() {
   return (
     <>
       <NewBoardDialog open={dialog === 'new'} onClose={close} />
-      <BoardsDialog open={dialog === 'boards'} onClose={close} />
       <ShortcutsDialog open={dialog === 'shortcuts'} onClose={close} />
       <ItemDialog open={dialog === 'item'} onClose={close} />
       <Suspense fallback={null}>
