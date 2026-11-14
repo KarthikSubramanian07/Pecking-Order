@@ -108,7 +108,21 @@ export default function SearchDialog({ open, onClose }: { open: boolean; onClose
       }
     >
       <div className={styles.searchHead}>
-        <div role="tablist" aria-label="Image source" className={styles.tabs}>
+        <div
+          role="tablist"
+          aria-label="Image source"
+          className={styles.tabs}
+          onKeyDown={(e) => {
+            const step = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0
+            if (!step) return
+            e.preventDefault()
+            const i = SOURCES.findIndex((s) => s.id === sourceId)
+            const next = SOURCES[(i + step + SOURCES.length) % SOURCES.length]
+            if (!next) return
+            setSourceId(next.id)
+            document.getElementById(`${tabsId}-${next.id}`)?.focus()
+          }}
+        >
           {SOURCES.map((s) => (
             <button
               key={s.id}
@@ -117,6 +131,7 @@ export default function SearchDialog({ open, onClose }: { open: boolean; onClose
               id={`${tabsId}-${s.id}`}
               aria-selected={s.id === sourceId}
               aria-controls={`${tabsId}-panel`}
+              tabIndex={s.id === sourceId ? 0 : -1}
               className={styles.tab}
               onClick={() => setSourceId(s.id)}
             >

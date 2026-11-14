@@ -112,25 +112,25 @@ export function TopBar() {
               {
                 label: 'Light theme',
                 icon: <Sun size={16} />,
-                hint: theme === 'light' ? '✓' : undefined,
+                checked: theme === 'light',
                 onSelect: () => setPref('theme', 'light'),
               },
               {
                 label: 'Dark theme',
                 icon: <Moon size={16} />,
-                hint: theme === 'dark' ? '✓' : undefined,
+                checked: theme === 'dark',
                 onSelect: () => setPref('theme', 'dark'),
               },
               {
                 label: 'Match system',
                 icon: <Monitor size={16} />,
-                hint: theme === 'system' ? '✓' : undefined,
+                checked: theme === 'system',
                 onSelect: () => setPref('theme', 'system'),
               },
               ...(['sm', 'md', 'lg'] as const).map((size, i) => ({
                 label: SIZE_LABEL[size],
                 separated: i === 0,
-                hint: itemSize === size ? '✓' : undefined,
+                checked: itemSize === size,
                 onSelect: () => setPref('itemSize', size),
               })),
               {
