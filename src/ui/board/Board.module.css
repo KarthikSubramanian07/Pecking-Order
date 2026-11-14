@@ -5,6 +5,11 @@
 .tiers > * {
   min-width: 0;
 }
+/* Focus and scrollIntoView stop above the sticky Coop instead of behind it. Only
+   the tiers get this: on the Coop's own tiles it would scroll the whole page. */
+.tiers * {
+  scroll-margin-bottom: calc(var(--coop-height, 0px) + var(--s-3));
+}
 .tiers[data-dragging] {
   cursor: grabbing;
 }

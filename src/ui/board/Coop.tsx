@@ -4,7 +4,7 @@ import { COOP, type ItemId } from '@/core/types'
 import { boardActions, useBoardStore } from '@/state/boardStore'
 import { useUiStore } from '@/state/uiStore'
 import { ArrowsDownUp, ImageSquare, MagnifyingGlass, Plus, Scales, Shuffle } from '@/ui/icons'
-import { addItems, moveItemTo } from '../actions'
+import { addItems, focusItem, moveItemTo } from '../actions'
 import { Hen } from '../brand/Hen'
 import { useIngest } from '../hooks/useIngest'
 import btn from '../primitives/Button.module.css'
@@ -20,19 +20,27 @@ export function Coop({ items, dragging }: { items: ItemId[]; dragging: boolean }
   const { upload } = useIngest()
   const [filter, setFilter] = useState('')
   const [draft, setDraft] = useState('')
+  // Quick adds have no toast, so screen readers hear about them here.
+  const [added, setAdded] = useState('')
   const quickAdd = useRef<HTMLTextAreaElement>(null)
   const dock = useRef<HTMLElement>(null)
 
-  // Publish the dock height so toasts can float just above it.
+  // Publish the dock height so toasts and focused tiles stay clear of it. On short
+  // screens the dock stops sticking and covers nothing, so it publishes zero.
   useEffect(() => {
     const el = dock.current
     if (!el) return
-    const ro = new ResizeObserver(([entry]) => {
-      const h = entry?.borderBoxSize[0]?.blockSize ?? el.offsetHeight
-      document.documentElement.style.setProperty('--coop-height', `${Math.round(h)}px`)
-    })
+    const publish = () => {
+      const h = getComputedStyle(el).position === 'sticky' ? el.offsetHeight : 0
+      document.documentElement.style.setProperty('--coop-height', `${h}px`)
+    }
+    const ro = new ResizeObserver(publish)
     ro.observe(el)
-    return () => ro.disconnect()
+    window.addEventListener('resize', publish)
+    return () => {
+      ro.disconnect()
+      window.removeEventListener('resize', publish)
+    }
   }, [])
 
   const visible = useMemo(() => {
@@ -41,13 +49,23 @@ export function Coop({ items, dragging }: { items: ItemId[]; dragging: boolean }
     return items.filter((id) => allItems[id]?.label.toLowerCase().includes(q))
   }, [items, allItems, filter])
 
+  const addLabels = (labels: string[]) => {
+    if (!labels.length) return
+    addItems(labels.map((label) => ({ label })))
+    setAdded(
+      labels.length === 1
+        ? `Added ${labels[0]} to the Coop.`
+        : `Added ${labels.length} items to the Coop.`,
+    )
+  }
+
   const addText = () => {
     const labels = draft
       .split(/\r?\n/)
       .map((l) => l.trim())
       .filter(Boolean)
     if (!labels.length) return
-    addItems(labels.map((label) => ({ label })))
+    addLabels(labels)
     setDraft('')
     quickAdd.current?.focus()
   }
@@ -129,6 +147,7 @@ export function Coop({ items, dragging }: { items: ItemId[]; dragging: boolean }
               onClick={() => {
                 moveItemTo(selected, COOP)
                 useUiStore.getState().select(null)
+                focusItem(selected)
               }}
             >
               Back to the Coop
@@ -183,11 +202,13 @@ export function Coop({ items, dragging }: { items: ItemId[]; dragging: boolean }
             const text = e.clipboardData.getData('text/plain')
             if (text.includes('\n') && !e.clipboardData.files.length) {
               e.preventDefault()
-              const labels = text
-                .split(/\r?\n/)
-                .map((l) => l.trim())
-                .filter(Boolean)
-              addItems(labels.slice(0, 200).map((label) => ({ label })))
+              addLabels(
+                text
+                  .split(/\r?\n/)
+                  .map((l) => l.trim())
+                  .filter(Boolean)
+                  .slice(0, 200),
+              )
             }
           }}
         />
@@ -205,11 +226,15 @@ export function Coop({ items, dragging }: { items: ItemId[]; dragging: boolean }
           or
         </span>
         <button type="button" className={btn.button} data-size="sm" onClick={() => void upload()}>
-          <ImageSquare size={16} aria-hidden /> Upload
+          <ImageSquare size={16} aria-hidden /> <span className={styles.buttonText}>Upload</span>
         </button>
         <button type="button" className={btn.button} data-size="sm" onClick={() => open('search')}>
-          <MagnifyingGlass size={16} aria-hidden /> Search
+          <MagnifyingGlass size={16} aria-hidden />{' '}
+          <span className={styles.buttonText}>Search</span>
         </button>
+        <p className="sr-only" role="status">
+          {added}
+        </p>
       </form>
     </section>
   )

@@ -59,6 +59,7 @@ export function NewBoardDialog({ open, onClose }: { open: boolean; onClose: () =
             value={title}
             maxLength={120}
             onChange={(e) => setTitle(e.target.value)}
+            data-autofocus
           />
         </label>
         <fieldset className={styles.presets}>

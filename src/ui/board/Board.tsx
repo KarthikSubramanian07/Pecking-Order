@@ -10,6 +10,7 @@ import {
   type DragStartEvent,
   type DropAnimation,
   getFirstCollision,
+  type KeyboardCoordinateGetter,
   KeyboardSensor,
   MeasuringStrategy,
   MouseSensor,
@@ -20,11 +21,10 @@ import {
   useSensor,
   useSensors,
 } from '@dnd-kit/core'
-import { sortableKeyboardCoordinates } from '@dnd-kit/sortable'
 import { AnimatePresence, useMotionValue } from 'motion/react'
 import * as m from 'motion/react-m'
 import { useCallback, useMemo, useRef, useState } from 'react'
-import { findContainer, opMoveItem } from '@/core/board'
+import { containerOrder, findContainer, opMoveItem } from '@/core/board'
 import { type Board as BoardData, COOP, type ContainerId, type ItemId } from '@/core/types'
 import { boardActions, useBoardStore } from '@/state/boardStore'
 import { useUiStore } from '@/state/uiStore'
@@ -48,18 +48,30 @@ const position = (board: BoardData, id: ItemId) => {
   return { where: cid ? containerName(cid) : 'nowhere', at: list.indexOf(id) + 1, of: list.length }
 }
 
+// dnd-kit reports "over itself" straight after pick-up; announcing that would
+// replace the "Picked up" message before a screen reader has read it.
+let justPickedUp = false
+
 const announcements: Announcements = {
   onDragStart({ active }) {
     const b = boardActions().board
     if (!b) return
+    justPickedUp = true
     const p = position(b, String(active.id))
     return `Picked up ${itemLabel(String(active.id))}. It is in ${p.where}, position ${p.at} of ${p.of}.`
   },
-  onDragOver({ active }) {
+  onDragOver({ active, over }) {
     const b = boardActions().board
-    if (!b) return
-    const p = position(b, String(active.id))
-    return `${itemLabel(String(active.id))} is in ${p.where}, position ${p.at} of ${p.of}.`
+    const first = justPickedUp
+    justPickedUp = false
+    if (!b || (first && over?.id === active.id)) return
+    const id = String(active.id)
+    const p = position(b, id)
+    // Within a row the order only changes on drop, so report the slot it is over.
+    const list = b.placement[findContainer(b, id) ?? ''] ?? []
+    const overAt = over ? list.indexOf(String(over.id)) : -1
+    const at = overAt >= 0 ? overAt + 1 : p.at
+    return `${itemLabel(id)} is in ${p.where}, position ${at} of ${p.of}.`
   },
   onDragEnd({ active }) {
     const b = boardActions().board
@@ -72,9 +84,59 @@ const announcements: Announcements = {
   },
 }
 
+const KEY_STEPS: Record<string, [axis: 'row' | 'slot', step: number]> = {
+  ArrowUp: ['row', -1],
+  ArrowDown: ['row', 1],
+  ArrowLeft: ['slot', -1],
+  ArrowRight: ['slot', 1],
+}
+
+/**
+ * Keyboard drags move in board order: Up and Down step to the previous or next
+ * row (tiers, then the Coop), Left and Right to the neighbouring slot in the row.
+ * dnd-kit's stock getter searches by on-screen distance, which skips rows and
+ * wanders between them once rows wrap.
+ */
+/**
+ * Where the arrow keys sent the current keyboard drag. Collision detection
+ * uses this instead of geometry, because the page reflows when a keyboard drag
+ * starts (the Coop leaves its dock) and any position-based guess would land
+ * the item on whatever row slid under it.
+ */
+let keyboardTarget: UniqueIdentifier | null = null
+
+const keyboardCoordinates: KeyboardCoordinateGetter = (event, { context }) => {
+  const move = KEY_STEPS[event.code]
+  if (!move) return undefined
+  event.preventDefault()
+  const b = boardActions().board
+  const { active, over, droppableContainers } = context
+  if (!b || !active) return undefined
+  const here = keyboardTarget ?? over?.id ?? active.id
+  const row = containerOf(b, here)
+  if (!row) return undefined
+  const [axis, step] = move
+  let target: UniqueIdentifier | undefined
+  if (axis === 'row') {
+    const order = containerOrder(b)
+    target = order[order.indexOf(row) + step]
+  } else {
+    const slots = b.placement[row] ?? []
+    const at = slots.indexOf(String(here))
+    target = slots[at === -1 ? 0 : at + step]
+  }
+  if (target === undefined) return undefined
+  keyboardTarget = target
+  // Measure the target live: cached droppable rects lag a frame behind the
+  // scroll, so quick repeated presses would aim at stale positions.
+  const node = droppableContainers.get(target)?.node.current
+  const rect = node?.getBoundingClientRect()
+  return rect ? { x: rect.left, y: rect.top } : undefined
+}
+
 const screenReaderInstructions = {
   draggable:
-    'To pick up an item, press Space or Enter. Use the arrow keys to move it, then Space or Enter to drop it, or Escape to cancel. You can also press 1 to 9 to send it straight to a tier, 0 for the Coop, E to edit and Delete to remove.',
+    'To pick up an item, press Space or Enter. Up and Down arrows move it to the row above or below, Left and Right move it along the row. Press Space or Enter to drop it, or Escape to cancel. You can also press 1 to 9 to send it straight to a tier, 0 for the Coop, E to edit and Delete to remove.',
 }
 
 export function Board() {
@@ -89,7 +151,9 @@ export function Board() {
     useSensor(MouseSensor, { activationConstraint: { distance: 4 } }),
     // A short press delay lets people scroll the page with a finger.
     useSensor(TouchSensor, { activationConstraint: { delay: 160, tolerance: 8 } }),
-    useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates }),
+    // Instant scrolling: a smooth scroll leaves stale rects, so a quick second
+    // arrow press would read old positions and the move would be lost.
+    useSensor(KeyboardSensor, { coordinateGetter: keyboardCoordinates, scrollBehavior: 'auto' }),
   )
 
   /**
@@ -102,6 +166,8 @@ export function Board() {
     (args) => {
       const b = boardActions().board
       if (!b) return []
+      // Keyboard drags have no pointer: go exactly where the arrow keys said.
+      if (!args.pointerCoordinates) return [{ id: keyboardTarget ?? args.active.id }]
       const pointer = pointerWithin(args)
       const hits = pointer.length > 0 ? pointer : rectIntersection(args)
       let overId = getFirstCollision(hits, 'id')
@@ -128,6 +194,7 @@ export function Board() {
   )
 
   const onDragStart = ({ active }: DragStartEvent) => {
+    keyboardTarget = null
     setActiveId(String(active.id))
     document.documentElement.dataset.dragging = ''
     useUiStore.getState().select(null)
@@ -159,7 +226,7 @@ export function Board() {
     boardActions().applyLive((d) => opMoveItem(d, String(active.id), to, index))
   }
 
-  const onDragEnd = ({ active, over }: DragEndEvent) => {
+  const onDragEnd = ({ active, over, activatorEvent }: DragEndEvent) => {
     const id = String(active.id)
     const b = boardActions().board
     if (b && over) {
@@ -174,6 +241,15 @@ export function Board() {
     }
     boardActions().endGesture(Boolean(over))
     finish(id)
+    // dnd-kit refocuses the tile without scrolling. Once the Coop has docked and
+    // grown back, bring the tile out from behind it.
+    if (activatorEvent instanceof KeyboardEvent) {
+      setTimeout(() => {
+        document
+          .querySelector(`[data-item-id="${CSS.escape(id)}"]`)
+          ?.scrollIntoView({ block: 'nearest' })
+      }, 260)
+    }
   }
 
   const onDragCancel = () => {
@@ -182,8 +258,10 @@ export function Board() {
   }
 
   const finish = (landed: ItemId | null) => {
+    keyboardTarget = null
     setActiveId(null)
     delete document.documentElement.dataset.dragging
+    delete document.documentElement.dataset.keyboardDrag
     lastOverId.current = null
     movedContainer.current = false
     if (landed) useUiStore.getState().land(landed)

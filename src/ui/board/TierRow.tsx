@@ -4,7 +4,7 @@ import type { Tier } from '@/core/types'
 import { useBoardStore } from '@/state/boardStore'
 import { useUiStore } from '@/state/uiStore'
 import { ArrowElbowDownLeft } from '@/ui/icons'
-import { moveItemTo } from '../actions'
+import { focusItem, moveItemTo } from '../actions'
 import { Container } from './Container'
 import styles from './TierRow.module.css'
 import { TierSettings } from './TierSettings'
@@ -29,25 +29,27 @@ export const TierRow = memo(function TierRow({ tier, index, count }: TierRowProp
       }
       aria-label={`${name}, ${items.length} ${items.length === 1 ? 'item' : 'items'}`}
     >
-      <TierSettings tier={tier} index={index} count={count}>
-        {(props) => (
-          <button
-            type="button"
-            className={styles.label}
-            data-short={short || undefined}
-            aria-label={`${name} settings`}
-            title="Rename, recolour or move this tier"
-            {...props}
-          >
-            <span className={styles.labelText}>{tier.label}</span>
-            {index < 9 && (
-              <kbd className={styles.key} aria-hidden>
-                {index + 1}
-              </kbd>
-            )}
-          </button>
+      <div className={styles.labelCell}>
+        <TierSettings tier={tier} index={index} count={count}>
+          {(props) => (
+            <button
+              type="button"
+              className={styles.label}
+              data-short={short || undefined}
+              aria-label={`${name} settings`}
+              title="Rename, recolour or move this tier"
+              {...props}
+            >
+              <span className={styles.labelText}>{tier.label}</span>
+            </button>
+          )}
+        </TierSettings>
+        {index < 9 && (
+          <kbd className={styles.key} aria-hidden>
+            {index + 1}
+          </kbd>
         )}
-      </TierSettings>
+      </div>
 
       <Container
         id={tier.id}
@@ -61,14 +63,14 @@ export const TierRow = memo(function TierRow({ tier, index, count }: TierRowProp
         <button
           type="button"
           className={styles.placeHere}
-          aria-label={`Place selected item in ${name}`}
           onClick={() => {
             moveItemTo(selected, tier.id)
             useUiStore.getState().select(null)
+            focusItem(selected)
           }}
         >
           <ArrowElbowDownLeft size={15} weight="bold" aria-hidden />
-          Place here
+          Place here<span className="sr-only"> in {name}</span>
         </button>
       )}
     </section>

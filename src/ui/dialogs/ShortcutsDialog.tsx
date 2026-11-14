@@ -6,7 +6,8 @@ export function ShortcutsDialog({ open, onClose }: { open: boolean; onClose: () 
   const mod = isMac() ? '⌘' : 'Ctrl'
   const rows: [string, string[]][] = [
     ['Pick up / drop the focused item', ['Space']],
-    ['Move a picked-up item', ['←', '↑', '→', '↓']],
+    ['Move a picked-up item up or down a row', ['↑', '↓']],
+    ['Move a picked-up item along its row', ['←', '→']],
     ['Cancel a move', ['Esc']],
     ['Send focused item to tier 1–9', ['1', '…', '9']],
     ['Send focused item to the Coop', ['0']],

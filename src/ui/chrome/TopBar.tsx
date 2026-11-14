@@ -47,6 +47,10 @@ export function TopBar({ onBoard: onBoardRoute }: { onBoard: boolean }) {
 
   useEffect(() => setDraft(title), [title])
 
+  useEffect(() => {
+    if (title) document.title = `${title} · Pecking Order`
+  }, [title])
+
   const commit = () => {
     if (draft.trim() !== title) boardActions().apply((b) => opSetTitle(b, draft))
     else setDraft(title)
@@ -120,25 +124,25 @@ export function TopBar({ onBoard: onBoardRoute }: { onBoard: boolean }) {
               {
                 label: 'Light theme',
                 icon: <Sun size={16} />,
-                hint: theme === 'light' ? '✓' : undefined,
+                checked: theme === 'light',
                 onSelect: () => setPref('theme', 'light'),
               },
               {
                 label: 'Dark theme',
                 icon: <Moon size={16} />,
-                hint: theme === 'dark' ? '✓' : undefined,
+                checked: theme === 'dark',
                 onSelect: () => setPref('theme', 'dark'),
               },
               {
                 label: 'Match system',
                 icon: <Monitor size={16} />,
-                hint: theme === 'system' ? '✓' : undefined,
+                checked: theme === 'system',
                 onSelect: () => setPref('theme', 'system'),
               },
               ...(['sm', 'md', 'lg'] as const).map((size, i) => ({
                 label: SIZE_LABEL[size],
                 separated: i === 0,
-                hint: itemSize === size ? '✓' : undefined,
+                checked: itemSize === size,
                 onSelect: () => setPref('itemSize', size),
               })),
               {
@@ -188,7 +192,7 @@ export function TopBar({ onBoard: onBoardRoute }: { onBoard: boolean }) {
               onClick={() => open('export')}
             >
               <Export size={18} weight="bold" aria-hidden />
-              Export
+              <span className={styles.hideXs}>Export</span>
             </button>
           )}
         </nav>
@@ -226,13 +230,17 @@ export function TopBar({ onBoard: onBoardRoute }: { onBoard: boolean }) {
               {total} {total === 1 ? 'item' : 'items'}, {total - unranked} ranked
             </span>
             <span aria-hidden>·</span>
-            <span className={styles.save} data-status={saveStatus} aria-live="polite">
+            <span className={styles.save} data-status={saveStatus}>
               {saveStatus === 'saving'
                 ? 'saving…'
                 : saveStatus === 'error'
                   ? 'not saved, storage may be full'
                   : 'saved on this device'}
             </span>
+          </p>
+          {/* Every edit saves, so only a failure is worth interrupting for. */}
+          <p className="sr-only" role="alert">
+            {saveStatus === 'error' ? 'Not saved. Storage may be full.' : ''}
           </p>
         </div>
       )}

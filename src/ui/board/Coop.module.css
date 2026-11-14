@@ -35,6 +35,8 @@
 }
 .tools {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   align-items: center;
   gap: var(--s-1);
 }
@@ -44,7 +46,7 @@
   gap: var(--s-2);
   height: 32px;
   padding: 0 var(--s-3);
-  border: 1px solid var(--line);
+  border: 1px solid var(--field-line);
   border-radius: var(--r-pill);
   background: var(--surface-raised);
   color: var(--muted);
@@ -52,8 +54,13 @@
 .filter:focus-within {
   border-color: var(--focus);
 }
+.filter:has(input:focus-visible) {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
 .filter input {
-  width: 120px;
+  width: 100px;
+  min-width: 0;
   border: 0;
   background: transparent;
   outline: none;
@@ -89,7 +96,7 @@
   height: 32px;
   padding: 6px var(--s-3);
   resize: none;
-  border: 1px solid var(--line);
+  border: 1px solid var(--field-line);
   border-radius: var(--r-pill);
   background: var(--surface-raised);
   font-size: var(--text-sm);
@@ -109,11 +116,43 @@
   font-size: var(--text-sm);
 }
 
+/* Narrow screens keep Upload and Search, as icons, so nothing is lost on reflow. */
 @media (max-width: 640px) {
-  .or,
-  .quick > button:not([type="submit"]) {
+  .or {
     display: none;
   }
+  .quick > button:not([type="submit"]) {
+    width: 32px;
+    padding: 0;
+  }
+  .quick > button:not([type="submit"]) .buttonText {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+}
+
+/* On short screens (landscape phones, 200% zoom) a docked Coop would hide most
+   of the board, so it joins the page flow instead. */
+@media (max-height: 500px) {
+  .coop {
+    position: static;
+  }
+}
+
+/* Arrow keys move a keyboard drag by on-screen position, and the docked Coop sits
+   on top of the lower tiers. For keyboard drags it joins the page flow, so every
+   tier is above it and reachable with the arrow keys. */
+:root[data-keyboard-drag] .coop {
+  position: static;
+}
+/* Resize instantly for keyboard drags: an animated height keeps the page
+   moving under the arrow keys and makes quick presses aim at stale rows. */
+:root[data-keyboard-drag] .grid {
+  transition: none;
 }
 
 /* While dragging, the dock ducks to one row so every tier stays reachable. */

@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { boardActions } from '@/state/boardStore'
 import { ui, useUiStore } from '@/state/uiStore'
+import { focusItem } from '../actions'
 import { isTypingTarget } from '../chrome/keys'
 import { ingestTransfer } from './useIngest'
 
@@ -11,13 +12,14 @@ export function useGlobalShortcuts(): void {
       if (isTypingTarget(e.target) || useUiStore.getState().dialog) return
       const mod = e.metaKey || e.ctrlKey
       const key = e.key.toLowerCase()
-      if (mod && key === 'z') {
+      if (mod && (key === 'z' || key === 'y')) {
         e.preventDefault()
-        if (e.shiftKey) boardActions().redo()
-        else boardActions().undo()
-      } else if (mod && key === 'y') {
-        e.preventDefault()
-        boardActions().redo()
+        // Undo can move the focused tile to another row, which remounts it.
+        const focused = (e.target as HTMLElement).closest?.<HTMLElement>('[data-item-id]')
+        if (key === 'z' && !e.shiftKey) boardActions().undo()
+        else boardActions().redo()
+        const id = focused?.dataset.itemId
+        if (id && boardActions().board?.items[id]) focusItem(id)
       } else if (!mod && e.key === '?') {
         ui().open('shortcuts')
       } else if (e.key === 'Escape') {

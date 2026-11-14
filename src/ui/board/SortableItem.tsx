@@ -47,7 +47,7 @@ export const SortableItem = memo(function SortableItem({
     }
     if (e.key === 'Delete' || e.key === 'Backspace') {
       e.preventDefault()
-      removeItems([id])
+      removeItems([id], { refocus: true })
       return
     }
     if (e.key === 'e' || e.key === 'F2') {
@@ -58,6 +58,10 @@ export const SortableItem = memo(function SortableItem({
     if (e.key === 'Escape' && selected) {
       useUiStore.getState().select(null)
       return
+    }
+    // Set before dnd-kit measures, so the drag starts with the Coop undocked.
+    if (e.code === 'Space' || e.code === 'Enter') {
+      document.documentElement.dataset.keyboardDrag = ''
     }
     listeners?.onKeyDown?.(e)
   }

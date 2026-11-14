@@ -74,6 +74,10 @@
   overflow: auto;
   overscroll-behavior: contain;
 }
+/* The panel clips overflow, so a focused scrolling body draws its ring inside. */
+.body:focus-visible {
+  outline-offset: -2px;
+}
 .footer {
   display: flex;
   justify-content: flex-end;

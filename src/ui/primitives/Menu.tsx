@@ -13,6 +13,8 @@ export interface MenuItem {
   label: string
   icon?: ReactNode
   hint?: string
+  /** Makes the item a radio option (one of a set) that exposes its state. */
+  checked?: boolean
   onSelect: () => void
   danger?: boolean
   disabled?: boolean
@@ -65,14 +67,14 @@ export function Menu({ trigger, items, align = 'end', label }: MenuProps) {
     if (open) {
       el.showPopover()
       place()
-      el.querySelector<HTMLElement>('[role="menuitem"]:not([aria-disabled="true"])')?.focus()
+      el.querySelector<HTMLElement>('[role^="menuitem"]:not([aria-disabled="true"])')?.focus()
     } else if (el.matches(':popover-open')) {
       el.hidePopover()
     }
   }, [open, place])
 
   const onKeyDown = (e: KeyboardEvent) => {
-    const nodes = [...(listRef.current?.querySelectorAll<HTMLElement>('[role="menuitem"]') ?? [])]
+    const nodes = [...(listRef.current?.querySelectorAll<HTMLElement>('[role^="menuitem"]') ?? [])]
     const i = nodes.indexOf(document.activeElement as HTMLElement)
     const go = (n: number) => nodes[(n + nodes.length) % nodes.length]?.focus()
     if (e.key === 'ArrowDown') go(i + 1)
@@ -114,7 +116,9 @@ export function Menu({ trigger, items, align = 'end', label }: MenuProps) {
             {item.separated && <hr className={styles.sep} />}
             <button
               type="button"
-              role="menuitem"
+              {...(item.checked === undefined
+                ? { role: 'menuitem' }
+                : { role: 'menuitemradio', 'aria-checked': item.checked })}
               tabIndex={-1}
               className={styles.item}
               data-danger={item.danger || undefined}
@@ -127,6 +131,11 @@ export function Menu({ trigger, items, align = 'end', label }: MenuProps) {
             >
               {item.icon && <span className={styles.icon}>{item.icon}</span>}
               <span className={styles.label}>{item.label}</span>
+              {item.checked && (
+                <span className={styles.hint} aria-hidden>
+                  ✓
+                </span>
+              )}
               {item.hint && <kbd className={styles.hint}>{item.hint}</kbd>}
             </button>
           </div>
