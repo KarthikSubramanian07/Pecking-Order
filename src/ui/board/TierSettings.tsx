@@ -96,7 +96,7 @@ export function TierSettings({ tier, index, count, children }: TierSettingsProps
           }}
         >
           <label className={styles.field}>
-            <span className="mono">Name</span>
+            <span className="label">Name</span>
             <input
               className={styles.input}
               value={draft}
@@ -107,7 +107,7 @@ export function TierSettings({ tier, index, count, children }: TierSettingsProps
           </label>
 
           <fieldset className={styles.swatches}>
-            <legend className="mono">Colour</legend>
+            <legend className="label">Colour</legend>
             {SWATCHES.map((s) => (
               <label
                 key={s.hex}

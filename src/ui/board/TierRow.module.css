@@ -58,7 +58,7 @@
   position: absolute;
   top: 5px;
   right: 6px;
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
   font-size: 10px;
   font-weight: 600;
   opacity: 0;
