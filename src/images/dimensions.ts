@@ -13,7 +13,7 @@ import type { Size } from './pipeline'
 /** Bigger than any phone camera's default mode; a decode stays under ~400 MB. */
 export const MAX_DECODE_PIXELS = 100_000_000
 /** Browsers refuse canvases beyond this on a side anyway. */
-export const MAX_DECODE_SIDE = 32_767
+const MAX_DECODE_SIDE = 32_767
 
 export function readImageSize(bytes: Uint8Array): Size | null {
   const at = (i: number) => bytes[i] ?? 0
@@ -103,7 +103,7 @@ export function assertDecodableSize(size: Size | null): void {
  * Bytes enough for the header of every format above. JPEG metadata can push
  * the frame header further in, so callers retry with the whole file then.
  */
-export const HEADER_BYTES = 1024 * 1024
+const HEADER_BYTES = 1024 * 1024
 
 /** Reads a Blob's declared size from its first bytes, then from all of it if needed. */
 export async function sniffBlobSize(blob: Blob): Promise<Size | null> {

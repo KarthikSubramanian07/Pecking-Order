@@ -29,7 +29,7 @@ const str = (v: unknown, max: number, fallback = ''): string =>
   typeof v === 'string' ? clampText(v, max) : fallback
 
 /** Well-formed and never a key that Object.prototype owns (see `isSafeKey`). */
-export function isSafeId(v: unknown): v is string {
+function isSafeId(v: unknown): v is string {
   return typeof v === 'string' && ID_RE.test(v) && isSafeKey(v)
 }
 
