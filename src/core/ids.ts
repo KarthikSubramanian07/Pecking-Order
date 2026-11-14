@@ -17,3 +17,12 @@ function randomId(): string {
 }
 
 export const newId = (prefix: 't' | 'i' | 'b'): string => `${prefix}_${randomId()}`
+
+/**
+ * Ids are used as keys of plain objects (`board.items`, `board.placement`).
+ * A key that Object.prototype already owns (`__proto__`, `constructor`,
+ * `toString`...) would swap the object's prototype or shadow a built-in.
+ */
+export function isSafeKey(key: string): boolean {
+  return key !== '__proto__' && !(key in Object.prototype)
+}
