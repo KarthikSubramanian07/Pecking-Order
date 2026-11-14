@@ -15,6 +15,8 @@ import { startBlank, startFromPack } from '../start'
 import styles from './Home.module.css'
 
 const FEATURED = 'Featured'
+/** Cards on the first page; the contribute card makes it an even dozen. */
+const PAGE = 11
 const ALL = 'All'
 const accentHex = (name?: string) => SWATCHES.find((s) => s.name === name)?.hex ?? '#d97757'
 const dateFmt = new Intl.DateTimeFormat(undefined, { month: 'short', day: 'numeric' })
@@ -25,6 +27,7 @@ export function Home() {
   const [title, setTitle] = useState('')
   const [query, setQuery] = useState('')
   const [category, setCategory] = useState(ALL)
+  const [expanded, setExpanded] = useState(false)
 
   useEffect(() => {
     void listPacks().then(setPacks)
@@ -51,6 +54,16 @@ export function Home() {
       )
       .sort((a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured)))
   }, [packs, query, category])
+
+  // Browsing everything starts with a tidy first page; filters always show all matches.
+  const browsingAll = category === ALL && !query.trim()
+  const visible = browsingAll && !expanded ? shown.slice(0, PAGE) : shown
+  const countFor = (c: string) =>
+    c === ALL
+      ? packs.length
+      : c === FEATURED
+        ? packs.filter((p) => p.featured).length
+        : packs.filter((p) => p.category === c).length
 
   return (
     <main id="main" className={styles.home} tabIndex={-1}>
@@ -135,12 +148,15 @@ export function Home() {
               aria-pressed={category === c}
               onClick={() => setCategory(c)}
             >
-              {c}
+              {c} <span className={styles.chipCount}>{countFor(c)}</span>
             </button>
           ))}
         </fieldset>
-        <ul className={styles.templateGrid} aria-live="polite">
-          {shown.map((p) => (
+        <p className="sr-only" role="status">
+          {shown.length} {shown.length === 1 ? 'template' : 'templates'}
+        </p>
+        <ul className={styles.templateGrid}>
+          {visible.map((p) => (
             <TemplateCard key={p.id} pack={p} />
           ))}
           <li>
@@ -167,6 +183,15 @@ export function Home() {
             )}
           </li>
         </ul>
+        {visible.length < shown.length && (
+          <button
+            type="button"
+            className={`${btn.button} ${styles.more}`}
+            onClick={() => setExpanded(true)}
+          >
+            Show all {shown.length} templates
+          </button>
+        )}
       </section>
     </main>
   )
