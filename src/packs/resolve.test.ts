@@ -15,6 +15,13 @@ afterEach(() => {
 })
 
 describe('upscaleThumb', () => {
+  it('returns hostile, overlong input untouched and quickly', () => {
+    const hostile = `${'/thumb/'.repeat(20_000)}/1px-`
+    const start = performance.now()
+    expect(upscaleThumb(hostile, 4000)).toBe(hostile)
+    expect(performance.now() - start).toBeLessThan(50)
+  })
+
   it('swaps in the 500px step when the original is large enough', () => {
     expect(upscaleThumb(THUMB, 1600)).toBe(
       'https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Hen.jpg/500px-Hen.jpg?utm_source=en.wikipedia.org',

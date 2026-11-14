@@ -23,6 +23,7 @@ export const WIKIMEDIA_HEADERS: Readonly<Record<string, string>> = {
 
 /** Wikimedia only renders thumbnails at standard steps; anything else is a 400/429. */
 const TARGET_WIDTH = 500
+const MAX_URL_LENGTH = 2048
 
 type Json = Record<string, unknown>
 const isObj = (v: unknown): v is Json => typeof v === 'object' && v !== null && !Array.isArray(v)
@@ -92,6 +93,8 @@ async function resolveWikipedia(
  * original fails, so smaller images stay as they are.
  */
 export function upscaleThumb(thumb: string, originalWidth: unknown): string {
+  // The pattern backtracks quadratically on long hostile strings; real URLs are short.
+  if (thumb.length > MAX_URL_LENGTH) return thumb
   const m = /^(.*\/thumb\/.+\/)(\d+)px-([^/]+)$/.exec(thumb.split('?')[0] ?? '')
   if (!m) return thumb
   const current = Number(m[2])
