@@ -149,3 +149,10 @@ kbd {
   animation-duration: 280ms;
   animation-timing-function: var(--ease-out);
 }
+
+/* No accidental text selection while an item is being dragged. */
+:root[data-dragging] {
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: grabbing;
+}

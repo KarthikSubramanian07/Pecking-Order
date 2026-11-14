@@ -129,6 +129,7 @@ export function Board() {
 
   const onDragStart = ({ active }: DragStartEvent) => {
     setActiveId(String(active.id))
+    document.documentElement.dataset.dragging = ''
     useUiStore.getState().select(null)
     dragX.jump(0)
     boardActions().beginGesture()
@@ -182,6 +183,7 @@ export function Board() {
 
   const finish = (landed: ItemId | null) => {
     setActiveId(null)
+    delete document.documentElement.dataset.dragging
     lastOverId.current = null
     movedContainer.current = false
     if (landed) useUiStore.getState().land(landed)
@@ -234,7 +236,7 @@ export function Board() {
           ))}
         </AnimatePresence>
       </div>
-      <Coop items={board.placement[COOP] ?? []} />
+      <Coop items={board.placement[COOP] ?? []} dragging={activeId !== null} />
       <DragOverlay dropAnimation={dropAnimation}>
         {activeItem ? (
           <DragGhost item={activeItem} dragX={dragX} reducedMotion={reducedMotion} />

@@ -12,7 +12,7 @@ import { Container } from './Container'
 import styles from './Coop.module.css'
 
 /** The unranked pool, docked to the bottom so it's always one drag away. */
-export function Coop({ items }: { items: ItemId[] }) {
+export function Coop({ items, dragging }: { items: ItemId[]; dragging: boolean }) {
   const allItems = useBoardStore((s) => s.board?.items)
   const total = useBoardStore((s) => Object.keys(s.board?.items ?? {}).length)
   const selected = useUiStore((s) => s.selected)
@@ -58,6 +58,7 @@ export function Coop({ items }: { items: ItemId[] }) {
     <section
       ref={dock}
       className={styles.coop}
+      data-dragging={dragging || undefined}
       aria-labelledby="coop-title"
       data-empty={brandNew || undefined}
     >
