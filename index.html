@@ -3,12 +3,269 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Pecking Order — rank anything</title>
-    <meta name="description" content="A fast, free, local-first tier list maker. Drag anything into tiers, export a clean image. No account." />
-    <meta name="theme-color" content="#f6f1e7" />
+    <title>Pecking Order — rank anything with a free tier list maker</title>
+    <meta
+      name="description"
+      content="Rank anything. Pecking Order is a fast, free, local-first tier list maker: drag images into tiers and export a clean picture. No account, nothing uploaded."
+    />
+    <link rel="canonical" href="https://pecking-order.pages.dev/" />
+    <meta name="theme-color" content="#f6f1e7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1a1714" media="(prefers-color-scheme: dark)" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="is-agentic-site-type" content="app" />
+    <link rel="alternate" type="text/markdown" href="/index.md" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Pecking Order" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://pecking-order.pages.dev/" />
+    <meta property="og:title" content="Pecking Order — rank anything" />
+    <meta
+      property="og:description"
+      content="A fast, free, local-first tier list maker. Drag anything into tiers, export a clean image. No account."
+    />
+    <meta property="og:image" content="https://pecking-order.pages.dev/og.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Pecking Order: the words Rank anything beside a line-drawn hen and a small colour-coded tier list."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pecking Order — rank anything" />
+    <meta
+      name="twitter:description"
+      content="A fast, free, local-first tier list maker. Drag anything into tiers, export a clean image. No account."
+    />
+    <meta name="twitter:image" content="https://pecking-order.pages.dev/og.png" />
+    <meta
+      name="twitter:image:alt"
+      content="Pecking Order: the words Rank anything beside a line-drawn hen and a small colour-coded tier list."
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebApplication",
+            "@id": "https://pecking-order.pages.dev/#app",
+            "name": "Pecking Order",
+            "url": "https://pecking-order.pages.dev/",
+            "description": "A fast, free, local-first tier list maker that runs entirely in the browser. Drag images into tiers and export a clean picture. No account, nothing uploaded.",
+            "applicationCategory": "EntertainmentApplication",
+            "operatingSystem": "Any (web browser)",
+            "browserRequirements": "Requires JavaScript and a modern browser.",
+            "image": "https://pecking-order.pages.dev/og.png",
+            "inLanguage": "en",
+            "isAccessibleForFree": true,
+            "keywords": "tier list maker, ranking, rank anything, tier list, tiermaker alternative",
+            "license": "https://opensource.org/licenses/MIT",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+            "publisher": { "@id": "https://pecking-order.pages.dev/#org" },
+            "sameAs": ["https://github.com/KarthikSubramanian07/Pecking-Order"]
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://pecking-order.pages.dev/#org",
+            "name": "Pecking Order",
+            "url": "https://pecking-order.pages.dev/",
+            "logo": "https://pecking-order.pages.dev/icon-512.png",
+            "sameAs": [
+              "https://github.com/KarthikSubramanian07/Pecking-Order",
+              "https://buymeacoffee.com/winnerkarthik"
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer support",
+              "url": "https://github.com/KarthikSubramanian07/Pecking-Order/issues"
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://pecking-order.pages.dev/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Is Pecking Order free?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Pecking Order is free and open source under the MIT licence. There are no ads, no premium tier and no sign-up."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need an account?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. There are no accounts. Open the page and start ranking."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where is my data stored?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "On your device, in your browser's IndexedDB storage. Boards and images never leave your device unless you export or share them yourself. Clearing this site's data in your browser deletes them."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I use my own images?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Drop in files or whole folders, paste from the clipboard, or drag pictures in from other web pages. They are stored on your device and never uploaded."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I add a category pack?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Packs are small JSON files in the GitHub repository: a title, a list of items, and where each item's picture lives on Wikipedia or Wikimedia Commons. Open a pull request that adds packs/your-pack/pack.json, or file a pack request issue."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <style>
+      :root{--sh-p:#f6f1e7;--sh-s:#fbf8f1;--sh-i:#1f1a17;--sh-m:#6b635a;--sh-h:#e2d9c8;--sh-a:#a9472e}
+      @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--sh-p:#1a1714;--sh-s:#24201c;--sh-i:#f2ece0;--sh-m:#a69c8e;--sh-h:#3a332d;--sh-a:#eb9a80}}
+      :root[data-theme=dark]{--sh-p:#1a1714;--sh-s:#24201c;--sh-i:#f2ece0;--sh-m:#a69c8e;--sh-h:#3a332d;--sh-a:#eb9a80}
+      body:has(.sh){margin:0;background:var(--sh-p);color:var(--sh-i)}
+      .sh{max-width:72rem;margin:0 auto;padding:20px 16px 40px;font:1rem/1.6 "Instrument Sans Variable",system-ui,sans-serif}
+      .sh a{color:var(--sh-a);text-underline-offset:.18em}
+      .sh h1,.sh h2,.sh h3,.sh .wm{font-family:"Fraunces Variable","Iowan Old Style",Georgia,serif;font-weight:500;letter-spacing:-.015em;line-height:1.1;margin:0}
+      .sh>header,.sh>footer{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:center;justify-content:space-between}
+      .sh nav{display:flex;gap:20px}.sh nav a,.sh .wm{color:inherit;text-decoration:none}
+      .sh .wm{display:flex;gap:8px;align-items:center;font-size:1.25rem}
+      .sh img{color-scheme:light dark}:root[data-theme=dark] .sh img{color-scheme:dark}
+      .sh h1{font-size:clamp(3rem,10vw,6rem);letter-spacing:-.035em;margin:clamp(40px,10vh,104px) 0 20px}
+      .sh .lede{font-size:1.2rem;max-width:34rem;color:var(--sh-m)}
+      .sh .g{display:grid;gap:8px 48px;grid-template-columns:repeat(auto-fit,minmax(min(100%,19rem),1fr));margin-top:48px}
+      .sh section{border-top:1px solid var(--sh-h);padding-top:20px;margin-top:24px}
+      .sh h2{font-size:1.6rem;margin-bottom:12px}.sh .faq .g{margin-top:0}.sh h3{font-size:1.15rem;margin:16px 0 4px}
+      .sh ol,.sh ul{padding-left:1.25em;margin:0}.sh li+li{margin-top:8px}.sh p{margin:0}
+      .sh noscript p{margin-top:24px;padding:12px 16px;border:1px solid var(--sh-h);border-radius:10px;background:var(--sh-s)}
+      .sh .faq p{color:var(--sh-m)}
+      .sh>footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--sh-h);font-size:.875rem;color:var(--sh-m)}
+      .sh>footer nav{flex-wrap:wrap;gap:4px 16px}
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="sh">
+        <header>
+          <a class="wm" href="/"
+            ><img src="/hen.svg" alt="" width="32" height="32" />Pecking Order</a
+          >
+          <nav aria-label="Site">
+            <a href="/about/">About</a>
+            <a href="/privacy/">Privacy</a>
+            <a href="https://github.com/KarthikSubramanian07/Pecking-Order">GitHub</a>
+          </nav>
+        </header>
+        <main>
+          <h1>Rank anything.</h1>
+          <p class="lede">
+            Pecking Order is a fast, free tier list maker that runs entirely in your browser. Drop
+            in pictures, drag them into tiers, and export a clean image of your opinions. No account,
+            nothing uploaded.
+          </p>
+          <noscript>
+            <p>
+              Pecking Order is an app that runs in your browser, so it needs JavaScript switched on.
+              Everything on this page still describes it, and the
+              <a href="/about/">about page</a> has the rest.
+            </p>
+          </noscript>
+          <div class="g">
+            <section>
+              <h2>How it works</h2>
+              <ol>
+                <li>
+                  <strong>Add things.</strong> Drop in images or whole folders, paste links, type
+                  names, or search Wikipedia, Wikimedia Commons and Openverse for pictures.
+                </li>
+                <li>
+                  <strong>Peck them into order.</strong> Drag each item into a tier from S to F, or
+                  rename the tiers to suit the argument.
+                </li>
+                <li>
+                  <strong>Export and settle it.</strong> Download a crisp PNG, copy it to the
+                  clipboard, or share it straight from your phone.
+                </li>
+              </ol>
+            </section>
+            <section>
+              <h2>Features</h2>
+              <ul>
+                <li>Boards save to your device as you go. No sign-up, no server.</li>
+                <li>Your own images from files, folders, the clipboard or other websites.</li>
+                <li>Image search across Wikipedia, Wikimedia Commons and Openverse, with credits kept.</li>
+                <li>Category packs: ready-made starter sets, contributed on GitHub.</li>
+                <li>Custom tier labels and colours, undo and redo, light and dark themes.</li>
+                <li>Image export in wide, portrait and story shapes.</li>
+                <li>Free and open source under the MIT licence.</li>
+              </ul>
+            </section>
+          </div>
+          <section class="faq">
+            <h2>FAQ</h2>
+            <div class="g">
+              <div>
+                <h3>Is it free?</h3>
+                <p>
+                  Yes. Pecking Order is free and open source under the MIT licence. There are no
+                  ads, no premium tier and no sign-up.
+                </p>
+                <h3>Do I need an account?</h3>
+                <p>No. There are no accounts. Open the page and start ranking.</p>
+                <h3>Where is my data stored?</h3>
+                <p>
+                  On your device, in your browser's IndexedDB storage. Boards and images never
+                  leave your device unless you export or share them yourself. Clearing this site's
+                  data in your browser deletes them.
+                </p>
+              </div>
+              <div>
+                <h3>Can I use my own images?</h3>
+                <p>
+                  Yes. Drop in files or whole folders, paste from the clipboard, or drag pictures in
+                  from other web pages. They are stored on your device and never uploaded.
+                </p>
+                <h3>How do I add a category pack?</h3>
+                <p>
+                  Packs are small JSON files in the
+                  <a href="https://github.com/KarthikSubramanian07/Pecking-Order">GitHub repository</a>:
+                  a title, a list of items, and where each item's picture lives on Wikipedia or
+                  Wikimedia Commons. Open a pull request that adds
+                  <code>packs/your-pack/pack.json</code>, or file a
+                  <a href="https://github.com/KarthikSubramanian07/Pecking-Order/issues/new?template=pack_request.yml">pack request</a>.
+                </p>
+              </div>
+            </div>
+          </section>
+        </main>
+        <footer>
+          <p>Pecking Order · free and open source, MIT licensed</p>
+          <nav aria-label="Footer">
+            <a href="/about/">About</a>
+            <a href="/privacy/">Privacy</a>
+            <a href="/contact/">Contact</a>
+            <a href="https://github.com/KarthikSubramanian07/Pecking-Order">GitHub</a>
+            <a href="https://buymeacoffee.com/winnerkarthik">Buy me a coffee</a>
+          </nav>
+        </footer>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
