@@ -1,0 +1,144 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "sushi",
+  "version": "1.0.0",
+  "title": "Sushi",
+  "description": "Rice, fish and the occasional cream cheese controversy.",
+  "category": "Food & Drink",
+  "accent": "Comb",
+  "author": "Pecking Order",
+  "tiers": ["Omakase", "Chef Recommends", "Conveyor Belt", "Gas Station", "Too Much Wasabi"],
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Nigiri_Sushi_%2825966163204%29.jpg/500px-Nigiri_Sushi_%2825966163204%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Sashimi_of_S%C3%A3o_Paulo.jpg/500px-Sashimi_of_S%C3%A3o_Paulo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Golden_Maki_Rainbow_Roll_sushi.jpg/500px-Golden_Maki_Rainbow_Roll_sushi.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Ikura_gunkan_maki_sushi_by_sunday_driver_in_Kyoto.jpg/500px-Ikura_gunkan_maki_sushi_by_sunday_driver_in_Kyoto.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  ],
+  "items": [
+    {
+      "id": "nigiri",
+      "label": "Nigiri",
+      "commons": "File:Nigiri Sushi (25966163204).jpg"
+    },
+    {
+      "id": "sashimi",
+      "label": "Sashimi",
+      "commons": "File:Sashimi of São Paulo.jpg"
+    },
+    {
+      "id": "maki",
+      "label": "Maki",
+      "commons": "File:Shitake mushroom maki roll from Sushi Club.jpg"
+    },
+    {
+      "id": "temaki",
+      "label": "Temaki",
+      "commons": "File:Temaki sushi.jpg"
+    },
+    {
+      "id": "california-roll",
+      "label": "California Roll",
+      "wikipedia": "California roll"
+    },
+    {
+      "id": "spicy-tuna-roll",
+      "label": "Spicy Tuna Roll",
+      "wikipedia": "Spicy tuna roll"
+    },
+    {
+      "id": "philadelphia-roll",
+      "label": "Philadelphia Roll",
+      "wikipedia": "Philadelphia roll"
+    },
+    {
+      "id": "dragon-roll",
+      "label": "Dragon Roll",
+      "commons": "File:Golden Maki Vegetarian Dragon sushi roll.jpg"
+    },
+    {
+      "id": "rainbow-roll",
+      "label": "Rainbow Roll",
+      "wikipedia": "Rainbow roll"
+    },
+    {
+      "id": "inarizushi",
+      "label": "Inarizushi",
+      "commons": "File:Kantofu Inarizushi.jpg"
+    },
+    {
+      "id": "chirashizushi",
+      "label": "Chirashi",
+      "commons": "File:Chirashi-zushi.jpg"
+    },
+    {
+      "id": "gunkanmaki",
+      "label": "Gunkan Maki",
+      "commons": "File:Sushi mit Caviar (25966193204).jpg"
+    },
+    {
+      "id": "oshizushi",
+      "label": "Oshizushi",
+      "commons": "File:Trichiurus lepturus Sushi.JPG"
+    },
+    {
+      "id": "futomaki",
+      "label": "Futomaki",
+      "commons": "File:Futomaki zushi in 201902.jpg"
+    },
+    {
+      "id": "tekkamaki",
+      "label": "Tekka Maki",
+      "commons": "File:Makizushi Tekkamaki 1.jpg"
+    },
+    {
+      "id": "kappamaki",
+      "label": "Kappa Maki",
+      "wikipedia": "Kappamaki"
+    },
+    {
+      "id": "tamago",
+      "label": "Tamago",
+      "commons": "File:Nigiri Sushi (26505096851).jpg"
+    },
+    {
+      "id": "unagi",
+      "label": "Unagi",
+      "commons": "File:Unagi nigiri sushi - Sushiko (2648979137).jpg"
+    },
+    {
+      "id": "ikura",
+      "label": "Ikura",
+      "commons": "File:Ikura gunkan maki sushi by sunday driver in Kyoto.jpg"
+    },
+    {
+      "id": "uni",
+      "label": "Uni",
+      "commons": "File:Uni gunkan-maki.jpg"
+    },
+    {
+      "id": "toro",
+      "label": "Toro",
+      "commons": "File:Otoro maguro.jpg"
+    },
+    {
+      "id": "ebi",
+      "label": "Ebi",
+      "commons": "File:Nigiri Sushi (26478732232).jpg"
+    },
+    {
+      "id": "hamachi",
+      "label": "Hamachi",
+      "commons": "File:Hamachi nigiri.jpg"
+    },
+    {
+      "id": "uramaki",
+      "label": "Uramaki",
+      "commons": "File:Vegetarian Sushi Maki roll.jpg"
+    },
+    {
+      "id": "spider-roll",
+      "label": "Spider Roll",
+      "wikipedia": "Spider roll"
+    }
+  ]
+}
