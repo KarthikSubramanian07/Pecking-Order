@@ -1,8 +1,9 @@
-import { Copy, Trash } from '@phosphor-icons/react'
+import { Copy, DownloadSimple, Trash, UploadSimple } from '@phosphor-icons/react'
 import { useEffect, useState } from 'react'
 import type { BoardSummary } from '@/core/types'
 import { useBoardStore } from '@/state/boardStore'
 import { ui } from '@/state/uiStore'
+import { downloadBackup, pickBackup } from '../backup'
 import { useImageUrl } from '../hooks/useImageUrl'
 import btn from '../primitives/Button.module.css'
 import { Dialog } from '../primitives/Dialog'
@@ -41,6 +42,24 @@ export function BoardsDialog({ open, onClose }: { open: boolean; onClose: () => 
       title="My boards"
       subtitle={`${boards.length} saved on this device. Nothing leaves it unless you export.`}
       size="lg"
+      footer={
+        <>
+          <span className={styles.footNote}>
+            Backups are .peck files: the board plus its images.
+          </span>
+          <button type="button" className={btn.button} onClick={pickBackup}>
+            <UploadSimple size={16} aria-hidden /> Open a backup
+          </button>
+          <button
+            type="button"
+            className={btn.button}
+            data-variant="primary"
+            onClick={() => void downloadBackup()}
+          >
+            <DownloadSimple size={16} aria-hidden /> Back up current board
+          </button>
+        </>
+      }
     >
       <ul className={styles.boards}>
         {boards.map((b) => (
