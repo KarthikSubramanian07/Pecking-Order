@@ -78,6 +78,15 @@ export function pagePath(pathname: string): string {
   return path.replace(/\/{2,}/g, '/')
 }
 
+/**
+ * Client-side app routes (boards at /b/<id>) that should get the app shell.
+ * Must match BOARD_RE in src/ui/router.tsx. Done here rather than in
+ * _redirects because Pages skips _redirects for requests a Function handles.
+ */
+export function isAppRoute(pathname: string): boolean {
+  return /^\/b\/[\w-]{1,64}\/?$/.test(pathname)
+}
+
 /** Paths with a file extension are assets (`/og.png`, `/llms.txt`, `/index.md`). */
 function isFilePath(pathname: string): boolean {
   const last = pathname.slice(pathname.lastIndexOf('/') + 1)
