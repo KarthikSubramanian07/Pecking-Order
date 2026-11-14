@@ -7,7 +7,15 @@ import type { ItemId } from '@/core/types'
 
 export type ThemePref = 'system' | 'light' | 'dark'
 export type ItemSize = 'sm' | 'md' | 'lg'
-export type DialogId = 'new' | 'search' | 'export' | 'boards' | 'shortcuts' | 'item' | null
+export type DialogId =
+  | 'new'
+  | 'search'
+  | 'export'
+  | 'boards'
+  | 'shortcuts'
+  | 'item'
+  | 'peckoff'
+  | null
 
 export const ITEM_SIZE_PX: Record<ItemSize, number> = { sm: 64, md: 88, lg: 116 }
 
