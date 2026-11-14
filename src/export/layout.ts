@@ -45,7 +45,7 @@ export interface TextBlock {
 export interface TileLayout extends Rect {
   itemId: ItemId
   image?: ImageHash
-  /** Centred label — used for text items, and as a fallback if the image fails. */
+  /** Centred label, used for text items, and as a fallback if the image fails. */
   text: TextBlock
   /** One-line label strip over the image (only when `showLabels`). */
   caption?: TextBlock
@@ -149,7 +149,7 @@ export function computeLayout(board: Board, opts: ExportOptions, measure: Measur
   if (opts.format === 'auto') {
     const wide = place(ctx, FRAMES.wide, TILE_FLEX, measure)
     if (wide.height <= wide.width * 0.75) return wide
-    // Tall content reads better as a 4:5 feed post — if tiles stay legible.
+    // Tall content reads better as a 4:5 feed post, if tiles stay legible.
     return fitFixed(ctx, FRAMES.portrait, AUTO_PORTRAIT_MIN_TILE, measure) ?? wide
   }
   const frame = FRAMES[opts.format]

@@ -1,5 +1,5 @@
 ---
-title: Pecking Order — rank anything with a free tier list maker
+title: Pecking Order: rank anything with a free tier list maker
 description: A fast, free, local-first tier list maker. Drag images into tiers and export a clean picture. No account, nothing uploaded.
 url: https://pecking-order.pages.dev/
 ---

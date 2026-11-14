@@ -227,7 +227,7 @@ export function summarize(board: Board): BoardSummary {
   }
 }
 
-/** Every image hash referenced by a board — used for garbage collection. */
+/** Every image hash referenced by a board, used for garbage collection. */
 export function referencedImages(board: Board): Set<string> {
   const out = new Set<string>()
   for (const item of Object.values(board.items)) if (item.image) out.add(item.image)
@@ -249,7 +249,7 @@ export function cloneBoard(board: Board, title = `${board.title} (copy)`): Board
 
 /**
  * Checks the board's structural invariants. Used after loading untrusted data
- * (imports, share links) — throws a descriptive error if anything is off.
+ * (imports, share links), throws a descriptive error if anything is off.
  */
 export function assertValidBoard(board: Board): void {
   const fail = (msg: string): never => {

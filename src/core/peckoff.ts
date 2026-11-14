@@ -3,7 +3,7 @@
  *
  * Binary-insertion sort as an immutable state machine. Each pending item is
  * inserted into the ranked list by bisection, so n items need about
- * log2(n!) ≈ n·log2(n) − 1.44n questions — 20 items take ~60 picks, not 190.
+ * log2(n!) ≈ n·log2(n) − 1.44n questions, 20 items take ~60 picks, not 190.
  */
 import type { ItemId } from './types'
 

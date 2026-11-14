@@ -23,7 +23,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Paper grain: an SVG noise tile, on the page only — never on cards. */
+/* Paper grain: an SVG noise tile, on the page only, never on cards. */
 body::before {
   content: "";
   position: fixed;
@@ -107,7 +107,7 @@ a {
   border: 0;
 }
 
-/* Small field labels: sentence case, a touch heavier — never shouty caps. */
+/* Small field labels: sentence case, a touch heavier, never shouty caps. */
 .label {
   font-size: var(--text-sm);
   font-weight: 600;

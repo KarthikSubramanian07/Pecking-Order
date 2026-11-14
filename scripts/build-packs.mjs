@@ -65,7 +65,7 @@ if (problems.length) {
 
 const itemCount = packs.reduce((n, p) => n + p.items.length, 0)
 if (checkOnly) {
-  console.log(`✓ ${packs.length} packs, ${itemCount} items — all valid`)
+  console.log(`✓ ${packs.length} packs, ${itemCount} items, all valid`)
   process.exit(0)
 }
 

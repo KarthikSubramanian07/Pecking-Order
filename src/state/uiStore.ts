@@ -35,9 +35,9 @@ interface Prefs {
 interface UiState extends Prefs {
   /** Item picked for tap-to-place / keyboard moves. */
   selected: ItemId | null
-  /** Item that just landed — drives the "peck" squash animation. */
+  /** Item that just landed, drives the "peck" squash animation. */
   landed: ItemId | null
-  /** Newly added items, in order — they hatch in with a staggered pop. */
+  /** Newly added items, in order, they hatch in with a staggered pop. */
   fresh: Map<ItemId, number>
   dialog: DialogId
   editingItem: ItemId | null

@@ -141,7 +141,7 @@ async function resolveCommons(
   return { url, credit }
 }
 
-/** Commons metadata is HTML. Parse it inertly and keep only the text — never inject it. */
+/** Commons metadata is HTML. Parse it inertly and keep only the text, never inject it. */
 export function htmlToText(html: string): string | undefined {
   const doc = new DOMParser().parseFromString(html, 'text/html')
   for (const el of doc.querySelectorAll('script, style')) el.remove()

@@ -38,8 +38,8 @@ body:
       label: Items
       description: One per line. Add the English Wikipedia article title or a Commons file name if you know it.
       placeholder: |
-        Cornflakes — Wikipedia: Corn flakes
-        Muesli — Wikipedia: Muesli
+        Cornflakes (Wikipedia: Corn flakes)
+        Muesli (Wikipedia: Muesli)
     validations:
       required: true
   - type: input

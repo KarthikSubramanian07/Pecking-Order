@@ -1,9 +1,9 @@
 /**
  * IndexedDB persistence. Three object stores:
- *   boards  — Board JSON keyed by board id
- *   images  — processed image Blobs keyed by SHA-256 hash (content-addressed,
+ *   boards , Board JSON keyed by board id
+ *   images , processed image Blobs keyed by SHA-256 hash (content-addressed,
  *             so the same picture used on five boards is stored once)
- *   meta    — small key/value settings (last opened board, preferences)
+ *   meta   , small key/value settings (last opened board, preferences)
  *
  * localStorage is never used for images: it is synchronous, string-only and
  * capped at ~5 MB, which is the #1 way tier-list apps lose people's work.

@@ -1,5 +1,5 @@
 ---
-title: Privacy — Pecking Order
+title: Privacy · Pecking Order
 description: No accounts, no cookies, no analytics. What stays on your device, and which services your browser contacts.
 url: https://pecking-order.pages.dev/privacy/
 updated: 2026-11-13

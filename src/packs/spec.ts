@@ -4,7 +4,7 @@
  * Packs are validated strictly at build time (scripts/pack-validate.mjs), but
  * what arrives over the network is still input: a stale cache, a proxy or a
  * hand-edited deploy could serve anything. This parser is deliberately
- * forgiving — it keeps every well-formed item and drops the rest — so one bad
+ * forgiving, it keeps every well-formed item and drops the rest, so one bad
  * entry never costs the user a whole pack.
  */
 import { clampText, MAX_LABEL, MAX_TIERS, MAX_TITLE } from '@/core/board'

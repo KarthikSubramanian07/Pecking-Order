@@ -9,7 +9,7 @@ interface ItemTileProps extends HTMLAttributes<HTMLDivElement> {
   state?: 'idle' | 'placeholder' | 'overlay' | 'selected' | 'landed' | 'hatching'
 }
 
-/** The visual tile. Pure presentation — dragging lives in SortableItem. */
+/** The visual tile. Pure presentation, dragging lives in SortableItem. */
 export const ItemTile = memo(
   forwardRef<HTMLDivElement, ItemTileProps>(function ItemTile(
     { item, showLabel, state = 'idle', className, ...rest },
