@@ -9,6 +9,7 @@
  * for browsers without OffscreenCanvas or module workers.
  */
 import type { StoredImage } from '@/storage/db'
+import { assertDecodableSize, sniffBlobSize } from './dimensions'
 import { processBitmapBlob, rasterize, type Size, type WorkerResponse } from './pipeline'
 
 export const MAX_INPUT_BYTES = 25 * 1024 * 1024
@@ -28,6 +29,8 @@ export function assertProcessable(blob: Blob): void {
 export async function processImage(blob: Blob): Promise<StoredImage> {
   assertProcessable(blob)
   if (blob.type !== SVG_TYPE) {
+    // Before any decoder sees it: a tiny file can declare billions of pixels.
+    assertDecodableSize(await sniffBlobSize(blob))
     const worker = processingWorker()
     if (worker) {
       try {
