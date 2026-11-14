@@ -1,25 +1,33 @@
 import { LazyMotion } from 'motion/react'
-import { useEffect } from 'react'
+import { lazy, Suspense, useEffect } from 'react'
 import { useBoardStore } from '@/state/boardStore'
 import { ITEM_SIZE_PX, useUiStore } from '@/state/uiStore'
 import styles from './App.module.css'
-import { Board } from './board/Board'
 import { Busy } from './chrome/Busy'
 import { DropZone } from './chrome/DropZone'
 import { Footer } from './chrome/Footer'
 import { TopBar } from './chrome/TopBar'
 import { Dialogs } from './dialogs/Dialogs'
+import { Home } from './home/Home'
 import { useGlobalShortcuts } from './hooks/useGlobalShortcuts'
 import { useTheme } from './hooks/useTheme'
 import { Toasts } from './primitives/Toasts'
+import { useRoute } from './router'
 
 // The animation engine streams in after first paint; until then motion
 // components render statically, which is exactly what reduced motion wants anyway.
 const loadMotionFeatures = () => import('./motionFeatures').then((mod) => mod.default)
 
+const HOME_TITLE = 'Pecking Order: rank anything'
+
+// The board (drag and drop, motion, dialogs) loads only when a board opens,
+// so the home page stays light.
+const BoardPage = lazy(() => import('./BoardPage'))
+
 export function App() {
   const ready = useBoardStore((s) => s.ready)
   const itemSize = useUiStore((s) => s.itemSize)
+  const route = useRoute()
   useTheme()
   useGlobalShortcuts()
 
@@ -35,19 +43,31 @@ export function App() {
   }, [])
 
   useEffect(() => {
+    if (route.name !== 'home') return
+    document.title = HOME_TITLE
+    void useBoardStore.getState().closeBoard()
+  }, [route])
+
+  useEffect(() => {
     document.documentElement.style.setProperty('--item', `${ITEM_SIZE_PX[itemSize]}px`)
   }, [itemSize])
 
   return (
     <LazyMotion features={loadMotionFeatures} strict>
       <div className={styles.app}>
-        <a className={styles.skip} href="#board">
-          Skip to board
+        <a className={styles.skip} href="#main">
+          Skip to content
         </a>
-        <TopBar />
-        <main id="board" className={styles.main} tabIndex={-1} aria-busy={!ready}>
-          {ready ? <Board /> : <p className={styles.hatching}>Hatching…</p>}
-        </main>
+        <TopBar onBoard={route.name === 'board'} />
+        {!ready ? (
+          <p className={styles.hatching}>Hatching…</p>
+        ) : route.name === 'board' ? (
+          <Suspense fallback={<p className={styles.hatching}>Hatching…</p>}>
+            <BoardPage key={route.id} id={route.id} />
+          </Suspense>
+        ) : (
+          <Home />
+        )}
         <Footer />
         <Dialogs />
         <DropZone />

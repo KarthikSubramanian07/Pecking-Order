@@ -31,3 +31,19 @@
     padding: 0 var(--s-3);
   }
 }
+.missing {
+  display: grid;
+  justify-items: center;
+  gap: var(--s-4);
+  max-width: 52ch;
+  margin: 0 auto;
+  padding: var(--s-8) 0;
+  text-align: center;
+  outline: none;
+}
+.missing h1 {
+  font-size: var(--text-3xl);
+}
+.missing p {
+  color: var(--ink-soft);
+}

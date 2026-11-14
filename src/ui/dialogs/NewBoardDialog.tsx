@@ -1,13 +1,12 @@
 import { useEffect, useId, useState } from 'react'
 import { SWATCHES } from '@/core/palette'
 import { DEFAULT_PRESET, TIER_PRESETS, tiersFromPreset } from '@/core/presets'
-import { boardFromPack, listPacks } from '@/packs/install'
+import { listPacks } from '@/packs/install'
 import type { PackSummary } from '@/packs/types'
-import { useBoardStore } from '@/state/boardStore'
-import { ui } from '@/state/uiStore'
 import { ArrowRight } from '@/ui/icons'
 import btn from '../primitives/Button.module.css'
 import { Dialog } from '../primitives/Dialog'
+import { startBlank, startFromPack } from '../start'
 import styles from './dialogs.module.css'
 
 const accentHex = (name?: string) => SWATCHES.find((s) => s.name === name)?.hex ?? SWATCHES[0]?.hex
@@ -24,31 +23,14 @@ export function NewBoardDialog({ open, onClose }: { open: boolean; onClose: () =
 
   const create = async () => {
     const preset = TIER_PRESETS.find((p) => p.id === presetId) ?? DEFAULT_PRESET
-    await useBoardStore
-      .getState()
-      .newBoard({ title: title.trim() || 'Untitled pecking order', preset })
-    setTitle('')
     onClose()
+    await startBlank(title, preset)
+    setTitle('')
   }
 
-  const fromPack = async (pack: PackSummary) => {
+  const fromPack = (pack: PackSummary) => {
     onClose()
-    const label = `Hatching ${pack.title}`
-    ui().setBusy({ label, done: 0, total: pack.itemCount })
-    try {
-      const board = await boardFromPack(pack.id, {
-        onProgress: ({ done, total }) => ui().setBusy({ label, done, total }),
-      })
-      await useBoardStore.getState().openBoard(board)
-      ui().toast({ message: `${pack.title} is ready. Start pecking.` })
-    } catch (err) {
-      ui().toast({
-        message: err instanceof Error ? err.message : 'That pack failed to load.',
-        tone: 'error',
-      })
-    } finally {
-      ui().setBusy(null)
-    }
+    void startFromPack(pack)
   }
 
   const categories = [...new Set(packs.map((p) => p.category))]
