@@ -1,0 +1,59 @@
+import { beforeEach, describe, expect, it } from 'vitest'
+import { opAddItems, opMoveItem } from '@/core/board'
+import { COOP } from '@/core/types'
+import { useBoardStore } from './boardStore'
+
+const s = () => useBoardStore.getState()
+
+beforeEach(async () => {
+  indexedDB.deleteDatabase('pecking-order')
+  useBoardStore.setState({ ready: false, board: null })
+  await s().init()
+})
+
+describe('boardStore', () => {
+  it('initializes with a board', () => {
+    expect(s().board?.tiers.length).toBeGreaterThan(0)
+    expect(s().boards).toHaveLength(1)
+  })
+
+  it('applies ops with undo/redo', () => {
+    s().apply((b) => void opAddItems(b, [{ label: 'Egg' }]))
+    expect(s().board?.placement[COOP]).toHaveLength(1)
+    s().undo()
+    expect(s().board?.placement[COOP]).toHaveLength(0)
+    s().redo()
+    expect(s().board?.placement[COOP]).toHaveLength(1)
+  })
+
+  it('collapses a gesture into one undo step and supports cancel', () => {
+    s().apply((b) => void opAddItems(b, [{ label: 'Egg' }]))
+    const id = s().board?.placement[COOP]?.[0] as string
+    const [t1, t2] = (s().board?.tiers ?? []).map((t) => t.id) as [string, string]
+    const before = s().history.past.length
+    s().beginGesture()
+    s().applyLive((b) => opMoveItem(b, id, t1))
+    s().applyLive((b) => opMoveItem(b, id, t2))
+    s().endGesture()
+    expect(s().history.past.length).toBe(before + 1)
+    expect(s().board?.placement[t2]).toEqual([id])
+
+    s().beginGesture()
+    s().applyLive((b) => opMoveItem(b, id, COOP))
+    s().endGesture(false)
+    expect(s().board?.placement[t2]).toEqual([id])
+  })
+
+  it('persists, creates, switches and deletes boards', async () => {
+    s().apply((b) => void opAddItems(b, [{ label: 'Saved' }]))
+    await s().flush()
+    const firstId = s().board?.id as string
+    await s().newBoard({ title: 'Second' })
+    expect(s().boards).toHaveLength(2)
+    await s().switchBoard(firstId)
+    expect(Object.values(s().board?.items ?? {})[0]?.label).toBe('Saved')
+    await s().deleteBoard(firstId)
+    expect(s().board?.title).toBe('Second')
+    expect(s().boards).toHaveLength(1)
+  })
+})
