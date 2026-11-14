@@ -1,0 +1,178 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "animated-tv-shows",
+  "version": "1.0.0",
+  "title": "Animated TV Shows",
+  "description": "Saturday morning, cross-examined.",
+  "category": "Film & TV",
+  "accent": "Corn",
+  "author": "Pecking Order",
+  "cover": [
+    "https://static.tvmaze.com/uploads/images/original_untouched/637/1594614.jpg",
+    "https://static.tvmaze.com/uploads/images/original_untouched/594/1486607.jpg",
+    "https://static.tvmaze.com/uploads/images/original_untouched/79/199224.jpg",
+    "https://static.tvmaze.com/uploads/images/original_untouched/633/1584696.jpg"
+  ],
+  "items": [
+    {
+      "id": "the-simpsons",
+      "label": "The Simpsons",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/637/1594614.jpg"
+    },
+    {
+      "id": "spongebob-squarepants",
+      "label": "SpongeBob SquarePants",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/594/1486607.jpg"
+    },
+    {
+      "id": "avatar-the-last-airbender",
+      "label": "Avatar: The Last Airbender",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/79/199224.jpg"
+    },
+    {
+      "id": "futurama",
+      "label": "Futurama",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/633/1584696.jpg"
+    },
+    {
+      "id": "bluey",
+      "label": "Bluey",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/512/1281879.jpg"
+    },
+    {
+      "id": "adventure-time",
+      "label": "Adventure Time",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/1/4898.jpg"
+    },
+    {
+      "id": "gravity-falls",
+      "label": "Gravity Falls",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/2/6140.jpg"
+    },
+    {
+      "id": "batman-the-animated-series",
+      "label": "Batman: The Animated Series",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/80/202273.jpg"
+    },
+    {
+      "id": "teenage-mutant-ninja-turtles",
+      "label": "Teenage Mutant Ninja Turtles",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/20/50244.jpg"
+    },
+    {
+      "id": "the-flintstones",
+      "label": "The Flintstones",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/11/29907.jpg"
+    },
+    {
+      "id": "the-jetsons",
+      "label": "The Jetsons",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/11/29999.jpg"
+    },
+    {
+      "id": "scooby-doo-where-are-you",
+      "label": "Scooby-Doo, Where Are You!",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/528/1320376.jpg"
+    },
+    {
+      "id": "animaniacs",
+      "label": "Animaniacs",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/25/64454.jpg"
+    },
+    {
+      "id": "arthur",
+      "label": "Arthur",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/487/1219265.jpg"
+    },
+    {
+      "id": "hey-arnold",
+      "label": "Hey Arnold!",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/24/61868.jpg"
+    },
+    {
+      "id": "rugrats",
+      "label": "Rugrats",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/402/1007439.jpg"
+    },
+    {
+      "id": "dexters-laboratory",
+      "label": "Dexter's Laboratory",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/11/27891.jpg"
+    },
+    {
+      "id": "the-powerpuff-girls",
+      "label": "The Powerpuff Girls",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/11/27896.jpg"
+    },
+    {
+      "id": "phineas-and-ferb",
+      "label": "Phineas and Ferb",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/595/1489325.jpg"
+    },
+    {
+      "id": "steven-universe",
+      "label": "Steven Universe",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/8/22200.jpg"
+    },
+    {
+      "id": "over-the-garden-wall",
+      "label": "Over the Garden Wall",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/221/554447.jpg"
+    },
+    {
+      "id": "bobs-burgers",
+      "label": "Bob's Burgers",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/589/1474468.jpg"
+    },
+    {
+      "id": "king-of-the-hill",
+      "label": "King of the Hill",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/633/1583514.jpg"
+    },
+    {
+      "id": "ducktales",
+      "label": "DuckTales",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/62/156739.jpg"
+    },
+    {
+      "id": "peppa-pig",
+      "label": "Peppa Pig",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/569/1423757.jpg"
+    },
+    {
+      "id": "x-men-the-animated-series",
+      "label": "X-Men: The Animated Series",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/305/764844.jpg"
+    },
+    {
+      "id": "samurai-jack",
+      "label": "Samurai Jack",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/33/82695.jpg"
+    },
+    {
+      "id": "courage-the-cowardly-dog",
+      "label": "Courage the Cowardly Dog",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/609/1523655.jpg"
+    },
+    {
+      "id": "ed-edd-n-eddy",
+      "label": "Ed, Edd n Eddy",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/24/61412.jpg"
+    },
+    {
+      "id": "the-legend-of-korra",
+      "label": "The Legend of Korra",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/260/650489.jpg"
+    },
+    {
+      "id": "kim-possible",
+      "label": "Kim Possible",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/158/396340.jpg"
+    },
+    {
+      "id": "recess",
+      "label": "Recess",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/23/58538.jpg"
+    }
+  ]
+}

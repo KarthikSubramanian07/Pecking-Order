@@ -1,0 +1,84 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "star-wars-films",
+  "version": "1.0.0",
+  "title": "Star Wars Films",
+  "description": "A long time ago, everyone already had opinions.",
+  "category": "Film & TV",
+  "accent": "Heather",
+  "author": "Pecking Order",
+  "tiers": ["The Chosen One", "Strong in the Force", "Moisture Farm", "Sand", "It's a Trap"],
+  "cover": [
+    "https://upload.wikimedia.org/wikipedia/en/8/87/StarWarsMoviePoster1977.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "https://upload.wikimedia.org/wikipedia/en/3/3f/The_Empire_Strikes_Back_%281980_film%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "https://upload.wikimedia.org/wikipedia/en/b/b2/ReturnOfTheJediPoster1983.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "https://upload.wikimedia.org/wikipedia/en/4/40/Star_Wars_Phantom_Menace_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+  ],
+  "items": [
+    {
+      "id": "a-new-hope",
+      "label": "A New Hope",
+      "wikipedia": "Star Wars (film)"
+    },
+    {
+      "id": "the-empire-strikes-back",
+      "label": "The Empire Strikes Back",
+      "wikipedia": "The Empire Strikes Back"
+    },
+    {
+      "id": "return-of-the-jedi",
+      "label": "Return of the Jedi",
+      "wikipedia": "Return of the Jedi"
+    },
+    {
+      "id": "the-phantom-menace",
+      "label": "The Phantom Menace",
+      "wikipedia": "Star Wars: Episode I – The Phantom Menace"
+    },
+    {
+      "id": "attack-of-the-clones",
+      "label": "Attack of the Clones",
+      "wikipedia": "Star Wars: Episode II – Attack of the Clones"
+    },
+    {
+      "id": "revenge-of-the-sith",
+      "label": "Revenge of the Sith",
+      "wikipedia": "Star Wars: Episode III – Revenge of the Sith"
+    },
+    {
+      "id": "the-clone-wars",
+      "label": "The Clone Wars",
+      "wikipedia": "Star Wars: The Clone Wars (film)"
+    },
+    {
+      "id": "the-force-awakens",
+      "label": "The Force Awakens",
+      "wikipedia": "Star Wars: The Force Awakens"
+    },
+    {
+      "id": "rogue-one",
+      "label": "Rogue One",
+      "wikipedia": "Rogue One"
+    },
+    {
+      "id": "the-last-jedi",
+      "label": "The Last Jedi",
+      "wikipedia": "Star Wars: The Last Jedi"
+    },
+    {
+      "id": "solo",
+      "label": "Solo",
+      "wikipedia": "Solo: A Star Wars Story"
+    },
+    {
+      "id": "the-rise-of-skywalker",
+      "label": "The Rise of Skywalker",
+      "wikipedia": "Star Wars: The Rise of Skywalker"
+    },
+    {
+      "id": "the-mandalorian-and-grogu",
+      "label": "The Mandalorian and Grogu",
+      "wikipedia": "The Mandalorian and Grogu"
+    }
+  ]
+}
