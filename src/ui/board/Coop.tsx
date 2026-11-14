@@ -1,16 +1,9 @@
-import {
-  ArrowsDownUp,
-  ImageSquare,
-  MagnifyingGlass,
-  Plus,
-  Scales,
-  Shuffle,
-} from '@phosphor-icons/react'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { opShuffleCoop, opSortContainer } from '@/core/board'
 import { COOP, type ItemId } from '@/core/types'
 import { boardActions, useBoardStore } from '@/state/boardStore'
 import { useUiStore } from '@/state/uiStore'
+import { ArrowsDownUp, ImageSquare, MagnifyingGlass, Plus, Scales, Shuffle } from '@/ui/icons'
 import { addItems, moveItemTo } from '../actions'
 import { Hen } from '../brand/Hen'
 import { useIngest } from '../hooks/useIngest'

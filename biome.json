@@ -6,7 +6,14 @@
     "useIgnoreFile": true
   },
   "files": {
-    "includes": ["**", "!**/dist", "!**/src/packs/generated", "!**/public/packs", "!**/.claude"]
+    "includes": [
+      "**",
+      "!**/dist",
+      "!**/src/packs/generated",
+      "!**/public/packs",
+      "!**/.claude",
+      "!**/src/ui/icons.tsx"
+    ]
   },
   "formatter": {
     "indentStyle": "space",

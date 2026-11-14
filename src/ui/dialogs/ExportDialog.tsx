@@ -1,4 +1,3 @@
-import { ClipboardText, DownloadSimple, ShareNetwork } from '@phosphor-icons/react'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import {
   DEFAULT_EXPORT,
@@ -15,6 +14,7 @@ import {
 } from '@/export/share'
 import { useBoardStore } from '@/state/boardStore'
 import { ui } from '@/state/uiStore'
+import { ClipboardText, DownloadSimple, ShareNetwork } from '@/ui/icons'
 import btn from '../primitives/Button.module.css'
 import { Dialog } from '../primitives/Dialog'
 import styles from './dialogs.module.css'
