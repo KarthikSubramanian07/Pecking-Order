@@ -1,0 +1,275 @@
+{
+  "$schema": "../pack.schema.json",
+  "id": "us-state-flags",
+  "version": "1.0.0",
+  "title": "US State Flags",
+  "description": "Fifty flags, and a surprising number of seals on blue bedsheets.",
+  "category": "Places",
+  "accent": "Duck Egg",
+  "author": "Pecking Order",
+  "tiers": [
+    "Vexillologist Approved",
+    "Proudly Flown",
+    "Perfectly Fine",
+    "Seal on a Bedsheet",
+    "Back to the Drawing Board"
+  ],
+  "cover": [
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Alabama.svg/500px-Flag_of_Alabama.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Flag_of_Alaska.svg/500px-Flag_of_Alaska.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Flag_of_Arizona.svg/500px-Flag_of_Arizona.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Flag_of_Arkansas.svg/500px-Flag_of_Arkansas.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  ],
+  "items": [
+    {
+      "id": "alabama",
+      "label": "Alabama",
+      "commons": "File:Flag of Alabama.svg"
+    },
+    {
+      "id": "alaska",
+      "label": "Alaska",
+      "commons": "File:Flag of Alaska.svg"
+    },
+    {
+      "id": "arizona",
+      "label": "Arizona",
+      "commons": "File:Flag of Arizona.svg"
+    },
+    {
+      "id": "arkansas",
+      "label": "Arkansas",
+      "commons": "File:Flag of Arkansas.svg"
+    },
+    {
+      "id": "california",
+      "label": "California",
+      "commons": "File:Flag of California.svg"
+    },
+    {
+      "id": "colorado",
+      "label": "Colorado",
+      "commons": "File:Flag of Colorado.svg"
+    },
+    {
+      "id": "connecticut",
+      "label": "Connecticut",
+      "commons": "File:Flag of Connecticut.svg"
+    },
+    {
+      "id": "delaware",
+      "label": "Delaware",
+      "commons": "File:Flag of Delaware.svg"
+    },
+    {
+      "id": "florida",
+      "label": "Florida",
+      "commons": "File:Flag of Florida.svg"
+    },
+    {
+      "id": "georgia",
+      "label": "Georgia",
+      "commons": "File:Flag of Georgia (U.S. state).svg"
+    },
+    {
+      "id": "hawaii",
+      "label": "Hawaii",
+      "commons": "File:Flag of Hawaii.svg"
+    },
+    {
+      "id": "idaho",
+      "label": "Idaho",
+      "commons": "File:Flag of Idaho.svg"
+    },
+    {
+      "id": "illinois",
+      "label": "Illinois",
+      "commons": "File:Flag of Illinois.svg"
+    },
+    {
+      "id": "indiana",
+      "label": "Indiana",
+      "commons": "File:Flag of Indiana.svg"
+    },
+    {
+      "id": "iowa",
+      "label": "Iowa",
+      "commons": "File:Flag of Iowa.svg"
+    },
+    {
+      "id": "kansas",
+      "label": "Kansas",
+      "commons": "File:Flag of Kansas.svg"
+    },
+    {
+      "id": "kentucky",
+      "label": "Kentucky",
+      "commons": "File:Flag of Kentucky.svg"
+    },
+    {
+      "id": "louisiana",
+      "label": "Louisiana",
+      "commons": "File:Flag of Louisiana.svg"
+    },
+    {
+      "id": "maine",
+      "label": "Maine",
+      "commons": "File:Flag of Maine.svg"
+    },
+    {
+      "id": "maryland",
+      "label": "Maryland",
+      "commons": "File:Flag of Maryland.svg"
+    },
+    {
+      "id": "massachusetts",
+      "label": "Massachusetts",
+      "commons": "File:Flag of Massachusetts.svg"
+    },
+    {
+      "id": "michigan",
+      "label": "Michigan",
+      "commons": "File:Flag of Michigan.svg"
+    },
+    {
+      "id": "minnesota",
+      "label": "Minnesota",
+      "commons": "File:Flag of Minnesota.svg"
+    },
+    {
+      "id": "mississippi",
+      "label": "Mississippi",
+      "commons": "File:Flag of Mississippi.svg"
+    },
+    {
+      "id": "missouri",
+      "label": "Missouri",
+      "commons": "File:Flag of Missouri.svg"
+    },
+    {
+      "id": "montana",
+      "label": "Montana",
+      "commons": "File:Flag of Montana.svg"
+    },
+    {
+      "id": "nebraska",
+      "label": "Nebraska",
+      "commons": "File:Flag of Nebraska.svg"
+    },
+    {
+      "id": "nevada",
+      "label": "Nevada",
+      "commons": "File:Flag of Nevada.svg"
+    },
+    {
+      "id": "new-hampshire",
+      "label": "New Hampshire",
+      "commons": "File:Flag of New Hampshire.svg"
+    },
+    {
+      "id": "new-jersey",
+      "label": "New Jersey",
+      "commons": "File:Flag of New Jersey.svg"
+    },
+    {
+      "id": "new-mexico",
+      "label": "New Mexico",
+      "commons": "File:Flag of New Mexico.svg"
+    },
+    {
+      "id": "new-york",
+      "label": "New York",
+      "commons": "File:Flag of New York.svg"
+    },
+    {
+      "id": "north-carolina",
+      "label": "North Carolina",
+      "commons": "File:Flag of North Carolina.svg"
+    },
+    {
+      "id": "north-dakota",
+      "label": "North Dakota",
+      "commons": "File:Flag of North Dakota.svg"
+    },
+    {
+      "id": "ohio",
+      "label": "Ohio",
+      "commons": "File:Flag of Ohio.svg"
+    },
+    {
+      "id": "oklahoma",
+      "label": "Oklahoma",
+      "commons": "File:Flag of Oklahoma.svg"
+    },
+    {
+      "id": "oregon",
+      "label": "Oregon",
+      "commons": "File:Flag of Oregon.svg"
+    },
+    {
+      "id": "pennsylvania",
+      "label": "Pennsylvania",
+      "commons": "File:Flag of Pennsylvania.svg"
+    },
+    {
+      "id": "rhode-island",
+      "label": "Rhode Island",
+      "commons": "File:Flag of Rhode Island.svg"
+    },
+    {
+      "id": "south-carolina",
+      "label": "South Carolina",
+      "commons": "File:Flag of South Carolina.svg"
+    },
+    {
+      "id": "south-dakota",
+      "label": "South Dakota",
+      "commons": "File:Flag of South Dakota.svg"
+    },
+    {
+      "id": "tennessee",
+      "label": "Tennessee",
+      "commons": "File:Flag of Tennessee.svg"
+    },
+    {
+      "id": "texas",
+      "label": "Texas",
+      "commons": "File:Flag of Texas.svg"
+    },
+    {
+      "id": "utah",
+      "label": "Utah",
+      "commons": "File:Flag of Utah.svg"
+    },
+    {
+      "id": "vermont",
+      "label": "Vermont",
+      "commons": "File:Flag of Vermont.svg"
+    },
+    {
+      "id": "virginia",
+      "label": "Virginia",
+      "commons": "File:Flag of Virginia.svg"
+    },
+    {
+      "id": "washington",
+      "label": "Washington",
+      "commons": "File:Flag of Washington.svg"
+    },
+    {
+      "id": "west-virginia",
+      "label": "West Virginia",
+      "commons": "File:Flag of West Virginia.svg"
+    },
+    {
+      "id": "wisconsin",
+      "label": "Wisconsin",
+      "commons": "File:Flag of Wisconsin.svg"
+    },
+    {
+      "id": "wyoming",
+      "label": "Wyoming",
+      "commons": "File:Flag of Wyoming.svg"
+    }
+  ]
+}
