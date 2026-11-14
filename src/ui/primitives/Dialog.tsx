@@ -1,4 +1,4 @@
-import { type ReactNode, useCallback, useEffect, useId, useRef } from 'react'
+import { type ReactNode, useCallback, useEffect, useId, useRef, useState } from 'react'
 import { X } from '@/ui/icons'
 import styles from './Dialog.module.css'
 
@@ -52,6 +52,20 @@ export function Dialog({
   // Lazily mounted dialogs unmount instead of closing; hand focus back then too.
   useEffect(() => restoreFocus, [restoreFocus])
 
+  // A body that scrolls must be reachable by keyboard, so it becomes a focusable
+  // region whenever its content overflows (the shortcuts list on a phone, say).
+  const body = useRef<HTMLDivElement>(null)
+  const [scrolls, setScrolls] = useState(false)
+  useEffect(() => {
+    const el = body.current
+    if (!open || !el) return
+    const measure = () => setScrolls(el.scrollHeight > el.clientHeight + 1)
+    const ro = new ResizeObserver(measure)
+    ro.observe(el)
+    for (const child of el.children) ro.observe(child)
+    return () => ro.disconnect()
+  }, [open])
+
   return (
     // biome-ignore lint/a11y/useKeyWithClickEvents: backdrop click is a mouse nicety; Escape is the keyboard path (native)
     <dialog
@@ -82,7 +96,13 @@ export function Dialog({
               <X size={18} weight="bold" aria-hidden />
             </button>
           </header>
-          <div className={styles.body}>{children}</div>
+          <div
+            ref={body}
+            className={styles.body}
+            {...(scrolls && { tabIndex: 0, role: 'region', 'aria-labelledby': titleId })}
+          >
+            {children}
+          </div>
           {footer && <footer className={styles.footer}>{footer}</footer>}
         </div>
       )}
