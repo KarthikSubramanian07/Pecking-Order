@@ -83,10 +83,17 @@
   --t-fast: 120ms;
   --t-med: 220ms;
 
-  /* Item size (user-adjustable) */
-  --item: 88px;
+  /* Item size: the user picks a base, phones scale it down a little. */
+  --item-base: 80px;
+  --item: var(--item-base);
 
   --grain-opacity: 0.045;
+}
+
+@media (max-width: 560px) {
+  :root {
+    --item: calc(var(--item-base) * 0.8);
+  }
 }
 
 :root[data-theme="dark"] {

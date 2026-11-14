@@ -1,4 +1,6 @@
 .coop {
+  /* 1 while the Coop is docked over the page, so Coop.tsx can publish its height. */
+  --docked: 1;
   position: sticky;
   bottom: 0;
   z-index: 5;
@@ -64,7 +66,7 @@
 }
 
 .grid {
-  max-height: min(34vh, calc(var(--item) * 2.6 + 24px));
+  max-height: min(26vh, calc(var(--item) * 1.6 + 24px));
   transition: max-height var(--t-med) var(--ease-out);
   overflow-y: auto;
   overscroll-behavior: contain;
@@ -81,14 +83,7 @@
   display: flex;
   align-items: center;
   gap: var(--s-2);
-  margin-top: var(--s-2);
-  padding-top: var(--s-3);
-  border-top: 1px dashed var(--hairline);
-}
-.coop[data-empty] .quick {
-  margin-top: 0;
-  padding-top: var(--s-2);
-  border-top: 0;
+  margin-top: var(--s-3);
 }
 .quick textarea {
   flex: 1;
@@ -118,6 +113,23 @@
 
 /* Narrow screens keep Upload and Search, as icons, so nothing is lost on reflow. */
 @media (max-width: 640px) {
+  /* Two header lines: the title with the fold button, then the tools. */
+  .head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: var(--s-2);
+  }
+  .tools {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: flex-start;
+  }
+  .filter {
+    flex: 1 1 110px;
+  }
+  .filter input {
+    width: 100%;
+  }
   .or {
     display: none;
   }
@@ -137,28 +149,94 @@
 
 /* On short screens (landscape phones, 200% zoom) a docked Coop would hide most
    of the board, so it joins the page flow instead. */
-@media (max-height: 500px) {
+@media (max-width: 999.98px) and (max-height: 500px) {
   .coop {
+    --docked: 0;
     position: static;
   }
 }
 
-/* Arrow keys move a keyboard drag by on-screen position, and the docked Coop sits
-   on top of the lower tiers. For keyboard drags it joins the page flow, so every
-   tier is above it and reachable with the arrow keys. */
-:root[data-keyboard-drag] .coop {
-  position: static;
-}
-/* Resize instantly for keyboard drags: an animated height keeps the page
-   moving under the arrow keys and makes quick presses aim at stale rows. */
-:root[data-keyboard-drag] .grid {
-  transition: none;
+/* Docked mode (below 1000px wide). */
+@media (max-width: 999.98px) {
+  /* Arrow keys move a keyboard drag by on-screen position, and the docked Coop
+     sits on top of the lower tiers. For keyboard drags it joins the page flow, so
+     every tier is above it and reachable with the arrow keys. */
+  :root[data-keyboard-drag] .coop {
+    position: static;
+  }
+  /* Resize instantly for keyboard drags: an animated height keeps the page
+     moving under the arrow keys and makes quick presses aim at stale rows. */
+  :root[data-keyboard-drag] .grid {
+    transition: none;
+  }
+
+  /* While dragging, the dock ducks to one row so every tier stays reachable. */
+  .coop[data-dragging] .grid {
+    max-height: calc(var(--item) + 16px);
+  }
+  .coop[data-dragging] .quick {
+    display: none;
+  }
+
+  /* Folded away, the dock is just its header. A drag still opens one row. */
+  .coop[data-folded]:not([data-dragging]) .grid,
+  .coop[data-folded] .quick {
+    display: none;
+  }
 }
 
-/* While dragging, the dock ducks to one row so every tier stays reachable. */
-.coop[data-dragging] .grid {
-  max-height: calc(var(--item) + 16px);
-}
-.coop[data-dragging] .quick {
-  display: none;
+/* Sidebar mode: the Coop sits beside the tiers and scrolls on its own. */
+@media (min-width: 1000px) {
+  .coop {
+    --docked: 0;
+    top: var(--s-4);
+    bottom: auto;
+    display: flex;
+    flex-direction: column;
+    max-height: max(320px, calc(100dvh - var(--coop-top, var(--s-4)) - var(--s-4)));
+    margin-top: 0;
+    border-bottom: 1px solid var(--hairline);
+    border-radius: var(--r-panel);
+    box-shadow: none;
+    padding: var(--s-3) var(--s-4);
+  }
+  .grid {
+    flex: 0 1 auto;
+    max-height: none;
+  }
+  .fold {
+    display: none;
+  }
+  .titleWrap {
+    flex-wrap: wrap;
+    column-gap: var(--s-2);
+  }
+  .title {
+    white-space: nowrap;
+  }
+  .tools {
+    flex: 1 1 100%;
+    justify-content: flex-start;
+  }
+  .filter {
+    flex: 1 1 88px;
+    min-width: 0;
+    gap: var(--s-1);
+    padding: 0 10px;
+  }
+  .filter input {
+    width: 100%;
+  }
+  .quick {
+    flex-wrap: wrap;
+  }
+  .quick textarea {
+    flex-basis: calc(100% - 40px);
+  }
+  .or {
+    display: none;
+  }
+  .quick > button:not([type="submit"]) {
+    flex: 1;
+  }
 }

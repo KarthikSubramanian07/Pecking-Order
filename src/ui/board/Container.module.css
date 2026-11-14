@@ -3,8 +3,8 @@
   flex-wrap: wrap;
   align-content: flex-start;
   gap: 6px;
-  min-height: calc(var(--item) + 12px);
-  padding: 6px;
+  min-height: calc(var(--item) + 8px);
+  padding: 4px;
   border-radius: 10px;
 }
 .empty {

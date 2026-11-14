@@ -44,11 +44,11 @@ export function App() {
   }, [route])
 
   useEffect(() => {
-    document.documentElement.style.setProperty('--item', `${ITEM_SIZE_PX[itemSize]}px`)
+    document.documentElement.style.setProperty('--item-base', `${ITEM_SIZE_PX[itemSize]}px`)
   }, [itemSize])
 
   return (
-    <div className={styles.app}>
+    <div className={styles.app} data-wide={route.name === 'board' || undefined}>
       <a className={styles.skip} href="#main">
         Skip to content
       </a>
