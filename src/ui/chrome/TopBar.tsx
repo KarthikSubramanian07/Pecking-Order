@@ -11,7 +11,6 @@ import {
   DownloadSimple,
   Export,
   Keyboard,
-  Monitor,
   Moon,
   Plus,
   SquaresFour,
@@ -20,6 +19,7 @@ import {
 } from '@/ui/icons'
 import { downloadBackup } from '../backup'
 import { Hen } from '../brand/Hen'
+import { useIsDark } from '../hooks/useTheme'
 import btn from '../primitives/Button.module.css'
 import { Menu } from '../primitives/Menu'
 import { boardPath, Link, navigate } from '../router'
@@ -41,7 +41,8 @@ export function TopBar({ onBoard: onBoardRoute }: { onBoard: boolean }) {
   const saveStatus = useBoardStore((s) => s.saveStatus)
   const canUndo = useBoardStore((s) => s.history.past.length > 0)
   const canRedo = useBoardStore((s) => s.history.future.length > 0)
-  const { theme, itemSize, showLabels, setPref, open } = useUiStore()
+  const { itemSize, showLabels, setPref, open } = useUiStore()
+  const dark = useIsDark()
   const [draft, setDraft] = useState(title)
   const mod = isMac() ? '⌘' : 'Ctrl+'
 
@@ -107,6 +108,18 @@ export function TopBar({ onBoard: onBoardRoute }: { onBoard: boolean }) {
               </button>
             </>
           )}
+          <button
+            type="button"
+            className={`${btn.icon} ${styles.themeToggle}`}
+            data-variant="ghost"
+            data-dark={dark || undefined}
+            onClick={() => setPref('theme', dark ? 'light' : 'dark')}
+            aria-label={dark ? 'Switch to light theme' : 'Switch to dark theme'}
+            title={dark ? 'Light theme' : 'Dark theme'}
+          >
+            <Moon size={18} aria-hidden className={styles.moon} />
+            <Sun size={18} aria-hidden className={styles.sun} />
+          </button>
           <Menu
             label="View and settings"
             trigger={(props) => (
@@ -121,27 +134,8 @@ export function TopBar({ onBoard: onBoardRoute }: { onBoard: boolean }) {
               </button>
             )}
             items={[
-              {
-                label: 'Light theme',
-                icon: <Sun size={16} />,
-                checked: theme === 'light',
-                onSelect: () => setPref('theme', 'light'),
-              },
-              {
-                label: 'Dark theme',
-                icon: <Moon size={16} />,
-                checked: theme === 'dark',
-                onSelect: () => setPref('theme', 'dark'),
-              },
-              {
-                label: 'Match system',
-                icon: <Monitor size={16} />,
-                checked: theme === 'system',
-                onSelect: () => setPref('theme', 'system'),
-              },
-              ...(['sm', 'md', 'lg'] as const).map((size, i) => ({
+              ...(['sm', 'md', 'lg'] as const).map((size) => ({
                 label: SIZE_LABEL[size],
-                separated: i === 0,
                 checked: itemSize === size,
                 onSelect: () => setPref('itemSize', size),
               })),
