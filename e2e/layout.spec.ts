@@ -51,6 +51,8 @@ test.describe('wide screens', () => {
   test('a mouse drag from the sidebar lands in a tier', async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 800 })
     await boardWithItems(page)
+    // New tiles play a short hatch animation; grab one once it has settled.
+    await expect(page.locator('[data-item-id][data-state="hatching"]')).toHaveCount(0)
     const from = await page
       .locator('[data-item-id]')
       .filter({ hasText: /^Bird 1$/ })
