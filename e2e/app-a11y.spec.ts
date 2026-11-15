@@ -173,18 +173,43 @@ test.describe('keyboard only', () => {
     await expectFocused(tile(page, 'Banana'))
   })
 
+  test('the sun and moon button switches theme in one press', async ({ page }) => {
+    await page.emulateMedia({ colorScheme: 'light' })
+    await openBoard(page)
+    const html = page.locator('html')
+    await expect(html).toHaveAttribute('data-theme', 'light')
+    const toDark = page.getByRole('button', { name: 'Switch to dark theme' })
+    await toDark.focus()
+    await page.keyboard.press('Enter')
+    await expect(html).toHaveAttribute('data-theme', 'dark')
+    const toLight = page.getByRole('button', { name: 'Switch to light theme' })
+    await expect(toLight).toBeFocused()
+    await page.keyboard.press('Space')
+    await expect(html).toHaveAttribute('data-theme', 'light')
+    // The choice sticks across a reload.
+    await toDark.click()
+    await page.reload()
+    await expect(html).toHaveAttribute('data-theme', 'dark')
+  })
+
   test('the settings menu works with arrow keys and Escape', async ({ page }) => {
     await openBoard(page)
     const trigger = page.getByRole('button', { name: 'View and settings' })
     await trigger.focus()
     await page.keyboard.press('Enter')
-    await expect(page.getByRole('menuitemradio', { name: 'Light theme' })).toBeFocused()
+    await expect(page.getByRole('menuitemradio', { name: 'Small tiles' })).toBeFocused()
     await page.keyboard.press('ArrowDown')
+    await page.keyboard.press('ArrowDown')
+    await expect(page.getByRole('menuitemradio', { name: 'Large tiles' })).toBeFocused()
     await page.keyboard.press('Enter')
-    await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark')
+    await expect
+      .poll(() =>
+        page.evaluate(() => document.documentElement.style.getPropertyValue('--item-base')),
+      )
+      .toBe('112px')
     await trigger.focus()
     await page.keyboard.press('Enter')
-    await expect(page.getByRole('menuitemradio', { name: 'Dark theme' })).toHaveAttribute(
+    await expect(page.getByRole('menuitemradio', { name: 'Large tiles' })).toHaveAttribute(
       'aria-checked',
       'true',
     )

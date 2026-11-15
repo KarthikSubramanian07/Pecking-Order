@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useSyncExternalStore } from 'react'
 import { useUiStore } from '@/state/uiStore'
 
 /** Resolves the theme preference to `data-theme` on <html>, tracking the OS. */
@@ -25,4 +25,23 @@ export function useTheme(): void {
     mq.addEventListener('change', apply)
     return () => mq.removeEventListener('change', apply)
   }, [pref])
+}
+
+const DARK_QUERY = '(prefers-color-scheme: dark)'
+
+const subscribeSystem = (cb: () => void) => {
+  const mq = window.matchMedia(DARK_QUERY)
+  mq.addEventListener('change', cb)
+  return () => mq.removeEventListener('change', cb)
+}
+
+/** Whether the page is dark right now: the saved choice, or the device setting before one is made. */
+export function useIsDark(): boolean {
+  const pref = useUiStore((s) => s.theme)
+  const systemDark = useSyncExternalStore(
+    subscribeSystem,
+    () => window.matchMedia(DARK_QUERY).matches,
+    () => false,
+  )
+  return pref === 'dark' || (pref === 'system' && systemDark)
 }

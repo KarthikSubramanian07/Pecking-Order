@@ -41,6 +41,38 @@
   background: var(--hairline);
 }
 
+/* One-click theme switch: a moon by day, a sun by night, swapping with a turn. */
+.themeToggle {
+  position: relative;
+}
+.moon,
+.sun {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  transition:
+    transform 360ms var(--ease-peck),
+    opacity var(--t-med) var(--ease-out);
+}
+.sun {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.5);
+}
+.themeToggle[data-dark] .moon {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.5);
+}
+.themeToggle[data-dark] .sun {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .moon,
+  .sun {
+    transition: none;
+  }
+}
+
 .titleRow {
   position: relative;
   margin: var(--s-4) 0 var(--s-4);
@@ -110,6 +142,13 @@
   }
 }
 @media (max-width: 440px) {
+  /* Icon-only on small phones: tighter buttons so the whole bar fits at 320px. */
+  .actions > a,
+  .actions > button {
+    width: auto;
+    min-width: 36px;
+    padding-inline: 8px;
+  }
   .hideXs {
     position: absolute;
     width: 1px;
@@ -134,5 +173,16 @@
   }
   .titleRow {
     margin-top: var(--s-3);
+  }
+}
+/* The narrowest phones keep the hen and every action on one line. */
+@media (max-width: 360px) {
+  .top {
+    gap: var(--s-2);
+  }
+  .actions > a,
+  .actions > button {
+    min-width: 32px;
+    padding-inline: 6px;
   }
 }
